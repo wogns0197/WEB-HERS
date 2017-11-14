@@ -1,0 +1,66 @@
+
+main{
+	left: 25%;
+	background-color: #585858;
+	width: 50%;
+	height: 400px;
+	position: absolute;
+	border-radius: 10px;
+}
+button{
+	width: 50%;
+	height: 60px;
+	background-color: #585858;
+	border:none;
+	color: white;
+	font-size: 10pt;
+	cursor: pointer;
+	margin-right: 0;
+}
+#q1{
+	background-color:#848484;
+	border-radius: 10px 0px 5px 0px;
+	float: left;
+}
+#q2{
+	float: right;
+	border-radius: 0px 10px 0px 5px;
+}
+section{
+	color: white;
+	font-size: 15pt;
+}
+input{
+	font-size: 10pt;
+	border-radius: 5px;
+	text-align: center;
+	width: 200px;
+	height: 40px;
+	border:1px solid #848484;
+}
+.forgotid{	
+	text-align: center;
+	margin-top: 20%;	
+}
+#bottom:hover{
+	cursor: pointer;
+	transition: 0.5s;
+	background-color: #2E2E2E;
+	transition: 0.5s;
+	transform:scale(0.9);
+}
+#bottom{
+	color: white;
+	font-size: 10pt;
+	width: 50%;
+	height: 50px;
+	border:none;
+	border-radius: 50px;
+	background-color: #848484;
+	transition: 0.2s;
+	transform: scale(1);
+}
+footer{
+	margin-top: 10%;
+	text-align: center;
+}
