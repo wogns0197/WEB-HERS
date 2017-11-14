@@ -22,6 +22,14 @@
 					<button id="bottom">FIND ID!</button>
 				</footer>
 			</div>
+			<div class="forgotpw">
+				<input type="text" name="email" value="Email" onfocus="this.value='';this.style.color='black';" style="color:#BDBDBD;" id="email">
+				<br/>
+				<input type="text" name="num" value="인증번호" onfocus="this.value='';this.style.color='black';" style="color:#BDBDBD;" id="num">
+				<footer>
+					<button id="bottom">FIND ID!</button>
+				</footer>
+			</div>
 
 
 			<script type="text/javascript">
@@ -29,21 +37,29 @@
 				window.onload = function() {
 			    document.getElementById("q1").onclick = changeColor;
 			    document.getElementById("q2").onclick = changeColor2;
+
 				};
 				function changeColor() {
 				    var q1 = document.getElementById("q1");
-				    var q2 = document.getElementById("q2");
-				    
-				    q1.style.backgroundColor = "#848484";
-				    q2.style.backgroundColor = "#585858";
+				    var q2 = document.getElementById("q2");	
+				    var id = document.getElementsByClassName("forgotid");
+				    var pw = document.getElementsByClassName("forgotpw");
+				    q1.style.backgroundColor = "#585858";
+				    q2.style.backgroundColor = "#6E6E6E";
+				    pw[0].style.display = "none";
+				    id[0].style.display = "block";
+
+
 				}
 				function changeColor2() {
 				    var q1 = document.getElementById("q1");
 				    var q2 = document.getElementById("q2");
 				    var id = document.getElementsByClassName("forgotid");
-				    q1.style.backgroundColor = "#585858";
-				    q2.style.backgroundColor = "#848484";
+				    var pw = document.getElementsByClassName("forgotpw");
+				    q1.style.backgroundColor = "#6E6E6E";
+				    q2.style.backgroundColor = "#585858";
 				    id[0].style.display = "none";
+				    pw[0].style.display = "block";
 				}
 
 			</script>

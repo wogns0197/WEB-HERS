@@ -1,0 +1,67 @@
+
+main{
+	text-align: center;
+	margin-top: 10%;
+	border-radius: 5px;
+	margin-left: 20%;
+	margin-right: 20%;
+	padding-top: 5%;
+	padding-bottom: 3%;
+	background-color: #585858;
+	box-shadow: 0px 10px 30px -9px rgba(0,0,0,0.4);
+
+}
+.id1{
+	margin-left: 20px;
+}
+input{
+	font-size: 10pt;
+	border-radius: 5px;
+	text-align: center;
+	width: 200px;
+	height: 40px;
+	border:1px solid #848484;
+}
+.log{
+	padding-top: 5%;
+}
+button:hover{
+	cursor: pointer;
+	transition: 0.5s;
+	background-color: #2E2E2E;
+	transition: 0.5s;
+	transform:scale(0.9);
+}
+button{
+	color: white;
+	font-size: 10pt;
+	width: 50%;
+	height: 50px;
+	border:none;
+	border-radius: 50px;
+	background-color: #848484;
+	transition: 0.2s;
+	transform: scale(1);
+}
+
+/*회원가입 각 빈칸들 설정*/
+#name1{
+	width: 100px;
+}
+#email{
+	margin:5px;
+	width: 308px;
+}
+#phone{
+	width: 308px;
+	
+	margin-bottom: 5px;	
+}
+#dept{
+	width: 308px;	
+	margin-bottom: 15px;		
+}
+.pw{
+	width: 150px;
+	margin: 5px;
+}

@@ -1,5 +1,6 @@
 
 main{
+	margin-top: 10%;
 	left: 25%;
 	background-color: #585858;
 	width: 50%;
@@ -18,11 +19,12 @@ button{
 	margin-right: 0;
 }
 #q1{
-	background-color:#848484;
+	background-color:#585858;
 	border-radius: 10px 0px 5px 0px;
 	float: left;
 }
 #q2{
+	background-color:#6E6E6E;
 	float: right;
 	border-radius: 0px 10px 0px 5px;
 }
@@ -63,4 +65,14 @@ input{
 footer{
 	margin-top: 10%;
 	text-align: center;
+}
+.forgotpw{
+	display: none;
+	text-align: center;
+	margin-top: 20%;
+}
+#num{
+	width:80px;
+	margin-top: 10px;
+	margin-right: 6px;
 }
