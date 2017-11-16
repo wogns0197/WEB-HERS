@@ -1,62 +1,71 @@
-사용 가능한 시간만 보여주기 위한 fuction
+사용 가능한 시간만 보여주기 위한 function
 보류 : 예약취소후 보여줄거냐 말거냐 
 
-Purpose 에 따른 경기 공지 알람{
-	if(purpose  = yes){
-		input(footsal_manage)
-		input(purpose view)
+Purpose 에 따른 경기 공지 알람[ #홈페이지에 오늘 진행되는 경기를 보여준다 ex) 15:00~17:00 풋살장2 소프트 vs ict
+	if(purpose==yes && purpose_view.borrowdate == today.date){
+		purpose_data(어디어디 어디어디) -> 어디어디 vs 어디어디 로 입력
+		print : time & place & 어디어디 vs 어디어디
 	}
-	else{
-		input(footsal_mangae){
-	}
-}
-if(purpose==yes){
-	어디어디 vs 어디어디 형식으로 받아온다
-}
-
+]
 Pseudo code(예약시스템)
 [
-	User info 를 긁어온다
-	if(Purposeview.borrowdate == today.date){
-		print(puposeview where borrow date-today.date<= 2months)
-	}
-	Callander{
+	User info 를 가져온다
+	time table{ # user가 선택 가능한 시간을 보여주는 time table 생성
 		Check already borrowed time
-		Make Callander
+		Make time table
 	}
-	Finish select and input database{
-		if(today.day > lastest borrowdate.day){ (가장 큰 manage_id의 borrowdate를 가져온다)
+	Finish select and input database{ # user가 원하는 시간을 선택 후 데이터를 db로 옮긴다
+		if(today.day > lastest borrowdate.day){ # 가장 큰 manage_id의 borrowdate를 가져온다./날마다 manag_id를 갱신하기 위함
 			manage_id -> default(1)
 		}
-		if(purpose  = yes){
+		if(purpose  = yes){ # ‘yes’ :  자신들의 경기를 공지 해줫으면 좋겠다 # ‘no’ : 공지가 필요가 없다.
 			input(footsal_manage)
-			input(purpose view)
+			input(purpose_view)
 		}
 		else{
 			input(footsal_mangae){
 		}
 	}
-	print result{
+	print result{ # 예약 성공 화면을 띄워준다
 		가져온다
 	}
 ]
 
 Pseudo code(예약내역시스템)
 [
-	User info를 긁어온다
-	if(footsal_manage.manage_id == user.id && borrowdate-today.date <2months){
+	User info를 가져온다
+	if(footsal_manage.manage_id == user.id && borrowdate - today.date <2months){ # 근 2달 이내의 예약 내역을 가져온다
 		get(info)
 	)
-	show reservation list
-	if(예약취소button){
-		delete database in footsal_manage, purposeview
+	show reservation list # list형식으로 출력
+	user가 list 중 하나를 고르면 manage_id, borrowdate를 저장해둔다.
+	if(예약취소button){ # db 에서 delete 후 종료
+		delete database in footsal_manage, purpose_view
 	}
-	if(예약수정button){
-		예약내용을 긁어와서 활성화 시켜준다
-		선택을 다시 시작(defalut값을 이전의 값으로 넣어준다)
-		update database in football_mange, purposeview
-	}	
-	print result{
+	if(예약수정button){ # 예약 창과 같은 폼으로 다시 선택 시작
+		if(purpose = yes){ # 예전에 공지를 해주길 원했을 경우
+			예약내용을 긁어오고 비활성화 부분을 활성화 시켜준다 # user가 예약을 했었기에 time table에서 비활성화 되어있던 부분도 다시 활성화 시켜준다
+			show timetable
+			선택을 다시 시작 # defalut값에 전에 입력했던 값을 넣어준다
+			update database in football_mangae # primary key를 기준으로 update
+			if(purpose = yes){
+				update database in purpose_view # primary key를 기준으로 update
+			}
+			else{
+				delete database in purpose_view # primary key를 기준으로 delete
+			}
+		}
+		else{ # 공지를 해주길 원하지 않았을 경우
+			예약내용을 긁어오고 비활성화 부분을 활성화 시켜준다 # user가 예약을 했었기에 time table에서 비활성화 되어있던 부분도 다시 활성화 시켜준다
+			show timetable
+			선택을 다시 시작 # defalut값에 전에 입력했던 값을 넣어준다
+			update database in football_mange # primary key를 기준으로 update
+			if(purpose = yes){ # 공지를 해주길 원하지 않았지만 이제 원하는 경우
+				input(purpose_view)
+			}
+		}
+	}
+	print result{ # 예약 변경 결과를 보여준다
 		가져온다
 	}
 }

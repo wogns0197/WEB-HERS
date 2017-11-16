@@ -25,7 +25,7 @@ create table footsal_manage
   constraint foreign key (user_id) references user(user_id)
     on delete set null
 );
-create table purposeview
+create table purpose_view
 (
     manage_ID   integer(10),
     purpose     varchar(30),
