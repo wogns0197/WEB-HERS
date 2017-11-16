@@ -3,6 +3,7 @@ body, html{
   margin: 0;
   font-family: sans-serif;
   font-size: 12pt;
+  background-image: url(image/background.jpg);
 }
 @font-face{
   font-family: headerfont;
@@ -103,8 +104,20 @@ nav ul li a:hover{
   margin-right: 1%;
 }
 #about{
+  margin-top: 0;
   height: 100%;
   text-align: center;
+}
+.aboutsite{
+  margin-top: 10%;
+  height: 35%;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+}
+.aboutsite p{
+  padding: 5% 5%;
+  font-size: 13pt;
+  column-count: 2;
 }
 footer{
   background-color: white;
