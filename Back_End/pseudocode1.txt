@@ -1,0 +1,73 @@
+사용 가능한 시간만 보여주기 위한 fuction
+보류 : 예약취소후 보여줄거냐 말거냐 
+
+Purpose 에 따른 경기 공지 알람{
+	if(purpose  = yes){
+		input(footsal_manage)
+		input(purpose view)
+	}
+	else{
+		input(footsal_mangae){
+	}
+}
+if(purpose==yes){
+	어디어디 vs 어디어디 형식으로 받아온다
+}
+
+Pseudo code(예약시스템)
+[
+	User info 를 긁어온다
+	if(Purposeview.borrowdate == today.date){
+		print(puposeview where borrow date-today.date<= 2months)
+	}
+	Callander{
+		Check already borrowed time
+		Make Callander
+	}
+	Finish select and input database{
+		if(today.day > lastest borrowdate.day){ (가장 큰 manage_id의 borrowdate를 가져온다)
+			manage_id -> default(1)
+		}
+		if(purpose  = yes){
+			input(footsal_manage)
+			input(purpose view)
+		}
+		else{
+			input(footsal_mangae){
+		}
+	}
+	print result{
+		가져온다
+	}
+]
+
+Pseudo code(예약내역시스템)
+[
+	User info를 긁어온다
+	if(footsal_manage.manage_id == user.id && borrowdate-today.date <2months){
+		get(info)
+	)
+	show reservation list
+	if(예약취소button){
+		delete database in footsal_manage, purposeview
+	}
+	if(예약수정button){
+		예약내용을 긁어와서 활성화 시켜준다
+		선택을 다시 시작(defalut값을 이전의 값으로 넣어준다)
+		update database in football_mange, purposeview
+	}	
+	print result{
+		가져온다
+	}
+}
+
+
+
+ 
+
+
+
+
+
+
+
