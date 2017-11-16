@@ -12,7 +12,7 @@ create table user
 );
 create table footsal_manage
 (
-  manage_ID     integer(10),
+  manage_ID     integer(10) not null default 1,
   user_id       varchar(10),
   borrowdate    date,
   start_time    date,
@@ -27,10 +27,12 @@ create table footsal_manage
 );
 create table purposeview
 (
+    manage_ID   integer(10),
     purpose     varchar(30),
     borrowdate  date,
     start_time  date,
     end_time    date
+    primary key(manage_ID,borrowdate)
 );
 create table lec_room_manage
 (
