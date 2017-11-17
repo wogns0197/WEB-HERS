@@ -26,6 +26,9 @@ video{
   height: auto;
 	z-index : -1;
 }
+.mainvideo{
+  height: 90%;
+}
 header{
   font-family: myserif;
   font-size: 15pt;
@@ -103,6 +106,7 @@ nav ul li a:hover{
   margin-right: 1%;
 }
 #about{
+  position: relative;
   height: 100%;
   text-align: center;
   background-image: url(image/background.jpg);
@@ -117,6 +121,15 @@ nav ul li a:hover{
   padding: 5% 5%;
   font-size: 13pt;
   column-count: 2;
+}
+#lecture{
+  position: relative;
+  background-color: green;
+  height: 100%;
+}
+#futsal{
+  background-color: blue;
+  height: 100%;
 }
 footer{
   background-color: white;
