@@ -16,6 +16,14 @@ body, html{
   font-family: mylight;
   src: url(font/Existence-Light.otf);
 }
+@font-face {
+  font-family: myheader2;
+  src: url(font/big_noodle_titling.ttf);
+}
+@font-face {
+  font-family: myexplain;
+  src: url(font/CaviarDreams.ttf);
+}
 video{
 	top : 0;
 	left : 0;
@@ -69,6 +77,9 @@ nav ul li a:hover{
   font-size: 17pt;
   transition: all 0.2s;
 }
+.navfixed{
+  position: fixed;
+}
 .main p{
   font-size: 28pt;
   font-family: mylight;
@@ -121,6 +132,7 @@ nav ul li a:hover{
   padding-left: 2%;
 }
 #about svg text{
+  font-family: myexplain;
   font-size: 8pt;
   text-align: center;
 }
@@ -132,18 +144,56 @@ nav ul li a:hover{
   position: relative;
   height: 70%;
 }
-#lecture{
-  background-color: rgba(235, 159, 159, 0.5);
+/*#lecture{
+  background-color: rgba(235, 159, 159, 0.2);
   height: 100%;
   width: 50%;
   float: left;
 }
 #futsal{
-  background-color: rgba(170, 207, 230, 0.5);
+  background-color: rgba(170, 207, 230, 0.2);
   height: 100%;
   width: 50%;
   float: right;
 }
+.rental h2{
+  font-family: myheader2;
+  font-weight: normal;
+  font-size: 30pt;
+  text-align: center;
+  margin-top: 25%;
+}
+.rental svg{
+  height: 100px;
+  width: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.rental svg:hover{
+  cursor: pointer;
+}
+#lecture_arrow:hover .lech2{
+  margin-top: 10%;
+}
+#lecture .box{
+  overflow: hidden;
+  margin-top: -25%;
+  height: 70%;
+  width: 90%;
+  background-color: rgba(235, 159, 159, 0.3);
+  margin-left: auto;
+  margin-right: auto;
+}
+#futsal .box{
+  overflow: hidden;
+  margin-top: -25%;
+  height: 70%;
+  width: 90%;
+  background-color: rgba(170, 207, 230, 0.3);
+  margin-left: auto;
+  margin-right: auto;
+}*/
 footer{
   background-color: white;
   height: 20%;
