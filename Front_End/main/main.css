@@ -107,22 +107,24 @@ nav ul li a:hover{
 }
 #about{
   position: relative;
-  height: 100%;
+  height: 70%;
   text-align: center;
   background-image: url(image/background.jpg);
 }
-.aboutsite{
+#about svg{
+  height: 200px;
+  width: 200px;
   margin-top: 10%;
-  height: 35%;
-  background-color: rgba(0, 0, 0, 0.6);
-  color: white;
+  padding-bottom: 50px;
+  padding-right: 2%;
+  padding-left: 2%;
+  border: 2px solid black;
 }
-.aboutsite p{
-  padding: 5% 5%;
-  font-size: 13pt;
-  column-count: 2;
+#about svg text{
+  font-size: 8pt;
+  text-align: center;
 }
-#lecture{
+/*#lecture{
   position: relative;
   background-color: green;
   height: 100%;
@@ -130,7 +132,7 @@ nav ul li a:hover{
 #futsal{
   background-color: blue;
   height: 100%;
-}
+}*/
 footer{
   background-color: white;
   height: 20%;
