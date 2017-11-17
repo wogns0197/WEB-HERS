@@ -7,18 +7,25 @@
 </head>
 <body>
 	<main>
-		<input type="text" name="ID" value="ID" onfocus="this.value='';" style="color:#585858">
-		<input type="password" name="PW" value="Pass" onfocus="this.value='';" style="color:#585858">
+		<input type="text" name="ID"  placeholder="ID">
+		<input type="password" name="PW" placeholder="PW">
 		<br/>
 		<div class="log">
 			<button>LOGIN</button>
 		</div>
 		<footer>
-			<a href="signup.html" >sign up</a>
+			<a href="signup.html" id="up">sign up</a>
 			|
-			<a href="forgot.html">forgot</a>
+			<a href="forgot.html" id="fg">forgot</a>
 		</footer>
-		
+		<script type="text/javascript">
+			window.onload = function(){
+				document.getElementById("up").onclick = smooth();
+			}
+			function smooth {
+				alert("!!");
+			}
+		</script>
 
 		
 	</main>
