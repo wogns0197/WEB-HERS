@@ -70,7 +70,19 @@ footer{
 	display: none;
 	text-align: center;
 	margin-top: 20%;
+	
+	animation-name: smooth;
+	animation-duration: 2s;
 }
+@keyframes smooth{
+	0%{
+		opacity: 0.3;
+	}
+	100%{
+		opacity: 0.9;
+	}
+}
+
 #num{
 	width:80px;
 	margin-top: 10px;
