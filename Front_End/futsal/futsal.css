@@ -36,28 +36,24 @@
   top: 10%;
   left: 40%;
   font-size: 20pt;
-  /*border: 2px solid blue;*/
   display: block;
   padding: 10px 10px;
-  /*opacity: 0;*/
 }
 .link2{
   z-index: 40;
   top: 15%;
   left: 26%;
   font-size: 20pt;
-  /*border: 2px solid blue;*/
+
   display: block;
   padding: 10px 20px;
-  /*opacity: 0;*/
 }
 .link3{
   z-index: 40;
   top: 13%;
   left: 36%;
   font-size: 20pt;
-  /*border: 2px solid blue;*/
+
   display: block;
   padding: 10px 20px;
-  /*opacity: 0;*/
 }
