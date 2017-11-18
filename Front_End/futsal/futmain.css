@@ -13,6 +13,54 @@ header h1{
   width: 100%;
 }
 .left{
+  width: 70%;
+
+  position: absolute;
+  left: 0;
 }
 .right{
+  width: 30%;
+  /*background-color: red;*/
+  position: absolute;
+  right: 30%;
+  top: 30%;
+}
+
+.right .fld1{
+  position: fixed;
+  right: 20%;
+  top: 31%;
+  left: 50%;
+}
+
+.right .link1 {
+  position: fixed;
+  right: 20%;
+  top: 40%;
+  left: 55%;
+  width: 100px;
+}
+
+.right .fld2{
+  position: fixed;
+  top:39%;
+  left: 34%;
+}
+
+.right .link2 {
+  position: fixed;
+  top:44%;
+  left: 38%;
+}
+
+.right .fld3 {
+  position: fixed;
+  top: 34%;
+  left: 45%;
+}
+
+.right .link3 {
+  position: fixed;
+  top: 43%;
+  left: 50%;
 }
