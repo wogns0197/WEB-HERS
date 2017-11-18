@@ -20,7 +20,7 @@
 
     <nav>
       <ul>
-        <li><a href="#home">Home</a></li>
+        <li><a href="main.html">Home</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#lecture">Lecture</a></li>
         <li><a href="#futsal">Futsal</a></li>
@@ -29,8 +29,8 @@
     </nav>
 
     <div class="buttons">
-      <a id="go" href="#">Rent Go</a>
-      <a id="login" href="#">Confirm Rental</a>
+      <button id="go" onclick="document.getElementById('rent_container').style.display='block'">Rent Go</button>
+      <button id="login" href="#">Confirm Rental</button>
     </div>
 
     <article class="main">
@@ -38,5 +38,15 @@
       Time Saving. Easiest Way Ever.</p>
     </article>
 
+
+    <div id="rent_container">
+      <div class="go_futsal">
+        <div class="inner"><a href ="../futsal/futmain.html">Go Futsal</a></div>
+      </div>
+
+      <div class="go_lecture">
+        <div class="inner"><a href = "">Go Lecture</a></div>
+      </div>
+    </div>
   </body>
 </html>
