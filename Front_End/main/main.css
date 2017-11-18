@@ -64,8 +64,6 @@ nav ul li a{
   color: black;
 }
 nav ul li a:hover{
-  font-size: 17pt;
-  transition: all 0.2s;
 }
 .main p{
   font-size: 28pt;
