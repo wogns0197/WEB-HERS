@@ -4,9 +4,9 @@ section{
 }
 
 .momtong{
-	border:3px solid #848484;
-	border-radius: 10px;
-	font-size: 13pt;
+	border-bottom: 2px solid #585858;
+	border-top: 2px solid #585858;
+	font-size: 11pt;
 }
 .vs{
 	font-size:10pt;
@@ -14,4 +14,11 @@ section{
 #gamenotice{
 	font-size: 11pt;
 	color: #8A0829;
+}
+main{
+	margin-left: 1%;
+}
+iframe{
+	border-bottom: 2px solid #585858;
+	margin-bottom: 5%;
 }
