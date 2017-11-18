@@ -1,0 +1,65 @@
+.map{
+  z-index: 20;
+  position: absolute;
+}
+.field{
+  position: absolute;
+  top: 4%;
+  left: 40%;
+  border-radius: 50%;
+  box-shadow: 0px 10px 20px -9px rgba(0, 0, 0, 0.9);
+}
+.add{
+  z-index: 30;
+}
+.realmap{
+  position: absolute;
+  top: 100%;
+}
+.fld2{
+  position: absolute;
+  top: 11%;
+  left: 23%;
+  border-radius: 50%;
+  box-shadow: 0px 10px 20px -9px rgba(0, 0, 0, 0.9);
+}
+.fld3{
+  position: absolute;
+  top: 7%;
+  left: 34%;
+  border-radius: 50%;
+  box-shadow: 0px 10px 20px -9px rgba(0, 0, 0, 0.9);
+}
+a{
+  position: absolute;
+}
+.one{
+  z-index: 40;
+  top: 10%;
+  left: 45%;
+  font-size: 20pt;
+  border: 2px solid blue;
+  display: block;
+  padding: 10px 50px;
+  opacity: 0;
+}
+.two{
+  z-index: 40;
+  top: 15%;
+  left: 26%;
+  font-size: 20pt;
+  border: 2px solid blue;
+  display: block;
+  padding: 10px 20px;
+  opacity: 0;
+}
+.three{
+  z-index: 40;
+  top: 13%;
+  left: 36%;
+  font-size: 20pt;
+  border: 2px solid blue;
+  display: block;
+  padding: 10px 20px;
+  opacity: 0;
+}
