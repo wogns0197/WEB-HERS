@@ -15,9 +15,10 @@ section{
 	font-size: 11pt;
 	color: #8A0829;
 }
-main{
+/*main{
 	margin-left: 1%;
-}
+	padding-right: 0px;
+}*/
 iframe{
 	border-bottom: 2px solid #585858;
 	margin-bottom: 5%;
