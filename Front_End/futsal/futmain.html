@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Futsal Field Rental</title>
+    <link rel="stylesheet" href="futmain.css">
+    <link rel="stylesheet" href="notice.css">
+    <link rel="stylesheet" href="futsal.css">
+    <script type="text/javascript"src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script>
+    $(document).ready( function(){
+      $(".link1").hover(function(){
+        $(".fld1").addClass("add");
+        $(".fld1").fadeIn(800);
+      },function(){
+        $(".fld1").removeClass("add");
+        $(".fld1").fadeOut(500);
+      });
+      $(".link2").hover(function(){
+        $(".fld2").addClass("add");
+        $(".fld2").fadeIn(800);
+      },function(){
+        $(".fld2").removeClass("add");
+        $(".fld2").fadeOut(500);
+      });
+      $(".link3").hover(function(){
+        $(".fld3").addClass("add");
+        $(".fld3").fadeIn(800);
+      },function(){
+        $(".fld3").removeClass("add");
+        $(".fld3").fadeOut(500);
+      });
+    });
+
+    </script>
+  </head>
+  <body>
+    <header>
+      <h1>HERS</h1><hr>
+    </header>
+
+    <div class="entire">
+      <div class="left">
+        <table cellSpacing=0 cellPadding=0 width="21.4%" class="momtong" >
+    			<tbody>
+    				<td>
+    				<table cellSpacing=0 cellPadding=0 width="100%" border=0 >
+    				<tr>
+    				<td>
+    				<MARQUEE scrollAmount=3 direction=up>
+    					<section>
+    					<table cellSpacing=0 cellPadding=0 width="100%" border=0>
+    					<tbody>
+    							<tr>
+    							<td height=20 id="gamenotice">&nbsp;--- Game Notice ---</td></tr>
+    							<tr>
+    							<td height=50>&nbsp; 소프트웨어학부 <span class="vs">vs</span> ICT융합학부</td></tr>
+    							<tr>
+    							<td height=50>&nbsp;기계공학과 <span class="vs">vs</span> 신문방송학과</td></tr>
+    							<tr>
+    							<td height=50>&nbsp;공학대학 <span class="vs">vs</span> 경상대학</td></tr>
+    							<tr>
+    							<td height=50>&nbsp;입축구 <span class="vs">vs</span> 잇몸튼튼</td></tr>
+    							<td height=1>&nbsp;</td></tr>
+
+    					</tbody></table></section></MARQUEE></td></tr></table></td>
+    	</main>
+    	<iframe  type="text/html" frameborder="0" height="250px" width="21%" src="http://forecast.io/embed/#lat=37.3217&lon=126.8309&name=Hanyang Univ.&units=si"> </iframe>
+    	<!-- API from.. https://darksky.net/ -->
+        <!-- source=http://thinkgood.tistory.com/471 -->
+      </div>
+
+
+      <div class="right">
+        <div id="map">
+          <img class="map" src="map.png" alt="ericamap">
+          <img class="fld1" src="fld1.png" alt="field">
+          <img class="fld2" src="fld2.png" alt="fld2">
+          <img class="fld3" src="fld3.png" alt="fld3">
+          <a class="link1" href="#">Link</a>
+          <a class="link2" href="#">Link2</a>
+          <a class="link3" href="#">Link3</a>
+        </div>
+
+      </div>
+
+    </div>
+
+  </body>
+</html>
