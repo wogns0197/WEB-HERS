@@ -17,6 +17,10 @@ body, html{
   font-family: mylight;
   src: url(font/Existence-Light.otf);
 }
+@font-face {
+  font-family: myexplain;
+  src: url(font/CaviarDreams.ttf);
+}
 video{
   position: fixed;
 	top : 0;
@@ -66,99 +70,51 @@ nav ul li a{
 nav ul li a:hover{
 }
 .main p{
-  font-size: 28pt;
+  font-size: 30pt;
   font-family: mylight;
   position: fixed;
-  top: 23%;
+  top: 25%;
   text-align: center;
   color: white;
   margin: 0 auto;
   display: inline-block;
   width: 100%;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
 }
 .buttons{
   position: fixed;
-  top: 36%;
+  top: 40%;
   width: 100%;
   margin: 0 auto;
   text-align: center;
 }
-.buttons #go,#login{
-  width: 180px;
-  padding-top: 10px;
-  padding-bottom: 10px;
+.buttons #lecture,#futsal{
+  width: 200px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   background-color: rgba(0, 0, 0, 0.2);
   border: 0.7px solid white;
-  font-size: 12pt;
+  font-size: 14pt;
   color: white;
   text-decoration: none;
   display: inline-block;
   cursor: pointer;
 }
-.buttons #go:hover ,#login:hover{
+.buttons #lecture:hover ,#futsal:hover{
   background-color: rgba(0, 0, 0, 0);
   color: rgba(0, 0, 0, 0.8);
+  text-shadow: none;
 }
-.buttons #go{
+.buttons #lecture{
   margin-right: 1%;
 }
-
-#rent_container {
-  left: 20%;
-  width: 60%;
-  height: 55%;
-
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 10%;
-
-  display: none;
-  z-index: 5;
-  border: solid white 2px;
-  border-radius: 15px;
-  background-color: #EFFBF2;
-  opacity: 0.8;
-
-}
-
-.go_futsal, .go_lecture {
+footer{
+  position: fixed;
+  bottom: 0;
   text-align: center;
-  font-size: 100%;
-  width: 40%;
-  height: 40%;
-  margin-top: 15%;
-  border-radius: 15px;
-  /*border: solid 2px black;*/
-}
-
-.go_futsal{
-  float: left;
-  margin-left: 7%;
-  background-color:#CEF6CE;
-
-}
-
-/*.inner :hover{
-  color: rgba(0, 0, 0, 0.8);
-  background-color: rgba(0, 0, 0, 0);
-
-
-}*/
-
-.go_lecture{
-  margin-right: 7%;
-  float: right;
-  background-color:#F7F8E0;
-
-}
-
-.inner {
-  font-size: 200%;
-  height: auto;
-  margin-top: 22%;
-  /*border: solid red 2px;*/
-}
-.inner a {
-  text-decoration: none;
-  color : black;
+  width: 100%;
+  color: #2F2E2E;
+  font-size: 9pt;
+  letter-spacing: 3pt;
+  font-family: myexplain;
 }
