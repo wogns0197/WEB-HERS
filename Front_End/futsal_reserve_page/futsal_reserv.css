@@ -1,0 +1,64 @@
+.reserve_container {
+  width: 70%;
+  height: 60%;
+  margin-top:15%;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #F2F2F2;
+
+  position: relative;
+}
+
+
+.reserve_container .timetable{
+  position: absolute;
+  width: 80%;
+  height: 50%;
+  left: 10%;
+  right: 10%;
+  top: 40%;
+  /*background-color: red;*/
+
+}
+
+.times {
+  border-collapse: collapse;
+  font-size: 100%;
+
+}
+
+
+.times th {
+  width: 5%;
+  color: #168;
+  background: #f0f6f9;
+
+}
+
+.times th:first-child{
+  width: 7%;
+}
+
+.times th:nth-child(2){
+  width: 8%;
+}
+.times th:last-child{
+  width: 7%;
+}
+.times th, .times td {
+  border: 1px solid #ddd;
+  text-align: center;
+
+}
+
+.reserv_date {
+  text-align: right;
+}
+.reserve_button{
+  text-align: right;
+}
+.times td {
+  width: 10px;
+  height: 10px;
+  /*background-color: red;*/
+}
