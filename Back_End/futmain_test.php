@@ -13,7 +13,7 @@
     </header>
 
       <div class="right">
-        <form action="../futsal_reserve_page/futsal_reserv.php" method="post">
+        <form action="../Front_end/futsal_reserve_page/futsal_reserv.php" method="post">
           <button name="place" value="풋살장">FUTSAL</button>
           <br/>
           <button name="place" value="잔디구장">SOCCER</button>
@@ -48,7 +48,7 @@
                                 <?php
                                     foreach($rows as $row){
                                 ?>
-                                     <tr><td height=50>&nbsp; <?= $row["home"] ?> <span class="vs">vs</span><?= $row["away"]?><?= $row["start_time"] ?>~<?= $row["end_time"] ?><td></tr>
+                                     <tr><td height=50>&nbsp; <?= $row["home"] ?> <span class="vs">vs </span><?= $row["away"]?> <?= $row["start_time"] ?>~<?= $row["end_time"] ?><td></tr>
                                  <?php
                                }?>
 
