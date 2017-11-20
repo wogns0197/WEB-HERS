@@ -47,13 +47,8 @@
                                 <tr>
                                 <?php
                                     foreach($rows as $row){
-
-
                                 ?>
-
-
-                                     <tr><td height=50>&nbsp; <?= $row["purpose"] ?> <span class="vs">vs</span><?= $row["start_time"] ?>~<?= $row["end_time"] ?><td></tr>
-
+                                     <tr><td height=50>&nbsp; <?= $row["home"] ?> <span class="vs">vs</span><?= $row["away"]?><?= $row["start_time"] ?>~<?= $row["end_time"] ?><td></tr>
                                  <?php
                                }?>
 
