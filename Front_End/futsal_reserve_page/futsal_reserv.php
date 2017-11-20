@@ -35,27 +35,20 @@
       <div class="timetable">
         <form action="futsal_reserv.php" method="post">
           <div class="reserv_date">
-          예약날짜:
-          <select>
-            <?php
-            $startdate=strtotime(date("Y/m/d"));
-            $enddate=strtotime("+3 weeks", $startdate);
-
-            while ($startdate < $enddate) {
-              ?>
-              <option ><?= date("Y-m-d",$startdate)?></option>
-              <?php
-              $startdate = strtotime("+1 day", $startdate);
-            }
-            ?>
-          </select>
+          <?php
+            $yesterday = date("Y-m-d",strtotime("+1 day",time()));
+            $maxday = date("Y-m-d",strtotime("+2 months",time()));
+          ?>
+          <span>선택날짜: <?= $_POST["selected_date"] ?></span>
+          <span>예약날짜:</span>
+          <input type="date" name="selected_date" min="<?= $yesterday ?>" max="<?= $maxday ?>">
           </div>
 
           <div class="reserve_button">
             <button type="submit">예약하기</button>
           </div>
 
-        </form>
+        
 
  
 
@@ -87,7 +80,7 @@
         <table class="times">
 
         <tr><th>경기장</th><th>수용인원</th></tr>
-        <tr><td><?= $place ?></td><td><?= $admit_min ?>~<?= $admit_max ?></td></tr>
+        <tr><td><input id = "place_input" type="text" name="place" value= "<?= $place ?>" readonly></td><td><?= $admit_min ?>~<?= $admit_max ?></td></tr>
         <tr><th>시간</th><th>상태</th></tr>
 
         <?php
@@ -105,7 +98,11 @@
         </table>
 
       </div>
+
+      </form>
     </div>
+
+
 
 
 
