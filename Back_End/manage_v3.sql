@@ -19,6 +19,8 @@ create table futsal_manage
   end_time      time,
   place         varchar(10),
   purpose       varchar(30),
+  home          varchar(30),
+  away          varchar(30),
   notice        boolean,
   people        integer(5),
   groupname     varchar(10),
@@ -29,7 +31,8 @@ create table futsal_manage
 create table purpose_view
 (
     manage_ID   integer(10),
-    purpose     varchar(30),
+    home        varchar(30),
+    away        varchar(30),
     borrowdate  date,
     start_time  time,
     end_time    time,
