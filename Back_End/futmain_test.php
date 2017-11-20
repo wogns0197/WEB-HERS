@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <title>Futsal Field Rental</title>
-    <link rel="stylesheet" href="futmain.css">
-    <link rel="stylesheet" href="notice.css">
+    <link rel="stylesheet" href="../Front_end/futsal/futmain.css">
+    <link rel="stylesheet" href="../Front_end/futsal/notice.css">
     <link rel="stylesheet" href="futsal.css">
   </head>
   <body>
