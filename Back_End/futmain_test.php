@@ -47,8 +47,12 @@
                                 <tr>
                                 <?php
                                     foreach($rows as $row){
+                                        $start_a = explode(":",$row["start_time"]);
+                                        $start_t = $start_a[0].":".$start_a[1];
+                                        $end_a = explode(":", $row["end_time"]);
+                                        $end_t = $end_a[0].":".$end_a[1];
                                 ?>
-                                     <tr><td height=50>&nbsp; <?= $row["home"] ?> <span class="vs">vs </span><?= $row["away"]?> <?= $row["start_time"] ?>~<?= $row["end_time"] ?><td></tr>
+                                     <tr><td height=50>&nbsp; <?= $row["home"] ?> <span class="vs">vs </span><?= $row["away"]?> <?= $start_t ?>~<?= $end_t ?><td></tr>
                                  <?php
                                }?>
 
