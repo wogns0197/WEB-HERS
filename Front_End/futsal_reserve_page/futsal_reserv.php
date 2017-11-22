@@ -36,7 +36,8 @@
         <form action="futsal_reserv.php" method="post">
           <div class="reserv_date">
           <?php
-            $yesterday = date("Y-m-d",strtotime("+1 day",time()));
+            // $yesterday = date("Y-m-d",strtotime("-1 day",time()));
+            $yesterday = date("Y-m-d",time());
             $maxday = date("Y-m-d",strtotime("+2 months",time()));
           ?>
           <span>선택날짜: <?= $_POST["selected_date"] ?></span>
