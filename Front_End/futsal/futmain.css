@@ -1,0 +1,65 @@
+h1{
+	text-align: center;
+}
+hr{
+	height: 1px;
+	background-color: black;
+}
+.left{
+	float: left;
+	width: 30%;
+}
+.right{
+	float: right;
+	margin-top: 10%;
+	width: 70%;
+	height: 500px;
+
+}
+button{
+	width: 60%;
+	margin-left: 20%;
+	margin-bottom: 5%;
+	cursor: pointer;
+	border: 1px solid black;
+	border-radius: 0;
+	font-size: 400%;
+	background:#1AAB8A;
+	color:#fff;
+	border:none;
+	position:relative;
+	height:60px;
+	font-size:1.6em;
+	padding:0 2em;
+	cursor:pointer;
+	transition:800ms ease all;
+	outline:none;
+}
+button:hover{
+	background:#fff;
+	color:#1AAB8A;
+}
+button:before,button:after{
+	content:'';
+	position:absolute;
+	top:0;
+	right:0;
+	height:2px;
+	width:0;
+	background: #1AAB8A;
+	transition:100ms ease all;
+}
+button:after{
+	right:inherit;
+	top:inherit;
+	left:0;
+	bottom:0;
+}
+button:hover:before,button:hover:after{
+	width:100%;
+	transition:800ms ease all;
+}
+
+
+
+
