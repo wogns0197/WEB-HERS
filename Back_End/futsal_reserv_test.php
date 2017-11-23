@@ -46,8 +46,7 @@
           </div>
 
           <div class="reserve_button">
-            <button type="submit">예약하기</button>
-            <!-- <input type="button" value="예약하기"/> -->
+            <button type="submit">조회하기</button>
           </div>
 
         
@@ -78,13 +77,12 @@
         }
 
         ?>
-
         <table class="times">
 
         <tr><th>경기장</th><th>수용인원</th></tr>
         <tr><td><input id = "place_input" type="text" name="place" value= "<?= $place ?>" readonly></td><td><?= $admit_min ?> ~ <?= $admit_max ?></td></tr>
         <tr><th>시간</th><th>상태</th></tr>
-
+    </form>
         <?php
           $start_time = 12;
           $n = 5;
@@ -106,8 +104,6 @@
                     $start_t = $start_a[0];
                     $end_a = explode(":", $row["end_time"]);
                     $end_t = $end_a[0];
-                    // echo $start_t;
-                    // echo $end_t;
                     if($start_time==$start_t && $end_time==$end_t){?>
                         <td class="status"> 예약 완료 </td>
                     <?php $flag = false;
@@ -128,20 +124,9 @@
           }
 
         ?>
-
         </table>
-
       </div>
-
-      </form>
     </div>
-
-
-
-
-
-
     </div>
-
   </body>
 </html>
