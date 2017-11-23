@@ -89,17 +89,32 @@
           $start_time = 12;
           $n = 5;
 
-          for($i = 0 ; $i < $n; $i++){?>
-           <tr><td><?= $start_time ?> ~ <?= $start_time + 2 ?></td><td class="status"></td>
+          for($i = 0 ; $i < $n; $i++){
+              $end_time = $start_time+2?>
+            <tr><td><?= $start_time ?> ~ <?= $end_time?></td>
            <?php
             try{
                 $name = "web_project";
                 $dbid = "root";
                 $dbpwd = "root";
-                $query = " ";
-                $db = new PDO("mysql::dbname=$name", $dbid,$dbpwd);
+                $date = $_POST["selected_date"];
+                $query = "select * from futsal_manage";
+                $db = new PDO("mysql::dbname=$name", $dbid, $dbpwd);
                 $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                 $rows = $db->query($query);
+                $flag = true;
+                foreach($rows as $row){
+                    if($start_time==$row["start_time"] && $end_time==$row["end_time"]){?>
+                        <td class="status"> 예약 완료 </td>
+                    <?php $flag = false;
+                        break;
+                    }
+                }
+                if($flag){?>
+                    <td class="status"> 예약 가능 </td>
+                <?php } ?>
+                </tr>
+                <?php
             }
             catch(PDOException $ex){
                 echo "Sorry";
