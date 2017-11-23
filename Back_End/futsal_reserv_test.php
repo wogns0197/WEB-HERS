@@ -33,7 +33,7 @@
 
     <div class="reserve_container">
       <div class="timetable">
-        <form action="test.php" method="post">
+        <form action="futsal_reserv_test.php" method="post">
           <div class="reserv_date">
           <?php
             // $yesterday = date("Y-m-d",strtotime("-1 day",time()));
@@ -88,23 +88,30 @@
         <?php
           $start_time = 12;
           $n = 5;
-
+          $date = $_POST["selected_date"];
+          $name = "web_project";
+          echo $date;
           for($i = 0 ; $i < $n; $i++){
               $end_time = $start_time+2?>
             <tr><td><?= $start_time ?> ~ <?= $end_time?></td>
            <?php
             try{
-                $name = "web_project";
-                $dbid = "root";
-                $dbpwd = "root";
-                $date = $_POST["selected_date"];
-                $query = "select * from futsal_manage";
-                $db = new PDO("mysql::dbname=$name", $dbid, $dbpwd);
-                $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                // $name = "web_project";
+                // $query = "select * from purpose_view";
+                // $db = new PDO("mysql:dbname=$name", "root", "root");
+                // $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                // $rows = $db->query($query);
+                $query = "select * from futsal_manage where borrowdate = $date";
+                $db = new PDO("mysql:dbname=$name", "root", "root");
+                $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_SILENT);
                 $rows = $db->query($query);
                 $flag = true;
                 foreach($rows as $row){
-                    if($start_time==$row["start_time"] && $end_time==$row["end_time"]){?>
+                    $start_a = explode(":",$row["start_time"]);
+                    $start_t = $start_a[0];
+                    $end_a = explode(":", $row["end_time"]);
+                    $end_t = $end_a[0];
+                    if($start_time==$start_t && $end_time==$end_t){?>
                         <td class="status"> 예약 완료 </td>
                     <?php $flag = false;
                         break;
