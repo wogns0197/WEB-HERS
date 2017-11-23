@@ -29,6 +29,7 @@
         <form action="futsal_reserv_test.php?where=<?= $_GET["where"] ?>" method="post">
         <div class="reserv_date">
         <?php //선택 날짜 받아오기
+            date_default_timezone_set('Asia/Seoul');
             $yesterday = date("Y-m-d",time());
             $maxday = date("Y-m-d",strtotime("+2 months",time()));
             $today = $_POST["selected_date"];
