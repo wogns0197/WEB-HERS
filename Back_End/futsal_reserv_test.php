@@ -38,8 +38,13 @@
           <?php
             $yesterday = date("Y-m-d",time());
             $maxday = date("Y-m-d",strtotime("+2 months",time()));
+            $today = $_POST["selected_date"];
+            if( !isset($_POST["selected_date"])){
+              $today = date("Y-m-d",time());
+
+            }
           ?>
-          <span>선택날짜: <?= $_POST["selected_date"] ?></span>
+          <span>선택날짜: <?= $today ?></span>
           <span>예약날짜:</span>
           <input type="date" name="selected_date" min="<?= $yesterday ?>" max="<?= $maxday ?>">
           </div>
