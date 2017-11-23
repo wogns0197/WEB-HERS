@@ -26,7 +26,7 @@
     </nav>
     <div class="reserve_container">
       <div class="timetable">
-        <form action="futsal_reserv_test.php" method="post">
+        <form action="futsal_reserv_test.php?where=<?= $_GET["where"] ?>" method="post">
         <div class="reserv_date">
         <?php //선택 날짜 받아오기
             $yesterday = date("Y-m-d",time());
@@ -43,7 +43,7 @@
             <button type="submit">예약 현황 조회</button>
         </div>
         <?php //장소받아오고 수용인원 체크
-            $place = $_POST["place"];
+            $place = $_GET["where"];
             $admit_min = 0;
             $admit_max = 0;
             if( $place == "풋살장"){
@@ -68,7 +68,9 @@
             </tr>
             <tr>
                 <td>
-                    <input id = "place_input" type="text" name="place" value= "<?= $place ?>" readonly> (<?= $admit_min ?> ~ <?= $admit_max ?>)
+                   <!--  <input id = "place_input" type="text" name="place" value= "<?= $place ?>" readonly> (<?= $admit_min ?> ~ <?= $admit_max ?>) -->
+                    <?= $_GET["where"] ?> (<?= $admit_min ?> ~ <?= $admit_max ?>)
+
                 </td>
                 <td>
                     <select name="population">

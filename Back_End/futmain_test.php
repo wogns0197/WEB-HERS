@@ -13,13 +13,21 @@
     </header>
 
       <div class="right">
-        <form action="futsal_reserv_test.php" method="post">
+<!--         <form action="futsal_reserv_test.php?where=<?= $_GET["place"] ?>" method="post">
           <button name="place" value="풋살장">FUTSAL</button>
           <br/>
           <button name="place" value="잔디구장">SOCCER</button>
           <br/>
           <button name="place" value="대운동장">STADIUM</button>
-        </form>
+        </form> -->
+
+
+          <a href="futsal_reserv_test.php?where=풋살장"><button name="place" value="풋살장">FUTSAL</button></a>
+          <br/>
+          <a href="futsal_reserv_test.php?where=잔디구장"><button name="place" value="잔디구장">SOCCER</button></a>
+          <br/>
+          <a href="futsal_reserv_test.php?where=대운동장"><button name="place" value="대운동장">STADIUM</button></a>
+        
       </div>
 
 
