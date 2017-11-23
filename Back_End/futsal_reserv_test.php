@@ -90,7 +90,12 @@
         <?php
           $start_time = 12;
           $n = 5;
-          $date = $_POST["selected_date"];
+          if(isset($_POST["selected_date"])){
+            $date = $_POST["selected_date"];
+          }
+          else{
+            $date = date("Y-m-d", time());
+          }
           $name = "web_project";
           $borrow_place = $_POST["place"];
           for($i = 0 ; $i < $n; $i++){
@@ -127,7 +132,6 @@
             }
            $start_time += 2;
           }
-
         ?>
         </table>
       </div>

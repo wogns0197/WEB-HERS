@@ -71,8 +71,11 @@ values ("hahah","2017-06-03","14:00:00","15:00:00","대운동장",
 insert into futsal_manage (user_id, borrowdate, start_time, end_time, place,
 purpose, notice,home, away, people, groupname)
 values ("hahah","2017-11-24","14:00:00","16:00:00","대운동장",
-"축구", true, "기계","생나",30,"hoop";)
-
+"축구", true, "기계","생나",30,"hoop");
+insert into futsal_manage (user_id, borrowdate, start_time, end_time, place,
+purpose, notice,home, away, people, groupname)
+values ("jaehoon", "2017-11-23","16:00:00","18:00:00","풋살장",
+"농구", true, "기계","생나",30,"hoop");
 insert into purpose_view
 values (1, "소프트","ict", "2017-02-03","12:00:00","14:00:00");
 insert into purpose_view
