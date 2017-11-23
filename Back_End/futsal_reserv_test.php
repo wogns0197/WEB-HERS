@@ -36,7 +36,6 @@
         <form action="futsal_reserv_test.php" method="post">
           <div class="reserv_date">
           <?php
-            // $yesterday = date("Y-m-d",strtotime("-1 day",time()));
             $yesterday = date("Y-m-d",time());
             $maxday = date("Y-m-d",strtotime("+2 months",time()));
           ?>
@@ -88,13 +87,14 @@
           $n = 5;
           $date = $_POST["selected_date"];
           $name = "web_project";
+          $borrow_place = $_POST["place"];
           for($i = 0 ; $i < $n; $i++){
               $end_time = $start_time+2?>
             <tr><td><?= $start_time ?> ~ <?= $end_time?></td>
            <?php
             try{
                 $name = "web_project";
-                $query = "select * from futsal_manage where borrowdate = '$date'";
+                $query = "select * from futsal_manage where borrowdate = '$date' && place ='$place'";
                 $db = new PDO("mysql:dbname=$name", "root", "root");
                 $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                 $rows = $db->query($query);

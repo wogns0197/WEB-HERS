@@ -13,7 +13,7 @@
     </header>
 
       <div class="right">
-        <form action="../Front_end/futsal_reserve_page/futsal_reserv.php" method="post">
+        <form action="futsal_reserv_test.php" method="post">
           <button name="place" value="풋살장">FUTSAL</button>
           <br/>
           <button name="place" value="잔디구장">SOCCER</button>
