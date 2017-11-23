@@ -44,13 +44,13 @@
 
             }
           ?>
-          <span>선택날짜: <?= $today ?></span>
-          <span>예약날짜:</span>
+          <span>선택 날짜: <?= $today ?></span>
+          <span>예약 희망 날짜:</span>
           <input type="date" name="selected_date" min="<?= $yesterday ?>" max="<?= $maxday ?>">
           </div>
 
           <div class="reserve_button">
-            <button type="submit">조회하기</button>
+            <button type="submit">예약 현황 조회</button>
           </div>
 
         
@@ -83,8 +83,14 @@
         ?>
         <table class="times">
 
-        <tr><th>경기장</th><th>수용인원</th></tr>
-        <tr><td><input id = "place_input" type="text" name="place" value= "<?= $place ?>" readonly></td><td><?= $admit_min ?> ~ <?= $admit_max ?></td></tr>
+        <tr><th>경기장(수용인원)</th><th>희망 인원</th></tr>
+        <tr><td><input id = "place_input" type="text" name="place" value= "<?= $place ?>" readonly> (<?= $admit_min ?> ~ <?= $admit_max ?>)</td>
+        <td><select name="population">
+            <?php for($i=$admit_min; $i<=$admit_max; $i++){?>
+                <option><?= $i ?></option>
+            <?php } ?>
+            </select>
+        </td></tr>
         <tr><th>시간</th><th>상태</th></tr>
     </form>
         <?php
@@ -100,7 +106,7 @@
           $borrow_place = $_POST["place"];
           for($i = 0 ; $i < $n; $i++){
               $end_time = $start_time+2?>
-            <tr><td><?= $start_time ?> ~ <?= $end_time?></td>
+            <tr><td><?= $start_time ?>:00 ~ <?= $end_time?>:00</td>
            <?php
             try{
                 $name = "web_project";

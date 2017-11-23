@@ -1,4 +1,7 @@
 <?php
+    $date = $_POST["selected_date"];
+    $place = $_POST["place"]
+    $time = $_POST[""]
     try{
         $name = "web_project";
         $dbid = "root";
