@@ -90,20 +90,15 @@
           $n = 5;
           $date = $_POST["selected_date"];
           $name = "web_project";
-          echo $date;
           for($i = 0 ; $i < $n; $i++){
               $end_time = $start_time+2?>
             <tr><td><?= $start_time ?> ~ <?= $end_time?></td>
            <?php
             try{
-                // $name = "web_project";
-                // $query = "select * from purpose_view";
-                // $db = new PDO("mysql:dbname=$name", "root", "root");
-                // $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-                // $rows = $db->query($query);
-                $query = "select * from futsal_manage where borrowdate = $date";
+                $name = "web_project";
+                $query = "select * from futsal_manage where borrowdate = '$date'";
                 $db = new PDO("mysql:dbname=$name", "root", "root");
-                $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_SILENT);
+                $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                 $rows = $db->query($query);
                 $flag = true;
                 foreach($rows as $row){
@@ -111,6 +106,8 @@
                     $start_t = $start_a[0];
                     $end_a = explode(":", $row["end_time"]);
                     $end_t = $end_a[0];
+                    // echo $start_t;
+                    // echo $end_t;
                     if($start_time==$start_t && $end_time==$end_t){?>
                         <td class="status"> 예약 완료 </td>
                     <?php $flag = false;
