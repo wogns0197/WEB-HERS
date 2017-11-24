@@ -5,6 +5,7 @@
     <title>Hanyang Erica Rental Site</title>
     <link rel="stylesheet" href="../Front_end/futsal_reserve_page/futsal_reserv.css">
     <link rel="stylesheet" href="../Front_end/main/main.css">
+    <link rel="stylesheet" href="../Front_end/futsal_reserve_page/futsal_reserv_test.css">
     <!-- <script src="main.js" type="text/javascript"></script> -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
@@ -61,8 +62,8 @@
             }
         ?>
         <!-- 시간 테이블 작성-->
-        <table class="times">
-            <tr>
+        <table class="times" >
+            <tr id="topcell">
                 <th>경기장(수용인원)</th>
                 <th>희망 인원</th>
                 <th>선택 날짜</th>

@@ -1,3 +1,7 @@
+body{
+  overflow: hidden;
+}
+
 .reserve_container {
   width: 70%;
   height: 60%;
@@ -5,8 +9,15 @@
   margin-left: auto;
   margin-right: auto;
   background-color: #F2F2F2;
-
   position: relative;
+  border-radius: 20px;
+  box-shadow: 0px 10px 30px -9px rgba(0,0,0,0.4);
+  transition: 0.4s;
+  transform: scale(1);
+}
+.reserve_container:hover{
+  transition: 0.4s;
+  transform: scale(1.02);
 }
 
 
@@ -16,7 +27,7 @@
   height: 50%;
   left: 10%;
   right: 10%;
-  top: 40%;
+  top: 11%;
   /*background-color: red;*/
 
 }
@@ -24,8 +35,10 @@
 .times {
   border-collapse: collapse;
   font-size: 100%;
-
+  border-radius: 10px;
+  font-size: 15pt;
 }
+
 
 
 .times th {
@@ -37,10 +50,12 @@
 
 .times th:first-child{
   width: 7%;
+
 }
 
 .times th:nth-child(2){
   width: 8%;
+
 }
 .times th:last-child{
   width: 7%;
@@ -61,4 +76,10 @@
   width: 10px;
   height: 10px;
   /*background-color: red;*/
+}
+tr:not(#topcell){
+  height: 35px;
+}
+#topcell{
+  height: 40px;
 }
