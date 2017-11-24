@@ -5,8 +5,8 @@
     <title>Hanyang Erica Rental Site</title>
     <link rel="stylesheet" href="../Front_end/futsal_reserve_page/futsal_reserv.css">
     <link rel="stylesheet" href="../Front_end/main/main.css">
-    <link rel="stylesheet" href="futsal_reserv_confirmation.css">
-    <!-- <script src="main.js" type="text/javascript"></script> -->
+    <link rel="stylesheet" href="futsal_reserv_confirmation.css?ver=1">
+    <script src="futsal_reserv_confirmation.js" type="text/javascript"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
   <body>
@@ -54,7 +54,13 @@
               <option>농구</option>
               <option>기타행사</option>
             </select> 
-          <input type="checkbox" name="notice_checked">공지
+          <input id = "notice_checked" type="checkbox" />공지
+          <br>
+            <span id="notice_on">
+              <input type="text" placeholder= "home" name = "home" />
+              <span > vs </span>
+              <input type="text" placeholder ="away" name="away" />
+            </span>
           <br>
           <span>단체명 : <input type="text" name="groupname"></span>
 
