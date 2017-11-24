@@ -39,7 +39,7 @@
             }
         ?>
             <span>예약 희망 날짜:</span>
-            <input type="date" name="selected_date" min="<?= $yesterday ?>" max="<?= $maxday ?>">
+            <input type="date" name="selected_date" min="<?= $yesterday ?>" max="<?= $maxday ?>" required>
         </div>
         <div class="reserve_button">
             <button type="submit">예약 현황 조회</button>
