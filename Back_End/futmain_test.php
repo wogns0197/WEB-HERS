@@ -37,9 +37,11 @@
 
         <table cellSpacing=0 cellPadding=0 width="100%" class="momtong" >
             <?php
+                date_default_timezone_set('Asia/Seoul');
+                $today = date("Y-m-d",time());
                 try{
                     $name = "web_project";
-                    $query = "select * from purpose_view";
+                    $query = "select * from purpose_view where borrowdate = '$today'";
                     $db = new PDO("mysql:dbname=$name", "root", "root");
                     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                     $rows = $db->query($query);
