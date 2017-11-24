@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>Hanyang Erica Rental Site</title>
-    <link rel="stylesheet" href="../Front_end/futsal_reserve_page/futsal_reserv.css">
+    <link rel="stylesheet" href="../Front_end/futsal_reserve_page/futsal_reserv.css?ver=3">
     <link rel="stylesheet" href="../Front_end/main/main.css">
     <link rel="stylesheet" href="../Front_end/futsal_reserve_page/futsal_reserv_test.css">
     <!-- <script src="main.js" type="text/javascript"></script> -->
@@ -158,6 +158,7 @@
             }
             ?>
         </table>
+            <button id="reserve_confirm">예약하기</button>
         </div>
       </div>
     </div>
