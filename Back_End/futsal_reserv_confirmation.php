@@ -16,7 +16,7 @@
     </header>
     <nav>
       <ul>
-        <li><a href="../main/main.html">Home</a></li>
+        <li><a href="../Front_End/main/main.html">Home</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
@@ -46,7 +46,7 @@
           <span>대여장소 : <?= $place ?></span><br>
         </div>
         <hr/>
-        <div>
+        <div class="container">
           <span>사용 용도 :</span>
             <select name="purpose">
               <option>풋살</option>
@@ -67,7 +67,7 @@
 
         </div>
         <hr/>
-        <div>
+        <div class="buttons">
           <button>예약 신청</button>
           <button>예약 취소</button>
         </div>
