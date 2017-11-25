@@ -5,7 +5,7 @@
     <title>Hanyang Erica Rental Site</title>
     <link rel="stylesheet" href="../Front_end/futsal_reserve_page/futsal_reserv.css">
     <link rel="stylesheet" href="../Front_end/main/main.css">
-    <link rel="stylesheet" href="futsal_reserv_confirmation.css?ver=1">
+    <link rel="stylesheet" href="../Front_end/futsal_reserve_page/futsal_reserv_confirmation.css?ver=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
   <body>
