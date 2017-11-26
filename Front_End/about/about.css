@@ -1,6 +1,7 @@
 body, html{
   margin: 0;
   padding: 0;
+  width: 100%;
 }
 @font-face {
   font-family: abouthead;
@@ -14,4 +15,22 @@ h1{
   letter-spacing: 0.8pt;
   margin: 0;
   margin-top: 2%;
+}
+.front img, .back img{
+  height: 230px;
+  width: 250px;
+  border: 2px solid black;
+}
+.front{
+  margin: auto;
+  width: 600px;
+  margin-top: 3%;
+}
+.back{
+  margin: auto;
+  width: 770px;
+  margin-top: 3%;
+}
+#kwon{
+  margin-right: 70px;
 }
