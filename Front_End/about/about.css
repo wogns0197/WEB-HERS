@@ -2,10 +2,14 @@ body, html{
   margin: 0;
   padding: 0;
   width: 100%;
+  background-color: #53C14B;
 }
 @font-face {
   font-family: abouthead;
   src: url(font/Franks-Regular.otf);
+}
+hr{
+  color: red;
 }
 h1{
   text-align: center;
@@ -20,6 +24,27 @@ h1{
   height: 230px;
   width: 250px;
   border: 2px solid black;
+}
+.front span{
+  visibility: hidden;
+  font-family: abouthead;
+  position: absolute;
+  padding: 10px;
+  border: 2px solid blue;
+  width: 230px; height: 210px;
+  text-align: center;
+}
+.front span h2{
+  font-size: 21pt;
+  font-weight: bold;
+  margin: 0;
+}
+.front span p{
+  font-size: 18pt;
+  margin: 0;
+}
+.front span a{
+  font-size: 15pt;
 }
 .front{
   margin: auto;
@@ -42,5 +67,5 @@ h1{
 .front_info{
   position: absolute;
   width: 1000px;
-  top: 27%;
+  top: 17%;
 }
