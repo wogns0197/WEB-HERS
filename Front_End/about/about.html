@@ -8,8 +8,41 @@
     <script type="text/javascript"src="http://code.jquery.com/jquery-latest.min.js"></script>
     <script type="text/javascript">
       $(document).ready( function(){
-
-        
+        $("#kwon").hover(function() {
+          $("#kwoninfo").css("z-index", "0");
+          $("#kwon").css("visibility","hidden");
+        },function() {
+          $("#kwoninfo").css("z-index", "-1");
+          $("#kwon").css("visibility","visible");
+        });
+        $("#seo").hover(function() {
+          $("#seoinfo").css("z-index", "0");
+          $("#seo").css("visibility","hidden");
+        },function() {
+          $("#seoinfo").css("z-index", "-1");
+          $("#seo").css("visibility","visible");
+        });
+        $("#choi").hover(function() {
+          $("#choiinfo").css("z-index", "0");
+          $("#choi").css("visibility","hidden");
+        },function() {
+          $("#choiinfo").css("z-index", "-1");
+          $("#choi").css("visibility","visible");
+        });
+        $("#park").hover(function() {
+          $("#parkinfo").css("z-index", "0");
+          $("#park").css("visibility","hidden");
+        },function() {
+          $("#parkinfo").css("z-index", "-1");
+          $("#park").css("visibility","visible");
+        });
+        $("#lee").hover(function() {
+          $("#leeinfo").css("z-index", "0");
+          $("#lee").css("visibility","hidden");
+        },function() {
+          $("#leeinfo").css("z-index", "-1");
+          $("#lee").css("visibility","visible");
+        });
 
       });
     </script>
@@ -18,14 +51,14 @@
     <h1>ABOUT US</h1><hr color="black">
 
     <div class="front">
-      <span>
+      <span id="kwoninfo">
         <h2>Kwon Jaehoon</h2>
         <p>"front"</p>
         <p>Futsal Rental Page function materialization</p>
         <a href="#">Github Go</a>
       </span>
       <img id="kwon" src="image/woman.png" alt="kwon">
-      <span>
+      <span id="seoinfo">
         <h2>Seo Geurim</h2>
         <p>"front"</p>
         <p>Main Page About Page Entire Design materialization</p>
@@ -35,21 +68,21 @@
     </div>
 
     <div class="back">
-      <span>
+      <span id="choiinfo">
         <h2>Choi Jaeyoung</h2>
         <p>"front/back"</p>
         <p>Rental function materialization back schema</p>
         <a href="#">Github Go</a>
       </span>
       <img id="choi" src="image/woman.png" alt="choi">
-      <span>
+      <span id="parkinfo">
         <h2>Park Jaehoon</h2>
         <p>"back"</p>
         <p>Database Schema materialization</p>
         <a href="#">Github Go</a>
       </span>
       <img id="park" src="image/woman.png" alt="park">
-      <span>
+      <span id="leeinfo">
         <h2>Lee Jaehoon</h2>
         <p>"back"</p>
         <p>Database Schema materialization</p>
