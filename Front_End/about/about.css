@@ -34,3 +34,13 @@ h1{
 #kwon{
   margin-right: 70px;
 }
+.front_info section{
+  height: 230px;
+  width: 250px;
+  border: 2px solid black;
+}
+.front_info{
+  position: absolute;
+  width: 1000px;
+  top: 27%;
+}
