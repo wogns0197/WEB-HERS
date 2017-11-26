@@ -21,8 +21,9 @@ h1{
   margin-top: 2%;
 }
 .front img, .back img{
-  height: 230px;
+  height: 250px;
   width: 250px;
+  border-radius: 50%;
 }
 .front{
   margin: auto;
