@@ -1,0 +1,14 @@
+#confirm_wrap{
+	width: 40%;
+	height: 60%;
+	margin-top: 10%;
+	margin-left: auto;
+	margin-right: auto;
+
+	/*position: fixed;*/
+}
+
+#notice_on {
+	display: none;
+
+}
