@@ -2,7 +2,7 @@ body, html{
   margin: 0;
   padding: 0;
   width: 100%;
-  background-image: url(image/background.jpg);
+  background-color: white;
 }
 @font-face {
   font-family: abouthead;
@@ -20,6 +20,12 @@ h1{
   margin: 0;
   margin-top: 2%;
 }
+h2{
+  text-align: center;
+  font-weight: bold;
+  font-family: abouthead;
+  font-size: 25pt;
+}
 .front img, .back img{
   height: 250px;
   width: 250px;
@@ -28,7 +34,7 @@ h1{
 .front{
   margin: auto;
   width: 600px;
-  margin-top: 5%;
+  margin-top: 3%;
 }
 .back{
   margin: auto;
@@ -49,7 +55,7 @@ span{
   text-align: center;
   z-index: -1;
 }
-span h2{
+span h3{
   font-size: 21pt;
   font-weight: bold;
   margin: 0;
