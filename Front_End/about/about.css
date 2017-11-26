@@ -26,6 +26,11 @@ h2{
   font-family: abouthead;
   font-size: 25pt;
 }
+.siteinfo{
+  text-align: center;
+  padding-left: 3%;
+  padding-right: 3%;
+}
 .front img, .back img{
   height: 250px;
   width: 250px;
