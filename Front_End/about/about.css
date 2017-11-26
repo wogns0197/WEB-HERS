@@ -2,7 +2,7 @@ body, html{
   margin: 0;
   padding: 0;
   width: 100%;
-  background-color: #53C14B;
+  background-image: url(image/background.jpg);
 }
 @font-face {
   font-family: abouthead;
@@ -25,47 +25,38 @@ h1{
   width: 250px;
   border: 2px solid black;
 }
-.front span{
-  visibility: hidden;
-  font-family: abouthead;
-  position: absolute;
-  padding: 10px;
-  border: 2px solid blue;
-  width: 230px; height: 210px;
-  text-align: center;
-}
-.front span h2{
-  font-size: 21pt;
-  font-weight: bold;
-  margin: 0;
-}
-.front span p{
-  font-size: 18pt;
-  margin: 0;
-}
-.front span a{
-  font-size: 15pt;
-}
 .front{
   margin: auto;
   width: 600px;
-  margin-top: 3%;
+  margin-top: 5%;
 }
 .back{
   margin: auto;
-  width: 770px;
+  width: 910px;
   margin-top: 3%;
 }
 #kwon{
   margin-right: 70px;
 }
-.front_info section{
-  height: 230px;
-  width: 250px;
-  border: 2px solid black;
+#choi, #park{
+  margin-right: 70px;
 }
-.front_info{
+span{
+  font-family: abouthead;
   position: absolute;
-  width: 1000px;
-  top: 17%;
+  padding: 10px;
+  width: 230px; height: 210px;
+  text-align: center;
+}
+span h2{
+  font-size: 21pt;
+  font-weight: bold;
+  margin: 0;
+}
+span p{
+  font-size: 18pt;
+  margin: 0;
+}
+span a{
+  font-size: 15pt;
 }
