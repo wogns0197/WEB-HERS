@@ -3,10 +3,11 @@
   <head>
     <meta charset="utf-8">
     <title>Futsal Field Rental</title>
-    <link rel="stylesheet" href="futmain.css">
     <link rel="stylesheet" href="notice.css">
-    <link rel="stylesheet" href="futsal.css">
-    <script type="text/javascript" src="futmain.cs"></script>
+    <link rel="stylesheet" href="futmain.css?ver=4">
+
+    <!-- <link rel="stylesheet" href="futsal.css"> -->
+    <script type="text/javascript" src="futmain.js"></script>
   </head>
   <body>
     <header>
@@ -14,10 +15,42 @@
     </header>
     
       <div class="right">
-          <form action="../../Back_end/futsal_reserv_test.php" method="post">
-            <object id = "erica_futsal_map" type="image/svg+xml" data="에리카_풋살장.svg">현재 브라우져는 object를 지원하지 않습니다.</object>
-          </form>
+          <!-- <form action="../../Back_end/futsal_reserv_test.php" method="post"> -->
+            <object id = "ericamap" type="image/svg+xml" data="에리카_풋살장.svg">현재 브라우져는 object를 지원하지 않습니다.</object>
+          <!-- </form> -->
+
+          <div id="futsal_modal" class="modal">
+            <div class="modal-content">
+              <span class="close">&times;</span>
+              <button id="futsal_A">풋살장A</button>
+              <button id="futsal_B">풋살장B</button>
+            </div>
+            
+          </div>
+
+          <div id="soccer_modal" class="modal">
+            <div class="modal-content">
+              <span class="close">&times;</span>
+              <button id="soccer">잔디구장</button>
+              
+            </div>
+            
+          </div>
+
+
+          <div id="stadium_modal" class="modal">
+            <div class="modal-content">
+              <span class="close">&times;</span>
+              <button id="stadium">대운동장</button>
+              
+            </div>
+            
+          </div>
+
+
       </div>
+
+      
 
       
       <div class="left">
