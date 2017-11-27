@@ -24,17 +24,14 @@
 
 
     <!-- 이전 페이지에서 예약 선택 정보 가져옴  -->
+    <form action="reserv_finish.php" method="post">
     <?php
-      $place = $_POST["where"];
-      $borrow_date = $_POST["borrow_date"];
+      $val_arr = explode(" ", $_POST["selected"]);
       $population = $_POST["population"];
-      $time_arr = $_POST["selected_time"];
-      $start_time = $time_arr[0];
-      $end_time = $time_arr[1];
-
-
-
-
+      $borrow_date = $val_arr[0];
+      $start_time = $val_arr[1];
+      $end_time = $val_arr[2];
+      $place = $val_arr[3];
     ?>
     
     <div id="confirm_wrap">
@@ -54,7 +51,7 @@
               <option>농구</option>
               <option>기타행사</option>
             </select> 
-          <input id = "notice_checked" type="checkbox" />공지
+          <input id = "notice_checked" name = "notice" type="checkbox" />공지
           <br>
             <span id="notice_on">
               <input type="text" placeholder= "home" name = "home" />
@@ -68,15 +65,10 @@
         </div>
         <hr/>
         <div class="buttons">
-          <button>예약 신청</button>
-          <button>예약 취소</button>
+          <button name="finish" value="<?= $_POST["selected"] ?>">예약 신청</button>
+          <!-- <button>예약 취소</button> -->
         </div>
-
-    <!-- 이부분에다가동db 연동 -->
-
-
-
-
     </div>
+    </form>
   </body>
 </html>

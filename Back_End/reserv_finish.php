@@ -5,7 +5,7 @@
     <title>Hanyang Erica Rental Site</title>
     <link rel="stylesheet" href="../Front_end/futsal_reserve_page/futsal_reserv.css">
     <link rel="stylesheet" href="../Front_end/main/main.css">
-    <link rel="stylesheet" href="../Front_end/futsal_reserve_page/futsal_reserv_confirmation.css?ver=1">
+    <link rel="stylesheet" href="../Front_end/futsal_reserv_confirmation.css?ver=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
   <body>
@@ -24,11 +24,7 @@
 
     <!-- 이전 페이지에서 예약 선택 정보 가져옴  -->
     <?php
-      
-
-
-
-
+    print_r($_POST);
     ?>
     
     <div id="confirm_wrap">
