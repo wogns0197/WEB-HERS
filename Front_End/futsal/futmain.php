@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title>Futsal Field Rental</title>
     <link rel="stylesheet" href="notice.css">
-    <link rel="stylesheet" href="futmain.css?ver=6">
+    <link rel="stylesheet" href="futmain.css?ver=4">
 
     <!-- <link rel="stylesheet" href="futsal.css"> -->
     <script type="text/javascript" src="futmain.js"></script>
