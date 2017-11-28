@@ -25,25 +25,16 @@
     <!-- 이전 페이지에서 예약 선택 정보 가져옴  -->
     <?php
     print_r($_POST);
-    $selected = explode(" ", $_POST["finish"]);
-    $borrowdate = $selected[0];
-    $start_time = $selected[1].":00:00";
-    $end_time = $selected[2].":00:00";
-    $place = $selected[3];
-    $notice = $_POST["notice"];
-    $home = $_POST["home"];
-    $away = $_POST["away"];
-    // $population = $
-    // try{
-    //   $name = "web_project";
-    //   // $query = "insert into futsal_manage values ("$id",
-    //   $db = new PDO("mysql:dbname=$name", "root","root");
-    //   $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    // }
-    // catch(PDOException $ex){
-    //   echo "Sorry";
-    //   echo "detail :".$ex->getMessage();
-    // }
+    try{
+      $name = "web_project";
+      // $query = "insert into futsal_manage values ("$id",
+      $db = new PDO("mysql:dbname=$name", "root","root");
+      $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    }
+    catch(PDOException $ex){
+      echo "Sorry";
+      echo "detail :".$ex->getMessage();
+    }
     ?>
     
     <div id="confirm_wrap">

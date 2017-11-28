@@ -26,18 +26,13 @@
     <!-- 이전 페이지에서 예약 선택 정보 가져옴  -->
     <form action="reserv_finish.php" method="post">
     <?php
-      print_r($_POST);
-      // $val_arr = explode(" ", $_POST["selected"]);
-      // $population = $_POST["population"];
-      // $borrow_date = $val_arr[0];
-      // $start_time = $val_arr[1];
-      // $end_time = $val_arr[2];
-      // $place = $val_arr[3];
-      // $var_arr[] = $population;
-      // $val = implode(" ", $var_arr);
-      // foreach($val as $i){
-      //   echo $i;
-      // }
+      $population = $_POST["population"]."명";
+      $timearr = $_POST["selected_time"];
+      $time = explode(" ",$timearr);
+      $start_time = $time[0].":00";
+      $end_time = $time[1].":00";
+      $borrow_date = $_POST["selected_date"];
+      $place = $_POST["place"];
     ?>
     
     <div id="confirm_wrap">
@@ -47,6 +42,10 @@
           <span>대여날짜 : <?= $borrow_date ?></span><br>
           <span>대여시간 : <?= $start_time ?> ~ <?= $end_time ?></span><br>
           <span>대여장소 : <?= $place ?></span><br>
+          <input class="hidden" type="text" name="population" value="<?= $population ?>"/>
+          <input class="hidden" type="text" name="selected_date" value="<?= $borrow_date ?>"/>
+          <input class="hidden" type="text" name="time" value="<?= $timearr ?>"/>
+          <input class="hidden" type="text" name="place" value="<?= $place ?>"/>
         </div>
         <hr/>
         <div class="container">
@@ -65,14 +64,13 @@
               <input type="text" placeholder ="away" name="away" />
             </span>
           <br>
-          <span>단체명 : <input type="text" name="groupname"></span>
+          <span>단체명 : </span> <input type="text" name="groupname">
 
 
         </div>
         <hr/>
         <div class="buttons">
-          <button name="finish" value="<?= $val ?>">예약 신청</button>
-          <!-- <button>예약 취소</button> -->
+          <button type="submit">예약 신청</button>
         </div>
     </div>
     </form>
