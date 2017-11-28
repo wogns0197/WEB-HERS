@@ -14,13 +14,19 @@
       $time = explode(" ",$_POST["time"]);
       $id = "jaehoon";
       $borrowdate = $_POST["selected_date"];
-      $start_time = $time.":00:00";
+      $start_time = $time[0].":00:00";
       // echo $start_time;
-      $end_time = $time.":00:00";
+      $end_time = $time[1].":00:00";
       // echo $end_time;
       $place = $_POST["place"];
       $purpose = $_POST["purpose"];
       $notice = $_POST["notice"];
+      if($notice === "on"){
+        $notice = 1;
+      }
+      else{
+        $notice = 0;
+      }
       $home = $_POST["home"];
       $away = $_POST["away"];
       $population = $_POST["population"];
