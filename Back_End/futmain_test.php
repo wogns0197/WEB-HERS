@@ -41,7 +41,8 @@
                 $today = date("Y-m-d",time());
                 try{
                     $name = "web_project";
-                    $query = "select * from purpose_view where borrowdate = '$today'";
+                    $query = "select * from purpose_view natural join futsal_manage where borrowdate = '$today'
+                    and notice = 1";
                     $db = new PDO("mysql:dbname=$name", "root", "root");
                     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                     $rows = $db->query($query);
@@ -53,7 +54,7 @@
                         <table cellSpacing=0 cellPadding=0 width="100%" border=0>
                         <tbody>
                                 <tr>
-                                <td height=20 id="gamenotice">&nbsp;--- Game Notice ---</td></tr>
+                                <td height=200 id="gamenotice">&nbsp;--- Game Notice ---</td></tr>
                                 <tr>
                                 <?php
                                     foreach($rows as $row){

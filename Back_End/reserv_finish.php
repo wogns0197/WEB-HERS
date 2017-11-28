@@ -32,9 +32,19 @@
       $population = $_POST["population"];
       $groupname = $_POST["groupname"];
       $query = "insert into futsal_manage(user_id, borrowdate, start_time, end_time, place, purpose, notice,home, away, people, groupname) values('$id','$borrowdate','$start_time','$end_time','$place', '$purpose', '$notice','$home','$away',$population, '$groupname')";
+
+      if($notice){
+        $query2 = "insert into purpose_view values((select manage_ID from futsal_manage
+                                  where user_id = '$id' and borrowdate = '$borrowdate'
+                                  and start_time = '$start_time' and end_time = '$end_time')
+                                  ,'$home','$away','$borrowdate','$start_time','$end_time')";
+      }
       $db = new PDO("mysql:dbname=$name", "root","root");
       $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
       $rows = $db->query($query);
+      if($notice){
+        $rows2 = $db->query($query2);
+      }
       $flag = true;
     ?>
       <script src="success.js" type = "text/javascript"></script>
