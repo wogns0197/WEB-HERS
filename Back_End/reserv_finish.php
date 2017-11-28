@@ -10,10 +10,13 @@
     <?php
     try{
       $name = "web_project";
-      $query = "insert into futsal_manage values";
+      $time = explode(" ",$_POST["time"]);
+      $start_time = $time.":00";
+      $end_time = $time.".:00";
+      $query = "insert into futsal_manage(user_id, borrowdate, start_time, end_time, place, purpose, notice,home, away, people, groupname) values ("park","$_POST["selected_date"]","$start_time","$end_time","$_POST["place"]", "$_POST["purpose"]", "$_POST["notice"]","$_POST["home"]","$_POST["away"]",20, "$_POST["groupname"]")";
       $db = new PDO("mysql:dbname=$name", "root","root");
       $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-      $rows = $db->query($query);
+      // $rows = $db->query($query);
     ?>
       <script src="success.js" type = "text/javascript"></script>
     <?php
@@ -22,8 +25,6 @@
     ?>
       <script src="fail.js" type = "text/javascript"></script>
     <?php
-      echo "Sorry";
-      echo "detail :".$ex->getMessage();
     }
     ?>
   </head>
