@@ -32,6 +32,12 @@
       $start_time = $val_arr[1];
       $end_time = $val_arr[2];
       $place = $val_arr[3];
+      $var_arr[] = $population;
+      $val = implode(" ", $var_arr);
+      foreach($val as $i){
+        echo $i;
+      }
+      echo "check";
     ?>
     
     <div id="confirm_wrap">
@@ -65,7 +71,7 @@
         </div>
         <hr/>
         <div class="buttons">
-          <button name="finish" value="<?= $_POST["selected"] ?>">예약 신청</button>
+          <button name="finish" value="<?= $val ?>">예약 신청</button>
           <!-- <button>예약 취소</button> -->
         </div>
     </div>
