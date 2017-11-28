@@ -96,7 +96,7 @@
         ?>
 
         <!-- 캘린더 선택후 캘린더에서 선택한 날짜로 선택날짜 이동할 때 php에서 장소 파라미터 주기위해 만든 input 태그임 브라우저에서는 안보이게 css처리함 -->
-        <input type="text" class="hidden" name="" value="<?= $place ?>">
+        <input type="text" id="checking_place" class="hidden" name="place" value="<?= $place ?>">
 
 
         <!-- 시간 테이블 작성-->
@@ -181,12 +181,13 @@
                     }
                     if($flag){
                         $timearr = array($start_time,$end_time);
+                        $time = implode(" ",$timearr);
                         ?>
                     <td class="text-center"> 
                         선택 가능 
                     </td>
                     <td class="text-center">
-                        <input type="radio" name="selected_time" value=<?=$timearr?> />
+                        <input type="radio" name="selected_time" value="<?=$time?>" />
                     </td>
                     <?php 
                     } 
