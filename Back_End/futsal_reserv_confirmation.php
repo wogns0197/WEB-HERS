@@ -26,18 +26,18 @@
     <!-- 이전 페이지에서 예약 선택 정보 가져옴  -->
     <form action="reserv_finish.php" method="post">
     <?php
-      $val_arr = explode(" ", $_POST["selected"]);
-      $population = $_POST["population"];
-      $borrow_date = $val_arr[0];
-      $start_time = $val_arr[1];
-      $end_time = $val_arr[2];
-      $place = $val_arr[3];
-      $var_arr[] = $population;
-      $val = implode(" ", $var_arr);
-      foreach($val as $i){
-        echo $i;
-      }
-      echo "check";
+      print_r($_POST);
+      // $val_arr = explode(" ", $_POST["selected"]);
+      // $population = $_POST["population"];
+      // $borrow_date = $val_arr[0];
+      // $start_time = $val_arr[1];
+      // $end_time = $val_arr[2];
+      // $place = $val_arr[3];
+      // $var_arr[] = $population;
+      // $val = implode(" ", $var_arr);
+      // foreach($val as $i){
+      //   echo $i;
+      // }
     ?>
     
     <div id="confirm_wrap">

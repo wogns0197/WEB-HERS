@@ -42,7 +42,7 @@
 
 
 
-
+    <form action="futsal_reserv_confirmation.php" method="post">
     <div class="container">
       <div class="panel panel-defaul">
         <!-- <form action="futsal_reserv_test_2.php?where=<?= $_GET["where"] ?>" method="post"> -->
@@ -53,20 +53,15 @@
         
         <div class="panel-body">
             <?php 
-                date_default_timezone_set('Asia/Seoul');
-              
+                date_default_timezone_set('Asia/Seoul'); 
             ?>
-
-
-                
-                
                 <br><br>
                 <div class="wish_date">
                 <span>예약 희망 날짜:</span>
                 </div>
 
                 <!-- 캘린더 구현 div/ source from "https://github.com/Baremetrics/calendar" -->
-                <div class="daterange daterange--single" value = "hi"></div>
+                <div class="daterange daterange--single"></div>
                
                 
                
@@ -101,7 +96,7 @@
         ?>
 
         <!-- 캘린더 선택후 캘린더에서 선택한 날짜로 선택날짜 이동할 때 php에서 장소 파라미터 주기위해 만든 input 태그임 브라우저에서는 안보이게 css처리함 -->
-        <input type="text" id="checking_place" name="" value="<?= $place ?>">
+        <input type="text" class="hidden" name="" value="<?= $place ?>">
 
 
         <!-- 시간 테이블 작성-->
@@ -134,11 +129,11 @@
                 </td>
                 <td class="text-center">
                     <!-- <?=$today?> -->
+                    <input class="hidden" type="text" name="selected_date" value="<?= $date ?>"/>
                     <?= $date ?>
                 </td>
             </tr>
             <tr>
-        <!-- </form> -->
                 <th class="text-center">시간</th>
                 <th class="text-center">예약 현황</th>
                 <th class="text-center">예약 시간 선택</th>
@@ -212,6 +207,7 @@
         </div>
       </div>
     </div>
+    </form>
     <script src="../Front_End/calendar/js/Calendar.js"></script>
     <script src="../Front_End/calendar/js/app.js"></script>
   </body>
