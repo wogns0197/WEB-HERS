@@ -22,11 +22,12 @@
       $away = $_POST["away"];
       $population = $_POST["population"];
       $groupname = $_POST["groupname"];
-      $query = "insert into futsal_manage (user_id, borrowdate, start_time, end_time, place, purpose, notice,home, away, people, groupname)
-      values ("$id","$borrowdate","$start_time","$end_time","$place", "$purpose", "$notice","$home","$away",$population, "$groupname")";
+      // $query = "insert into futsal_manage (user_id, borrowdate, start_time, end_time, place, purpose, notice,home, away, people, groupname)
+      // values ("$id","$borrowdate","$start_time","$end_time","$place", "$purpose", "$notice","$home","$away",$population, "$groupname")";
       $db = new PDO("mysql:dbname=$name", "root","root");
       $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-      $rows = $db->query($query);
+      // $rows = $db->query($query);
+      $flag = true;
     ?>
       <script src="success.js" type = "text/javascript"></script>
     <?php
@@ -35,6 +36,7 @@
     ?>
       <script src="fail.js" type = "text/javascript"></script>
     <?php
+      $flag = false;
     }
     ?>
   </head>
@@ -51,10 +53,16 @@
       </ul>
     </nav>
 
-
-    <!-- 이전 페이지에서 예약 선택 정보 가져옴  -->
     <?php
-    print_r($_POST);
+    if($flag){?>
+      <!-- 성공한 예약 내역 출력해주세요 -->
+    <?php
+    }
+    else{?>
+      <!-- 예약이 이미 차있다고 출력해주고
+      예약 다시 진행하게 해주세요 -->
+    <?php
+    }
     ?>
   </body>
 </html>
