@@ -7,6 +7,25 @@
     <link rel="stylesheet" href="../Front_end/main/main.css">
     <link rel="stylesheet" href="../Front_end/futsal_reserv_confirmation.css?ver=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <?php
+    try{
+      $name = "web_project";
+      $query = "insert into futsal_manage values";
+      $db = new PDO("mysql:dbname=$name", "root","root");
+      $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+      $rows = $db->query($query);
+    ?>
+      <script src="success.js" type = "text/javascript"></script>
+    <?php
+    }
+    catch(PDOException $ex){
+    ?>
+      <script src="fail.js" type = "text/javascript"></script>
+    <?php
+      echo "Sorry";
+      echo "detail :".$ex->getMessage();
+    }
+    ?>
   </head>
   <body>
 
@@ -25,32 +44,6 @@
     <!-- 이전 페이지에서 예약 선택 정보 가져옴  -->
     <?php
     print_r($_POST);
-    try{
-      $name = "web_project";
-      // $query = "insert into futsal_manage values ("$id",
-      $db = new PDO("mysql:dbname=$name", "root","root");
-      $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    }
-    catch(PDOException $ex){
-      echo "Sorry";
-      echo "detail :".$ex->getMessage();
-    }
     ?>
-    
-    <div id="confirm_wrap">
-      <h2>예약이 완료되었습니다.</h2>
-
-      <div class="container">
-        <a href="#"><button>예약확인 GO</button></a>
-      </div>
-      
-
-
-    <!-- 이부분에다가동db 연동 -->
-
-
-
-
-    </div>
   </body>
 </html>

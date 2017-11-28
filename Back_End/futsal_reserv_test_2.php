@@ -16,7 +16,6 @@
     <script src="../Front_End/calendar/js/vendor/jquery.js"></script>
     <script src="../Front_End/calendar/js/vendor/moment.js"></script>
 
-
     
 
     <script src="../Front_End/bootstrap-3.3.2-dist/js/bootstrap.js"></script>

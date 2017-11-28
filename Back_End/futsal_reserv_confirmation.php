@@ -41,6 +41,10 @@
           <span>인원 : <?= $population ?></span><br>
           <span>대여날짜 : <?= $borrow_date ?></span><br>
           <span>대여시간 : <?= $start_time ?> ~ <?= $end_time ?></span><br>
+          <?php 
+            $start_time = $start_time.":00";
+            $end_time = $end_time.":00";
+          ?>
           <span>대여장소 : <?= $place ?></span><br>
           <input class="hidden" type="text" name="population" value="<?= $population ?>" readonly/>
           <input class="hidden" type="text" name="selected_date" value="<?= $borrow_date ?>" readonly/>
@@ -59,7 +63,7 @@
           <input id = "notice_checked" name = "notice" type="checkbox" />공지
           <br>
             <div id="notice_on">
-              <input type="text" placeholder= "home" name = "home" />
+              <input type="text" placeholder = "home" name = "home" />
               <span > vs </span>
               <input type="text" placeholder ="away" name="away" />
             </div>
@@ -73,7 +77,7 @@
         </div>
         <hr/>
         <div class="buttons">
-          <button type="submit">예약 신청</button>
+          <button id="alert" type="submit">예약 신청</button>
         </div>
     </div>
     </form>
