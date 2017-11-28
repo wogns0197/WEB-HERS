@@ -26,7 +26,7 @@
     <!-- 이전 페이지에서 예약 선택 정보 가져옴  -->
     <form action="reserv_finish.php" method="post">
     <?php
-      $population = $_POST["population"]."명";
+      $population = $_POST["population"];
       $timearr = $_POST["selected_time"];
       $time = explode(" ",$timearr);
       $start_time = $time[0].":00";
@@ -38,7 +38,7 @@
     <div id="confirm_wrap">
       
         <div class="container">
-          <span>인원 : <?= $population ?></span><br>
+          <span>인원 : <?= $population ?>명</span><br>
           <span>대여날짜 : <?= $borrow_date ?></span><br>
           <span>대여시간 : <?= $start_time ?> ~ <?= $end_time ?></span><br>
           <?php 

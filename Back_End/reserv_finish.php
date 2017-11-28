@@ -9,12 +9,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?php
     try{
+      print_r($_POST);      
       $name = "web_project";
       $time = explode(" ",$_POST["time"]);
       $id = "jaehoon";
       $borrowdate = $_POST["selected_date"];
-      $start_time = $time.":00";
-      $end_time = $time.".:00";
+      $start_time = $time.":00:00";
+      // echo $start_time;
+      $end_time = $time.":00:00";
+      // echo $end_time;
       $place = $_POST["place"];
       $purpose = $_POST["purpose"];
       $notice = $_POST["notice"];
@@ -22,17 +25,19 @@
       $away = $_POST["away"];
       $population = $_POST["population"];
       $groupname = $_POST["groupname"];
-      // $query = "insert into futsal_manage (user_id, borrowdate, start_time, end_time, place, purpose, notice,home, away, people, groupname)
-      // values ("$id","$borrowdate","$start_time","$end_time","$place", "$purpose", "$notice","$home","$away",$population, "$groupname")";
+      $query = "insert into futsal_manage(user_id, borrowdate, start_time, end_time, place, purpose, notice,home, away, people, groupname) values('$id','$borrowdate','$start_time','$end_time','$place', '$purpose', '$notice','$home','$away',$population, '$groupname')";
       $db = new PDO("mysql:dbname=$name", "root","root");
       $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-      // $rows = $db->query($query);
+      $rows = $db->query($query);
       $flag = true;
     ?>
       <script src="success.js" type = "text/javascript"></script>
     <?php
     }
     catch(PDOException $ex){
+      print_r($_POST);
+      echo "Sorry";
+      echo "detail :".$ex->getMessage();
     ?>
       <script src="fail.js" type = "text/javascript"></script>
     <?php
