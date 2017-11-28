@@ -50,142 +50,34 @@
     } onClose();
   }
   */
-  if ($_SERVER['REQUEST_METHOD'] == 'POST'){
-  try {
-    $db = new PDO('mysql:host=localhost;dbname=web_project', 'test','1234');
-  } catch (PDOException $e){
-    print "데이터베이스에 접속할 수 없습니다.".$e->getMessage();
+  $host = "localhost:3309";
+  $user = "test";
+  $pw = "11111111";
+  $dbName = "web";
+  $conn = mysqli_connect($host, $user, $pw);
+
+  if (!$conn) {
+    die ("Connection failed: " . mysqli_connect_error());
   }
-  #$count = mysqli_num_rows($result);
+  echo "Connected";
 
-  $db ->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+  $name = $_POST["name"];
+  $sid = $_POST["sid"];
+  $email = $_POST["email"];
+  $phone = $_POST["phone"];
+  $dept = $_POST["dept"];
+  $id = $_POST["id"];
+  $password = md5($_POST["pw"]);
+  $password2 = $_POST["pwre"];
 
-  $input = array();
-  $errors = array();
+  $sql = "insert into user (name, student_ID, phone_num, e_mail, user_id, user_pw, dept_name)";
+  $sql = $sql. "values('$name', '$sid', '$phone', '$email', '$id', '$password', '$dept')";
 
-  if (isset($_POST['name'])){
-    $input['name'] = trim($_POST['name']);
-  } else {
-    $errors[] = "이름은 필수입력사항입니다.";
-  }
-
-  if (isset($_POST['sid'])){
-    $input['sid'] = trim($_POST['sid']);
-  } else {
-    $errors[] = "학번은 필수입력사항입니다.";
-  }
-
-  if (isset($_POST['email'])){
-    $input['email'] = trim($_POST['email']);
-  } else {
-    $errors[] = "이메일은 필수입력사항입니다.";
+  if($conn->query($sql)){
+    echo 'success inserting';
+  } else{
+    echo 'fall to insert sql';
   }
 
-  if (isset($_POST['phone'])){
-    $input['phone'] = trim($_POST['phone']);
-  } else {
-    $errors[] = "휴대폰 번호는 필수입력사항입니다.";
-  }
-
-  if (isset($_POST['dept'])){
-    $input['dept'] = trim($_POST['dept']);
-  } else {
-    $errors[] = "학과는 필수입력사항입니다.";
-  }
-
-
-  if (isset($_POST['id'])){
-    $input['id'] = trim($_POST['id']);
-  } else {
-    $errors[] = "아이디는 필수입력사항입니다.";
-  }
-
-  if (isset($_POST['pw'])){
-    $input['pw'] = trim($_POST['pw']);
-  } else {
-    $errors[] = "패스워드는 필수입력사항입니다.";
-  }
-
-  $sql = "INSERT INTO user SET ";
-  $sql .= "name = ?, student_ID = ?, phone_num = ?, email = ?, user_id = ?, user_pw = ?, dept_name = ?";
-
-  if (strlen($input['name'])){
-    $memName = $input['name'];
-    $memName = strtr($memName, array('_'=>'\_', '%' => '\%'));
-  }
-
-  if (strlen($input['sid'])){
-    $memSID = $input['sid'];
-    $memSID = strtr($memSID, array('_'=>'\_', '%' => '\%'));
-  }
-
-  if (strlen($input['email'])){
-    $memEmail = $input['email'];
-    $memEmail = strtr($memEmail, array('_'=>'\_', '%' => '\%'));
-  }
-
-  if (strlen($input['phone'])){
-    $memPhone = $input['phone'];
-    $memPhone = strtr($memPhone, array('_'=>'\_', '%' => '\%'));
-  }
-
-  if (strlen($input['dept'])){
-    $memDept = $input['dept'];
-    $memDept = strtr($memDept, array('_'=>'\_', '%' => '\%'));
-  }
-
-  if (strlen($input['id'])){
-    $memID = $input['id'];
-    $memID = strtr($memID, array('_'=>'\_', '%' => '\%'));
-  }
-
-  if (strlen($input['pw'])){
-    $memPW = $input['pw'];
-    $memPW = password_hash($memPW, PASSWORD_DEFAULT, array('cost' => 12));
-  }
-
-  $stmt = $db->prepare($sql);
-  $stmt->execute(array($memName, $memSID, $memEmail, $memPhone, $memDept, $memID, $memPW));
-}  else {
-
- ?>
- <!DOCTYPE html>
- <html>
- <head>
- 	<link href="signup.css" rel="stylesheet" />
- 	<meta charset="utf-8"/>
- 	<title>Sign in</title>
- </head>
- <body>
- 	<main>
- 		<form action="<?=$_SERVER['PHP_SELF']?>" method = "post">
- 		<input type="text" name="name" value="Name" onfocus="this.value='';this.style.color='black';" style="color:#BDBDBD;" id="name1">
-
- 		<input type="text" name="sid" value="Student id" onfocus="this.value='';this.style.color='black';" style="color:#BDBDBD;">
-
- 		<br/>
- 		<input type="text" name="email" value="Email" onfocus="this.value='';this.style.color='black';" style="color:#BDBDBD;" id="email">
-
- 		<br/>
- 		<input type="text" name="phone" value="Phone-Number" onfocus="this.value='';this.style.color='black';" style="color:#BDBDBD;" id="phone">
-
- 		<br/>
- 		<input type="text" name="dept" value="Department" onfocus="this.value='';this.style.color='black';" style="color:#BDBDBD;" id="dept">
-
- 		<br/>
- 		<input type="text" name="id" value="ID" onfocus="this.value='';this.style.color='black';" style="color:#BDBDBD;" id="id">
-
- 		<br/>
- 		<!-- !!!패스워드 부분 암호화로 변경해야함 -->
- 		<input type="text" name="pw" value="Password" onfocus="this.value='';this.style.color='black';" style="color:#BDBDBD;" class="pw">
- 		<input type="text" name="pwre" value="Re-Password" onfocus="this.value='';this.style.color='black';" style="color:#BDBDBD;" class="pw">
- 		<br/>
-
- 		<div class="log">
- 			<button id = "submit">SIGN IN</button>
- 		</div>
-  </form>
- 	</main>
- </body>
- </html>
- <?php } ?>
+  mysqli_close($conn);
+?>
