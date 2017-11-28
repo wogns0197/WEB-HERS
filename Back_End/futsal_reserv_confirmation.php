@@ -5,7 +5,7 @@
     <title>Hanyang Erica Rental Site</title>
     <link rel="stylesheet" href="../Front_end/futsal_reserve_page/futsal_reserv.css">
     <link rel="stylesheet" href="../Front_end/main/main.css">
-    <link rel="stylesheet" href="../Front_end/futsal_reserve_page/futsal_reserv_confirmation.css?ver=1">
+    <link rel="stylesheet" href="../Front_end/futsal_reserve_page/futsal_reserv_confirmation.css?ver=4">
     <script src="../Front_end/futsal_reserve_page/futsal_reserv_confirmation.js" type="text/javascript"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
@@ -42,10 +42,10 @@
           <span>대여날짜 : <?= $borrow_date ?></span><br>
           <span>대여시간 : <?= $start_time ?> ~ <?= $end_time ?></span><br>
           <span>대여장소 : <?= $place ?></span><br>
-          <input class="hidden" type="text" name="population" value="<?= $population ?>"/>
-          <input class="hidden" type="text" name="selected_date" value="<?= $borrow_date ?>"/>
-          <input class="hidden" type="text" name="time" value="<?= $timearr ?>"/>
-          <input class="hidden" type="text" name="place" value="<?= $place ?>"/>
+          <input class="hidden" type="text" name="population" value="<?= $population ?>" readonly/>
+          <input class="hidden" type="text" name="selected_date" value="<?= $borrow_date ?>" readonly/>
+          <input class="hidden" type="text" name="time" value="<?= $timearr ?>" readonly/>
+          <input class="hidden" type="text" name="place" value="<?= $place ?>" readonly/>
         </div>
         <hr/>
         <div class="container">
@@ -58,13 +58,16 @@
             </select> 
           <input id = "notice_checked" name = "notice" type="checkbox" />공지
           <br>
-            <span id="notice_on">
+            <div id="notice_on">
               <input type="text" placeholder= "home" name = "home" />
               <span > vs </span>
               <input type="text" placeholder ="away" name="away" />
-            </span>
-          <br>
-          <span>단체명 : </span> <input type="text" name="groupname">
+            </div>
+          
+
+          <div>
+          <span>단체명 : </span> <input type="text" name="groupname" />
+          </div>
 
 
         </div>
