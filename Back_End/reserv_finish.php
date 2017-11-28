@@ -11,12 +11,22 @@
     try{
       $name = "web_project";
       $time = explode(" ",$_POST["time"]);
+      $id = "jaehoon";
+      $borrowdate = $_POST["selected_date"];
       $start_time = $time.":00";
       $end_time = $time.".:00";
-      $query = "insert into futsal_manage(user_id, borrowdate, start_time, end_time, place, purpose, notice,home, away, people, groupname) values ("park","$_POST["selected_date"]","$start_time","$end_time","$_POST["place"]", "$_POST["purpose"]", "$_POST["notice"]","$_POST["home"]","$_POST["away"]",20, "$_POST["groupname"]")";
+      $place = $_POST["place"];
+      $purpose = $_POST["purpose"];
+      $notice = $_POST["notice"];
+      $home = $_POST["home"];
+      $away = $_POST["away"];
+      $population = $_POST["population"];
+      $groupname = $_POST["groupname"];
+      $query = "insert into futsal_manage (user_id, borrowdate, start_time, end_time, place, purpose, notice,home, away, people, groupname)
+      values ("$id","$borrowdate","$start_time","$end_time","$place", "$purpose", "$notice","$home","$away",$population, "$groupname")";
       $db = new PDO("mysql:dbname=$name", "root","root");
       $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-      // $rows = $db->query($query);
+      $rows = $db->query($query);
     ?>
       <script src="success.js" type = "text/javascript"></script>
     <?php
