@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="../Front_end/main/main.css">
     <link rel="stylesheet" href="../Front_end/futsal_reserve_page/futsal_reserv_confirmation.css?ver=4">
     <script src="../Front_end/futsal_reserve_page/futsal_reserv_confirmation.js" type="text/javascript"></script>
+    <script src="timeexception.js" type="text/javascript"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
   <body>
@@ -48,7 +49,7 @@
           <span>대여장소 : <?= $place ?></span><br>
           <input class="hidden" type="text" name="population" value="<?= $population ?>" readonly/>
           <input class="hidden" type="text" name="selected_date" value="<?= $borrow_date ?>" readonly/>
-          <input class="hidden" type="text" name="time" value="<?= $timearr ?>" readonly/>
+          <input id ="time" class="hidden" type="text" name="time" value="<?= $timearr ?>" readonly/>
           <input class="hidden" type="text" name="place" value="<?= $place ?>" readonly/>
         </div>
         <hr/>

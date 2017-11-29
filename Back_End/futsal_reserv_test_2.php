@@ -185,7 +185,7 @@
                         선택 가능 
                     </td>
                     <td class="text-center">
-                        <input type="radio" name="selected_time" value="<?=$time?>" />
+                        <input id="time" type="radio" name="selected_time" value="<?=$time?>" />
                     </td>
                     <?php 
                     } 
@@ -202,7 +202,7 @@
             ?>
         </tbody>
         </table>
-            <p class="text-center"><button>예약하기</button></p>
+            <p id = "button" class="text-center"><button>예약하기</button></p>
         </div>
       </div>
     </div>
