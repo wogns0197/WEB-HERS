@@ -8,15 +8,16 @@
     <script type="text/javascript"src="http://code.jquery.com/jquery-latest.min.js"></script>
     <script type="text/javascript">
       $(document).ready( function(){
-        $("#kwon").hover(function() {
+        $("#kwon").click(function() {
           $("#kwoninfo").css("z-index", "0");
           $("#kwon").css("visibility","hidden");
-        },function() {
-          setTimeout(function(){
-            $("#kwoninfo").css("z-index", "-1");
-            $("#kwon").css("visibility","visible");
-          },500);
         });
+        // ,function() {
+        //   setTimeout(function(){
+        //     $("#kwoninfo").css("z-index", "-1");
+        //     $("#kwon").css("visibility","visible");
+        //   },500);
+        // });
         $("#seo").hover(function() {
           $("#seoinfo").css("z-index", "0");
           $("#seo").css("visibility","hidden");
@@ -96,17 +97,17 @@
       <span id="choiinfo">
         <h3>Choi Jaeyoung</h3>
         <p>"front/back"</p>
-        <p>Rental function materialization back schema</p>
+        <p>Rental Function Partial Design materialization</p>
         <a href="https://github.com/chlwodud77">Github Go</a>
       </span>
       <img id="choi" src="image/choi.jpg" alt="choi">
       <span id="parkinfo">
         <h3>Park Jaehoon</h3>
         <p>"back"</p>
-        <p>Database Schema materialization</p>
+        <p>Rental Function Database materialization</p>
         <a href="https://github.com/MilyangParkJaeHoon">Github Go</a>
       </span>
-      <img id="park" src="image/woman.png" alt="park">
+      <img id="park" src="image/park.png" alt="park">
       <span id="leeinfo">
         <h3>Lee Jaehoon</h3>
         <p>"back"</p>
