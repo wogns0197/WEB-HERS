@@ -146,7 +146,6 @@
             }
             $start_time = 12;
             $n = 5;
-            
             $name = "web_project";
             $borrow_place = $_POST["place"];
             for($i = 0 ; $i < $n; $i++){

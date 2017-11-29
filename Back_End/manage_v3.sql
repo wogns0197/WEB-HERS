@@ -31,6 +31,7 @@ create table futsal_manage
 create table purpose_view
 (
     manage_ID   integer(10),
+    place       varchar(10),
     home        varchar(30),
     away        varchar(30),
     borrowdate  date,
@@ -86,10 +87,10 @@ values ("jaehoon", "2017-11-23","12:00:00","22:00:00","풋살장",
 "농구", true, "기계","생나",30,"hoop");
 
 insert into purpose_view
-values (1, "소프트","ict", "2017-02-03","12:00:00","14:00:00");
+values (1, "대운동장", "소프트","ict", "2017-02-03","12:00:00","14:00:00");
 insert into purpose_view
-values (2, "전자","생나","2017-02-03","12:00:00","14:00:00");
+values (2, "대운동장", "전자","생나","2017-02-03","12:00:00","14:00:00");
 insert into purpose_view
-values (3, "전자","생나","2017-11-25","12:00:00","14:00:00");
+values (3, "대운동장", "전자","생나","2017-11-25","12:00:00","14:00:00");
 insert into purpose_view
-values (4, "소프트","기계","2017-11-25","14:00:00","16:00:00");
+values (4, "대운동장", "소프트","기계","2017-11-25","14:00:00","16:00:00");

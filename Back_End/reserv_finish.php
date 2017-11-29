@@ -31,19 +31,23 @@
       $away = $_POST["away"];
       $population = $_POST["population"];
       $groupname = $_POST["groupname"];
-      $query = "insert into futsal_manage(user_id, borrowdate, start_time, end_time, place, purpose, notice,home, away, people, groupname) values('$id','$borrowdate','$start_time','$end_time','$place', '$purpose', '$notice','$home','$away',$population, '$groupname')";
-
-      if($notice){
-        $query2 = "insert into purpose_view values((select manage_ID from futsal_manage
-                                  where user_id = '$id' and borrowdate = '$borrowdate'
-                                  and start_time = '$start_time' and end_time = '$end_time')
-                                  ,'$home','$away','$borrowdate','$start_time','$end_time')";
-      }
+      $query1 = "insert into futsal_manage(user_id, borrowdate, start_time, end_time, place, purpose, notice,home, away, people, groupname) values('$id','$borrowdate','$start_time','$end_time','$place', '$purpose', '$notice','$home','$away',$population, '$groupname')";
       $db = new PDO("mysql:dbname=$name", "root","root");
       $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-      $rows = $db->query($query);
+      $db->query($query1);
+      $query2 = "select manage_ID from futsal_manage where manage_ID >= all(select manage_ID from futsal_manage)";
+      $rows = $db->query($query2);
+      foreach($rows as $row){
+        $manage_ID = $row["manage_ID"];
+      }
       if($notice){
-        $rows2 = $db->query($query2);
+        try{
+          $query3 = "insert into purpose_view values($manage_ID,'$place', '$home','$away','$borrowdate','$start_time','$end_time')";
+          $db->query($query3);
+        }
+        catch(PDOException $ex){
+          echo "detail :".$ex->getMessage();
+        }
       }
       $flag = true;
     ?>
@@ -63,6 +67,8 @@
   </head>
   <body>
 
+    <?php
+    ?>
     <header id="home">
       <h1><a href="#home">HERS</a></h1>
     </header>
