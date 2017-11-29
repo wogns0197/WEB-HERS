@@ -84,7 +84,7 @@
                                   $end_a = explode(":", $row["end_time"]);
                                   $end_t = $end_a[0].":".$end_a[1];
                           ?>
-                               <tr><td height=50>&nbsp; <?= $row["home"] ?> <span class="vs">vs </span><?= $row["away"]?> <?= $start_t ?>~<?= $end_t ?><td></tr>
+                               <tr><td height=50>&nbsp;<?= $row["place"] ?>   <?= $row["home"] ?> <span class="vs">vs </span><?= $row["away"]?> <?= $start_t ?>~<?= $end_t ?><td></tr>
                            <?php
                          }?>
 

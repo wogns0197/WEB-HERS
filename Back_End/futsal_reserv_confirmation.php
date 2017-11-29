@@ -5,8 +5,9 @@
     <title>Hanyang Erica Rental Site</title>
     <link rel="stylesheet" href="../Front_end/futsal_reserve_page/futsal_reserv.css">
     <link rel="stylesheet" href="../Front_end/main/main.css">
-    <link rel="stylesheet" href="../Front_end/futsal_reserve_page/futsal_reserv_confirmation.css?ver=1">
+    <link rel="stylesheet" href="../Front_end/futsal_reserve_page/futsal_reserv_confirmation.css?ver=4">
     <script src="../Front_end/futsal_reserve_page/futsal_reserv_confirmation.js" type="text/javascript"></script>
+    <script src="timeexception.js" type="text/javascript"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
   <body>
@@ -24,26 +25,32 @@
 
 
     <!-- 이전 페이지에서 예약 선택 정보 가져옴  -->
+    <form action="reserv_finish.php" method="post">
     <?php
-      $place = $_POST["where"];
-      $borrow_date = $_POST["borrow_date"];
       $population = $_POST["population"];
-      $time_arr = $_POST["selected_time"];
-      $start_time = $time_arr[0];
-      $end_time = $time_arr[1];
-
-
-
-
+      $timearr = $_POST["selected_time"];
+      $time = explode(" ",$timearr);
+      $start_time = $time[0].":00";
+      $end_time = $time[1].":00";
+      $borrow_date = $_POST["selected_date"];
+      $place = $_POST["place"];
     ?>
     
     <div id="confirm_wrap">
       
         <div class="container">
-          <span>인원 : <?= $population ?></span><br>
+          <span>인원 : <?= $population ?>명</span><br>
           <span>대여날짜 : <?= $borrow_date ?></span><br>
           <span>대여시간 : <?= $start_time ?> ~ <?= $end_time ?></span><br>
+          <?php 
+            $start_time = $start_time.":00";
+            $end_time = $end_time.":00";
+          ?>
           <span>대여장소 : <?= $place ?></span><br>
+          <input class="hidden" type="text" name="population" value="<?= $population ?>" readonly/>
+          <input class="hidden" type="text" name="selected_date" value="<?= $borrow_date ?>" readonly/>
+          <input id ="time" class="hidden" type="text" name="time" value="<?= $timearr ?>" readonly/>
+          <input class="hidden" type="text" name="place" value="<?= $place ?>" readonly/>
         </div>
         <hr/>
         <div class="container">
@@ -54,29 +61,26 @@
               <option>농구</option>
               <option>기타행사</option>
             </select> 
-          <input id = "notice_checked" type="checkbox" />공지
+          <input id = "notice_checked" name = "notice" type="checkbox" />공지
           <br>
-            <span id="notice_on">
-              <input type="text" placeholder= "home" name = "home" />
+            <div id="notice_on">
+              <input type="text" placeholder = "home" name = "home" />
               <span > vs </span>
               <input type="text" placeholder ="away" name="away" />
-            </span>
-          <br>
-          <span>단체명 : <input type="text" name="groupname"></span>
+            </div>
+          
+
+          <div>
+          <span>단체명 : </span> <input type="text" name="groupname" />
+          </div>
 
 
         </div>
         <hr/>
         <div class="buttons">
-          <button>예약 신청</button>
-          <button>예약 취소</button>
+          <button id="alert" type="submit">예약 신청</button>
         </div>
-
-    <!-- 이부분에다가동db 연동 -->
-
-
-
-
     </div>
+    </form>
   </body>
 </html>

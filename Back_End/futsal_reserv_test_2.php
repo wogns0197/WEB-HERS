@@ -8,6 +8,16 @@
     <!-- <link rel="stylesheet" href="../Front_end/futsal_reserve_page/futsal_reserv_test.css"> -->
     <link rel="stylesheet" type="text/css" href="../Front_End/bootstrap-3.3.2-dist/css/bootstrap.css">
     <!-- <script src="main.js" type="text/javascript"></script> -->
+    <link rel="stylesheet" href="../Front_End/calendar/css/application.css" />
+    <link rel="stylesheet" href="../Front_End/calendar/css/home.css" />
+    <link rel="stylesheet" href="futsal_reserv_test_2.css?ver=5" />
+
+
+    <script src="../Front_End/calendar/js/vendor/jquery.js"></script>
+    <script src="../Front_End/calendar/js/vendor/moment.js"></script>
+
+    
+
     <script src="../Front_End/bootstrap-3.3.2-dist/js/bootstrap.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
@@ -31,32 +41,42 @@
 
 
 
+    <form action="futsal_reserv_confirmation.php" method="post">
     <div class="container">
       <div class="panel panel-defaul">
-        <form action="futsal_reserv_test.php?where=<?= $_GET["where"] ?>" method="post">
+        <!-- <form action="futsal_reserv_test_2.php?where=<?= $_GET["where"] ?>" method="post"> -->
 
         <div class="panel-heading">
             <p class="text-left">예약진행</p>
         </div>
         
         <div class="panel-body">
-            <?php //선택 날짜 받아오기
-                date_default_timezone_set('Asia/Seoul');
-                $yesterday = date("Y-m-d",time());
-                $maxday = date("Y-m-d",strtotime("+2 months",time()));
-                $today = $_POST["selected_date"];
-                if( !isset($_POST["selected_date"])){
-                $today = date("Y-m-d",time());
-                }
+            <?php 
+                date_default_timezone_set('Asia/Seoul'); 
             ?>
-            <p class="text-right">
+                <br><br>
+                <div class="wish_date">
                 <span>예약 희망 날짜:</span>
-                <input type="date" name="selected_date" min="<?= $yesterday ?>" max="<?= $maxday ?>" required>
-            
-                <button type="submit">예약 현황 조회</button>
-            </p>
+                </div>
+
+                <!-- 캘린더 구현 div/ source from "https://github.com/Baremetrics/calendar" -->
+                <div class="daterange daterange--single"></div>
+               
+                
+               
+                <br><br>
+                
+
+
         </div>
         <?php //장소받아오고 수용인원 체크
+            
+            if(isset($_GET["date"])){
+                $date = $_GET["date"];
+            }
+            else{
+                $date = date("Y-m-d", time());
+            }
             $place = $_GET["where"];
             $admit_min = 0;
             $admit_max = 0;
@@ -73,10 +93,16 @@
                 $admit_max = 22;
             }
         ?>
+
+        <!-- 캘린더 선택후 캘린더에서 선택한 날짜로 선택날짜 이동할 때 php에서 장소 파라미터 주기위해 만든 input 태그임 브라우저에서는 안보이게 css처리함 -->
+        <input type="text" id="checking_place" class="hidden" name="place" value="<?= $place ?>">
+
+
         <!-- 시간 테이블 작성-->
 
+
         <table class = "table table-hover text-center">
-            <thead class="text-center">
+            <thead>
             <tr>
                 <th class="text-center">경기장(수용인원)</th>
                 <th class="text-center">희망 인원</th>
@@ -85,11 +111,11 @@
             </thead>
             <tbody>
             <tr>
-                <td>
-                    <?= $_GET["where"] ?> (<?= $admit_min ?> ~ <?= $admit_max ?>)
+                <td class="text-center">
+                    <?= $place ?> (<?= $admit_min ?> ~ <?= $admit_max ?>)
 
                 </td>
-                <td>
+                <td class="text-center">
                     <select name="population">
                         <?php
                             for($i=$admit_min; $i<=$admit_max; $i++){
@@ -100,32 +126,33 @@
                         ?>
                     </select>
                 </td>
-                <td>
-                    <?=$today?>
+                <td class="text-center">
+                    <!-- <?=$today?> -->
+                    <input class="hidden" type="text" name="selected_date" value="<?= $date ?>"/>
+                    <?= $date ?>
                 </td>
             </tr>
             <tr>
-        </form>
                 <th class="text-center">시간</th>
                 <th class="text-center">예약 현황</th>
                 <th class="text-center">예약 시간 선택</th>
             </tr>
             <?php //예약현황 표시
-            $start_time = 12;
-            $n = 5;
-            if(isset($_POST["selected_date"])){
-                $date = $_POST["selected_date"];
+            if(isset($_GET["date"])){
+                $date = $_GET["date"];
             }
             else{
                 $date = date("Y-m-d", time());
             }
+            $start_time = 12;
+            $n = 5;
             $name = "web_project";
             $borrow_place = $_POST["place"];
             for($i = 0 ; $i < $n; $i++){
                 $end_time = $start_time+2
             ?>
                 <tr>
-                    <td>
+                    <td class="text-center">
                         <?= $start_time ?>:00 ~ <?= $end_time?>:00
                     </td>
             <?php
@@ -143,8 +170,8 @@
                         $end_t = $end_a[0];
                         if($start_time==$start_t && $end_time==$end_t){
             ?>
-                    <td> 예약 완료 </td>
-                    <td>X</td>
+                    <td class="text-center"> 예약 완료 </td>
+                    <td class="text-center">X</td>
                         <?php 
                             $flag = false;
                             break;
@@ -152,12 +179,13 @@
                     }
                     if($flag){
                         $timearr = array($start_time,$end_time);
+                        $time = implode(" ",$timearr);
                         ?>
-                    <td> 
+                    <td class="text-center"> 
                         선택 가능 
                     </td>
-                    <td>
-                        <input type="radio" name="selected_time" value=<?=$timearr?> />
+                    <td class="text-center">
+                        <input id="time" type="radio" name="selected_time" value="<?=$time?>" />
                     </td>
                     <?php 
                     } 
@@ -174,9 +202,12 @@
             ?>
         </tbody>
         </table>
-            <p class="text-center"><button>예약하기</button></p>
+            <p id = "button" class="text-center"><button>예약하기</button></p>
         </div>
       </div>
     </div>
+    </form>
+    <script src="../Front_End/calendar/js/Calendar.js"></script>
+    <script src="../Front_End/calendar/js/app.js"></script>
   </body>
 </html>

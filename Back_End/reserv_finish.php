@@ -5,11 +5,70 @@
     <title>Hanyang Erica Rental Site</title>
     <link rel="stylesheet" href="../Front_end/futsal_reserve_page/futsal_reserv.css">
     <link rel="stylesheet" href="../Front_end/main/main.css">
-    <link rel="stylesheet" href="../Front_end/futsal_reserve_page/futsal_reserv_confirmation.css?ver=1">
+    <link rel="stylesheet" href="../Front_end/futsal_reserv_confirmation.css?ver=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <?php
+    try{
+      print_r($_POST);      
+      $name = "web_project";
+      $time = explode(" ",$_POST["time"]);
+      $id = "jaehoon";
+      $borrowdate = $_POST["selected_date"];
+      $start_time = $time[0].":00:00";
+      // echo $start_time;
+      $end_time = $time[1].":00:00";
+      // echo $end_time;
+      $place = $_POST["place"];
+      $purpose = $_POST["purpose"];
+      $notice = $_POST["notice"];
+      if($notice === "on"){
+        $notice = 1;
+      }
+      else{
+        $notice = 0;
+      }
+      $home = $_POST["home"];
+      $away = $_POST["away"];
+      $population = $_POST["population"];
+      $groupname = $_POST["groupname"];
+      $query1 = "insert into futsal_manage(user_id, borrowdate, start_time, end_time, place, purpose, notice,home, away, people, groupname) values('$id','$borrowdate','$start_time','$end_time','$place', '$purpose', '$notice','$home','$away',$population, '$groupname')";
+      $db = new PDO("mysql:dbname=$name", "root","root");
+      $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+      $db->query($query1);
+      $query2 = "select manage_ID from futsal_manage where manage_ID >= all(select manage_ID from futsal_manage)";
+      $rows = $db->query($query2);
+      foreach($rows as $row){
+        $manage_ID = $row["manage_ID"];
+      }
+      if($notice){
+        try{
+          $query3 = "insert into purpose_view values($manage_ID,'$place', '$home','$away','$borrowdate','$start_time','$end_time')";
+          $db->query($query3);
+        }
+        catch(PDOException $ex){
+          echo "detail :".$ex->getMessage();
+        }
+      }
+      $flag = true;
+    ?>
+      <script src="success.js" type = "text/javascript"></script>
+    <?php
+    }
+    catch(PDOException $ex){
+      print_r($_POST);
+      echo "Sorry";
+      echo "detail :".$ex->getMessage();
+    ?>
+      <script src="fail.js" type = "text/javascript"></script>
+    <?php
+      $flag = false;
+    }
+    ?>
   </head>
   <body>
 
+    <?php
+    ?>
     <header id="home">
       <h1><a href="#home">HERS</a></h1>
     </header>
@@ -21,30 +80,16 @@
       </ul>
     </nav>
 
-
-    <!-- 이전 페이지에서 예약 선택 정보 가져옴  -->
     <?php
-      
-
-
-
-
+    if($flag){?>
+      <!-- 성공한 예약 내역 출력해주세요 -->
+    <?php
+    }
+    else{?>
+      <!-- 예약이 이미 차있다고 출력해주고
+      예약 다시 진행하게 해주세요 -->
+    <?php
+    }
     ?>
-    
-    <div id="confirm_wrap">
-      <h2>예약이 완료되었습니다.</h2>
-
-      <div class="container">
-        <a href="#"><button>예약확인 GO</button></a>
-      </div>
-      
-
-
-    <!-- 이부분에다가동db 연동 -->
-
-
-
-
-    </div>
   </body>
 </html>

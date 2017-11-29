@@ -62,6 +62,8 @@
             }
         ?>
         <!-- 시간 테이블 작성-->
+        </form>
+        <form action="futsal_reserv_confirmation.php" method="post">
         <table class="times" >
             <tr id="topcell">
                 <th>경기장(수용인원)</th>
@@ -79,7 +81,7 @@
                         <?php
                             for($i=$admit_min; $i<=$admit_max; $i++){
                         ?>
-                                <option><?= $i ?></option>
+                                <option> <?= $i ?> </option>
                         <?php
                             } 
                         ?>
@@ -90,7 +92,6 @@
                 </td>
             </tr>
             <tr>
-        </form>
                 <th>시간</th>
                 <th>예약 현황</th>
                 <th>예약 시간 선택</th>
@@ -137,12 +138,15 @@
                     }
                     if($flag){
                         $timearr = array($start_time,$end_time);
+                        $time = implode(" ",$timearr);
+                        $valarr = array($date, $time, $place);
+                        $val = implode(" ", $valarr);
                         ?>
                     <td class="status"> 
                         선택 가능 
                     </td>
                     <td class="time_select">
-                        <input type="radio" name="selected_time" value=<?=$timearr?> />
+                        <input type="radio" name="selected" value= "<?= $val ?>" />
                     </td>
                     <?php 
                     } 
@@ -158,9 +162,10 @@
             }
             ?>
         </table>
-            <button id="reserve_confirm">예약하기</button>
+            <button id="reserve_confirm" type="submit">예약하기</button>
         </div>
       </div>
     </div>
+    </form>
   </body>
 </html>

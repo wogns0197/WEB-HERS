@@ -73,17 +73,17 @@ function showStadium(){
 }
 
 function toFutsalA(){
-	location.href = "../../Back_end/futsal_reserv_test.php?where=풋살장A";
+	location.href = "../../Back_end/futsal_reserv_test_2.php?where=풋살장A";
 }
 
 function toFutsalB(){
-	location.href = "../../Back_end/futsal_reserv_test.php?where=풋살장B";
+	location.href = "../../Back_end/futsal_reserv_test_2.php?where=풋살장B";
 }
 
 function toSoccer(){
-	location.href = "../../Back_end/futsal_reserv_test.php?where=잔디구장";
+	location.href = "../../Back_end/futsal_reserv_test_2.php?where=잔디구장";
 }
 
 function toStadium(){
-	location.href = "../../Back_end/futsal_reserv_test.php?where=대운동장";
+	location.href = "../../Back_end/futsal_reserv_test_2.php?where=대운동장";
 }

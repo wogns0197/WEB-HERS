@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title>Futsal Field Rental</title>
     <link rel="stylesheet" href="notice.css">
-    <link rel="stylesheet" href="futmain.css?ver=6">
+    <link rel="stylesheet" href="futmain.css?ver=4">
 
     <!-- <link rel="stylesheet" href="futsal.css"> -->
     <script type="text/javascript" src="futmain.js"></script>
@@ -58,48 +58,23 @@
         <iframe  type="text/html" frameborder="0" height="250px" width="100%" src="http://forecast.io/embed/#lat=37.3217&lon=126.8309&name=Hanyang Univ.&units=si"> </iframe>
 
         <table cellSpacing=0 cellPadding=0 width="100%" class="momtong" >
-          <?php
-          date_default_timezone_set('Asia/Seoul');
-          $today = date("Y-m-d",time());
-          try{
-              $name = "web_project";
-              $query = "select * from purpose_view where borrowdate = '$today'";
-              $db = new PDO("mysql:dbname=$name", "root", "root");
-              $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-              $rows = $db->query($query);
-      ?>
-          <tbody>
-              <td>
-              <MARQUEE scrollAmount=6 direction=up>
-                  <section>
-                  <table cellSpacing=0 cellPadding=0 width="100%" border=0>
-                  <tbody>
-                          <tr>
-                          <td height=20 id="gamenotice">&nbsp;--- Game Notice ---</td></tr>
-                          <tr>
-                          <?php
-                              foreach($rows as $row){
-                                  $start_a = explode(":",$row["start_time"]);
-                                  $start_t = $start_a[0].":".$start_a[1];
-                                  $end_a = explode(":", $row["end_time"]);
-                                  $end_t = $end_a[0].":".$end_a[1];
-                          ?>
-                               <tr><td height=50>&nbsp; <?= $row["home"] ?> <span class="vs">vs </span><?= $row["away"]?> <?= $start_t ?>~<?= $end_t ?><td></tr>
-                           <?php
-                         }?>
-
-                          <td height=1>&nbsp;</td></tr>
-                  </tbody>
-                  </table>
-                  </section>
-              </MARQUEE>
-              </td>
-          <?php
-          } catch(PDOException $ex) { ?>
-              <p>Sorry</p>
-              <p>detail : <?=$ex->getMessage() ?>)</p>
-              <?php
-          } ?>
+                <tbody>
+                    <td>
+                    <MARQUEE scrollAmount=10 direction=up>
+                        <section>
+                        <table cellSpacing=0 cellPadding=0 width="100%" border=0>
+                        <tbody>
+                                <tr>
+                                <td height=20 id="gamenotice">&nbsp;--- Game Notice ---</td></tr>
+                                <tr>
+                                <td height=50>&nbsp; 소프트웨어학부 <span class="vs">vs</span> ICT융합학부</td></tr>
+                                <tr>
+                                <td height=50>&nbsp;기계공학과 <span class="vs">vs</span> 신문방송학과</td></tr>
+                                <tr>
+                                <td height=50>&nbsp;공학대학 <span class="vs">vs</span> 경상대학</td></tr>
+                                <tr>
+                                <td height=50>&nbsp;입축구 <span class="vs">vs</span> 잇몸튼튼</td></tr>
+                                <td height=1>&nbsp;</td></tr>
                             </tbody></table></section></MARQUEE></td></tbody></table>
 
         <!-- API from.. https://darksky.net/ -->
