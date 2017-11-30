@@ -4,20 +4,22 @@
     <meta charset="utf-8">
     <title>Futsal Field Rental</title>
     <link rel="stylesheet" href="notice.css">
-    <link rel="stylesheet" href="futmain.css?ver=6">
-
-    <!-- <link rel="stylesheet" href="futsal.css"> -->
-    <script type="text/javascript" src="futmain.js"></script>
+    <link rel="stylesheet" href="futmain.css?ver=10">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
+
   <body>
     <header>
-      <h1>RENTAL</h1><hr>
+      <h1>HERS</h1><hr>
     </header>
     
       <div class="right">
-          <!-- <form action="../../Back_end/futsal_reserv_test.php" method="post"> -->
-            <object id = "ericamap" type="image/svg+xml" data="에리카_풋살장.svg">현재 브라우져는 object를 지원하지 않습니다.</object>
-          <!-- </form> -->
+
+          <div id="map">
+            <object id = "ericamap" type="image/svg+xml" data="erica_futsal_대지 1.svg" >현재 브라우져는 object를 지원하지 않습니다.</object>
+          </div>
+ 
+          <script type="text/javascript" src="futmain.js?ver=11"></script>
 
           <div id="futsal_modal" class="modal">
             <div class="modal-content">

@@ -7,6 +7,7 @@ var futsal_a_btn, futsal_b_btn, soccer_btn, stadium_btn;
 var futsal,soccer,stadium;
 
 window.onload = function(){
+	// alert("hi6!");
 	futsal_modal = document.getElementById("futsal_modal");
 	soccer_modal = document.getElementById("soccer_modal");
 	stadium_modal = document.getElementById("stadium_modal");
@@ -20,9 +21,11 @@ window.onload = function(){
 
 	object = document.getElementById("ericamap");
 	svgDocument = object.contentDocument;
-	futsal = svgDocument.getElementById("futsal");
-	soccer = svgDocument.getElementById("soccer");
-	stadium = svgDocument.getElementById("stadium");
+	futsal = svgDocument.getElementById("futsal_x5F_selector");
+	soccer = svgDocument.getElementById("soccer_x5F_selector");
+	stadium = svgDocument.getElementById("stadium_x5F_selector");
+
+
 	futsal.onclick = showFutsal;
 	soccer.onclick = showSoccer;
 	stadium.onclick = showStadium;

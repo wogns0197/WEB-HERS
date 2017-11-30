@@ -7,13 +7,17 @@ hr{
 }
 .left{
 	float: left;
-	width: 30%;
+	width: 20%;
+	/*height: 100%;*/
+	/*overflow: hidden;*/
 }
 .right{
 	float: right;
 	margin-top: 10%;
-	width: 70%;
-	height: 500px;
+	width: 80%;
+	/*height: 100%;*/
+	/*overflow: hidden;*/
+	/*border: solid 1px green;*/
 
 }
 button{
@@ -77,7 +81,7 @@ button:hover:before,button:hover:after{
 
 .modal-content {
     background-color: #fefefe;
-    margin: 15% auto; /* 15% from the top and centered */
+    margin: 20% auto; /* 15% from the top and centered */
     padding: 20px;
     border: 1px solid #888;
     width: 50%; /* Could be more or less, depending on screen size */
@@ -95,6 +99,23 @@ button:hover:before,button:hover:after{
     color: black;
     text-decoration: none;
     cursor: pointer;
+}
+
+#map{
+
+	width: 80%;
+	height: 80%;
+	border-radius: 10px;
+	margin-left: 5%;
+	margin-top: -7%;
+
+}
+
+#ericamap {
+	width: 80%;
+	height: 100%;
+	margin-left:10%;
+	border-radius: 40%;
 }
 
 
