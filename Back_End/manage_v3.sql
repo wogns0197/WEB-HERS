@@ -24,7 +24,7 @@ create table futsal_manage
   away          varchar(30),
   people        integer(5),
   groupname     varchar(10),
-  primary key(manage_ID,borrowdate),
+  primary key(manage_ID, borrowdate),
   constraint foreign key (user_id) references user(user_id)
     on delete set null
 );
@@ -50,7 +50,9 @@ create table lec_room_manage
   purpose       varchar(30),
   people        integer(5),
   groupname     varchar(10),
-  primary key(manage_ID,borrowdate),
+  primary key(manage_ID, borrowdate),
   foreign key(user_id) references user(user_id)
     on delete set null
 );
+
+insert into user values("jaehoon", 2016003509,01023589277,"jh9277@naver.com","jaehoon","jh2628","Computer");

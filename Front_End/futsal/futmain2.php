@@ -65,7 +65,7 @@
           $today = date("Y-m-d",time());
           try{
               $name = "web_project";
-              $query = "select * from purpose_view where borrowdate = '$today'";
+              $query = "select * from purpose_view where borrowdate = '$today' order by start_time";
               $db = new PDO("mysql:dbname=$name", "root", "root");
               $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
               $rows = $db->query($query);

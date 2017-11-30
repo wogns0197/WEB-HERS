@@ -78,7 +78,11 @@
             $place = $_GET["where"];
             $admit_min = 0;
             $admit_max = 0;
-            if( $place == "풋살장"){
+            if( $place == "풋살장A"){
+                $admit_min = 6;
+                $admit_max = 10;
+            }
+            if( $place == "풋살장B"){
                 $admit_min = 6;
                 $admit_max = 10;
             }
