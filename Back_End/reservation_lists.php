@@ -43,11 +43,12 @@
     }
     catch(PDOException $ex){
       echo "detail :".$ex->getMessage();
-    }?>
-
+    }
+    ?>
+    <form action="reserv_cancel.php" method="post" id="cancel"></form>
+    <form action="modify_reserv.php" method="post" id="modify"></form>
     <div id="reserve_wrap">
       <h2>예약 내역</h2>
-
       <div class="container">
         <table class="reserve_lists">
           <tr>
@@ -63,24 +64,18 @@
             <th><?=$borrowdate[$i]?></th>
             <th><?=$start_time[$i]?>:00 ~ <?=$end_time[$i]?>:00</th>
             <th><?=$place[$i]?></th>
+          <?php
+            $valarr = array($manage_ID[$i], $borrowdate[$i]);
+            $val = implode(" ",$valarr);
+          ?>
+            <th><button name="cancel_val" value="<?= $val ?>" type="submit" form = "cancel">취소</button></th>
+            <th><button name="modify_val" value="<?= $val ?>" type="submit" form = "modify">수정</button></th>
             </tr>
           <?php
             }
           ?>
-          
-         <!-- 이부분에다가 db 연동해서 내역 목록 출력 -->
-         <!-- 내역 목록 리스트마다 옆에 수정/삭제 버튼으로 편집 -->
-
         </table>
       </div>
-      
-
-
-    <!-- 이부분에다가 db 연동 -->
-
-
-
-
     </div>
   </body>
 </html>
