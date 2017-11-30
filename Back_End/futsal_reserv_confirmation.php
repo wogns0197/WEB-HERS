@@ -69,7 +69,7 @@
           
 
           <div>
-          <span>단체명 : </span> <input type="text" name="groupname" />
+          <span>단체명 : </span> <input type="text" name="groupname" required/>
           </div>
 
 

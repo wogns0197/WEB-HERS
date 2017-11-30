@@ -183,7 +183,7 @@
                         선택 가능 
                     </td>
                     <td class="text-center">
-                        <input class="time" type="radio" name="selected_time" value="<?=$time?>" />
+                        <input class="time" type="radio" name="selected_time" value="<?=$time?>"/>
                     </td>
                     <?php 
                     } 
