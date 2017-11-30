@@ -12,12 +12,10 @@
     <link rel="stylesheet" href="../Front_End/calendar/css/home.css" />
     <link rel="stylesheet" href="futsal_reserv_test_2.css?ver=5" />
 
-
+    <script src="http://ajax.googleapis.com/ajax/libs/prototype/1.7.3.0/prototype.js" type="text/javascript"></script>
+    <script src="timeexception.js" type="text/javascript"></script>
     <script src="../Front_End/calendar/js/vendor/jquery.js"></script>
     <script src="../Front_End/calendar/js/vendor/moment.js"></script>
-
-    
-
     <script src="../Front_End/bootstrap-3.3.2-dist/js/bootstrap.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
@@ -202,7 +200,7 @@
             ?>
         </tbody>
         </table>
-            <p id = "button" class="text-center"><button>예약하기</button></p>
+            <p class="text-center"><button id = "button">예약하기</button></p>
         </div>
       </div>
     </div>

@@ -6,8 +6,6 @@
     <link rel="stylesheet" href="../Front_end/futsal_reserve_page/futsal_reserv.css">
     <link rel="stylesheet" href="../Front_end/main/main.css">
     <link rel="stylesheet" href="../Front_end/futsal_reserve_page/futsal_reserv_confirmation.css?ver=4">
-   
-    <script src="timeexception.js" type="text/javascript"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
   <body>

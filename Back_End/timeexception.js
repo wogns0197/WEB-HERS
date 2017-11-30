@@ -1,12 +1,11 @@
-window.onload = check;
-function check(){
-    var value = document.getElementById("time").value;
-    var time = value.split(" ");
-    if(time[0] == "" || time[0] == null){
-        alert("예약 시간을 입력해주세요");
-    	
-        window.history.goback();
+window.onload = function(){
+    document.getElementById("button").onclick = check;
+};
 
+function check(){
+    var time  = $$("#time");
+    alert("check");
+    for(var i=0; i<time.length; i++){
+        alert(time[i]);
     }
-    // alert("ss");
 }
