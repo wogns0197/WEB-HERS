@@ -32,22 +32,39 @@
       $population = $_POST["population"];
       $groupname = $_POST["groupname"];
       $query1 = "insert into futsal_manage(user_id, borrowdate, start_time, end_time, place, purpose, notice,home, away, people, groupname) values('$id','$borrowdate','$start_time','$end_time','$place', '$purpose', '$notice','$home','$away',$population, '$groupname')";
+      $check_query = "select count(*) from futsal_manage where borrowdate='$borrowdate' and start_time='$start_time' and place='$place'";              
       $db = new PDO("mysql:dbname=$name", "root","root");
       $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-      $db->query($query1);
-      if($notice){
-        try{
-          $query2 = "insert into purpose_view values((select manage_ID from futsal_manage where user_id = '$id' and borrowdate = '$borrowdate' and start_time = '$start_time' and end_time = '$end_time'),'$place','$home','$away','$borrowdate','$start_time','$end_time')";
-          $db->query($query2);
-        }
-        catch(PDOException $ex){
-          echo "detail :".$ex->getMessage();
+      try{
+        $check = $db->query($check_query);
+        foreach($check as $a){
+          $count = $a['count(*)'];
         }
       }
-      $flag = true;
-    ?>
-      <script src="success.js" type = "text/javascript"></script>
+      catch(PDOException $ex){
+        echo "detail : ".$ex->getMessage();
+      }
+      if($count==0){
+        $db->query($query1);
+        if($notice){
+          try{
+            $query2 = "insert into purpose_view values((select manage_ID from futsal_manage where user_id = '$id' and borrowdate = '$borrowdate' and start_time = '$start_time' and end_time = '$end_time'),'$place','$home','$away','$borrowdate','$start_time','$end_time')";
+            $db->query($query2);
+          }
+          catch(PDOException $ex){
+            echo "detail :".$ex->getMessage();
+          }
+        }
+        ?>
+        <script src="success.js" type = "text/javascript"></script>
+      <?php
+        $flag = true;
+      }
+      else{?>
+        <script src="fail.js" type = "text/javascript"></script>
     <?php
+        $flag = false;
+      }
     }
     catch(PDOException $ex){
       print_r($_POST);
