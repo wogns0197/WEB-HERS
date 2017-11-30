@@ -9,9 +9,12 @@
 }
 
 #notice_on {
-	display: none;
-	/*visibility: hidden;*/
+	visibility: hidden;
 
+}
+
+#notice_on .show{
+	visibility: visible;
 }
 
 .hidden {
