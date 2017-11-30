@@ -8,5 +8,5 @@ function check(){
         window.history.goback();
 
     }
-    alert("ss");
+    // alert("ss");
 }

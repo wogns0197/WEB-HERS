@@ -77,7 +77,7 @@
                   <table cellSpacing=0 cellPadding=0 width="100%" border=0>
                   <tbody>
                           <tr>
-                          <td height=20 id="gamenotice">&nbsp;--- Game Notice ---</td></tr>
+                          <td height=60 id="gamenotice">&nbsp;--- Game Notice ---</td></tr>
                           <tr>
                           <?php
                               foreach($rows as $row){
