@@ -62,9 +62,9 @@
           <input id = "notice_checked" name = "notice" type="checkbox" unchecked/>공지
           <br>
             <div id="notice_on">
-              <input type="text" placeholder = "home" name = "home" />
+              <input type="text" placeholder = "home" name = "home" required/>
               <span > vs </span>
-              <input type="text" placeholder ="away" name="away" />
+              <input type="text" placeholder ="away" name="away" required/>
             </div>
           
 

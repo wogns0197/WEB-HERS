@@ -15,9 +15,7 @@
       $id = "jaehoon";
       $borrowdate = $_POST["selected_date"];
       $start_time = $time[0].":00:00";
-      // echo $start_time;
       $end_time = $time[1].":00:00";
-      // echo $end_time;
       $place = $_POST["place"];
       $purpose = $_POST["purpose"];
       $notice = $_POST["notice"];
@@ -98,8 +96,7 @@
     <?php
     }
     else{?>
-      <!-- 예약이 이미 차있다고 출력해주고
-      예약 다시 진행하게 해주세요 -->
+      
     <?php
     }
     ?>
