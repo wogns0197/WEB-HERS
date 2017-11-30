@@ -1,11 +1,17 @@
+var flag=false;
 window.onload = function(){
     document.getElementById("button").onclick = check;
+    document.getElementsByClassName("time").onclick = check2;
 };
 
-function check(){
-    var time  = $$("#time");
-    alert("check");
-    for(var i=0; i<time.length; i++){
-        alert(time[i]);
+function check2(){
+    alert("aa");
+    flag=true;
+}
+function check(event){
+    if(!flag){
+        alert("시간을 입력해주세요");
+        event.stop();
+        return false;
     }
 }
