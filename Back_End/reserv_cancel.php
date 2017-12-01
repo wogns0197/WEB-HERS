@@ -1,3 +1,4 @@
+<script src="success_cancel.js" type="text/javascript"></script>
 <?php
     $id = "jaehoon";
     $name = "web_project";
