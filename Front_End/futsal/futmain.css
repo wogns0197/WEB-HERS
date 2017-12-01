@@ -21,8 +21,9 @@ hr{
 	/*border: solid 1px green;*/
 
 }
-button:not(#reserv_confirm){
+button{
 	width: 50%;
+
 	margin-left: 25%;
 	/*margin-left: auto;*/
 	/*margin-right: auto;*/
@@ -41,12 +42,13 @@ button:not(#reserv_confirm){
 	cursor:pointer;
 	transition:800ms ease all;
 	outline:none;
+	border-radius: 3px;
 }
-button:hover:not(#reserv_confirm){
+button:hover {
 	background:#fff;
 	color:#1AAB8A;
 }
-button:before,button:after:not(#reserv_confirm){
+button:before,button:after{
 	content:'';
 	position:absolute;
 	top:0;
@@ -56,18 +58,18 @@ button:before,button:after:not(#reserv_confirm){
 	background: #1AAB8A;
 	transition:100ms ease all;
 }
-button:after:not(#reserv_confirm){
+button:after{
 	right:inherit;
 	top:inherit;
 	left:0;
 	bottom:0;
 }
-button:hover:before,button:hover:after:not(#reserv_confirm){
+button:hover:before,button:hover:after{
 	width:100%;
-	transition:800ms ease all;
+	transition:900ms ease all;
 }
 
-.modal {
+.modal{
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
@@ -78,14 +80,17 @@ button:hover:before,button:hover:after:not(#reserv_confirm){
     overflow: auto; /* Enable scroll if needed */
     background-color: rgb(0,0,0); /* Fallback color */
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+
 }
 
-.modal-content {
+.modal-content{
     background-color: #fefefe;
     margin: 20% auto; /* 15% from the top and centered */
     padding: 20px;
     border: 1px solid #888;
-    width: 50%; /* Could be more or less, depending on screen size */
+    width: 70%; /* Could be more or less, depending on screen size */
+    border-radius: 10px;
+    
 }
 
 .close {
@@ -103,16 +108,14 @@ button:hover:before,button:hover:after:not(#reserv_confirm){
 }
 
 #map{
-
 	width: 80%;
 	height: 80%;
 	border-radius: 10px;
 	margin-left: 5%;
 	margin-top: -7%;
-
 }
 
-#ericamap {
+#ericamap{
 	width: 80%;
 	height: 100%;
 	margin-left:10%;
