@@ -24,6 +24,7 @@
 
     <!-- db에서 유저 아이디 써서 예약 내역 불러옴 -->
     <?php
+    echo $_POST["modify"];
     $id = "jaehoon";
     $name = "web_project";
     try{

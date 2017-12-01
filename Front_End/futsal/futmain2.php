@@ -51,13 +51,11 @@
 
 
       </div>
-
-      
-
-      
       <div class="left">
 
         <iframe  type="text/html" frameborder="0" height="250px" width="100%" src="http://forecast.io/embed/#lat=37.3217&lon=126.8309&name=Hanyang Univ.&units=si"> </iframe>
+        <!-- API from.. https://darksky.net/ -->
+        <!-- source=http://thinkgood.tistory.com/471 -->
 
         <table cellSpacing=0 cellPadding=0 width="100%" class="momtong" >
           <?php
@@ -101,11 +99,12 @@
               <p>Sorry</p>
               <p>detail : <?=$ex->getMessage() ?>)</p>
               <?php
-          } ?>
-                            </tbody></table></section></MARQUEE></td></tbody></table>
-
-        <!-- API from.. https://darksky.net/ -->
-      <!-- source=http://thinkgood.tistory.com/471 -->
+          }
+          ?>
+          <form action="../../Back_End/reservation_lists.php">
+            <button>예약내역확인</button>
+          </form>
+        </tbody></table></section></MARQUEE></td></tbody></table>
       </div>
     
 
