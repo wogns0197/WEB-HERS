@@ -53,19 +53,34 @@ svg{
 }
 nav{
   font-family: myserif;
+  background-color: rgba(0, 0, 0, 0.4);
+  width: 22%;
+  height: 100%;
+  position: fixed;
+}
+nav h2{
+  position: absolute;
+  left: 10%;
+  font-size: 30pt;
 }
 nav ul{
   list-style: none;
+  /*padding-left: 0;*/
+  position: absolute;
+  top: 10%;
 }
 nav ul li{
-  font-size: 14pt;
+  font-size: 18pt;
   font-family: myserif;
+  margin-bottom: 5%;
+  width: 100%;
 }
 nav ul li a{
   text-decoration: none;
   color: black;
 }
 nav ul li a:hover{
+
 }
 .main p{
   font-size: 30pt;
