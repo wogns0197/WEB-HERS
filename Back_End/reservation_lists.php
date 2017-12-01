@@ -12,7 +12,7 @@ session_start();
     <title>Hanyang Erica Rental Site</title>
     <link rel="stylesheet" href="../Front_end/futsal_reserve_page/futsal_reserv.css">
     <link rel="stylesheet" href="../Front_end/main/main.css">
-    <link rel="stylesheet" href="../Front_end/futsal_reserve_page/reservation_lists.css?ver=1">
+    <link rel="stylesheet" href="../Front_end/futsal_reserve_page/reservation_lists.css?">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
   <body>
