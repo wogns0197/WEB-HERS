@@ -8,6 +8,7 @@
     <script type="text/javascript"src="http://code.jquery.com/jquery-latest.min.js"></script>
     <script type="text/javascript">
       $(document).ready( function(){
+        $("#home").fadeOut(0);
         $(".mainp1").fadeOut(0);
         $(".mainp2").fadeOut(0);
         $(".buttons").fadeOut(0);
@@ -18,6 +19,10 @@
         setTimeout(function(){
           $(".buttons").fadeIn(1500);
         },1600);
+        setTimeout(function(){
+          $("#home").fadeIn(1500);
+        },2400);
+
 
       });
     </script>
@@ -29,17 +34,17 @@
       </video>
     </div>
 
-    <header id="home">
+     <header id="home">
       <h1><a href="#home">HERS</a></h1>
     </header>
-
+<!--
     <nav>
       <ul>
         <li><a href="main.html">Home</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#">Login</a></li>
       </ul>
-    </nav>
+    </nav> -->
 
     <div class="buttons">
       <button id="lecture">Lecture Room</button>

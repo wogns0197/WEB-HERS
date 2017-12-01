@@ -7,7 +7,7 @@ body, html{
 }
 @font-face{
   font-family: headerfont;
-  src: url(font/norwester.otf);
+  src: url(font/Anson-Regular.otf);
 }
 @font-face {
   font-family: myserif;
@@ -32,17 +32,19 @@ video{
 	z-index : -1;
 }
 header{
-  font-family: myserif;
-  font-size: 15pt;
+  font-family: mylight;
   position: fixed;
-  top: -2%;
+  top: 15.5%;
   margin: 0 auto;
   text-align: center;
   width: 100%;
 }
 header a{
   text-decoration: none;
-  color: black;
+  font-weight: normal;
+  font-size: 35pt;
+  color: white;
+  text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.9);
 }
 nav{
   font-family: myserif;
