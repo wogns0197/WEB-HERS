@@ -31,13 +31,13 @@ session_start();
     <?php
         $_SESSION['place'] = $_GET['where'];
         if(!isset($_SESSION['user_id'])){
-            echo "<p><a href ='login_function/login.php'>로그인</p>";
+            echo "<p><a href ='login_function/login.php'>로그인</a></p>";
         }
 
         else{
             $user_id = $_SESSION['user_id'];
             echo "<p>안녕하세요 $user_id 님.</p>";
-            echo "<p><a href = 'login_function/logout.php'>로그아웃</p>";
+            echo "<p><a href = 'login_function/logout.php'>로그아웃</a></p>";
         }
 
 
