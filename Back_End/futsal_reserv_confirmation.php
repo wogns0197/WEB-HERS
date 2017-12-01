@@ -1,3 +1,10 @@
+<?php
+session_start();
+
+
+
+?>
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -9,6 +16,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
   <body>
+    <?php
+        $_SESSION['place'] = $_GET['where'];
+        if(!isset($_SESSION['user_id'])){
+            echo "<script>alert('로그인이 필요합니다!');location.href='../Front_End/futsal/futmain2.php';</script>";
+        }
+
+        else{
+            $user_id = $_SESSION['user_id'];
+            echo "<p>안녕하세요 $user_id 님.</p>";
+            echo "<p><a href = 'login_function/logout.php'>로그아웃</p>";
+        }
+
+
+
+    ?>
+
 
     <header id="home">
       <h1><a href="#home">HERS</a></h1>

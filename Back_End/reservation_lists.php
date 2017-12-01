@@ -1,3 +1,10 @@
+<?php
+session_start();
+
+
+
+?>
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -25,7 +32,7 @@
     <!-- db에서 유저 아이디 써서 예약 내역 불러옴 -->
     <?php
     echo $_POST["modify"];
-    $id = "jaehoon";
+    $id = $_SESSION['user_id'];
     $name = "web_project";
     try{
       $query = "select * from futsal_manage where user_id = '$id'";

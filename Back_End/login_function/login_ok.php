@@ -1,5 +1,4 @@
 <?php
-session_start();
 
 if(!isset($_POST['user_id']) || !isset($_POST['user_pw'])) exit;
 $user_id = $_POST['user_id'];
@@ -26,6 +25,7 @@ try{
   }
 
   if($user_in_flag === true){
+    session_start();
 
     $_SESSION['user_id'] = $user_id;
     $_SESSION['user_pw'] = $user_pw;
