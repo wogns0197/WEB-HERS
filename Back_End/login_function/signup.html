@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link href="signup.css" rel="stylesheet" />
+	<meta charset="utf-8"/>
+	<title>Sign in</title>
+</head>
+<body>
+	<main>
+		<form action="signup_ok.php" method ="post">
+			<input type="text" name="name" placeholder="Name" id="name1" required>
+
+			<input type="text" name="sid" placeholder="Student id" required>
+
+			<br/>
+			<input type="text" name="email" placeholder="Email" id="email">
+
+			<br/>
+			<input type="text" name="phone" placeholder="Phone-Number" id="phone">
+
+			<br/>
+			<input type="text" name="dept" placeholder="Department" id="dept">
+
+			<br/>
+			<input type="text" name="user_id" placeholder="ID" id="id" required>
+
+			<br/>
+			<!-- !!!패스워드 부분 암호화로 변경해야함 -->
+			<input type="password" name="user_pw" placeholder="Password" class="pw" required>
+			<input type="password" name="user_pw_re" placeholder="Re-Password" class="pw" required>
+			<div class="log">
+				<button type="submit">SIGN IN</button>
+			</div>
+		</from>
+	</main>
+</body>
+</html>
+
+<!-- php 기능 구현
+
+-회원가입
+
+이름 -> 특수문자 x
+학번 -> 15자리 숫자
+폰번 ->
+이메일 ->
+아이디 -> 특수문자 x, 중복확인
+비번 -> 특수문자 하나이상, 숫자 영문 조합 8글자 이상
+학과 -> 학과별 그룹 선택 리스트
+
+-회원가입 정보수정
+회원가입 틀에서 db 에 update 허용
+
+
+-비밀번호 찾기
+-> 이메일 인증으로
+
+-아이디 찾기
+-> 이름, 학번
+
+-로그인,로그아웃
+-> 로그인 하지 않았을 때는 예약확인 등록 등등에서 접근불가 메세지 출력
+
+
+-등록(상의)
+타임테이블에서 모든 예약 목록(팀명,그룹,시간) 이 뜰지 아니면 그냥 예약 가능한 시간 목록만 보여줄지
+
+
+-등록완료
+등록 하면 등록 전반적인 내역 보여주기 (쇼핑몰 주문완료 내역처럼)
+
+
+
+{ 마이페이지
+
+-등록수정
+-> 수정 페이지에 대해서는 상의 (유무)
+
+-과거예약내역
+-> id랑 매칭해서 과거 예약한 내역들 출력
+
+}
+ -->
