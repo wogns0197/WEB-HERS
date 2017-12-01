@@ -1,7 +1,5 @@
-window.onload = alertfunction;
+window.onload  = alertfunction;
 function alertfunction(){
-    var r = confirm("예약을 취소하시겠습니까?");
-    if(r==false){
-        return false;
-    }
+    alert("취소가 완료되었습니다.");
+    location.href="../Front_End/futsal/futmain2.php";    
 }
