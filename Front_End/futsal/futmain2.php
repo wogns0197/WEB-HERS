@@ -10,7 +10,8 @@
 
   <body>
     <header>
-      <h1>HERS</h1><hr>
+      <h1>HERS</h1>
+      <hr/>
     </header>
     
       <div class="right">
@@ -70,7 +71,7 @@
       ?>
           <tbody>
               <td>
-              <MARQUEE scrollAmount=6 direction=up>
+              <MARQUEE scrollAmount=4 direction=up>
                   <section>
                   <table cellSpacing=0 cellPadding=0 width="100%" border=0>
                   <tbody>
@@ -101,10 +102,10 @@
               <?php
           }
           ?>
-          <form action="../../Back_End/reservation_lists.php">
-            <button>예약내역확인</button>
-          </form>
         </tbody></table></section></MARQUEE></td></tbody></table>
+        <form action="../../Back_End/reservation_lists.php">
+        <button id="reserv_confirm">예약내역확인</button>
+      </form>
       </div>
     
 
