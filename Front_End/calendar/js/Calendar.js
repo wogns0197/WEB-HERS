@@ -16,8 +16,11 @@
   function Calendar(settings) {
     var self = this;
     var today = new Date();
+    var today2 = today.setDate(today.getDate() + 1);
     var n = today.toISOString();
+    // var n2 = today2.toISOString();
     var today_date = n.slice(0,10);
+    // var today_date2 = n2.slice(0,10);
     var end_day = today.setMonth(today.getMonth() + 2);
     var end_day2 = new Date(end_day);
     var n2 = end_day2.toISOString();
