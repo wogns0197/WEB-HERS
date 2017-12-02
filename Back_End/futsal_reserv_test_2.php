@@ -153,7 +153,6 @@ session_start();
                     </select>
                 </td>
                 <td class="text-center">
-                    <!-- <?=$today?> -->
                     <input class="hidden" type="text" name="selected_date" value="<?= $date ?>"/>
                     <?= $date ?>
                 </td>

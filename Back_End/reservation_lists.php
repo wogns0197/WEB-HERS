@@ -34,8 +34,9 @@ session_start();
     echo $_POST["modify"];
     $id = $_SESSION['user_id'];
     $name = "web_project";
+    $today = date("Y-m-d", time());
     try{
-      $query = "select * from futsal_manage where user_id = '$id'";
+      $query = "select * from futsal_manage where user_id = 'jh9288' and borrowdate >= date_format(curdate(), '%Y-%m-%d')";
       $db = new PDO("mysql:dbname=$name", "root","root");
       $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
       $rows = $db->query($query);
