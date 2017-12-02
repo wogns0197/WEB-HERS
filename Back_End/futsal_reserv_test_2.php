@@ -33,12 +33,18 @@ session_start();
             <?php
             $_SESSION['place'] = $_GET['where'];
             if(!isset($_SESSION['user_id'])){
-                echo "<p><a href ='login_function/login.php'>Login</a></p>";
+                ?>
+                <p><a href ='login_function/login.php'>Login</a></p>
+                <?php
             }
             else{
                 $user_id = $_SESSION['user_id'];
-                echo "<p>$user_id</p>";
-                echo "<p ><a href = 'login_function/logout.php'>Logout</a></p>";
+                ?>
+                <p><?= $user_id ?></p>
+                <p ><a href = 'login_function/logout.php'>Logout</a></p>
+
+
+                <?php
             }
             // 아스바 이거 로그아웃 오른쪽으로 옮기고 싶은데 쉬발람이 안옮겨지넹;;
             ?>

@@ -34,8 +34,12 @@ session_start();
 
       else{
           $user_id = $_SESSION['user_id'];
-          echo "<p>안녕하세요 $user_id 님.</p>";
-          echo "<p><a href = 'login_function/logout.php'>로그아웃</p>";
+          ?>
+
+          <p><?= $user_id ?></p>
+          <p ><a href = 'login_function/logout.php'>Logout</a></p>
+
+          <?php
       }
 
       print_r($_POST);      
