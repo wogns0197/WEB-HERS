@@ -7,7 +7,7 @@ body, html{
 }
 @font-face{
   font-family: headerfont;
-  src: url(font/norwester.otf);
+  src: url(font/Anson-Regular.otf);
 }
 @font-face {
   font-family: myserif;
@@ -32,42 +32,55 @@ video{
 	z-index : -1;
 }
 header{
-  font-family: myserif;
-  font-size: 15pt;
+  font-family: mylight;
   position: fixed;
-  top: -2%;
+  top: 15.5%;
   margin: 0 auto;
   text-align: center;
   width: 100%;
 }
 header a{
   text-decoration: none;
-  color: black;
+  font-weight: normal;
+  font-size: 35pt;
+  letter-spacing: 0.8pt;
+  color: white;
+  text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.9);
+}
+svg{
+  height: 70px;
+  position: fixed;
 }
 nav{
   font-family: myserif;
+  background-color: rgba(0, 0, 0, 0.4);
+  width: 22%;
+  height: 100%;
   position: fixed;
-  width: 100%;
-  height: 54px;
-  margin: 0 auto;
-  text-align: center;
-  float: left;
-  top: 5.5%;
+}
+nav h2{
+  position: absolute;
+  left: 10%;
+  font-size: 30pt;
 }
 nav ul{
   list-style: none;
+  /*padding-left: 0;*/
+  position: absolute;
+  top: 10%;
 }
 nav ul li{
-  display: inline-block;
-  font-size: 14pt;
+  font-size: 18pt;
   font-family: myserif;
-  padding-right: 2%;
+  margin-bottom: 5%;
+  width: 100%;
 }
 nav ul li a{
   text-decoration: none;
   color: black;
 }
 nav ul li a:hover{
+
 }
 .main p{
   font-size: 30pt;
