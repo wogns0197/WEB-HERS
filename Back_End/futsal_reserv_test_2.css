@@ -1,18 +1,26 @@
-p{
+p:not(.text-center){
 	float: left;
+}
+html{
+	padding-top: 0px;
+}
+body{
+	padding-top: 0px;
 }
 .daterange {
 	/*float: right;*/
 	/*display: inline;*/
 	/*border: 5px red solid;*/
-	padding: 2px;
+	padding: 0px;
 	float: right;
+	
 	/*float: right;*/
 	/*background-color: red;*/
 }
 
 .calendar {
 	/*border: 3px green solid;*/
+
 
 }
 
@@ -23,17 +31,10 @@ p{
 #checking_place {
 	display: none;
 }
-
-
-
-
-.panel-body {
-	margin-left: 0;
-	/*border: 2px red solid;*/
-	text-align: right;
-	/*margin-right: auto;*/
+.panel-body {	
+	/*border: 2px red solid;*/	
+	float: right;	
 }
-
 .panel-body .wish_date{
 	/*padding-right: 1%;*/
 	/*display: inline;*/
@@ -44,6 +45,15 @@ p{
 	/*border: 3px red solid;*/
 /*	margin-left: auto;
 	margin-right: auto;*/
+}
+button{
+	border:0;
+	background-color: rgb(225,225,248);
+	color: rgb(30,138,189);
+	margin-left: 4%;
+	margin-top: 3%;
+	width: 20%;
+	height: 40px;
 }
 
 

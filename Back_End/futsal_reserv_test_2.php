@@ -45,7 +45,7 @@ session_start();
 
         ?>
         <div class="page-header">
-                <h1 class="text-center">HERS</h1>
+            <h1 class="text-center">HERS</h1>
         </div>
 
     </header>
@@ -69,7 +69,7 @@ session_start();
         <!-- <form action="futsal_reserv_test_2.php?where=<?= $_GET["where"] ?>" method="post"> -->
 
         <div class="panel-heading">
-            <p class="text-left">예약진행</p>
+            <!-- <p clas진s="text-left">예약진행</p> -->
         </div>
         
         <div class="panel-body">
@@ -80,13 +80,11 @@ session_start();
                 <div class="wish_date">
                 <span>예약 희망 날짜:</span>
                 </div>
+                <div class="daterange daterange--single"></div>               
 
                 <!-- 캘린더 구현 div/ source from "https://github.com/Baremetrics/calendar" -->
-                <div class="daterange daterange--single"></div>
-               
                 
-               
-                <br><br>
+                <br>
                 
 
 
