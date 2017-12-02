@@ -1,8 +1,5 @@
 <?php
 session_start();
-
-
-
 ?>
 
 <!DOCTYPE html>
@@ -52,6 +49,29 @@ session_start();
     <!-- 이전 페이지에서 예약 선택 정보 가져옴  -->
     <form action="reserv_finish.php" method="post">
     <?php
+      $modify = $_SESSION['modify'];
+      if($modify){
+        try{
+          $manage_ID = $_SESSION['manage_id'];
+          $borroewdate = $_SESSION['borrowdate'];
+          $query1 = "select * from futsal_manage where manage_ID=$manage_ID and borrowdate='$borrowdate'";        
+          $db = new PDO("mysql:dbname=$name", "root","root");
+          $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+          $rows = $db->query($query1);
+          foreach($rows as $row){
+              $purpose = $row['purpose'];
+              $notice = $row['notice'];
+              if($notice == 1){
+                $home = $row['home'];
+                $away = $row['away'];
+                $groupname = $row['groupname'];
+              }
+          }
+        }
+        catch(PDOException $ex){
+            echo "detail :".$ex->getMessage();
+        }
+      }
       $population = $_POST["population"];
       $timearr = $_POST["selected_time"];
       $time = explode(" ",$timearr);
@@ -85,8 +105,22 @@ session_start();
               <option>축구</option>
               <option>농구</option>
               <option>기타행사</option>
-            </select> 
-          <input id = "notice_checked" name = "notice" type="checkbox" unchecked/>공지
+            </select>
+          <?php
+            if($modify == 1){
+              if($notice == 1){
+          ?>
+            <input id = "notice_checked" name = "notice" type="checkbox" checked/>공지
+            <div id="notice_on">
+              <input type="text" placeholder = "home" name = "home" value = "<?= $home ?>" required/>
+              <span > vs </span>
+              <input type="text" placeholder ="away" name="away" value = "<?= $away ?>" required/>
+            </div>
+          <?php
+              }
+              else{
+          ?>
+            <input id = "notice_checked" name = "notice" type="checkbox" unchecked/>공지
           <br>
             <div id="notice_on">
               <input type="text" placeholder = "home" name = "home" required/>

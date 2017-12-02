@@ -1,5 +1,8 @@
 <?php
-    $id = "jaehoon";
+session_start();
+?>
+<?php
+    $id = $_SESSION['user_id'];
     $name = "web_project";
     $val = $_POST["cancel_val"];
     $valarr = explode(" ", $val);

@@ -1,8 +1,5 @@
 <?php
 session_start();
-
-
-
 ?>
 
 
@@ -32,6 +29,51 @@ session_start();
         
             <?php
             $_SESSION['place'] = $_GET['where'];
+            $modify = $_POST["modify_val"];
+            if(!isset($modify)){
+                $modify = false;
+            }
+            else{
+                $id = $_SESSION['user_id'];
+                $name = "web_project";
+                $val = $_POST["modify_val"];
+                $valarr = explode(" ", $val);
+                $manage_ID = $valarr[0];
+                $borrowdate = $valarr[1];
+                $_SESSION['manage_id'] = $manage_ID;
+                $_SESSION['borroewdate'] = $borrowdate;
+                try{
+                    $query1 = "select * from futsal_manage where manage_ID=$manage_ID and borrowdate='$borrowdate'";        
+                    $db = new PDO("mysql:dbname=$name", "root","root");
+                    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                    $rows = $db->query($query1);
+                    foreach($rows as $row){
+                        $modify_place = $row['place'];
+                        $modify_population = $row['people'];
+                        $modify_start = $row['start_time'];
+                    }
+                    if($notice){
+                        try{
+                            $query3 = "delete from purpose_view where manage_ID=$manage_ID and borrowdate='$borrowdate'";
+                            $db->query($query3);
+                        }
+                        catch(PDOException $ex){
+                            echo "detail :".$ex->getMessage();
+                        } 
+                    }
+                }
+                catch(PDOException $ex){
+                    echo "detail :".$ex->getMessage();
+                }
+
+
+
+                $valarr = explode(" ", $modify);
+                $modify_id = $val_arr[0];
+                $modify_borrowdate = $valarr[1];
+                $modify = true;
+            }
+            $_SESSION['modify'] = $modify;
             if(!isset($_SESSION['user_id'])){
                 ?>
                 <p><a href ='login_function/login.php'>Login</a></p>
@@ -42,8 +84,6 @@ session_start();
                 ?>
                 <p><?= $user_id ?></p>
                 <p ><a href = 'login_function/logout.php'>Logout</a></p>
-
-
                 <?php
             }
             // 아스바 이거 로그아웃 오른쪽으로 옮기고 싶은데 쉬발람이 안옮겨지넹;;
@@ -93,13 +133,21 @@ session_start();
         </div>
         <?php //장소받아오고 수용인원 체크
             
-            if(isset($_GET["date"])){
+            if($modify){
+                $date = $modify_borrowdate;                
+            }
+            else if(isset($_GET["date"])){
                 $date = $_GET["date"];
             }
             else{
-                $date = date("Y-m-d", time());
+                $date = date("Y-m-d", time());                
             }
-            $place = $_GET["where"];
+            if(!$modify){
+                $place = $_GET["where"];
+            }
+            else{
+                $place = $modify_place;
+            }
             $admit_min = 0;
             $admit_max = 0;
             if( $place == "풋살장A"){
@@ -125,8 +173,6 @@ session_start();
 
 
         <!-- 시간 테이블 작성-->
-
-
         <table class = "table table-hover text-center">
             <thead>
             <tr>
@@ -145,9 +191,17 @@ session_start();
                     <select name="population">
                         <?php
                             for($i=$admit_min; $i<=$admit_max; $i++){
+                                // if($modify && $i == $modify_population){
+                                if($i == $modify_population){
+                        ?>
+                                <option selected = 'selected'><?= $i ?></option>
+                        <?php
+                                }
+                                else{
                         ?>
                                 <option><?= $i ?></option>
                         <?php
+                                }
                             } 
                         ?>
                     </select>
@@ -163,12 +217,6 @@ session_start();
                 <th class="text-center">예약 시간 선택</th>
             </tr>
             <?php //예약현황 표시
-            if(isset($_GET["date"])){
-                $date = $_GET["date"];
-            }
-            else{
-                $date = date("Y-m-d", time());
-            }
             $start_time = 12;
             $n = 5;
             $name = "web_project";
@@ -188,35 +236,47 @@ session_start();
                     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                     $rows = $db->query($query);
                     $flag = true;
-                    foreach($rows as $row){
-                        $start_a = explode(":",$row["start_time"]);
-                        $start_t = $start_a[0];
-                        $end_a = explode(":", $row["end_time"]);
-                        $end_t = $end_a[0];
-                        if($start_time==$start_t && $end_time==$end_t){
-            ?>
-                    <td class="text-center"> 예약 완료 </td>
-                    <td class="text-center">X</td>
-                        <?php 
-                            $flag = false;
-                            break;
-                        }
-                    }
-                    if($flag){
-                        $timearr = array($start_time,$end_time);
-                        $time = implode(" ",$timearr);
-                        ?>
-                    <td class="text-center"> 
-                        선택 가능 
-                    </td>
-                    <td class="text-center">
-                        <input class="time" type="radio" name="selected_time" value="<?=$time?>"/>
-                    </td>
-                    <?php 
-                    } 
+                    if($modify == 1 && $start_time == $modify_start){
                     ?>
-                </tr>
+                        <td class="text-center"> 예약 수정중 </td> -->
+                        <td>
+                            <input class="time" type="radio" name="selected_time" value="<?=$time?>" selected = 'selected'/>                            
+                        </td>
+                    <?php
+                    }
+                    else{
+                        foreach($rows as $row){
+                            $start_a = explode(":",$row["start_time"]);
+                            $start_t = $start_a[0];
+                            $end_a = explode(":", $row["end_time"]);
+                            $end_t = $end_a[0];
+                        ?>
+                        <?php
+                                if($start_time==$start_t){
+                                    ?>
+                                    <td class="text-center"> 예약 완료 </td>
+                                    <td class="text-center">X</td>
+                                        <?php 
+                                            $flag = false;
+                                            break;
+                                }
+                        }
+                        if($flag){
+                            $timearr = array($start_time,$end_time);
+                            $time = implode(" ",$timearr);
+                            ?>
+                        <td class="text-center"> 
+                            선택 가능 
+                        </td>
+                        <td class="text-center">
+                            <input class="time" type="radio" name="selected_time" value="<?=$time?>"/>
+                        </td>
+                         <?php 
+                        }  
+                        ?>
+                    </tr>
             <?php
+                    }
                 }
                 catch(PDOException $ex){
                     echo "Sorry";

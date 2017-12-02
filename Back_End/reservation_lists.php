@@ -1,8 +1,5 @@
 <?php
 session_start();
-
-
-
 ?>
 
 <!DOCTYPE html>
@@ -34,9 +31,8 @@ session_start();
     echo $_POST["modify"];
     $id = $_SESSION['user_id'];
     $name = "web_project";
-    $today = date("Y-m-d", time());
     try{
-      $query = "select * from futsal_manage where user_id = 'jh9288' and borrowdate >= date_format(curdate(), '%Y-%m-%d')";
+      $query = "select * from futsal_manage where user_id = '$id' and borrowdate >= date_format(curdate(), '%Y-%m-%d')";
       $db = new PDO("mysql:dbname=$name", "root","root");
       $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
       $rows = $db->query($query);
@@ -55,7 +51,7 @@ session_start();
     }
     ?>
     <form action="reserv_cancel.php" method="post" id="cancel"></form>
-    <form action="modify_reserv.php" method="post" id="modify"></form>
+    <form action="futsal_reserv_test_2.php" method="post" id="modify"></form>
     <div id="reserve_wrap">
       <h2>예약 내역</h2>
       <div class="container">
@@ -77,8 +73,8 @@ session_start();
             $valarr = array($manage_ID[$i], $borrowdate[$i]);
             $val = implode(" ",$valarr);
           ?>
-            <th><button name="cancel_val" value="<?= $val ?>" type="submit" form = "cancel">취소</button></th>
             <th><button name="modify_val" value="<?= $val ?>" type="submit" form = "modify">수정</button></th>
+            <th><button name="cancel_val" value="<?= $val ?>" type="submit" form = "cancel">취소</button></th>
             </tr>
           <?php
             }
