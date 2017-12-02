@@ -41,7 +41,7 @@ session_start();
                 $manage_ID = $valarr[0];
                 $borrowdate = $valarr[1];
                 $_SESSION['manage_id'] = $manage_ID;
-                $_SESSION['borroewdate'] = $borrowdate;
+                $_SESSION['borrowdate'] = $borrowdate;
                 try{
                     $query1 = "select * from futsal_manage where manage_ID=$manage_ID and borrowdate='$borrowdate'";        
                     $db = new PDO("mysql:dbname=$name", "root","root");
@@ -65,9 +65,6 @@ session_start();
                 catch(PDOException $ex){
                     echo "detail :".$ex->getMessage();
                 }
-
-
-
                 $valarr = explode(" ", $modify);
                 $modify_id = $val_arr[0];
                 $modify_borrowdate = $valarr[1];

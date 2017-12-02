@@ -53,8 +53,9 @@ session_start();
       if($modify){
         try{
           $manage_ID = $_SESSION['manage_id'];
-          $borroewdate = $_SESSION['borrowdate'];
-          $query1 = "select * from futsal_manage where manage_ID=$manage_ID and borrowdate='$borrowdate'";        
+          $borrowdate = $_SESSION['borrowdate'];
+          $name = "web_project";
+          $query1 = "select * from futsal_manage where manage_ID=$manage_ID and borrowdate = '$borrowdate'";        
           $db = new PDO("mysql:dbname=$name", "root","root");
           $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
           $rows = $db->query($query1);
@@ -111,6 +112,7 @@ session_start();
               if($notice == 1){
           ?>
             <input id = "notice_checked" name = "notice" type="checkbox" checked/>공지
+            <br>
             <div id="notice_on">
               <input type="text" placeholder = "home" name = "home" value = "<?= $home ?>" required/>
               <span > vs </span>
@@ -121,17 +123,29 @@ session_start();
               else{
           ?>
             <input id = "notice_checked" name = "notice" type="checkbox" unchecked/>공지
-          <br>
-            <div id="notice_on">
-              <input type="text" placeholder = "home" name = "home" required/>
-              <span > vs </span>
-              <input type="text" placeholder ="away" name="away" required/>
+          <?php
+              }
+          ?>
+            <div>
+            <span>단체명 : </span> <input type="text" name="groupname" value = <?= $groupname ?> required/>
             </div>
-          
-
-          <div>
-          <span>단체명 : </span> <input type="text" name="groupname" required/>
-          </div>
+          <?php
+            }
+            else{
+          ?>
+            <input id = "notice_checked" name = "notice" type="checkbox" unchecked/>공지
+            <br>
+              <div id="notice_on">
+                <input type="text" placeholder = "home" name = "home" required/>
+                <span > vs </span>
+                <input type="text" placeholder ="away" name="away" required/>
+              </div>
+            <div>
+            <span>단체명 : </span> <input type="text" name="groupname" required/>
+            </div>
+          <?php
+            }
+          ?>
 
 
         </div>
