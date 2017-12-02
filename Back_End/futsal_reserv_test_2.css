@@ -1,5 +1,6 @@
-p:not(.text-center){
+p:not(.text-center):not(.right){
 	float: left;
+	padding: 5px;
 }
 html{
 	padding-top: 0px;
@@ -7,20 +8,25 @@ html{
 body{
 	padding-top: 0px;
 }
+h1{
+	font-size: 20pt;
+	
+}
+.right{
+	
+}
 .daterange {
 	/*float: right;*/
 	/*display: inline;*/
 	/*border: 5px red solid;*/
-	padding: 0px;
+	margin-right: 10px;
 	float: right;
 	
 	/*float: right;*/
 	/*background-color: red;*/
 }
-
-.calendar {
-	/*border: 3px green solid;*/
-
+.container{
+	padding-right: 1px;
 
 }
 
@@ -32,19 +38,14 @@ body{
 	display: none;
 }
 .panel-body {	
-	/*border: 2px red solid;*/	
 	float: right;	
+	padding: 0px;
 }
-.panel-body .wish_date{
-	/*padding-right: 1%;*/
-	/*display: inline;*/
-	/*border: 5px red solid;*/
-
+.panel-heading{
+	padding: 0;
 }
-.table {
-	/*border: 3px red solid;*/
-/*	margin-left: auto;
-	margin-right: auto;*/
+.container{
+	padding:0px;
 }
 button{
 	border:0;
@@ -54,7 +55,18 @@ button{
 	margin-top: 3%;
 	width: 20%;
 	height: 40px;
+	transition: 0.3s;
+	transform:scale(1);
 }
+button:hover{
+	transition: 0.3s;
+	transform:scale(1.1);
+}
+.tb1{
+	width: 35%;
+}
+
+
 
 
 

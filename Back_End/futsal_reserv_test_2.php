@@ -18,7 +18,7 @@ session_start();
     <!-- <script src="main.js" type="text/javascript"></script> -->
     <link rel="stylesheet" href="../Front_End/calendar/css/application.css" />
     <link rel="stylesheet" href="../Front_End/calendar/css/home.css" />
-    <link rel="stylesheet" href="futsal_reserv_test_2.css?ver=5" />
+    <link rel="stylesheet" href="futsal_reserv_test_2.css" />
 
     <script src="http://ajax.googleapis.com/ajax/libs/prototype/1.7.3.0/prototype.js" type="text/javascript"></script>
     <script src="../Front_End/calendar/js/vendor/jquery.js"></script>
@@ -29,21 +29,20 @@ session_start();
   </head>
   <body>
     <header>
-        <?php
-        $_SESSION['place'] = $_GET['where'];
-        if(!isset($_SESSION['user_id'])){
-            echo "<p><a href ='login_function/login.php'>로그인</a></p>";
-        }
-
-        else{
-            $user_id = $_SESSION['user_id'];
-            echo "<p>안녕하세요 $user_id 님.</p>";
-            echo "<p><a href = 'login_function/logout.php'>로그아웃</a></p>";
-        }
-
-
-
-        ?>
+        
+            <?php
+            $_SESSION['place'] = $_GET['where'];
+            if(!isset($_SESSION['user_id'])){
+                echo "<p><a href ='login_function/login.php'>Login</a></p>";
+            }
+            else{
+                $user_id = $_SESSION['user_id'];
+                echo "<p>$user_id</p>";
+                echo "<p ><a href = 'login_function/logout.php'>Logout</a></p>";
+            }
+            // 아스바 이거 로그아웃 오른쪽으로 옮기고 싶은데 쉬발람이 안옮겨지넹;;
+            ?>
+        
         <div class="page-header">
             <h1 class="text-center">HERS</h1>
         </div>
@@ -52,7 +51,6 @@ session_start();
 
     <nav class="navbar-default">
         <div class="container">
-
           <ul class="nav nav-pills nav-justified">
             <li><a href="../main/main.html">Home</a></li>
             <li><a href="#about">About</a></li>
@@ -77,10 +75,8 @@ session_start();
                 date_default_timezone_set('Asia/Seoul'); 
             ?>
                 <br><br>
-                <div class="wish_date">
-                <span>예약 희망 날짜:</span>
-                </div>
-                <div class="daterange daterange--single"></div>               
+                
+                <div class="daterange daterange--single">예약 희망 날짜:</div>               
 
                 <!-- 캘린더 구현 div/ source from "https://github.com/Baremetrics/calendar" -->
                 
@@ -128,7 +124,7 @@ session_start();
         <table class = "table table-hover text-center">
             <thead>
             <tr>
-                <th class="text-center">경기장(수용인원)</th>
+                <th class="text-center tb1">경기장(수용인원)</th>
                 <th class="text-center">희망 인원</th>
                 <th class="text-center">선택 날짜</th>
             </tr>
@@ -226,7 +222,7 @@ session_start();
             ?>
         </tbody>
         </table>
-            <p class="text-center"><button id = "button">예약하기</button></p>
+            <p class="text-center"><button id = "button2">예약하기</button></p>
         </div>
       </div>
     </div>
