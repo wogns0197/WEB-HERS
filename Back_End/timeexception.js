@@ -1,6 +1,6 @@
 var flag=false;
 window.onload = function(){
-    document.getElementById("button").onclick = button;
+    document.getElementById("button2").onclick = button;
     var times = document.getElementsByClassName("time");
     for(var i = 0; i< times.length; i++){
         times[i].onclick = time_empty_check;
