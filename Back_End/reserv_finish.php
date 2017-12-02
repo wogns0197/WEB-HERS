@@ -7,12 +7,23 @@ session_start();
 
 <!DOCTYPE html>
 <html>
-  <head>
+    <header>
+          <h1><a href="#home">HERS</a></h1>
+          <hr/>
+        </header>
+        <nav>
+          <ul>
+            <li><a href="../Front_End/main/main.html">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+    </header>
+
     <meta charset="utf-8">
     <title>Hanyang Erica Rental Site</title>
-    <link rel="stylesheet" href="../Front_end/futsal_reserve_page/futsal_reserv.css">
-    <link rel="stylesheet" href="../Front_end/main/main.css">
-    <link rel="stylesheet" href="../Front_end/futsal_reserv_confirmation.css?ver=1">
+    
+    <link rel="stylesheet" href="reserv_finish.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?php
     try{
@@ -97,20 +108,11 @@ session_start();
 
     <?php
     ?>
-    <header id="home">
-      <h1><a href="#home">HERS</a></h1>
-    </header>
-    <nav>
-      <ul>
-        <li><a href="../Front_End/main/main.html">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
+    
 
     <?php
     if($flag){?>
-      <!-- 성공한 예약 내역 출력해주세요 -->
+    
     <?php
     }
     else{?>

@@ -1,0 +1,12 @@
+a{
+	text-decoration: none;
+}
+a:visited{
+	color: black;
+}
+h1{
+	text-align: center;
+	color: black;
+	font-size: 19pt;
+	margin-bottom: 0px;
+}
