@@ -58,7 +58,7 @@ session_start();
     <nav class="navbar-default">
         <div class="container">
           <ul class="nav nav-pills nav-justified">
-            <li><a href="../main/main.html">Home</a></li>
+            <li><a href="../Front_End/main/main.html">Home</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
