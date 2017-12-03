@@ -20,9 +20,12 @@ session_start();
           $user_id = $_SESSION['user_id'];
           ?>
 
-          <p><?= $user_id ?></p>
-          <p ><a href = 'login_function/logout.php'>Logout</a></p>
-
+          <div class="top">
+            <p id="userleft"><?= $user_id ?></p>
+            <p id="logoutright"><a href = 'login_function/logout.php'>Logout</a></p>
+            <hr id="tophr" />
+            <br/>
+          </div>
           <?php
       }      
       $name = "web_project";
@@ -31,8 +34,8 @@ session_start();
       $borrowdate = $_POST["selected_date"];
       $modifydate = $_SESSION['m_borrowdate'];
       $m_manage_id = $_SESSION['m_manage_id'];
-      $start_time = $time[0].":00:00";
-      $end_time = $time[1].":00:00";
+      $start_time = $time[0].":00";
+      $end_time = $time[1].":00";
       $place = $_POST["place"];
       $purpose = $_POST["purpose"];
       $notice = $_POST["notice"];
@@ -161,14 +164,18 @@ session_start();
     }
     else{?>
       <div class="momtong">
-        <p>시간  <?= $start_time ?> - <?= $end_time ?></p>
-        <p>대여날짜 <?=$borrowdate?> </p>
+        <p>시간   :  <span class="strong"> <?= $start_time ?> - <?= $end_time ?></span></p>
+        <p>대여날짜   :   <span class="strong"><?=$borrowdate?></span></p>
         <!-- <p>수정날짜<?=$modifydate?></p> -->
-        <p>장소 : <?=$place?></p>
-        <p>목적 : <?=$purpose?></p>
+        <p>장소 : <span class="strong"><?=$place?></span></p>
+        <p>목적 : <span class="strong"><?=$purpose?></span></p>
         <?php
         if($notice==1)?>
-          <p>공지여부 : O</p>
+          <p>공지여부 : <span class="strong">O</span></p>
+        
+
+          
+
       </div>
     <?php
     }
