@@ -16,13 +16,14 @@
   function Calendar(settings) {
     var self = this;
     var today = new Date();
-    // var tmptoday = new Date();
+    var tmptoday = new Date();
+    tmptoday.setDate(tmptoday.getDate() + 1);
     // var today2 = today.setDate(today.getDate() + 1);
     var n = today.toISOString();
-    // var n2 = tmptoday.toISOString();
+    var n3 = tmptoday.toISOString();
     // var n2 = today2.toISOString();
     var today_date = n.slice(0,10);
-    // var today_date2 = n2.slice(0,10);
+    var today_date2 = n3.slice(0,10);
     var end_day = today.setMonth(today.getMonth() + 2);
     var end_day2 = new Date(end_day);
     var n2 = end_day2.toISOString();
@@ -55,13 +56,13 @@
     this.orig_end_date =      null;
     this.orig_current_date =  null;
 
-    this.earliest_date =  settings.earliest_date ? moment(settings.earliest_date)
-                          : moment(today_date);
+    this.earliest_date =  settings.earliest_date ? moment(today_date)
+                          : moment(today_date2);
     this.latest_date =    settings.latest_date ? moment(settings.latest_date)
                           : moment(end_date);
     this.end_date =       settings.end_date ? moment(settings.end_date)
                           : (this.type == 'double' ? moment() : null);
-    this.start_date =     settings.start_date ? moment(settings.start_date)
+    this.start_date =     settings.start_date ? moment(today_date)
                           : (this.type == 'double' ? this.end_date.clone().subtract(1, 'month') : null);
     this.current_date =   settings.current_date ? moment(today_date)
                           : (this.type == 'single' ? moment() : null);
