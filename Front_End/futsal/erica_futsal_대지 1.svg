@@ -29,7 +29,10 @@
 	.st12{font-family:'AdobeMyungjoStd-Medium-KSCpc-EUC-H';}
 	.st13{font-size:21.6069px;}
 	.st14{opacity:0.1;fill:#8FFFFF;}
+	.st14:hover{opacity:0.4;}
 	.st15{opacity:0.1;fill:#8FFFFF;enable-background:new    ;}
+	.st15:hover{opacity:0.4;}
+	
 	.st16{font-size:27.246px;}
 </style>
 <switch>
