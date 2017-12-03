@@ -90,7 +90,7 @@ button:hover:before,button:hover:after {
     border: 1px solid #888;
     width: 70%; /* Could be more or less, depending on screen size */
     border-radius: 10px;
-    
+
 }
 
 .close {
@@ -132,6 +132,3 @@ button:hover:before,button:hover:after {
 	font-size: 12pt;
 	color: #1AAB8A;
 }
-
-
-
