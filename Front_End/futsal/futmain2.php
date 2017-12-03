@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -60,6 +63,21 @@
 
         <table cellSpacing=0 cellPadding=0 width="100%" class="momtong" >
           <?php
+          if(!isset($_POST['modify_val'])){
+            $_SESSION['modify'] = false;
+          }
+          else{
+              $_SESSION['modify'] = true;
+              $id = $_SESSION['user_id'];
+              $name = "web_project";
+              $val = $_POST["modify_val"];
+              $valarr = explode(" ", $val);
+              $manage_ID = $valarr[0];
+              $borrowdate = $valarr[1];
+              $_SESSION['m_manage_id'] = $manage_ID;
+              $_SESSION['m_borrowdate'] = $borrowdate;
+          }
+          $modify = $_SESSION['modify'];
           date_default_timezone_set('Asia/Seoul');
           $today = date("Y-m-d",time());
           try{

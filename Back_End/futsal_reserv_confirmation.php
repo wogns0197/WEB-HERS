@@ -80,6 +80,10 @@ session_start();
       $end_time = $time[1].":00";
       $borrow_date = $_POST["selected_date"];
       $place = $_POST["place"];
+      echo "post : ";
+      print_r($_POST);
+      echo "session : ";
+      print_r($_SESSION);
     ?>
     
     <div id="confirm_wrap">

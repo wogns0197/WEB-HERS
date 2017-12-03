@@ -28,7 +28,6 @@ session_start();
 
     <!-- db에서 유저 아이디 써서 예약 내역 불러옴 -->
     <?php
-    echo $_POST["modify"];
     $id = $_SESSION['user_id'];
     $name = "web_project";
     try{
@@ -51,7 +50,7 @@ session_start();
     }
     ?>
     <form action="reserv_cancel.php" method="post" id="cancel"></form>
-    <form action="futsal_reserv_test_2.php" method="post" id="modify"></form>
+    <form action="../Front_End/futsal/futmain2.php" method="post" id="modify"></form>
     <div id="reserve_wrap">
       <h2>예약 내역</h2>
       <div class="container">

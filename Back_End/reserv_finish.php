@@ -37,9 +37,7 @@ session_start();
           <p ><a href = 'login_function/logout.php'>Logout</a></p>
 
           <?php
-      }
-
-      print_r($_POST);      
+      }      
       $name = "web_project";
       $time = explode(" ",$_POST["time"]);
       $id = $_SESSION['user_id'];
@@ -51,6 +49,10 @@ session_start();
       $place = $_POST["place"];
       $purpose = $_POST["purpose"];
       $notice = $_POST["notice"];
+      echo "post : ";
+      print_r($_POST);
+      echo "session : ";
+      print_r($_SESSION);
       if($notice === "on"){
         $notice = 1;
       }

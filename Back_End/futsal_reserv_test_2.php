@@ -29,48 +29,36 @@ session_start();
         
             <?php
             $_SESSION['place'] = $_GET['where'];
-            $modify = $_POST["modify_val"];
-            if(!isset($modify)){
-                $modify = false;
-            }
-            else{
+            $modify = $_SESSION['modify'];
+            if($modify){
                 $id = $_SESSION['user_id'];
                 $name = "web_project";
-                $val = $_POST["modify_val"];
-                $valarr = explode(" ", $val);
-                $manage_ID = $valarr[0];
-                $borrowdate = $valarr[1];
-                $_SESSION['manage_id'] = $manage_ID;
-                $_SESSION['borrowdate'] = $borrowdate;
+                $m_manage_ID = $_SESSION['m_manage_id'];
+                $m_borrowdate = $_SESSION['m_borrowdate'];
                 try{
-                    $query1 = "select * from futsal_manage where manage_ID=$manage_ID and borrowdate='$borrowdate'";        
+                    $query1 = "select * from futsal_manage where manage_ID=$m_manage_ID and borrowdate='$m_borrowdate'";        
                     $db = new PDO("mysql:dbname=$name", "root","root");
                     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                     $rows = $db->query($query1);
                     foreach($rows as $row){
-                        $modify_place = $row['place'];
-                        $modify_population = $row['people'];
-                        $modify_start = $row['start_time'];
+                        $m_population = $row['people'];
+                        $m_start = $row['start_time'];
+                        $m_notice = $row['notice'];
                     }
-                    if($notice){
-                        try{
-                            $query3 = "delete from purpose_view where manage_ID=$manage_ID and borrowdate='$borrowdate'";
-                            $db->query($query3);
-                        }
-                        catch(PDOException $ex){
-                            echo "detail :".$ex->getMessage();
-                        } 
-                    }
+                    // if($m_notice){
+                    //     try{
+                    //         $query3 = "delete from purpose_view where manage_ID=$m_manage_ID and borrowdate='$m_borrowdate'";
+                    //         $db->query($query3);
+                    //     }
+                    //     catch(PDOException $ex){
+                    //         echo "detail :".$ex->getMessage();
+                    //     } 
+                    // }
                 }
                 catch(PDOException $ex){
                     echo "detail :".$ex->getMessage();
                 }
-                $valarr = explode(" ", $modify);
-                $modify_id = $val_arr[0];
-                $modify_borrowdate = $valarr[1];
-                $modify = true;
             }
-            $_SESSION['modify'] = $modify;
             if(!isset($_SESSION['user_id'])){
                 ?>
                 <p><a href ='login_function/login.php'>Login</a></p>
@@ -130,21 +118,16 @@ session_start();
         </div>
         <?php //장소받아오고 수용인원 체크
             
-            if($modify){
-                $date = $modify_borrowdate;                
-            }
-            else if(isset($_GET["date"])){
+            if(isset($_GET["date"])){
                 $date = $_GET["date"];
+            }
+            else if($modify){
+                $date = $m_borrowdate;                
             }
             else{
                 $date = date("Y-m-d", time());                
             }
-            if(!$modify){
-                $place = $_GET["where"];
-            }
-            else{
-                $place = $modify_place;
-            }
+            $place = $_GET["where"];
             $admit_min = 0;
             $admit_max = 0;
             if( $place == "풋살장A"){
@@ -189,7 +172,7 @@ session_start();
                         <?php
                             for($i=$admit_min; $i<=$admit_max; $i++){
                                 // if($modify && $i == $modify_population){
-                                if($i == $modify_population){
+                                if($i == $m_population){
                         ?>
                                 <option selected = 'selected'><?= $i ?></option>
                         <?php
@@ -233,7 +216,7 @@ session_start();
                     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                     $rows = $db->query($query);
                     $flag = true;
-                    if($modify == 1 && $start_time == $modify_start){
+                    if($modify == 1 && $start_time == $m_start){
                     ?>
                         <td class="text-center"> 예약 수정중 </td> -->
                         <td>
