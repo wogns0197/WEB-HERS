@@ -6,9 +6,28 @@ session_start();
   <head>
     <meta charset="utf-8">
     <title>Futsal Field Rental</title>
+    <link rel="stylesheet" href="../main/main.css">
     <link rel="stylesheet" href="notice.css">
     <link rel="stylesheet" href="futmain.css?ver=10">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+     <script type="text/javascript"src="http://code.jquery.com/jquery-latest.min.js"></script>
+     <script type="text/javascript">
+       $(document).ready( function(){
+         $("#menuicon").click(function () {
+           $("#menubar").animate({left: 0}, 300 );
+           $("#xicon").animate({left: 0}, 300 );
+           $("#menuicon").fadeOut(300);
+         });
+
+         $("#xicon").click(function () {
+           $("#menubar").animate({left: "-22%"}, 300 );
+           $("#xicon").animate({left: "-22%"}, 300 );
+           $("#menuicon").fadeIn(300);
+         });
+
+       });
+     </script>
   </head>
 
   <body>
@@ -16,13 +35,51 @@ session_start();
       <h1>HERS</h1>
       <hr/>
     </header>
-    
+
+    <a id="menuicon"><svg xmlns="http://www.w3.org/2000/svg" data-name="Layer 1" viewBox="0 0 100 125" x="0px" y="0px"><title>54 all</title><path d="M74.46,49H25.54a1,1,0,0,0,0,2H74.46a1,1,0,0,0,0-2Z"/><path d="M74.46,28.73H25.54a1,1,0,0,0,0,2H74.46a1,1,0,0,0,0-2Z"/><path d="M74.46,69.27H25.54a1,1,0,1,0,0,2H74.46a1,1,0,1,0,0-2Z"/>
+    </svg></a>
+
+    <a id="xicon"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 100 125" version="1.1" x="0px" y="0px"><title>Bold Cross</title><desc>Created with Sketch.</desc><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g fill="#000000"><path d="M48,48 L48,18.8873016 C48,17.7827321 48.8954305,16.8873016 50,16.8873016 C51.1045695,16.8873016 52,17.7827321 52,18.8873016 L52,48 L81.1126984,48 C82.2172679,48 83.1126984,48.8954305 83.1126984,50 C83.1126984,51.1045695 82.2172679,52 81.1126984,52 L52,52 L52,81.1126984 C52,82.2172679 51.1045695,83.1126984 50,83.1126984 C48.8954305,83.1126984 48,82.2172679 48,81.1126984 L48,52 L18.8873016,52 C17.7827321,52 16.8873016,51.1045695 16.8873016,50 C16.8873016,48.8954305 17.7827321,48 18.8873016,48 L48,48 L48,48 Z" transform="translate(50.000000, 50.000000) rotate(45.000000) translate(-50.000000, -50.000000) "/></g></g>
+    </svg></a>
+
+    <nav id="menubar">
+      <dl>
+        <dt id="title">HERS</dt>
+
+        <dt>MAIN</dt><hr color="black">
+        <dd>
+          <ul class="menus">
+            <li><a href="main.html">Home</a></li>
+            <li><a href="#">About Us</a></li>
+          </ul>
+        </dd>
+
+        <dt>USER</dt><hr color="black">
+        <dd>
+          <ul class="menus">
+            <li><a href="#">Login</a></li>
+            <li><a href="#">Logout</a></li>
+            <li><a href="#">My Page</a></li>
+          </ul>
+        </dd>
+
+        <dt>RENTAL</dt><hr color="black">
+        <dd>
+          <ul class="menus">
+            <li><a href="#">Lecture Room</a></li>
+            <li><a href="#">Futsal Field</a></li>
+          </ul>
+        </dd>
+      </dl>
+
+    </nav>
+
       <div class="right">
 
           <div id="map">
             <object id = "ericamap" type="image/svg+xml" data="erica_futsal_대지 1.svg" >현재 브라우져는 object를 지원하지 않습니다.</object>
           </div>
- 
+
           <script type="text/javascript" src="futmain.js?ver=11"></script>
 
           <div id="futsal_modal" class="modal">
@@ -31,16 +88,16 @@ session_start();
               <button id="futsal_A">풋살장A</button>
               <button id="futsal_B">풋살장B</button>
             </div>
-            
+
           </div>
 
           <div id="soccer_modal" class="modal">
             <div class="modal-content">
               <span class="close">&times;</span>
               <button id="soccer">잔디구장</button>
-              
+
             </div>
-            
+
           </div>
 
 
@@ -48,9 +105,9 @@ session_start();
             <div class="modal-content">
               <span class="close">&times;</span>
               <button id="stadium">대운동장</button>
-              
+
             </div>
-            
+
           </div>
 
 
@@ -125,10 +182,10 @@ session_start();
         <button id="reserv_confirm">예약내역확인</button>
       </form>
       </div>
-    
 
 
- 
+
+
 
 
 
