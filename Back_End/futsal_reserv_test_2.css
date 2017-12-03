@@ -3,14 +3,14 @@ p:not(.text-center):not(.right){
 	padding: 5px;
 }
 html{
-	padding-top: 0px;
+	padding-top: 15px;
 }
 body{
 	padding-top: 0px;
 }
 h1{
 	font-size: 20pt;
-	
+	margin-bottom: 35px;
 }
 .right{
 

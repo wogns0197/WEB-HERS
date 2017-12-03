@@ -4,19 +4,6 @@ session_start();
 
 <!DOCTYPE html>
 <html>
-    <header>
-          <h1><a href="#home">HERS</a></h1>
-          <hr/>
-        </header>
-        <nav>
-          <ul>
-            <li><a href="../Front_End/main/main.html">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </nav>
-    </header>
-
     <meta charset="utf-8">
     <title>Hanyang Erica Rental Site</title>
     
@@ -100,7 +87,7 @@ session_start();
             $db->query($query2);
           }
           catch(PDOException $ex){
-            echo "detail :".$ex->getMessage();
+            // echo "detail :".$ex->getMessage();
             $flag = false;
             ?>
             <script src="modify_fail.js" type = "text/javascript"></script>            
@@ -119,7 +106,7 @@ session_start();
               $db->query($query2);
             }
             catch(PDOException $ex){
-              echo "detail :".$ex->getMessage();
+              // echo "detail :".$ex->getMessage();
               $flag = false;
             }
           }
@@ -156,14 +143,33 @@ session_start();
     <?php
     ?>
     
-
+    <!-- $name = "web_project";
+    $time = explode(" ",$_POST["time"]);
+    $id = $_SESSION['user_id'];
+    $borrowdate = $_POST["selected_date"];
+    $modifydate = $_SESSION['m_borrowdate'];
+    $m_manage_id = $_SESSION['m_manage_id'];
+    $start_time = $time[0].":00:00";
+    $end_time = $time[1].":00:00";
+    $place = $_POST["place"];
+    $purpose = $_POST["purpose"];
+    $notice = $_POST["notice"]; -->
     <?php
     if($flag){?>
-    
+      <p>시간<?= $time?></p>
     <?php
     }
     else{?>
-      
+      <div class="momtong">
+        <p>시간  <?= $start_time ?> - <?= $end_time ?></p>
+        <p>대여날짜 <?=$borrowdate?> </p>
+        <!-- <p>수정날짜<?=$modifydate?></p> -->
+        <p>장소 : <?=$place?></p>
+        <p>목적 : <?=$purpose?></p>
+        <?php
+        if($notice==1)?>
+          <p>공지여부 : O</p>
+      </div>
     <?php
     }
     ?>

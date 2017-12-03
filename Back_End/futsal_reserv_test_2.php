@@ -66,10 +66,9 @@ session_start();
             // 아스바 이거 로그아웃 오른쪽으로 옮기고 싶은데 쉬발람이 안옮겨지넹;;
             ?>
         
-        <div class="page-header">
+        <!-- <div class="page-header"> -->
             <h1 class="text-center">HERS</h1>
-        </div>
-
+        <!-- </div> -->
     </header>
 
     <nav class="navbar-default">

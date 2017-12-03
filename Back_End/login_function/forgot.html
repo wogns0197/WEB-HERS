@@ -6,22 +6,30 @@
 	<meta charset="utf-8"/>
 </head>
 <body>
+
 	
 	<main>
 		<section>
+		<button id="q1">ID</button>
+		<button id="q2">PW</button>
+
+
+		<form action="find_id.php" method="post" id="find_id">
+
 			
-			<button id="q1">ID</button>
 			
-			<button id="q2">PW</button>
+			
 			<br/>
 			<div class="forgotid">
 				<input type="text" name="name" placeholder="Name" this.style.color='black'; id="name">
 				<input type="text" name="sid" placeholder="Student id" this.style.color='black';>
 			
 				<footer>
-					<button id="bottom">FIND ID!</button>
+					<button id="bottom" type = "submit" form="find_id">FIND ID!</button>
 				</footer>
 			</div>
+		</form>
+
 			<div class="forgotpw">
 				<input type="text" name="email" placeholder="Email" this.style.color='black'; id="email">
 				<br/>
@@ -68,6 +76,7 @@
 		</section>
 		
 	</main>
+
 
 	
 </body>
