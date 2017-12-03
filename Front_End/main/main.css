@@ -56,8 +56,8 @@ nav{
   background-color: rgba(0, 0, 0, 0.4);
   width: 22%;
   height: 100%;
-  position: fixed;
-  visibility: hidden;
+  position: absolute;
+  left: -25%;
 }
 nav h2{
   position: absolute;
