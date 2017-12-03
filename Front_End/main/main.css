@@ -57,6 +57,7 @@ nav{
   width: 22%;
   height: 100%;
   position: fixed;
+  visibility: hidden;
 }
 nav h2{
   position: absolute;
@@ -74,6 +75,7 @@ nav ul li{
   font-family: myserif;
   margin-bottom: 5%;
   width: 100%;
+
 }
 nav ul li a{
   text-decoration: none;
