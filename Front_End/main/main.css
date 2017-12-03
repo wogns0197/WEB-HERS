@@ -51,6 +51,10 @@ svg{
   height: 70px;
   position: fixed;
 }
+#xicon{
+  position: absolute;
+  left: -25%;
+}
 nav{
   font-family: myserif;
   background-color: rgba(0, 0, 0, 0.4);
