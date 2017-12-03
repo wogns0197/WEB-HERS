@@ -62,7 +62,7 @@ svg{
   cursor: pointer;
 }
 #xicon{
-  z-index: 10;
+  z-index: 20;
   position: absolute;
   left: -22%;
 }
@@ -73,30 +73,40 @@ nav{
   height: 100%;
   position: absolute;
   left: -22%;
+  z-index: 10;
 }
-nav ul{
+nav dl{
   list-style: none;
   position: absolute;
   left: 10%;
   top: 4%;
-  border: 2px solid blue;
 }
-/*nav {
-  font-size: 19pt;
+nav dl dt{
+  font-size: 20pt;
   font-family: myserif;
   margin-top: 15%;
 }
 #title{
   font-size: 25pt;
   font-weight: bold;
-}*/
-nav ul li{
+}
+nav dl dd{
   font-size: 16pt;
   font-family: myserif;
   padding-left: 0;
   margin-left: 0;
+  list-style: none;
 }
-nav ul li a{
+.menus{
+  margin-top: 0;
+  padding-left: 0;
+  margin-left: 0;
+  list-style: none;
+}
+.menus li{
+
+}
+.menus li a{
   text-decoration: none;
   color: black;
 }
