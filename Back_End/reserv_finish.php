@@ -102,7 +102,7 @@ session_start();
         if($count==0){
           if($notice){
             try{
-              $query2 = "insert into purpose_view values((select manage_ID from futsal_manage where user_id = '$id' and borrowdate = '$borrowdate' and start_time = '$start_time' and end_time = '$end_time'),'$place','$home','$away','$borrowdate','$start_time','$end_time')";
+              $query2 = "insert into purpose_view values((select manage_ID from futsal_manage where place = '$place' and user_id = '$id' and borrowdate = '$borrowdate' and start_time = '$start_time' and end_time = '$end_time'),'$place','$home','$away','$borrowdate','$start_time','$end_time')";
               $db->query($query2);
             }
             catch(PDOException $ex){
