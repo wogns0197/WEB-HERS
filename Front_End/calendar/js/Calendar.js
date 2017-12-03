@@ -16,8 +16,10 @@
   function Calendar(settings) {
     var self = this;
     var today = new Date();
-    var today2 = today.setDate(today.getDate() + 1);
+    // var tmptoday = new Date();
+    // var today2 = today.setDate(today.getDate() + 1);
     var n = today.toISOString();
+    // var n2 = tmptoday.toISOString();
     // var n2 = today2.toISOString();
     var today_date = n.slice(0,10);
     // var today_date2 = n2.slice(0,10);
@@ -61,7 +63,7 @@
                           : (this.type == 'double' ? moment() : null);
     this.start_date =     settings.start_date ? moment(settings.start_date)
                           : (this.type == 'double' ? this.end_date.clone().subtract(1, 'month') : null);
-    this.current_date =   settings.current_date ? moment(settings.current_date)
+    this.current_date =   settings.current_date ? moment(today_date)
                           : (this.type == 'single' ? moment() : null);
 
     this.presets =        settings.presets == false || this.type == 'single' ? false : true;
