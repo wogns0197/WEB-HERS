@@ -61,6 +61,7 @@ session_start();
       $groupname = $_POST["groupname"];
       $db = new PDO("mysql:dbname=$name", "root","root");
       $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+      $flag = true;      
       if($_SESSION['modify']==1){
         $query1 = "update futsal_manage set borrowdate='$borrowdate',start_time='$start_time',end_time='$end_time',place='$place',purpose='$purpose',notice='$notice',home='$home',away='$away',people=$population,groupname='$groupname' where manage_ID=$m_manage_id and borrowdate='$modifydate'";
       }
@@ -73,10 +74,11 @@ session_start();
         foreach($check as $a){
           $count = $a['count(*)'];
         }
-        $db->query($query1);        
+        $db->query($query1);  
       }
       catch(PDOException $ex){
         echo "detail : ".$ex->getMessage();
+        $flag = false;
       }
       if($_SESSION['modify']==1){
         if($notice){
@@ -86,6 +88,10 @@ session_start();
           }
           catch(PDOException $ex){
             echo "detail :".$ex->getMessage();
+            $flag = false;
+          ?>
+            <script src="modify_fail.js" type = "text/javascript"></script>            
+          <?php
           }
         }
         else{
@@ -95,8 +101,15 @@ session_start();
           }
           catch(PDOException $ex){
             echo "detail :".$ex->getMessage();
+            $flag = false;
+            ?>
+            <script src="modify_fail.js" type = "text/javascript"></script>            
+            <?php
           }
         }
+        ?>
+        <script src="modify_success.js" type = "text/javascript"></script>
+        <?php  
       }
       else{
         if($count==0){
@@ -107,12 +120,12 @@ session_start();
             }
             catch(PDOException $ex){
               echo "detail :".$ex->getMessage();
+              $flag = false;
             }
           }
         ?>
         <script src="success.js" type = "text/javascript"></script>
       <?php
-        $flag = true;
         }
         else{?>
           <script src="fail.js" type = "text/javascript"></script>
@@ -124,9 +137,16 @@ session_start();
     catch(PDOException $ex){
       echo "Sorry";
       echo "detail :".$ex->getMessage();
+      if($modify){
+    ?>
+      <script src="modify_fail.js" type = "text/javascript"></script>
+    <?php
+      }
+      else{
     ?>
       <script src="fail.js" type = "text/javascript"></script>
     <?php
+      }
       $flag = false;
     }
     ?>

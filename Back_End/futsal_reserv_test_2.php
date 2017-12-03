@@ -259,7 +259,19 @@ session_start();
             ?>
         </tbody>
         </table>
-            <p class="text-center"><button id = "button2">예약하기</button></p>
+            <p class="text-center"><button id = "button2">
+            <?php if($_SESSION['modify']){
+            ?>
+                수정
+            <?php
+            }
+            else{
+            ?>
+              예약
+            <?php
+            }?>    
+            하기
+            </p>
         </div>
       </div>
     </div>

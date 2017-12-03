@@ -151,7 +151,18 @@ session_start();
         </div>
         <hr/>
         <div class="buttons">
-          <button id="alert" type="submit">예약 신청</button>
+          <button id="alert" type="submit">예약
+            <?php if($_SESSION['modify']){
+            ?>
+                수정
+            <?php
+            }
+            else{
+            ?>
+              신청
+            <?php
+            }?>
+          </button>
         </div>
     </div>
     </form>
