@@ -8,7 +8,7 @@ session_start();
     <title>Futsal Field Rental</title>
     <link rel="stylesheet" href="../main/main.css">
     <link rel="stylesheet" href="notice.css">
-    <link rel="stylesheet" href="futmain.css?ver=10">
+    <link rel="stylesheet" href="futmain.css?ver=11">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
      <script type="text/javascript"src="http://code.jquery.com/jquery-latest.min.js"></script>
