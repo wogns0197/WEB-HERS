@@ -143,6 +143,9 @@ session_start();
   </head>
   <body>
 
+
+    
+    
     <?php
     ?>
     
@@ -158,7 +161,7 @@ session_start();
     $purpose = $_POST["purpose"];
     $notice = $_POST["notice"]; -->
     <?php
-    if(!$flag){?>
+    if($flag){?>
       <div class="momtong">
         예약확인
         <hr id="tophr"/>
@@ -170,13 +173,21 @@ session_start();
         <?php
         if($notice==1)?>
           <p>공지여부 : <span class="strong">O</span></p>
+        <button><a href="../Front_End/main/main.html">Home</a></button>
       </div>
+
     <?php
     }
     else{?>
       
+      <div class="fail">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/CH-Vortrittssignal-Verzweigung_mit_Rechtsvortritt.svg/2000px-CH-Vortrittssignal-Verzweigung_mit_Rechtsvortritt.svg.png" alt="fail" height="300" width="300">
+        FAIL
+      </div>
+      
     <?php
     }
     ?>
+
   </body>
 </html>
