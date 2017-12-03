@@ -42,17 +42,13 @@ session_start();
       $time = explode(" ",$_POST["time"]);
       $id = $_SESSION['user_id'];
       $borrowdate = $_POST["selected_date"];
-      $modifydate = $_SESSION['borrowdate'];
-      $id = $_SESSION['manage_id'];
+      $modifydate = $_SESSION['m_borrowdate'];
+      $m_manage_id = $_SESSION['m_manage_id'];
       $start_time = $time[0].":00:00";
       $end_time = $time[1].":00:00";
       $place = $_POST["place"];
       $purpose = $_POST["purpose"];
       $notice = $_POST["notice"];
-      echo "post : ";
-      print_r($_POST);
-      echo "session : ";
-      print_r($_SESSION);
       if($notice === "on"){
         $notice = 1;
       }
@@ -66,7 +62,7 @@ session_start();
       $db = new PDO("mysql:dbname=$name", "root","root");
       $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
       if($_SESSION['modify']==1){
-        $query1 = "update futsal_manage set borrowdate='$borrowdate',start_time='$start_time',end_time='$end_time',place='$place',purpose='$purpose',notice='$notice',home='$home',away='$away',people=$population,groupname='$groupname' where borrowdate='$modifydate' and manage_ID=$id";
+        $query1 = "update futsal_manage set borrowdate='$borrowdate',start_time='$start_time',end_time='$end_time',place='$place',purpose='$purpose',notice='$notice',home='$home',away='$away',people=$population,groupname='$groupname' where manage_ID=$m_manage_id and borrowdate='$modifydate'";
       }
       else{
         $query1 = "insert into futsal_manage(user_id, borrowdate, start_time, end_time, place, purpose, notice,home, away, people, groupname) values('$id','$borrowdate','$start_time','$end_time','$place', '$purpose', '$notice','$home','$away',$population, '$groupname')";
@@ -77,6 +73,7 @@ session_start();
         foreach($check as $a){
           $count = $a['count(*)'];
         }
+        $db->query($query1);        
       }
       catch(PDOException $ex){
         echo "detail : ".$ex->getMessage();
@@ -84,7 +81,7 @@ session_start();
       if($_SESSION['modify']==1){
         if($notice){
           try{
-            $query2 = "update purpose_view set place='$place', home='$home', away='$away', borrowdate='$modifydate',start_time='$start_time',end_time='$end_time'";
+            $query2 = "update purpose_view set place='$place', home='$home', away='$away', borrowdate='$borrowdate',start_time='$start_time',end_time='$end_time' where borrowdate='$modifydate' and manage_ID=$m_manage_id";
             $db->query($query2);
           }
           catch(PDOException $ex){
@@ -93,7 +90,7 @@ session_start();
         }
         else{
           try{
-            $query2 = "delete from purpose_view where manage_ID=$id and borrowdate='$modifydate'";
+            $query2 = "delete from purpose_view where manage_ID=$m_manage_id and borrowdate='$modifydate'";
             $db->query($query2);
           }
           catch(PDOException $ex){
@@ -103,7 +100,6 @@ session_start();
       }
       else{
         if($count==0){
-          $db->query($query1);
           if($notice){
             try{
               $query2 = "insert into purpose_view values((select manage_ID from futsal_manage where user_id = '$id' and borrowdate = '$borrowdate' and start_time = '$start_time' and end_time = '$end_time'),'$place','$home','$away','$borrowdate','$start_time','$end_time')";
@@ -126,7 +122,6 @@ session_start();
       }
     }
     catch(PDOException $ex){
-      print_r($_POST);
       echo "Sorry";
       echo "detail :".$ex->getMessage();
     ?>

@@ -44,16 +44,8 @@ session_start();
                         $m_population = $row['people'];
                         $m_start = $row['start_time'];
                         $m_notice = $row['notice'];
+                        $m_place = $row['place'];
                     }
-                    // if($m_notice){
-                    //     try{
-                    //         $query3 = "delete from purpose_view where manage_ID=$m_manage_ID and borrowdate='$m_borrowdate'";
-                    //         $db->query($query3);
-                    //     }
-                    //     catch(PDOException $ex){
-                    //         echo "detail :".$ex->getMessage();
-                    //     } 
-                    // }
                 }
                 catch(PDOException $ex){
                     echo "detail :".$ex->getMessage();
@@ -216,7 +208,7 @@ session_start();
                     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                     $rows = $db->query($query);
                     $flag = true;
-                    if($modify == 1 && $start_time == $m_start){
+                    if($modify == 1 && $start_time == $m_start && $place == $m_place){
                     ?>
                         <td class="text-center"> 예약 수정중 </td> -->
                         <td>

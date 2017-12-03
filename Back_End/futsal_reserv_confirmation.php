@@ -52,10 +52,10 @@ session_start();
       $modify = $_SESSION['modify'];
       if($modify){
         try{
-          $manage_ID = $_SESSION['manage_id'];
-          $borrowdate = $_SESSION['borrowdate'];
+          $m_manage_ID = $_SESSION['m_manage_id'];
+          $m_borrowdate = $_SESSION['m_borrowdate'];
           $name = "web_project";
-          $query1 = "select * from futsal_manage where manage_ID=$manage_ID and borrowdate = '$borrowdate'";        
+          $query1 = "select * from futsal_manage where manage_ID=$m_manage_ID and borrowdate = '$m_borrowdate'";        
           $db = new PDO("mysql:dbname=$name", "root","root");
           $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
           $rows = $db->query($query1);
@@ -80,10 +80,6 @@ session_start();
       $end_time = $time[1].":00";
       $borrow_date = $_POST["selected_date"];
       $place = $_POST["place"];
-      echo "post : ";
-      print_r($_POST);
-      echo "session : ";
-      print_r($_SESSION);
     ?>
     
     <div id="confirm_wrap">
