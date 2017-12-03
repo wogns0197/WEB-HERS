@@ -158,12 +158,10 @@ session_start();
     $purpose = $_POST["purpose"];
     $notice = $_POST["notice"]; -->
     <?php
-    if($flag){?>
-      <p>시간<?= $time?></p>
-    <?php
-    }
-    else{?>
+    if(!$flag){?>
       <div class="momtong">
+        예약확인
+        <hr id="tophr"/>
         <p>시간   :  <span class="strong"> <?= $start_time ?> - <?= $end_time ?></span></p>
         <p>대여날짜   :   <span class="strong"><?=$borrowdate?></span></p>
         <!-- <p>수정날짜<?=$modifydate?></p> -->
@@ -172,11 +170,11 @@ session_start();
         <?php
         if($notice==1)?>
           <p>공지여부 : <span class="strong">O</span></p>
-        
-
-          
-
       </div>
+    <?php
+    }
+    else{?>
+      
     <?php
     }
     ?>

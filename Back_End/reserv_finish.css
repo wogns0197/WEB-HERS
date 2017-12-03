@@ -29,7 +29,6 @@ a,p{
 }
 #tophr{
 	width: 58%;
-	margin-top: 0px;
 }
 .momtong{	
 	margin-top: 5%;
@@ -47,9 +46,9 @@ a,p{
 }
 .momtong p{
 	color: black;
-
+	
 }
 .strong{
 	font-weight: bold;
-	font-size: 25pt;
+	font-size: 15pt;
 }
