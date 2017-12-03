@@ -8,11 +8,12 @@ session_start();
     <meta charset="utf-8">
     <title>Hanyang Erica Rental Site</title>
     <link rel="stylesheet" href="../Front_end/futsal_reserve_page/futsal_reserv.css">
-    <link rel="stylesheet" href="../Front_end/main/main.css">
-    <link rel="stylesheet" href="../Front_end/futsal_reserve_page/futsal_reserv_confirmation.css?ver=4">
+    <!-- <link rel="stylesheet" href="../Front_end/main/main.css"> -->
+    <link rel="stylesheet" href="../Front_end/futsal_reserve_page/futsal_reserv_confirmation.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
   <body>
+
     <?php
         $_SESSION['place'] = $_GET['where'];
         if(!isset($_SESSION['user_id'])){
@@ -23,8 +24,14 @@ session_start();
             $user_id = $_SESSION['user_id'];
 
             ?>
-            <p><?= $user_id ?></p>
-            <p ><a href = 'login_function/logout.php'>Logout</a></p>
+            <div class="top">
+
+              <p id="userleft"><?= $user_id ?></p>
+
+              <p id="logoutright"><a href = 'login_function/logout.php'>Logout</a></p>
+
+            </div>
+            <hr id="tophr" />
 
             <?php
         }
@@ -34,7 +41,7 @@ session_start();
     ?>
 
 
-    <header id="home">
+    <!-- <header id="home">
       <h1><a href="#home">HERS</a></h1>
     </header>
     <nav>
@@ -43,9 +50,9 @@ session_start();
         <li><a href="#about">About</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
-    </nav>
+    </nav> -->
 
-
+    
     <!-- 이전 페이지에서 예약 선택 정보 가져옴  -->
     <form action="reserv_finish.php" method="post">
     <?php
@@ -82,23 +89,25 @@ session_start();
       $place = $_POST["place"];
     ?>
     
-    <div id="confirm_wrap">
-      
+    <div class="confirm_wrap">
+        <hr id="tophr" />
+        <br>
         <div class="container">
-          <span>인원 : <?= $population ?>명</span><br>
-          <span>대여날짜 : <?= $borrow_date ?></span><br>
-          <span>대여시간 : <?= $start_time ?> ~ <?= $end_time ?></span><br>
+          <span class="arc">인원 : <?= $population ?>명</span><br>
+          <span class="arc">대여날짜 : <?= $borrow_date ?></span><br>
+          <span class="arc">대여시간 : <?= $start_time ?> ~ <?= $end_time ?></span><br>
           <?php 
             $start_time = $start_time.":00";
             $end_time = $end_time.":00";
           ?>
-          <span>대여장소 : <?= $place ?></span><br>
+          <span class="arc">대여장소 : <?= $place ?></span><br>
           <input class="hidden" type="text" name="population" value="<?= $population ?>" readonly/>
           <input class="hidden" type="text" name="selected_date" value="<?= $borrow_date ?>" readonly/>
           <input id ="time" class="hidden" type="text" name="time" value="<?= $timearr ?>" readonly/>
           <input class="hidden" type="text" name="place" value="<?= $place ?>" readonly/>
         </div>
-        <hr/>
+        <!-- <hr/> -->
+        <br/>
         <div class="container">
           <span>사용 용도 :</span>
             <select name="purpose">
@@ -126,8 +135,8 @@ session_start();
           <?php
               }
           ?>
-            <div>
-            <span>단체명 : </span> <input type="text" name="groupname" value = <?= $groupname ?> required/>
+            <div class="groupname">
+              <input type="text" placeholder="단체명" name="groupname" value = <?= $groupname ?> required/>
             </div>
           <?php
             }
@@ -141,7 +150,7 @@ session_start();
                 <input type="text" placeholder ="away" name="away" required/>
               </div>
             <div>
-            <span>단체명 : </span> <input type="text" name="groupname" required/>
+            <input type="text" placeholder="단체명" name="groupname" required/>
             </div>
           <?php
             }
@@ -149,7 +158,7 @@ session_start();
 
 
         </div>
-        <hr/>
+        <br/>
         <div class="buttons">
           <button id="alert" type="submit">예약
             <?php if($_SESSION['modify']){
