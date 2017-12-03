@@ -209,6 +209,8 @@ session_start();
                     $rows = $db->query($query);
                     $flag = true;
                     if($modify == 1 && $start_time == $m_start && $place == $m_place){
+                        $timearr = array($start_time,$end_time);
+                        $time = implode(" ",$timearr);
                     ?>
                         <td class="text-center"> 예약 수정중 </td> -->
                         <td>
