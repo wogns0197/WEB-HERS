@@ -124,9 +124,9 @@ session_start();
             <input id = "notice_checked" name = "notice" type="checkbox" checked/>공지
             <br>
             <div id="notice_on">
-              <input type="text" placeholder = "home" name = "home"  required/>
+              <input type="text" placeholder = "home" name = "home" value ="<?= $home ?>" required/>
               <span > vs </span>
-              <input type="text" placeholder ="away" name="away"  required />
+              <input type="text" placeholder ="away" name="away" value="<?= $away ?>"  required />
             </div>
           <?php
               }
