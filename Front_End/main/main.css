@@ -51,9 +51,20 @@ svg{
   height: 70px;
   position: fixed;
 }
-#xicon{
+#menuicon{
   position: absolute;
-  left: -25%;
+  left: 0;
+}
+#menuicon:hover{
+  cursor: pointer;
+}
+#xicon:hover{
+  cursor: pointer;
+}
+#xicon{
+  z-index: 10;
+  position: absolute;
+  left: -22%;
 }
 nav{
   font-family: myserif;
@@ -61,25 +72,29 @@ nav{
   width: 22%;
   height: 100%;
   position: absolute;
-  left: -25%;
-}
-nav h2{
-  position: absolute;
-  left: 10%;
-  font-size: 30pt;
+  left: -22%;
 }
 nav ul{
   list-style: none;
-  /*padding-left: 0;*/
   position: absolute;
-  top: 10%;
+  left: 10%;
+  top: 4%;
+  border: 2px solid blue;
 }
-nav ul li{
-  font-size: 18pt;
+/*nav {
+  font-size: 19pt;
   font-family: myserif;
-  margin-bottom: 5%;
-  width: 100%;
-
+  margin-top: 15%;
+}
+#title{
+  font-size: 25pt;
+  font-weight: bold;
+}*/
+nav ul li{
+  font-size: 16pt;
+  font-family: myserif;
+  padding-left: 0;
+  margin-left: 0;
 }
 nav ul li a{
   text-decoration: none;
