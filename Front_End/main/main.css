@@ -111,7 +111,7 @@ nav dl dd{
   color: black;
 }
 nav ul li a:hover{
-
+  color: white;
 }
 .main p{
   font-size: 30pt;
