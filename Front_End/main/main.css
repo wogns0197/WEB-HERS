@@ -5,10 +5,6 @@ body, html{
   font-family: sans-serif;
   font-size: 12pt;
 }
-@font-face{
-  font-family: headerfont;
-  src: url(font/Anson-Regular.otf);
-}
 @font-face {
   font-family: myserif;
   src: url(font/Anson-Regular.otf);
@@ -161,4 +157,13 @@ footer{
   font-size: 9pt;
   letter-spacing: 3pt;
   font-family: myexplain;
+}
+.user{
+  position: fixed;
+  right: 0;
+  height: 50px;
+  margin-right: 2%;
+  font-family: myserif;
+  font-size: 15pt;
+  visibility: hidden;
 }
