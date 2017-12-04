@@ -74,6 +74,10 @@ session_start();
 
     </nav>
 
+    <div class="user">
+      <p>Signed In as (USER)</p>
+    </div>
+
       <div class="right">
 
           <div id="map">
