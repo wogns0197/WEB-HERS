@@ -6,7 +6,7 @@ session_start();
   <head>
     <meta charset="utf-8">
     <title>Futsal Field Rental</title>
-    <link rel="stylesheet" href="../main/main.css">
+    <link rel="stylesheet" href="../main2.css">
     <link rel="stylesheet" href="notice.css">
     <link rel="stylesheet" href="futmain.css?ver=11">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,8 +21,8 @@ session_start();
          });
 
          $("#xicon").click(function () {
-           $("#menubar").animate({left: "-22%"}, 300 );
-           $("#xicon").animate({left: "-22%"}, 300 );
+           $("#menubar").animate({left: "-25%"}, 300 );
+           $("#xicon").animate({left: "-25%"}, 300 );
            $("#menuicon").fadeIn(300);
          });
 
@@ -32,7 +32,7 @@ session_start();
 
   <body>
     <header>
-      <h1>HERS</h1>
+      <h1><a href="../main/main.html">HERS</a></h1>
       <hr/>
     </header>
 
