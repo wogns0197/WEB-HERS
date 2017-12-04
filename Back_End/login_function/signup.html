@@ -10,7 +10,7 @@
 		<form action="signup_ok.php" method ="post">
 			<input type="text" name="name" placeholder="Name" id="name1" required>
 
-			<input type="number" name="sid" placeholder="Student id" min="15" required>
+			<input type="text" name="sid" placeholder="Student id (More than 10 digits)" pattern="\d{10,20}" required>
 
 			<br/>
 			<input type="email" name="email" placeholder="email@example.com" id="email">
