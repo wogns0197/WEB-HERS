@@ -11,6 +11,7 @@ session_start();
     <!-- <link rel="stylesheet" href="../Front_end/main/main.css"> -->
     <link rel="stylesheet" href="../Front_end/futsal_reserve_page/futsal_reserv_confirmation.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="futsal_reserv_confirm_js.js" type="text/javascript" ></script>
   </head>
   <body>
 
@@ -123,9 +124,9 @@ session_start();
             <input id = "notice_checked" name = "notice" type="checkbox" checked/>공지
             <br>
             <div id="notice_on">
-              <input type="text" placeholder = "home" name = "home" value = "<?= $home ?>" required/>
+              <input type="text" placeholder = "home" name = "home" value ="<?= $home ?>" required/>
               <span > vs </span>
-              <input type="text" placeholder ="away" name="away" value = "<?= $away ?>" required/>
+              <input type="text" placeholder ="away" name="away" value="<?= $away ?>"  required />
             </div>
           <?php
               }
@@ -145,9 +146,9 @@ session_start();
             <input id = "notice_checked" name = "notice" type="checkbox" unchecked/>공지
             <br>
               <div id="notice_on">
-                <input type="text" placeholder = "home" name = "home" required/>
+                <input id = "notice_home" type="text" placeholder = "home" name = "home" required />
                 <span > vs </span>
-                <input type="text" placeholder ="away" name="away" required/>
+                <input id = "notice_away" type="text" placeholder ="away" name="away" required />
               </div>
             <div>
             <input type="text" placeholder="단체명" name="groupname" required/>
