@@ -8,15 +8,18 @@ $email = $_POST['email'];
 $phone = $_POST['phone'];
 $dept = $_POST['dept'];
 
+
+
 if($user_pw != $user_pw_re){
   echo "<script>alert('패스워드가 일치하지 않습니다!');history.back();</script>";
+  exit;
 }
 
 try{
-  $name = "web_project";
+  $db_name = "web_project";
   $signup_query = "insert into user values('$name',$s_id,$phone,'$email','$user_id','$user_pw','$dept')";
 
-  $db = new PDO("mysql:dbname=$name", "root","root");
+  $db = new PDO("mysql:dbname=$db_name", "root","root");
   $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
   $rows = $db->query($signup_query);
 
