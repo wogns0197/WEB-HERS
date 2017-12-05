@@ -41,7 +41,7 @@ catch(PDOException $ex){
 }
 
 ?>
-<meta http-equiv='refresh' content='0;url=../futsal_reserv_test_2.php?where=<?= $_SESSION['place'] ?>'>
+<meta http-equiv='refresh' content='0;url=<?= $_SESSION['prevPage'] ?>'>
 
 <?php
 
