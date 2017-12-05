@@ -16,18 +16,11 @@
   function Calendar(settings) {
 
     var self = this;
-    var today2 = new Date();
+
+    // 오늘 날짜부터 2달 뒤까지로 캘린더 선택할 수 있음
     var today = document.getElementById("checking_today").value;
-    // alert(today);
-    // var tmptoday = new Date();
-    // tmptoday.setDate(tmptoday.getDate() + 1);
-    // var today2 = today.setDate(today.getDate() + 1);
-    // var n = today.toISOString();
-    // var n3 = tmptoday.toISOString();
-    // var n2 = today2.toISOString();
-    // var today_date = n.slice(0,10);
+    var today2 = new Date();
     var today_date = today;
-    // var today_date2 = n3.slice(0,10);
     var end_day = today2.setMonth(today2.getMonth() + 2);
     var end_day2 = new Date(end_day);
     var n2 = end_day2.toISOString();
@@ -60,6 +53,8 @@
     this.orig_end_date =      null;
     this.orig_current_date =  null;
 
+    // 요부분 변수들이 캘린더 구간 날짜 선택 부분임.
+    // --------------------------------------------------------------------------
     this.earliest_date =  settings.earliest_date ? moment(today_date)
                           : moment(today_date);
     this.latest_date =    settings.latest_date ? moment(settings.latest_date)
@@ -70,6 +65,8 @@
                           : (this.type == 'double' ? this.end_date.clone().subtract(1, 'month') : null);
     this.current_date =   settings.current_date ? moment(today_date)
                           : (this.type == 'single' ? moment() : null);
+    // --------------------------------------------------------------------------
+
 
     this.presets =        settings.presets == false || this.type == 'single' ? false : true;
 
