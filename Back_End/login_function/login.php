@@ -17,7 +17,7 @@ session_start();
 
 
 <?php
-$place = $_SESSION['place'];
+
 
 
 

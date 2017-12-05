@@ -16,9 +16,8 @@ session_start();
   <body>
 
     <?php
-        $_SESSION['place'] = $_GET['where'];
         if(!isset($_SESSION['user_id'])){//로그인 확인
-            echo "<script>alert('로그인이 필요합니다!');location.href='../Front_End/futsal/futmain2.php';</script>";
+            echo "<script>alert('로그인이 필요합니다!');location.href='login_function/login.php';</script>";
         }
         else{
             $user_id = $_SESSION['user_id'];
