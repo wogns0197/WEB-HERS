@@ -182,7 +182,7 @@ session_start();
           }
           ?>
         </tbody></table></section></MARQUEE></td></tbody></table>
-        <form action="../../Back_End/reservation_lists.php">
+        <form action="../futsal-comfirmation/reservation_lists.php">
         <button id="reserv_confirm">예약내역확인</button>
       </form>
       </div>

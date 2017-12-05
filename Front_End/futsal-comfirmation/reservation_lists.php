@@ -41,30 +41,30 @@ session_start();
     }
     ?>
     <form action="reserv_cancel.php" method="post" id="cancel"></form>
-    <form action="../Front_End/futsal/futmain2.php" method="post" id="modify"></form>
+    <form action="../futsal/futmain2.php" method="post" id="modify"></form>
     <div id="reserve_wrap">
       <h2>예약 내역</h2>
       <div class="container">
-        <table class="reserve_lists">
-          <tr>
-            <th>관리번호</th>
-            <th>대여날짜</th>
-            <th>대여시간</th>
-            <th>대여장소</th>
+        <table class="reserve_lists" bor>
+          <tr>          
+            <th id="num" class="base">관리번호</th>
+            <th id="day" class="base">대여날짜</th>
+            <th id="time" class="base">대여시간</th>
+            <th id="place" class="base">대여장소</th>          
           </tr>
           <?php
             for($i = 0; $i < $size; $i++){?>
             <tr>
-            <th><?=$manage_ID[$i]?></th>
-            <th><?=$borrowdate[$i]?></th>
-            <th><?=$start_time[$i]?>:00 ~ <?=$end_time[$i]?>:00</th>
-            <th><?=$place[$i]?></th>
+            <th id="num" class="tab"><?=$manage_ID[$i]?></th>
+            <th id="day" class="tab"><?=$borrowdate[$i]?></th>
+            <th id="time" class="tab"><?=substr($start_time[$i],0,-3)?> ~ <?=substr($end_time[$i],0,-3)?></th>
+            <th id="place" class="tab"><?=$place[$i]?></th>
           <?php
             $valarr = array($manage_ID[$i], $borrowdate[$i]);
             $val = implode(" ",$valarr);
           ?>
-            <th><button name="modify_val" value="<?= $val ?>" type="submit" form = "modify">수정</button></th>
-            <th><button name="cancel_val" value="<?= $val ?>" type="submit" form = "cancel">취소</button></th>
+            <th id="but"><button id="but1" name="modify_val" value="<?= $val ?>" type="submit" form = "modify">수정</button></th>
+            <th id="but"><button id="but2" name="cancel_val" value="<?= $val ?>" type="submit" form = "cancel">취소</button></th>
             </tr>
           <?php
             }
