@@ -13,7 +13,7 @@ session_start();
   </head>
   <body>
     <!-- db에서 유저 아이디 써서 예약 내역 불러옴 -->
-    <form action="reserv_cancel.php" method="post" id="cancel"></form>
+    <form action="../../Back_End/reserv_cancel.php" method="post" id="cancel"></form>
     <form action="../futsal/futmain2.php" method="post" id="modify"></form>
     <div id="reserve_wrap">
       <h2>예약 내역</h2>

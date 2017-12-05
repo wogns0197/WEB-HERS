@@ -48,29 +48,10 @@ session_start();
     <!-- 이전 페이지에서 예약 선택 정보 가져옴  -->
     <form action="reserv_finish.php" method="post">
     <?php
+      //전의 페이지에서 받아온 정보를 가져온다
       $modify = $_SESSION['modify'];
       if($modify){//예약 수정일 경우 예전 예약 내용을 default값으로 가져온다
-        try{
-          $m_manage_ID = $_SESSION['m_manage_id'];
-          $m_borrowdate = $_SESSION['m_borrowdate'];
-          $name = "web_project";
-          $query1 = "select * from futsal_manage where manage_ID=$m_manage_ID and borrowdate = '$m_borrowdate'";        
-          $db = new PDO("mysql:dbname=$name", "root","root");
-          $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-          $rows = $db->query($query1);
-          foreach($rows as $row){
-              $purpose = $row['purpose'];
-              $notice = $row['notice'];
-              if($notice == 1){
-                $home = $row['home'];
-                $away = $row['away'];
-                $groupname = $row['groupname'];
-              }
-          }
-        }
-        catch(PDOException $ex){
-            echo "detail :".$ex->getMessage();
-        }
+        set_modify_val();
       }
       $population = $_POST["population"];
       $timearr = $_POST["selected_time"];
@@ -127,39 +108,25 @@ session_start();
               }
           ?>
             <div class="groupname">
-              <input type="text" placeholder="단체명" name="groupname" value = <?= $groupname ?> required/>
+              <input type="text" placeholder="단체명" name="groupname" value = "<?= $groupname ?>" required/>
             </div>
           <?php
             }
             else{//기본 예약
-              if($notice == 1){?>
-                <input id = "notice_checked" name = "notice" type="checkbox" checked/>공지
-                <br>
-                <div id="notice_on">
-                  <input type="text" placeholder = "home" name = "home" required/>
-                  <span > vs </span>
-                  <input type="text" placeholder ="away" name="away" required />
-                </div>
-            <?php
-              }
-              else{
-            ?>
-            <input id = "notice_checked" name = "notice" type="checkbox" unchecked/>공지
-            <br>
+          ?>
+              <input id = "notice_checked" name = "notice" type="checkbox" checked/>공지
+              <br>
               <div id="notice_on">
-                <input id = "notice_home" type="text" placeholder = "home" name = "home"/>
+                <input type="text" placeholder = "home" name = "home" required/>
                 <span > vs </span>
-                <input id = "notice_away" type="text" placeholder ="away" name="away"/>
+                <input type="text" placeholder ="away" name="away" required />
               </div>
+            <?php
+            }
+            ?>
             <div>
             <input type="text" placeholder="단체명" name="groupname" required/>
             </div>
-          <?php
-              }
-            }
-          ?>
-
-
         </div>
         <br/>
         <div class="buttons">
@@ -182,3 +149,28 @@ session_start();
      <script src="../Front_end/futsal_reserve_page/futsal_reserv_confirmation.js?ver=2" type="text/javascript"></script>
   </body>
 </html>
+<?php
+  function set_modify_val(){
+    global $notice, $home, $away, $groupname;
+    try{
+      $m_manage_ID = $_SESSION['m_manage_id'];
+      $m_borrowdate = $_SESSION['m_borrowdate'];
+      $name = "web_project";
+      $query1 = "select * from futsal_manage where manage_ID=$m_manage_ID and borrowdate = '$m_borrowdate'";        
+      $db = new PDO("mysql:dbname=$name", "root","root");
+      $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+      $rows = $db->query($query1);
+      foreach($rows as $row){
+          $notice = $row['notice'];
+          if($notice == 1){
+            $home = $row['home'];
+            $away = $row['away'];
+            $groupname = $row['groupname'];
+          }
+      }
+    }
+    catch(PDOException $ex){
+        echo "detail :".$ex->getMessage();
+    }
+  }
+?>
