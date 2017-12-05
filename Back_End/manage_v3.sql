@@ -51,3 +51,4 @@ create table matching_manage
     constraint foreign key (receive_id) references user(user_id)
         on delete set null
 );
+insert into matching_manage values ("jh9277","한판합시다.","jh2628",2,"2017-12-06");
