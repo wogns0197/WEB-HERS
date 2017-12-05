@@ -50,7 +50,7 @@ session_start();
         <dd>
           <ul class="menus">
             <li><a href="main.html">Home</a></li>
-            <li><a href="#">About Us</a></li>
+            <li><a href="../about/about.html">About Us</a></li>
           </ul>
         </dd>
 
@@ -59,15 +59,15 @@ session_start();
           <ul class="menus">
             <li><a href="#">Login</a></li>
             <li><a href="#">Logout</a></li>
-            <li><a href="#">My Page</a></li>
+            <li><a href="../mypage/mypage.html">My Page</a></li>
           </ul>
         </dd>
 
         <dt>RENTAL</dt><hr color="black">
         <dd>
           <ul class="menus">
-            <li><a href="#">Lecture Room</a></li>
-            <li><a href="#">Futsal Field</a></li>
+            <li><a href="../futsal-comfirmation/futconfirm.html">Futsal Confirmation</a></li>
+            <li><a href="../futsal/futmain2.php">Futsal Field Rental</a></li>
           </ul>
         </dd>
       </dl>
