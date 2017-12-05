@@ -14,17 +14,21 @@
   }
 } (this, function ($, moment) {
   function Calendar(settings) {
+
     var self = this;
-    var today = new Date();
-    var tmptoday = new Date();
-    tmptoday.setDate(tmptoday.getDate() + 1);
+    var today2 = new Date();
+    var today = document.getElementById("checking_today").value;
+    // alert(today);
+    // var tmptoday = new Date();
+    // tmptoday.setDate(tmptoday.getDate() + 1);
     // var today2 = today.setDate(today.getDate() + 1);
-    var n = today.toISOString();
-    var n3 = tmptoday.toISOString();
+    // var n = today.toISOString();
+    // var n3 = tmptoday.toISOString();
     // var n2 = today2.toISOString();
-    var today_date = n.slice(0,10);
-    var today_date2 = n3.slice(0,10);
-    var end_day = today.setMonth(today.getMonth() + 2);
+    // var today_date = n.slice(0,10);
+    var today_date = today;
+    // var today_date2 = n3.slice(0,10);
+    var end_day = today2.setMonth(today2.getMonth() + 2);
     var end_day2 = new Date(end_day);
     var n2 = end_day2.toISOString();
     var end_date = n2.slice(0,10);
@@ -57,7 +61,7 @@
     this.orig_current_date =  null;
 
     this.earliest_date =  settings.earliest_date ? moment(today_date)
-                          : moment(today_date2);
+                          : moment(today_date);
     this.latest_date =    settings.latest_date ? moment(settings.latest_date)
                           : moment(end_date);
     this.end_date =       settings.end_date ? moment(settings.end_date)
