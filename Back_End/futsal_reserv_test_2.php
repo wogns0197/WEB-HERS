@@ -94,7 +94,7 @@ session_start();
 
                 ?>
                 <!-- 캘린더 자바스크립트에서 오늘날짜 가져오기 위한 부분. -->
-                <input type="text" id="checking_place" class="hidden" name="place" value="<?= $today ?>">
+                <input type="text" id="checking_today" class="hidden" name="place" value="<?= $today ?>">
                 <?php
 
             ?>
