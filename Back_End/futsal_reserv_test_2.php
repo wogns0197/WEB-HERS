@@ -188,7 +188,6 @@ session_start();
             <?php //예약현황 표시
             $start_time = 12;
             $n = 5;
-            $name = "web_project";
             $borrow_place = $_POST["place"];
             for($i = 0 ; $i < $n; $i++){
                 $end_time = $start_time+2
@@ -199,7 +198,6 @@ session_start();
                     </td>
             <?php
                 try{
-                    $name = "web_project";
                     $query = "select * from futsal_manage where borrowdate = '$date' && place ='$place'";
                     $db = new PDO("mysql:dbname=$name", "root", "root");
                     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
