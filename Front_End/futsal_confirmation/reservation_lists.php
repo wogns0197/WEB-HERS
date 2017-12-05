@@ -27,9 +27,8 @@ session_start();
           </tr>
           <?php
             get_list();
-            for($i = 0; $i < $size; $i++){
+            for($i = 0; $i < $size; $i++){//모든 예약 내역을 가져온다
           ?>
-            
             <tr>
             <th id="num" class="tab"><?=$manage_ID[$i]?></th>
             <th id="day" class="tab"><?=$borrowdate[$i]?></th>

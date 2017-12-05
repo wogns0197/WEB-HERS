@@ -10,16 +10,14 @@ session_start();
     <link rel="stylesheet" href="reserv_finish.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?php
+    $_SESSION['place'] = $_GET['where'];          
     try{
-      $_SESSION['place'] = $_GET['where'];
       if(!isset($_SESSION['user_id'])){
-           echo "<script>alert('로그인이 필요합니다!');location.href='../Front_End/futsal/futmain2.php';</script>";
+           echo "<script>alert('로그인이 필요합니다!');location.href='login_function/login.php';</script>";
       }
-
       else{
           $user_id = $_SESSION['user_id'];
           ?>
-
           <div class="top">
             <p id="userleft"><?= $user_id ?></p>
             <p id="logoutright"><a href = 'login_function/logout.php'>Logout</a></p>
