@@ -9,21 +9,12 @@ session_start();
     <title>Hanyang Erica Rental Site</title>
     <!-- <link rel="stylesheet" href="../Front_end/futsal_reserve_page/futsal_reserv.css"> -->
     <!-- <link rel="stylesheet" href="../Front_end/main/main.css"> -->
-    <link rel="stylesheet" href="../Front_end/futsal_reserve_page/reservation_lists.css?">
+    <link rel="stylesheet" href="../futsal_reserve_page/reservation_lists.css?">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
   <body>
 
-    <header id="home">
-      <h1><a href="#home">HERS</a></h1>
-    </header>
-    <nav>
-      <ul>
-        <li><a href="../Front_End/main/main.html">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
+    
 
 
     <!-- db에서 유저 아이디 써서 예약 내역 불러옴 -->
