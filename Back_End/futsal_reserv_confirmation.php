@@ -17,28 +17,19 @@ session_start();
 
     <?php
         $_SESSION['place'] = $_GET['where'];
-        if(!isset($_SESSION['user_id'])){
+        if(!isset($_SESSION['user_id'])){//로그인 확인
             echo "<script>alert('로그인이 필요합니다!');location.href='../Front_End/futsal/futmain2.php';</script>";
         }
-
         else{
             $user_id = $_SESSION['user_id'];
-
             ?>
             <div class="top">
-
               <p id="userleft"><?= $user_id ?></p>
-
               <p id="logoutright"><a href = 'login_function/logout.php'>Logout</a></p>
-
             </div>
             <hr id="tophr" />
-
             <?php
         }
-
-
-
     ?>
 
 
@@ -58,7 +49,7 @@ session_start();
     <form action="reserv_finish.php" method="post">
     <?php
       $modify = $_SESSION['modify'];
-      if($modify){
+      if($modify){//예약 수정일 경우 예전 예약 내용을 default값으로 가져온다
         try{
           $m_manage_ID = $_SESSION['m_manage_id'];
           $m_borrowdate = $_SESSION['m_borrowdate'];
@@ -107,7 +98,6 @@ session_start();
           <input id ="time" class="hidden" type="text" name="time" value="<?= $timearr ?>" readonly/>
           <input class="hidden" type="text" name="place" value="<?= $place ?>" readonly/>
         </div>
-        <!-- <hr/> -->
         <br/>
         <div class="container">
           <span>사용 용도 :</span>
@@ -118,8 +108,8 @@ session_start();
               <option>기타행사</option>
             </select>
           <?php
-            if($modify == 1){
-              if($notice == 1){
+            if($modify == 1){//예약 수정
+              if($notice == 1){//예약 수정할때 공지를 원할 경우
           ?>
             <input id = "notice_checked" name = "notice" type="checkbox" checked/>공지
             <br>
@@ -130,7 +120,7 @@ session_start();
             </div>
           <?php
               }
-              else{
+              else{//예약 수정할때 공지를 원하지 않을 경우
           ?>
             <input id = "notice_checked" name = "notice" type="checkbox" unchecked/>공지
           <?php
@@ -141,19 +131,31 @@ session_start();
             </div>
           <?php
             }
-            else{
-          ?>
+            else{//기본 예약
+              if($notice == 1){?>
+                <input id = "notice_checked" name = "notice" type="checkbox" checked/>공지
+                <br>
+                <div id="notice_on">
+                  <input type="text" placeholder = "home" name = "home" required/>
+                  <span > vs </span>
+                  <input type="text" placeholder ="away" name="away" required />
+                </div>
+            <?php
+              }
+              else{
+            ?>
             <input id = "notice_checked" name = "notice" type="checkbox" unchecked/>공지
             <br>
               <div id="notice_on">
-                <input id = "notice_home" type="text" placeholder = "home" name = "home" required />
+                <input id = "notice_home" type="text" placeholder = "home" name = "home"/>
                 <span > vs </span>
-                <input id = "notice_away" type="text" placeholder ="away" name="away" required />
+                <input id = "notice_away" type="text" placeholder ="away" name="away"/>
               </div>
             <div>
             <input type="text" placeholder="단체명" name="groupname" required/>
             </div>
           <?php
+              }
             }
           ?>
 
@@ -162,9 +164,9 @@ session_start();
         <br/>
         <div class="buttons">
           <button id="alert" type="submit">예약
-            <?php if($_SESSION['modify']){
+            <?php if($_SESSION['modify']){//예약 수정 중일 때는 '예약 수정'버튼 기본 예약 중일때는 '예약 신청'버튼으로
             ?>
-                수정
+              수정
             <?php
             }
             else{

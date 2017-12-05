@@ -4,10 +4,23 @@
     <meta charset="utf-8">
     <title>About HERS</title>
     <link rel="stylesheet" href="about.css">
+    <link rel="stylesheet" href="../main2.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script type="text/javascript"src="http://code.jquery.com/jquery-latest.min.js"></script>
     <script type="text/javascript">
       $(document).ready( function(){
+        $("#menuicon").click(function () {
+  				$("#menubar").animate({left: 0}, 300 );
+  				$("#xicon").animate({left: 0}, 300 );
+  				$("#menuicon").fadeOut(300);
+  			});
+
+  			$("#xicon").click(function () {
+  				$("#menubar").animate({left: "-25%"}, 300 );
+  				$("#xicon").animate({left: "-25%"}, 300 );
+  				$("#menuicon").fadeIn(300);
+  			});
+
         $("#kwon").click(function() {
           $("#kwoninfo").css("z-index", "0");
           $("#kwon").css("visibility","hidden");
@@ -59,9 +72,54 @@
     </script>
   </head>
   <body>
-    <h1>ABOUT US</h1><hr color="black">
+    <header>
+  		<h1><a href="../main/main.html">HERS</a> ABOUT</h1>
+  		<hr/>
+  	</header>
 
-    <h2>&#45;ABOUT OUR SITE&#45;</h2>
+  	<a id="menuicon"><svg xmlns="http://www.w3.org/2000/svg" data-name="Layer 1" viewBox="0 0 100 125" x="0px" y="0px"><title>54 all</title><path d="M74.46,49H25.54a1,1,0,0,0,0,2H74.46a1,1,0,0,0,0-2Z"/><path d="M74.46,28.73H25.54a1,1,0,0,0,0,2H74.46a1,1,0,0,0,0-2Z"/><path d="M74.46,69.27H25.54a1,1,0,1,0,0,2H74.46a1,1,0,1,0,0-2Z"/>
+  	</svg></a>
+
+  	<a id="xicon"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 100 125" version="1.1" x="0px" y="0px"><title>Bold Cross</title><desc>Created with Sketch.</desc><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g fill="#000000"><path d="M48,48 L48,18.8873016 C48,17.7827321 48.8954305,16.8873016 50,16.8873016 C51.1045695,16.8873016 52,17.7827321 52,18.8873016 L52,48 L81.1126984,48 C82.2172679,48 83.1126984,48.8954305 83.1126984,50 C83.1126984,51.1045695 82.2172679,52 81.1126984,52 L52,52 L52,81.1126984 C52,82.2172679 51.1045695,83.1126984 50,83.1126984 C48.8954305,83.1126984 48,82.2172679 48,81.1126984 L48,52 L18.8873016,52 C17.7827321,52 16.8873016,51.1045695 16.8873016,50 C16.8873016,48.8954305 17.7827321,48 18.8873016,48 L48,48 L48,48 Z" transform="translate(50.000000, 50.000000) rotate(45.000000) translate(-50.000000, -50.000000) "/></g></g>
+  	</svg></a>
+
+  	<nav id="menubar">
+  		<dl>
+  			<dt id="title">HERS</dt>
+
+        <dt>MAIN</dt><hr color="black">
+        <dd>
+          <ul class="menus">
+            <li><a href="main.html">Home</a></li>
+            <li><a href="../about/about.html">About Us</a></li>
+          </ul>
+        </dd>
+
+        <dt>USER</dt><hr color="black">
+        <dd>
+          <ul class="menus">
+            <li><a href="#">Login</a></li>
+            <li><a href="#">Logout</a></li>
+            <li><a href="../mypage/mypage.html">My Page</a></li>
+          </ul>
+        </dd>
+
+        <dt>RENTAL</dt><hr color="black">
+        <dd>
+          <ul class="menus">
+            <li><a href="../futsal-comfirmation/futconfirm.html">Futsal Confirmation</a></li>
+            <li><a href="../futsal/futmain2.php">Futsal Field Rental</a></li>
+          </ul>
+        </dd>
+  		</dl>
+
+  	</nav>
+
+  	<div class="user">
+  		<p>Signed In as (USER)</p>
+  	</div>
+
+    <!-- <h2>&#45;ABOUT OUR SITE&#45;</h2>
     <div class="siteinfo">
       <p>The World Wide Web uses relatively simple technologies with sufficient scalability,
         efficiency and utility that they have resulted in a remarkable information space of
@@ -72,11 +130,11 @@
          and the protocols that support the interaction between agents and resources in the space.
           We relate core design components, constraints, and good practices to the principles
           and properties they support.</p>
-    </div>
+    </div> -->
 
-    <h2>&#45;DEVELOPERS&#45;</h2>
+    <!-- <h2>&#45;DEVELOPERS&#45;</h2> -->
 
-    <div class="front">
+    <!-- <div class="developer">
       <span id="kwoninfo">
         <h3>Kwon Jaehoon</h3>
         <p>"front"</p>
@@ -84,6 +142,7 @@
         <a href="https://github.com/wogns0197">Github Go</a>
       </span>
       <img id="kwon" src="image/kwon.jpg" alt="kwon">
+
       <span id="seoinfo">
         <h3>Seo Geurim</h3>
         <p>"front"</p>
@@ -91,9 +150,7 @@
         <a href="https://github.com/Seogeurim">Github Go</a>
       </span>
       <img id="seo" src="image/seo.jpg" alt="seo">
-    </div>
 
-    <div class="back">
       <span id="choiinfo">
         <h3>Choi Jaeyoung</h3>
         <p>"front/back"</p>
@@ -101,25 +158,14 @@
         <a href="https://github.com/chlwodud77">Github Go</a>
       </span>
       <img id="choi" src="image/choi.jpg" alt="choi">
+
       <span id="parkinfo">
         <h3>Park Jaehoon</h3>
         <p>"back"</p>
         <p>Rental Function Database materialization</p>
         <a href="https://github.com/MilyangParkJaeHoon">Github Go</a>
       </span>
-      <img id="park" src="image/park.png" alt="park">
-      <span id="leeinfo">
-        <h3>Lee Jaehoon</h3>
-        <p>"back"</p>
-        <p>Database Schema materialization</p>
-        <a href="https://github.com/Tacituslee">Github Go</a>
-      </span>
-      <img id="lee" src="image/woman.png" alt="lee">
-    </div>
-
-    <footer>
-
-    </footer>
+    </div> -->
 
   </body>
 </html>
