@@ -92,7 +92,7 @@ session_start();
     <form action="../../Back_End/reserv_cancel.php" method="post" id="cancel"></form>
     <form action="../futsal/futmain2.php" method="post" id="modify"></form>
     <div id="reserve_wrap">
-      <h2>예약 내역</h2>
+      <h2>| 예약 내역 |</h2>
       <div class="container">
         <table class="reserve_lists" bor>
           <tr>          
