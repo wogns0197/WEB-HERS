@@ -27,6 +27,7 @@ session_start();
   <body>
     <header>
             <?php
+
             $_SESSION['place'] = $_GET['where'];
             $modify = $_SESSION['modify'];
             $id = $_SESSION['user_id'];
@@ -89,6 +90,13 @@ session_start();
         <div class="panel-body">
             <?php 
                 date_default_timezone_set('Asia/Seoul'); 
+                $today = date("Y-m-d",time());
+
+                ?>
+                <!-- 캘린더 자바스크립트에서 오늘날짜 가져오기 위한 부분. -->
+                <input type="text" id="checking_today" class="hidden" name="place" value="<?= $today ?>">
+                <?php
+
             ?>
                 <br><br>
                 
