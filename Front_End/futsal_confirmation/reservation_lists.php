@@ -8,7 +8,7 @@ session_start();
     <title>Hanyang Erica Rental Site</title>
     <!-- <link rel="stylesheet" href="../Front_end/futsal_reserve_page/futsal_reserv.css"> -->
     <!-- <link rel="stylesheet" href="../Front_end/main/main.css"> -->
-    <link rel="stylesheet" href="../futsal_reserve_page/reservation_lists.css?">
+    <link rel="stylesheet" href="../futsal_reserve_page/reservation_lists.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../main2.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -99,17 +99,32 @@ session_start();
             <th id="num" class="base">관리번호</th>
             <th id="day" class="base">대여날짜</th>
             <th id="time" class="base">대여시간</th>
-            <th id="place" class="base">대여장소</th>          
+            <th id="place" class="base">대여장소</th>
+            <th id="empt" class="base"></th>          
+            <th id="empt" class="base"></th>          
           </tr>
           <?php
             get_list();
             for($i = 0; $i < $size; $i++){//모든 예약 내역을 가져온다
+
+
+            //if절 넣은건 관리번호 홀/짝에 따라 백그라운드컬러 다르게 하려는거
+              if ($i%2==0){?>
+                <tr>
+                <th id="num" class="tab2"><?=$manage_ID[$i]?></th>
+                <th id="day" class="tab2"><?=$borrowdate[$i]?></th>
+                <th id="time" class="tab2"><?=substr($start_time[$i],0,-3)?> ~ <?=substr($end_time[$i],0,-3)?></th>
+                <th id="place" class="tab2"><?=$place[$i]?></th>
+              <?}
+          
+              else{?>
+                <tr>
+                <th id="num" class="tab"><?=$manage_ID[$i]?></th>
+                <th id="day" class="tab"><?=$borrowdate[$i]?></th>
+                <th id="time" class="tab"><?=substr($start_time[$i],0,-3)?> ~ <?=substr($end_time[$i],0,-3)?></th>
+                <th id="place" class="tab"><?=$place[$i]?></th>
+              <?}
           ?>
-            <tr>
-            <th id="num" class="tab"><?=$manage_ID[$i]?></th>
-            <th id="day" class="tab"><?=$borrowdate[$i]?></th>
-            <th id="time" class="tab"><?=substr($start_time[$i],0,-3)?> ~ <?=substr($end_time[$i],0,-3)?></th>
-            <th id="place" class="tab"><?=$place[$i]?></th>
           <?php
             $valarr = array($manage_ID[$i], $borrowdate[$i]);
             $val = implode(" ",$valarr);

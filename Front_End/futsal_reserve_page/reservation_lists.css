@@ -1,6 +1,6 @@
 
 #reserve_wrap{
-	
+	left: 15%;
 	height: 60%;
 	margin-top: 10%;
 	width: 70%;
@@ -17,12 +17,12 @@ table{
 
 }
 th{
-	border: 1px dotted black;
+	border: none;
 	width: 80px;
 	font-weight: normal;
 }
 #num{
-	width: 5%;
+	width: 7%;
 	font-size: 10pt;
 }
 #but{
@@ -41,11 +41,19 @@ th{
 	padding-right: 5px;
 }
 .base{
+	color: white;
 	font-size: 10pt;
-	background-color: black;
+	background-color: #F78181;
 }
 .tab{
 	font-size: 15pt;
+	background-color: #F2F2F2;
+}
+.tab2{
+	font-size: 15pt;
+}
+th{
+	height: 40px;
 }
 button{
 	border: none;
