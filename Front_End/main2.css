@@ -3,10 +3,39 @@ body, html{
   padding: 0;
   font-family: sans-serif;
   font-size: 12pt;
+  width: 100%;
+}
+@font-face {
+  font-family: mylight;
+  src: url(main/font/Existence-Light.otf);
 }
 @font-face {
   font-family: myserif;
-  src: url(font/Anson-Regular.otf);
+  src: url(main/font/Anson-Regular.otf);
+}
+header{
+  font-family: mylight;
+  position: fixed;
+  margin: 0 auto;
+  text-align: center;
+  width: 100%;
+}
+header a{
+  text-decoration: none;
+  font-weight: normal;
+  font-size: 25pt;
+  letter-spacing: 1pt;
+  color: black;
+}
+header h1{
+  margin-top: 0.5%;
+  margin-bottom: 0;
+  height: 50px;
+}
+hr{
+  margin-top: 0;
+	height: 1px;
+	background-color: black;
 }
 svg{
   height: 70px;
@@ -25,15 +54,16 @@ svg{
 #xicon{
   z-index: 20;
   position: absolute;
-  left: -22%;
+  left: -25%;
 }
 nav{
   font-family: myserif;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: white;
+  box-shadow: 5px 0 20px rgba(0,0,0,0.5);
   width: 22%;
   height: 100%;
   position: absolute;
-  left: -22%;
+  left: -25%;
   z-index: 10;
 }
 nav dl{
@@ -72,5 +102,14 @@ nav dl dd{
   color: black;
 }
 nav ul li a:hover{
-  color: white;
+  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);
+}
+.user{
+  position: fixed;
+  right: 0;
+  height: 50px;
+  margin-right: 2%;
+  font-family: myserif;
+  font-size: 15pt;
+  visibility: hidden;
 }
