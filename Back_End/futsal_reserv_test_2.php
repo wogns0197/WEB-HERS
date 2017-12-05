@@ -26,13 +26,12 @@ session_start();
   </head>
   <body>
     <header>
-        
             <?php
             $_SESSION['place'] = $_GET['where'];
             $modify = $_SESSION['modify'];
-            if($modify){
-                $id = $_SESSION['user_id'];
-                $name = "web_project";
+            $id = $_SESSION['user_id'];
+            $name = "web_project";
+            if($modify){//예약 수정 상태일 경우 예약 수정을 진행할때 예전 예약 내용을 default값으로 넣어주기위한 값들을 받아온다
                 $m_manage_ID = $_SESSION['m_manage_id'];
                 $m_borrowdate = $_SESSION['m_borrowdate'];
                 try{
@@ -51,19 +50,18 @@ session_start();
                     echo "detail :".$ex->getMessage();
                 }
             }
-            if(!isset($_SESSION['user_id'])){
+            if(!isset($_SESSION['user_id'])){ //로그인 확인
                 ?>
                 <p><a href ='login_function/login.php'>Login</a></p>
-                <?php
+            <?php
             }
             else{
                 $user_id = $_SESSION['user_id'];
-                ?>
+            ?>
                 <p><?= $user_id ?></p>
                 <p ><a href = 'login_function/logout.php'>Logout</a></p>
-                <?php
+            <?php
             }
-            // 아스바 이거 로그아웃 오른쪽으로 옮기고 싶은데 쉬발람이 안옮겨지넹;;
             ?>
         
         <!-- <div class="page-header"> -->
@@ -86,12 +84,8 @@ session_start();
     <form action="futsal_reserv_confirmation.php" method="post">
     <div class="container">
       <div class="panel panel-defaul">
-        <!-- <form action="futsal_reserv_test_2.php?where=<?= $_GET["where"] ?>" method="post"> -->
-
         <div class="panel-heading">
-            <!-- <p clas진s="text-left">예약진행</p> -->
         </div>
-        
         <div class="panel-body">
             <?php 
                 date_default_timezone_set('Asia/Seoul'); 
@@ -103,24 +97,20 @@ session_start();
                 <!-- 캘린더 구현 div/ source from "https://github.com/Baremetrics/calendar" -->
                 
                 <br>
-                
-
-
         </div>
-        <?php //장소받아오고 수용인원 체크
-            
-            if(isset($_GET["date"])){
+        <?php //장소와 날짜 표시
+            if(isset($_GET["date"])){ //달력에서 선택한 날짜를 가져온다
                 $date = $_GET["date"];
             }
-            else if($modify){
+            else if($modify){ //예약 수정 상태일때 예전 예약 날짜를 가져온다
                 $date = $m_borrowdate;                
             }
-            else{
+            else{ //처음 default값은 오늘 날짜를 가져온다
                 $date = date("Y-m-d", time());                
             }
             $place = $_GET["where"];
-            $admit_min = 0;
-            $admit_max = 0;
+            // $admit_min = 0;
+            // $admit_max = 0;
             if( $place == "풋살장A"){
                 $admit_min = 6;
                 $admit_max = 10;
@@ -163,7 +153,7 @@ session_start();
                         <?php
                             for($i=$admit_min; $i<=$admit_max; $i++){
                                 // if($modify && $i == $modify_population){
-                                if($i == $m_population){
+                                if($i == $m_population){ // 예약 수정상태일 때 전의 예약했던 인원을 selected상태로 default
                         ?>
                                 <option selected = 'selected'><?= $i ?></option>
                         <?php
@@ -211,7 +201,7 @@ session_start();
                         $timearr = array($start_time,$end_time);
                         $time = implode(" ",$timearr);
                     ?>
-                        <td class="text-center"> 예약 수정중 </td> -->
+                        <td class="text-center"> 예약 수정중 </td>
                         <td>
                             <input class="time" type="radio" name="selected_time" value="<?=$time?>" selected = 'selected'/>                            
                         </td>
