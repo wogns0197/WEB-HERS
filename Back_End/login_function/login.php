@@ -5,6 +5,9 @@ session_start();
 // 로그인 이전 페이지, 즉 원래 있던 페이지에서 로그인한 후 원래 있던 페이지로 가기 위한 세션 변수
 $prevPage = $_SERVER['HTTP_REFERER'];
 $_SESSION['prevPage'] = $prevPage;
+
+
+//이미 로그인 되어있으면 이전페이지로 돌아가게함.
 if(isset($_SESSION['user_id'])){
 	echo "<script>alert('이미 로그인이 되어있습니다!');</script>";
 	?>

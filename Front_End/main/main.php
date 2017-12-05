@@ -75,9 +75,22 @@ session_start();
         <dt>USER</dt><hr color="black">
         <dd>
           <ul class="menus">
+            <?php
+            if(!isset($_SESSION['user_id'])){ //로그인이 안되어있으면 login 버튼만 보여준다.
+             ?>
             <li><a href="../../Back_End/login_function/login.php">Login</a></li>
+            <?php
+            }
+
+            else{ //로그인 상태일 떄의 버튼
+              ?>
+            <li>Signed In as (<?= $_SESSION['user_id']?>)</li>
+
             <li><a href="../../Back_End/login_function/logout.php">Logout</a></li>
             <li><a href="../mypage/mypage.html">My Page</a></li>
+            <?php
+             }
+            ?>
           </ul>
         </dd>
 
@@ -91,17 +104,6 @@ session_start();
       </dl>
 
     </nav>
-
-    <?php
-    if(isset($_SESSION['user_id'])){ //로그인이 되었으면 표시해줌.
-    ?>
-      <div class="user">
-        <p>Signed In as (<?= $_SESSION['user_id']?>)</p>
-      </div>
-    <?php
-
-    }
-     ?>
 
 
     <div class="buttons">
