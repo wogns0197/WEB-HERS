@@ -92,11 +92,11 @@ session_start();
     <form action="../../Back_End/reserv_cancel.php" method="post" id="cancel"></form>
     <form action="../futsal/futmain2.php" method="post" id="modify"></form>
     <div id="reserve_wrap">
-      <h2>| 예약 내역 |</h2>
+      <h2>| Reservation Confirmation |</h2>
       <div class="container">
         <table class="reserve_lists" bor>
           <tr>          
-            <th id="num" class="base">관리번호</th>
+            <th id="num lefttop" class="base">관리번호</th>
             <th id="day" class="base">대여날짜</th>
             <th id="time" class="base">대여시간</th>
             <th id="place" class="base">대여장소</th>
@@ -115,7 +115,17 @@ session_start();
                 <th id="day" class="tab2"><?=$borrowdate[$i]?></th>
                 <th id="time" class="tab2"><?=substr($start_time[$i],0,-3)?> ~ <?=substr($end_time[$i],0,-3)?></th>
                 <th id="place" class="tab2"><?=$place[$i]?></th>
-              <?}
+                <?php
+                  $valarr = array($manage_ID[$i], $borrowdate[$i]);
+                  $val = implode(" ",$valarr);
+                ?>
+                  <th id="but"><button  id="but1" name="modify_val" value="<?= $val ?>" type="submit" form = "modify">수정</button></th>
+                  <th id="but"><button id="but2" name="cancel_val" value="<?= $val ?>" type="submit" form = "cancel">취소</button></th>
+                  </tr>
+                <?php
+                  }
+              
+              
           
               else{?>
                 <tr>
@@ -123,18 +133,19 @@ session_start();
                 <th id="day" class="tab"><?=$borrowdate[$i]?></th>
                 <th id="time" class="tab"><?=substr($start_time[$i],0,-3)?> ~ <?=substr($end_time[$i],0,-3)?></th>
                 <th id="place" class="tab"><?=$place[$i]?></th>
-              <?}
-          ?>
-          <?php
+                <?php
             $valarr = array($manage_ID[$i], $borrowdate[$i]);
             $val = implode(" ",$valarr);
           ?>
-            <th id="but"><button id="but1" name="modify_val" value="<?= $val ?>" type="submit" form = "modify">수정</button></th>
-            <th id="but"><button id="but2" name="cancel_val" value="<?= $val ?>" type="submit" form = "cancel">취소</button></th>
+            <th id="but"><button class="buttab2" id="but1" name="modify_val" value="<?= $val ?>" type="submit" form = "modify">수정</button></th>
+            <th id="but"><button class="buttab2" id="but2" name="cancel_val" value="<?= $val ?>" type="submit" form = "cancel">취소</button></th>
             </tr>
           <?php
             }
           ?>
+              <?}
+          ?>
+          
         </table>
       </div>
     </div>

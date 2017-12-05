@@ -43,9 +43,13 @@ th{
 }
 
 .base{
-	color: white;
+	background-color: #F2F2F2;
+	/*color: #0431B4;*/
 	font-size: 10pt;
-	background-color: #F78181;
+	font-weight: bold;
+	/*border-bottom: 3px solid #0431B4;*/
+	/*background-color: #F78181;*/
+
 }
 .tab{
 	font-size: 15pt;
@@ -53,6 +57,9 @@ th{
 }
 .tab2{
 	font-size: 15pt;
+}
+.buttab2{
+	background-color: #F2F2F2;
 }
 th{
 	height: 40px;
@@ -65,14 +72,21 @@ button{
 	border: none;
 	cursor: pointer;
 	font-size: 10pt;
+	border-radius: 0;
 }
-#but1{
-	background-color:#A9BCF5;
+/*#but1{
+	border-left: 2px solid #0431B4;
+	border-radius:0;
 }
 #but2{
-	background-color:#BCF5A9;
-}
+	border-left: 2px solid #0431B4;
+	border-right: 2px solid #0431B4;
+	border-radius:0;
+}*/
 @import url(//fonts.googleapis.com/earlyaccess/nanumgothiccoding.css);
 table{
 	font-family: 'Nanum Gothic Coding', monospace;
 }
+
+/*table radius*/
+
