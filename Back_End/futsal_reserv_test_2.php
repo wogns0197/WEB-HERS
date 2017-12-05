@@ -1,5 +1,6 @@
 <?php
 session_start();
+date_default_timezone_set('Asia/Seoul'); 
 ?>
 <!DOCTYPE html>
 <html>
@@ -69,7 +70,6 @@ session_start();
         </div>
         <div class="panel-body">
             <?php 
-                date_default_timezone_set('Asia/Seoul'); 
                 $today = date("Y-m-d",time());
                 ?>
                 <!-- 캘린더 자바스크립트에서 오늘날짜 가져오기 위한 부분. -->

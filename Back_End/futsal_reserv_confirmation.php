@@ -29,21 +29,18 @@ session_start();
             <hr id="tophr" />
             <?php
         }
+        if(!isset($_POST['confirm_val'])){
+          $_SESSION['confirm']=false;
+        }
+        else{
+          $c_val = $_POST['confirm_val'];
+          $c_array = explode(" ",$c_val);
+          $c_manage_ID = $c_array[0];
+          $c_borrowdate = $c_array[1];
+          $_SESSION['confirm']=true;
+        }
+        $confirm = $_SESSION['confirm'];
     ?>
-
-
-    <!-- <header id="home">
-      <h1><a href="#home">HERS</a></h1>
-    </header>
-    <nav>
-      <ul>
-        <li><a href="../Front_End/main/main.html">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav> -->
-
-    
     <!-- 이전 페이지에서 예약 선택 정보 가져옴  -->
     <form action="reserv_finish.php" method="post">
     <?php
@@ -52,13 +49,25 @@ session_start();
       if($modify){//예약 수정일 경우 예전 예약 내용을 default값으로 가져온다
         set_modify_val();
       }
-      $population = $_POST["population"];
-      $timearr = $_POST["selected_time"];
-      $time = explode(" ",$timearr);
-      $start_time = $time[0].":00";
-      $end_time = $time[1].":00";
-      $borrow_date = $_POST["selected_date"];
-      $place = $_POST["place"];
+      if($confirm){
+        set_confirm_val();
+        $population = $c_population;
+        $start_time = substr($c_start_time,0,5);
+        $end_time = substr($c_end_time,0,5);
+        $timearr = array($start_time, $end_time);
+        $timearr = implode(" ",$timearr);
+        $borrow_date = $c_borrowdate;
+        $place = $c_place;
+      }
+      else{
+        $population = $_POST["population"];
+        $timearr = $_POST["selected_time"];
+        $time = explode(" ",$timearr);
+        $start_time = $time[0].":00";
+        $end_time = $time[1].":00";
+        $borrow_date = $_POST["selected_date"];
+        $place = $_POST["place"];
+      }
     ?>
     
     <div class="confirm_wrap">
@@ -121,11 +130,13 @@ session_start();
                 <input type="text" placeholder ="away" name="away" required />
               </div>
             <?php
-            }
             ?>
             <div>
             <input type="text" placeholder="단체명" name="groupname" required/>
             </div>
+            <?php
+            }
+            ?>
         </div>
         <br/>
         <div class="buttons">
@@ -133,6 +144,11 @@ session_start();
             <?php if($_SESSION['modify']){//예약 수정 중일 때는 '예약 수정'버튼 기본 예약 중일때는 '예약 신청'버튼으로
             ?>
               수정
+            <?php
+            }
+            else if($confirm){
+            ?>
+              확정
             <?php
             }
             else{
@@ -155,10 +171,10 @@ session_start();
       $m_manage_ID = $_SESSION['m_manage_id'];
       $m_borrowdate = $_SESSION['m_borrowdate'];
       $name = "web_project";
-      $query1 = "select * from futsal_manage where manage_ID=$m_manage_ID and borrowdate = '$m_borrowdate'";        
+      $query = "select * from futsal_manage where manage_ID=$m_manage_ID and borrowdate = '$m_borrowdate'";        
       $db = new PDO("mysql:dbname=$name", "root","root");
       $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-      $rows = $db->query($query1);
+      $rows = $db->query($query);
       foreach($rows as $row){
           $notice = $row['notice'];
           if($notice == 1){
@@ -166,6 +182,27 @@ session_start();
             $away = $row['away'];
             $groupname = $row['groupname'];
           }
+      }
+    }
+    catch(PDOException $ex){
+        echo "detail :".$ex->getMessage();
+    }
+  }
+  function set_confirm_val(){
+    global $c_population, $c_start_time, $c_end_time, $c_place, $c_manage_ID, $c_borrowdate;
+    try{
+      $name = "web_project";
+      echo $c_manage_ID;
+      echo $c_borrowdate;
+      $query = "select * from futsal_manage where manage_ID=$c_manage_ID and borrowdate = '$c_borrowdate'";        
+      $db = new PDO("mysql:dbname=$name", "root","root");
+      $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+      $rows = $db->query($query);
+      foreach($rows as $row){
+        $c_population = $row['people'];
+        $c_start_time = $row['start_time'];
+        $c_end_time = $row['end_time'];
+        $c_place = $row['place'];
       }
     }
     catch(PDOException $ex){
