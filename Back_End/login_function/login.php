@@ -5,7 +5,15 @@ session_start();
 // 로그인 이전 페이지, 즉 원래 있던 페이지에서 로그인한 후 원래 있던 페이지로 가기 위한 세션 변수
 $prevPage = $_SERVER['HTTP_REFERER'];
 $_SESSION['prevPage'] = $prevPage;
+if(isset($_SESSION['user_id'])){
+	echo "<script>alert('이미 로그인이 되어있습니다!');</script>";
+	?>
+	<meta http-equiv='refresh' content='0;url=<?= $_SESSION['prevPage'] ?>'>
+	<?php
 
+	die();
+	// exit;
+}
 ?>
 
 <!DOCTYPE html>
@@ -18,16 +26,6 @@ $_SESSION['prevPage'] = $prevPage;
 	<meta charset="utf-8"/>
 	<title>LOGIN</title>
 </head>
-
-
-<?php
-
-
-
-
-
-?>
-
 
 <body>
 	<main>
