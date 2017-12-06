@@ -5,8 +5,9 @@ window.onload = function(){
         times[i].onclick = time_empty_check;
         times[i].checked = clear(times[i].checked);
     }
-    document.getElementById("button").onclick = button;
-    // document.getElementById("button1").onclick = button;
+    var buttons = document.getElementsByClassName("button");
+    document.getElementById("button2").onclick = button;
+    document.getElementById("button1").onclick = button;
 };
 
 function time_empty_check(){
