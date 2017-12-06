@@ -13,27 +13,30 @@ h1{
 	margin-bottom: 35px;
 }
 
+
 #menuicon,#xicon,#menuabr {
 	z-index: 100;
 }
-.right{
 
+#matchingModal .close{
+	margin-right: 0;
+}
+
+.show_match_info:hover{
+	cursor: pointer;
 }
 .daterange {
-	/*float: right;*/
-	/*display: inline;*/
-	/*border: 5px red solid;*/
+
 	margin-right: 10px;
 	float: right;
-
-	/*float: right;*/
-	/*background-color: red;*/
 }
 .container{
-	/*margin-top: 10%;*/
+
 	padding-right: 1px;
 
 }
+
+
 .panel{
 	margin-top: 15%;
 }

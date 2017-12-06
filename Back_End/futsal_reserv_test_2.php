@@ -222,6 +222,40 @@ date_default_timezone_set('Asia/Seoul');
       </div>
     </div>
     </form>
+
+    <!-- Modal -->
+  <div class="modal fade" id="matchingModal" role="dialog">
+    <div class="modal-dialog">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <span type="button" class="close" data-dismiss="modal">&times;</span>
+          <h4 class="modal-title">Matching</h4>
+        </div>
+        <div class="modal-body">
+        <fieldset>
+          <legend>Detail</legend>
+          <textarea class="form-control" rows="5" id="detail" readonly></textarea>
+        </fieldset>
+        <br>
+        <fieldset>
+          <legend>Send Message:</legend>
+          <textarea class="form-control" rows="5" id="message" maxlength="150" placeholder="Type Your Message..."></textarea>
+        </fieldset>
+
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-default">Submit</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <!-- Modal End-->
+
+
     <script src="../Front_End/calendar/js/Calendar.js"></script>
     <script src="../Front_End/calendar/js/app.js"></script>
   </body>
@@ -319,7 +353,7 @@ date_default_timezone_set('Asia/Seoul');
                             if($row['matching']==1){
                                 ?>
                                 <td class="text-center"> 상대팀 구하는 중 </td>
-                                <td class="text-center"><button>정보 보기</button></td>
+                                <td class="text-center"><span class="text-center show_match_info" data-toggle="modal" data-target="#matchingModal">정보 보기</span></td>
                                 <?php
                                 $flag = false;
                                 break;
