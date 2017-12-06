@@ -67,17 +67,6 @@ date_default_timezone_set('Asia/Seoul');
 
 
     </header>
-
-
-    <!-- <nav class="navbar-default">
-        <div class="container">
-          <ul class="nav nav-pills nav-justified">
-            <li><a href="../Front_End/main/main.html">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </div>
-    </nav> -->
     <a id="menuicon"><svg xmlns="http://www.w3.org/2000/svg" data-name="Layer 1" viewBox="0 0 100 125" x="0px" y="0px"><title>54 all</title><path d="M74.46,49H25.54a1,1,0,0,0,0,2H74.46a1,1,0,0,0,0-2Z"/><path d="M74.46,28.73H25.54a1,1,0,0,0,0,2H74.46a1,1,0,0,0,0-2Z"/><path d="M74.46,69.27H25.54a1,1,0,1,0,0,2H74.46a1,1,0,1,0,0-2Z"/>
     </svg></a>
 
@@ -327,12 +316,22 @@ date_default_timezone_set('Asia/Seoul');
                     ?>
                     <?php
                         if($start_time==$start_t){//그 시간에 예약이 차있을 경우
-                            ?>
-                            <td class="text-center"> 예약 완료 </td>
-                            <td class="text-center">X</td>
+                            if($row['matching']==1){
+                                ?>
+                                <td class="text-center"> 상대팀 구하는 중 </td>
+                                <td class="text-center"><button>정보 보기</button></td>
                                 <?php
-                                    $flag = false;
-                                    break;
+                                $flag = false;
+                                break;
+                            }
+                            else{
+                                ?>
+                                <td class="text-center"> 예약 완료 </td>
+                                <td class="text-center">X</td>
+                                <?php
+                                $flag = false;
+                                break;
+                            }
                         }
                     }
                     if($flag){//그 시간에 예약이 차있지 않았을 경우
