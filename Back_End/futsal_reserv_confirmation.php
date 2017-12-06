@@ -1,5 +1,6 @@
 <?php
 session_start();
+print_r($_POST);
 ?>
 
 <!DOCTYPE html>
@@ -29,6 +30,7 @@ session_start();
             <?php
         }
         if(isset($_POST['find'])){
+
         }
         if(!isset($_POST['confirm_val'])){
           $_SESSION['confirm']=false;
