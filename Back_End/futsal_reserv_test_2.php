@@ -91,7 +91,7 @@ date_default_timezone_set('Asia/Seoul');
         <dt>MAIN</dt><hr color="black">
         <dd>
           <ul class="menus">
-            <li><a href="main.html">Home</a></li>
+            <li><a href="../Front_End/main/main.php">Home</a></li>
             <li><a href="../about/about.html">About Us</a></li>
           </ul>
         </dd>
@@ -102,7 +102,7 @@ date_default_timezone_set('Asia/Seoul');
             <?php
             if(!isset($_SESSION['user_id'])){
              ?>
-            <li><a href="../../Back_End/login_function/login.php">Login</a></li>
+            <li><a href="login_function/login.php">Login</a></li>
             <?php
             }
 
@@ -110,8 +110,8 @@ date_default_timezone_set('Asia/Seoul');
               ?>
             <li>Signed In as (<?= $_SESSION['user_id']?>)</li>
 
-            <li><a href="../../Back_End/login_function/logout.php">Logout</a></li>
-            <li><a href="../mypage/mypage.html">My Page</a></li>
+            <li><a href="login_function/logout.php">Logout</a></li>
+            <li><a href="../Front_End/mypage/mypage.html">My Page</a></li>
             <?php
              }
             ?>
@@ -121,8 +121,8 @@ date_default_timezone_set('Asia/Seoul');
         <dt>RENTAL</dt><hr color="black">
         <dd>
           <ul class="menus">
-            <li><a href="../futsal-comfirmation/futconfirm.html">Futsal Confirmation</a></li>
-            <li><a href="../futsal/futmain2.php">Futsal Field Rental</a></li>
+            <li><a href="../Front_End/futsal_confirmation/reservation_lists.php">Futsal Confirmation</a></li>
+            <li><a href="../Front_End/futsal/futmain2.php">Futsal Field Rental</a></li>
           </ul>
         </dd>
       </dl>
@@ -133,6 +133,7 @@ date_default_timezone_set('Asia/Seoul');
     <div class="container">
       <div class="panel panel-defaul">
         <div class="panel-heading">
+          <p>예약진행</p>
         </div>
         <div class="panel-body">
             <?php
