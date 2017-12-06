@@ -125,7 +125,9 @@ session_start();
 
   </body>
 
-  <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+
+
+  <!-- http://www.blueb.co.kr/?c=1/14&cat=%EB%B0%B0%EA%B2%BD%ED%9A%A8%EA%B3%BC&uid=4089 -->
   <script type="text/javascript" src="backgroundTransition.js"></script>
   <script type="text/javascript">
     $(document).ready(function(){
