@@ -7,7 +7,11 @@ session_start();
   <head>
     <meta charset="utf-8">
     <title>Hanyang Erica Rental Site</title>
+    <link rel="stylesheet" type="text/css" href="backgroundTransition.css" />
     <link rel="stylesheet" href="main.css">
+
+
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <script type="text/javascript"src="http://code.jquery.com/jquery-latest.min.js"></script>
@@ -44,11 +48,8 @@ session_start();
     </script>
   </head>
   <body>
-    <div class="mainvideo">
-      <video preload="auto" autoplay="true" loop="loop" muted="muted" volume="0">
-        <source src="video/Keyboard.mp4" type="video/mp4">
-      </video>
-    </div>
+    <div class="backgroundTransition"></div>
+
 
      <header id="home">
       <h1><a href="main.html">HERS</a></h1>
@@ -76,13 +77,13 @@ session_start();
         <dd>
           <ul class="menus">
             <?php
-            if(!isset($_SESSION['user_id'])){ //로그인이 안되어있으면 login 버튼만 보여준다.
+            if(!isset($_SESSION['user_id'])){
              ?>
             <li><a href="../../Back_End/login_function/login.php">Login</a></li>
             <?php
             }
 
-            else{ //로그인 상태일 떄의 버튼
+            else{
               ?>
             <li>Signed In as (<?= $_SESSION['user_id']?>)</li>
 
@@ -106,6 +107,8 @@ session_start();
     </nav>
 
 
+
+
     <div class="buttons">
       <a href="../futsal_confirmation/reservation_lists.php"><button id="lecture">Confirmation</button></a>
       <a href = "../futsal/futmain2.php"><button id="futsal" href="#">Rental Go</button></a>
@@ -121,4 +124,24 @@ session_start();
     </footer>
 
   </body>
+
+  <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+  <script type="text/javascript" src="backgroundTransition.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function(){
+  	  $('.backgroundTransition').backgroundTransition({
+  		  backgrounds:[
+
+  			  { src: 'mainimg/boys.jpg' },
+  			  { src: 'mainimg/theball.jpg' },
+          { src: 'mainimg/desert.jpg'},
+          { src: 'mainimg/theball2.jpg'}
+
+  		  ],
+  		  transitionDelay: 5,
+  		  animationSpeed: 500
+  	  });
+    });
+  </script>
+
 </html>
