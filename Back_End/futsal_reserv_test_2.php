@@ -241,7 +241,7 @@ date_default_timezone_set('Asia/Seoul');
         <br>
         <fieldset>
           <legend>Send Message:</legend>
-          <textarea class="form-control" rows="5" id="message" maxlength="150" placeholder="Type Your Message..."></textarea>
+          <textarea class="form-control" rows="5" id="message" maxlength="150" placeholder="Type Your Message..." required></textarea>
         </fieldset>
 
         </div>
