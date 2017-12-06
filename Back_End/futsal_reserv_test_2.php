@@ -219,10 +219,10 @@ date_default_timezone_set('Asia/Seoul');
             </button></p>
             <?php
             if($modify==0){
-                $confirm = true;
+                $find = true;
             ?>
             <p class="text-center">
-                <button id = "button1" name = "confirm" value =<?= $confirm ?>>
+                <button id = "button1" name = "find" value =<?= $find ?>>
                 상대팀 구하기
             </button></p>
             <?php

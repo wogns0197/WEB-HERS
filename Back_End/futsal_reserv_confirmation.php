@@ -1,6 +1,5 @@
 <?php
 session_start();
-print_r($_POST);
 ?>
 
 <!DOCTYPE html>
@@ -15,7 +14,6 @@ print_r($_POST);
     <script src="futsal_reserv_confirm_js.js" type="text/javascript" ></script>
   </head>
   <body>
-
     <?php
         if(!isset($_SESSION['user_id'])){//로그인 확인
             echo "<script>alert('로그인이 필요합니다!');location.href='login_function/login.php';</script>";
@@ -29,6 +27,8 @@ print_r($_POST);
             </div>
             <hr id="tophr" />
             <?php
+        }
+        if(isset($_POST['find'])){
         }
         if(!isset($_POST['confirm_val'])){
           $_SESSION['confirm']=false;
