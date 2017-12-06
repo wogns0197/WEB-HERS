@@ -203,7 +203,7 @@ date_default_timezone_set('Asia/Seoul');
         ?>
         </tbody>
         </table>
-            <p class="text-center"><button id = "button2">
+            <p class="text-center"><button class = "button">
             <?php
             if($_SESSION['modify']){
             ?>
@@ -216,7 +216,18 @@ date_default_timezone_set('Asia/Seoul');
             <?php
             }?>
                 하기
-            </p>
+            </button></p>
+            <?php
+            if($modify==0){
+                $confirm = true;
+            ?>
+            <p class="text-center">
+                <button class = "button" name = "confirm" value =<?= $confirm ?>>
+                상대팀 구하기
+            </button></p>
+            <?php
+            }
+            ?>
         </div>
       </div>
     </div>

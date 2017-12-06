@@ -52,3 +52,9 @@ create table matching_manage
         on delete set null
 );
 insert into matching_manage values ("jh9277","한판합시다.","jh2628",2,"2017-12-06");
+create table b_test
+)
+    num     integer(10),
+    numb    integer(10),
+    primary key(num, numb)
+);

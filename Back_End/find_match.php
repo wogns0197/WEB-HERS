@@ -1,6 +1,6 @@
 <?php
 session_start();
-print_r($_POST);
+echo print_r($_POST);
 ?>
 
 <!DOCTYPE html>
@@ -30,45 +30,18 @@ print_r($_POST);
             <hr id="tophr" />
             <?php
         }
-        if(!isset($_POST['confirm_val'])){
-          $_SESSION['confirm']=false;
-        }
-        else{
-          $c_val = $_POST['confirm_val'];
-          $c_array = explode(" ",$c_val);
-          $c_manage_ID = $c_array[0];
-          $c_borrowdate = $c_array[1];
-          $_SESSION['confirm']=true;
-        }
-        $confirm = $_SESSION['confirm'];
     ?>
     <!-- 이전 페이지에서 예약 선택 정보 가져옴  -->
     <form action="reserv_finish.php" method="post">
     <?php
       //전의 페이지에서 받아온 정보를 가져온다
-      $modify = $_SESSION['modify'];
-      if($modify){//예약 수정일 경우 예전 예약 내용을 default값으로 가져온다
-        set_modify_val();
-      }
-      if($confirm){
-        set_confirm_val();
-        $population = $c_population;
-        $start_time = substr($c_start_time,0,5);
-        $end_time = substr($c_end_time,0,5);
-        $timearr = array($start_time, $end_time);
-        $timearr = implode(" ",$timearr);
-        $borrow_date = $c_borrowdate;
-        $place = $c_place;
-      }
-      else{
-        $population = $_POST["population"];
-        $timearr = $_POST["selected_time"];
-        $time = explode(" ",$timearr);
-        $start_time = $time[0].":00";
-        $end_time = $time[1].":00";
-        $borrow_date = $_POST["selected_date"];
-        $place = $_POST["place"];
-      }
+    $population = $_POST["population"];
+    $timearr = $_POST["selected_time"];
+    $time = explode(" ",$timearr);
+    $start_time = $time[0].":00";
+    $end_time = $time[1].":00";
+    $borrow_date = $_POST["selected_date"];
+    $place = $_POST["place"];
     ?>
     
     <div class="confirm_wrap">
@@ -89,76 +62,6 @@ print_r($_POST);
           <input class="hidden" type="text" name="place" value="<?= $place ?>" readonly/>
         </div>
         <br/>
-        <div class="container">
-          <span>사용 용도 :</span>
-            <select name="purpose">
-              <option>풋살</option>
-              <option>축구</option>
-              <option>농구</option>
-              <option>기타행사</option>
-            </select>
-          <?php
-            if($modify == 1){//예약 수정
-              if($notice == 1){//예약 수정할때 공지를 원할 경우
-          ?>
-            <input id = "notice_checked" name = "notice" type="checkbox" checked/>공지
-            <br>
-            <div id="notice_on">
-              <input type="text" placeholder = "home" name = "home" value ="<?= $home ?>" required/>
-              <span > vs </span>
-              <input type="text" placeholder ="away" name="away" value="<?= $away ?>"  required />
-            </div>
-          <?php
-              }
-              else{//예약 수정할때 공지를 원하지 않을 경우
-          ?>
-            <input id = "notice_checked" name = "notice" type="checkbox" unchecked/>공지
-          <?php
-              }
-          ?>
-            <div class="groupname">
-              <input type="text" placeholder="단체명" name="groupname" value = "<?= $groupname ?>" required/>
-            </div>
-          <?php
-            }
-            else{//기본 예약
-          ?>
-              <input id = "notice_checked" name = "notice" type="checkbox" checked/>공지
-              <br>
-              <div id="notice_on">
-                <input type="text" placeholder = "home" name = "home" required/>
-                <span > vs </span>
-                <input type="text" placeholder ="away" name="away" required />
-              </div>
-            <?php
-            ?>
-            <div>
-            <input type="text" placeholder="단체명" name="groupname" required/>
-            </div>
-            <?php
-            }
-            ?>
-        </div>
-        <br/>
-        <div class="buttons">
-          <button id="alert" type="submit">예약
-            <?php if($_SESSION['modify']){//예약 수정 중일 때는 '예약 수정'버튼 기본 예약 중일때는 '예약 신청'버튼으로
-            ?>
-              수정
-            <?php
-            }
-            else if($confirm){
-            ?>
-              확정
-            <?php
-            }
-            else{
-            ?>
-              신청
-            <?php
-            }?>
-          </button>
-        </div>
     </div>
     </form>
 
@@ -193,8 +96,6 @@ print_r($_POST);
     global $c_population, $c_start_time, $c_end_time, $c_place, $c_manage_ID, $c_borrowdate;
     try{
       $name = "web_project";
-      echo $c_manage_ID;
-      echo $c_borrowdate;
       $query = "select * from futsal_manage where manage_ID=$c_manage_ID and borrowdate = '$c_borrowdate'";        
       $db = new PDO("mysql:dbname=$name", "root","root");
       $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
