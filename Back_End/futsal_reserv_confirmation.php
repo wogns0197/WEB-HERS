@@ -1,6 +1,6 @@
 <?php
 session_start();
-print_r($_POST);
+// print_r($_POST);
 ?>
 
 <!DOCTYPE html>
@@ -11,8 +11,10 @@ print_r($_POST);
     <link rel="stylesheet" href="../Front_end/futsal_reserve_page/futsal_reserv.css">
     <!-- <link rel="stylesheet" href="../Front_end/main/main.css"> -->
     <link rel="stylesheet" href="../Front_end/futsal_reserve_page/futsal_reserv_confirmation.css">
+    <script src="../Front_end/futsal_reserve_page/futsal_reserv_confirmation.js" type="text/javascript"></script>
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="futsal_reserv_confirm_js.js" type="text/javascript" ></script>
+
   </head>
   <body>
     <?php
@@ -72,7 +74,7 @@ print_r($_POST);
         $place = $_POST["place"];
       }
     ?>
-    
+
     <div class="confirm_wrap">
         <hr id="tophr" />
         <br>
@@ -80,7 +82,7 @@ print_r($_POST);
           <span class="arc">인원 : <?= $population ?>명</span><br>
           <span class="arc">대여날짜 : <?= $borrow_date ?></span><br>
           <span class="arc">대여시간 : <?= $start_time ?> ~ <?= $end_time ?></span><br>
-          <?php 
+          <?php
             $start_time = $start_time.":00";
             $end_time = $end_time.":00";
           ?>
@@ -106,15 +108,21 @@ print_r($_POST);
             <input id = "notice_checked" name = "notice" type="checkbox" checked/>공지
             <br>
             <div id="notice_on">
-              <input type="text" placeholder = "home" name = "home" value ="<?= $home ?>" required/>
+              <input type="text" id = "notice_home" placeholder = "home" name = "home" value ="<?= $home ?>" required/>
               <span > vs </span>
-              <input type="text" placeholder ="away" name="away" value="<?= $away ?>"  required />
+              <input type="text" id = "notice_away" placeholder ="away" name="away" value="<?= $away ?>"  required />
             </div>
           <?php
               }
               else{//예약 수정할때 공지를 원하지 않을 경우
           ?>
             <input id = "notice_checked" name = "notice" type="checkbox" unchecked/>공지
+            br>
+            <div id="notice_on">
+              <input type="text" id = "notice_home" placeholder = "home" name = "home" />
+              <span > vs </span>
+              <input type="text" id = "notice_away" placeholder ="away" name="away"  />
+            </div>
           <?php
               }
           ?>
@@ -125,12 +133,12 @@ print_r($_POST);
             }
             else{//기본 예약
           ?>
-              <input id = "notice_checked" name = "notice" type="checkbox" checked/>공지
+              <input id = "notice_checked" name = "notice" type="checkbox" unchecked/>공지
               <br>
               <div id="notice_on">
-                <input type="text" placeholder = "home" name = "home" required/>
+                <input type="text" id = "notice_home" placeholder = "home" name = "home" />
                 <span > vs </span>
-                <input type="text" placeholder ="away" name="away" required />
+                <input type="text" id = "notice_away" placeholder ="away" name="away"  />
               </div>
             <?php
             ?>
@@ -164,7 +172,6 @@ print_r($_POST);
     </div>
     </form>
 
-     <script src="../Front_end/futsal_reserve_page/futsal_reserv_confirmation.js?ver=2" type="text/javascript"></script>
   </body>
 </html>
 <?php
@@ -174,7 +181,7 @@ print_r($_POST);
       $m_manage_ID = $_SESSION['m_manage_id'];
       $m_borrowdate = $_SESSION['m_borrowdate'];
       $name = "web_project";
-      $query = "select * from futsal_manage where manage_ID=$m_manage_ID and borrowdate = '$m_borrowdate'";        
+      $query = "select * from futsal_manage where manage_ID=$m_manage_ID and borrowdate = '$m_borrowdate'";
       $db = new PDO("mysql:dbname=$name", "root","root");
       $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
       $rows = $db->query($query);
@@ -197,7 +204,7 @@ print_r($_POST);
       $name = "web_project";
       echo $c_manage_ID;
       echo $c_borrowdate;
-      $query = "select * from futsal_manage where manage_ID=$c_manage_ID and borrowdate = '$c_borrowdate'";        
+      $query = "select * from futsal_manage where manage_ID=$c_manage_ID and borrowdate = '$c_borrowdate'";
       $db = new PDO("mysql:dbname=$name", "root","root");
       $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
       $rows = $db->query($query);
