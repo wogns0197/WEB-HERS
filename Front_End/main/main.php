@@ -55,6 +55,7 @@ session_start();
       <h1><a href="main.html">HERS</a></h1>
     </header>
 
+    <!-- sidebar menu -->
     <a id="menuicon"><svg xmlns="http://www.w3.org/2000/svg" data-name="Layer 1" viewBox="0 0 100 125" x="0px" y="0px"><title>54 all</title><path d="M74.46,49H25.54a1,1,0,0,0,0,2H74.46a1,1,0,0,0,0-2Z"/><path d="M74.46,28.73H25.54a1,1,0,0,0,0,2H74.46a1,1,0,0,0,0-2Z"/><path d="M74.46,69.27H25.54a1,1,0,1,0,0,2H74.46a1,1,0,1,0,0-2Z"/>
     </svg></a>
 
@@ -68,7 +69,7 @@ session_start();
         <dt>MAIN</dt><hr color="black">
         <dd>
           <ul class="menus">
-            <li><a href="main.html">Home</a></li>
+            <li><a href="main.php">Home</a></li>
             <li><a href="../about/about.html">About Us</a></li>
           </ul>
         </dd>
@@ -98,13 +99,14 @@ session_start();
         <dt>RENTAL</dt><hr color="black">
         <dd>
           <ul class="menus">
-            <li><a href="../futsal-comfirmation/futconfirm.html">Futsal Confirmation</a></li>
+            <li><a href="../futsal_confirmation/reservation_lists.php">Futsal Confirmation</a></li>
             <li><a href="../futsal/futmain2.php">Futsal Field Rental</a></li>
           </ul>
         </dd>
       </dl>
 
     </nav>
+    <!-- end sidebar menu -->
 
 
 
