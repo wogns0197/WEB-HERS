@@ -1,5 +1,6 @@
 <?php
 session_start();
+// print_r($_POST);
 ?>
 
 <!DOCTYPE html>
@@ -10,11 +11,12 @@ session_start();
     <link rel="stylesheet" href="../Front_end/futsal_reserve_page/futsal_reserv.css">
     <!-- <link rel="stylesheet" href="../Front_end/main/main.css"> -->
     <link rel="stylesheet" href="../Front_end/futsal_reserve_page/futsal_reserv_confirmation.css">
+    <script src="../Front_end/futsal_reserve_page/futsal_reserv_confirmation.js" type="text/javascript"></script>
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="futsal_reserv_confirm_js.js" type="text/javascript" ></script>
+
   </head>
   <body>
-
     <?php
         if(!isset($_SESSION['user_id'])){//로그인 확인
             echo "<script>alert('로그인이 필요합니다!');location.href='login_function/login.php';</script>";
@@ -29,21 +31,21 @@ session_start();
             <hr id="tophr" />
             <?php
         }
+        if(isset($_POST['find'])){
+
+        }
+        if(!isset($_POST['confirm_val'])){
+          $_SESSION['confirm']=false;
+        }
+        else{
+          $c_val = $_POST['confirm_val'];
+          $c_array = explode(" ",$c_val);
+          $c_manage_ID = $c_array[0];
+          $c_borrowdate = $c_array[1];
+          $_SESSION['confirm']=true;
+        }
+        $confirm = $_SESSION['confirm'];
     ?>
-
-
-    <!-- <header id="home">
-      <h1><a href="#home">HERS</a></h1>
-    </header>
-    <nav>
-      <ul>
-        <li><a href="../Front_End/main/main.html">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav> -->
-
-    
     <!-- 이전 페이지에서 예약 선택 정보 가져옴  -->
     <form action="reserv_finish.php" method="post">
     <?php
@@ -52,15 +54,27 @@ session_start();
       if($modify){//예약 수정일 경우 예전 예약 내용을 default값으로 가져온다
         set_modify_val();
       }
-      $population = $_POST["population"];
-      $timearr = $_POST["selected_time"];
-      $time = explode(" ",$timearr);
-      $start_time = $time[0].":00";
-      $end_time = $time[1].":00";
-      $borrow_date = $_POST["selected_date"];
-      $place = $_POST["place"];
+      if($confirm){
+        set_confirm_val();
+        $population = $c_population;
+        $start_time = substr($c_start_time,0,5);
+        $end_time = substr($c_end_time,0,5);
+        $timearr = array($start_time, $end_time);
+        $timearr = implode(" ",$timearr);
+        $borrow_date = $c_borrowdate;
+        $place = $c_place;
+      }
+      else{
+        $population = $_POST["population"];
+        $timearr = $_POST["selected_time"];
+        $time = explode(" ",$timearr);
+        $start_time = $time[0].":00";
+        $end_time = $time[1].":00";
+        $borrow_date = $_POST["selected_date"];
+        $place = $_POST["place"];
+      }
     ?>
-    
+
     <div class="confirm_wrap">
         <hr id="tophr" />
         <br>
@@ -68,7 +82,7 @@ session_start();
           <span class="arc">인원 : <?= $population ?>명</span><br>
           <span class="arc">대여날짜 : <?= $borrow_date ?></span><br>
           <span class="arc">대여시간 : <?= $start_time ?> ~ <?= $end_time ?></span><br>
-          <?php 
+          <?php
             $start_time = $start_time.":00";
             $end_time = $end_time.":00";
           ?>
@@ -94,15 +108,21 @@ session_start();
             <input id = "notice_checked" name = "notice" type="checkbox" checked/>공지
             <br>
             <div id="notice_on">
-              <input type="text" placeholder = "home" name = "home" value ="<?= $home ?>" required/>
+              <input type="text" id = "notice_home" placeholder = "home" name = "home" value ="<?= $home ?>" required/>
               <span > vs </span>
-              <input type="text" placeholder ="away" name="away" value="<?= $away ?>"  required />
+              <input type="text" id = "notice_away" placeholder ="away" name="away" value="<?= $away ?>"  required />
             </div>
           <?php
               }
               else{//예약 수정할때 공지를 원하지 않을 경우
           ?>
             <input id = "notice_checked" name = "notice" type="checkbox" unchecked/>공지
+            br>
+            <div id="notice_on">
+              <input type="text" id = "notice_home" placeholder = "home" name = "home" />
+              <span > vs </span>
+              <input type="text" id = "notice_away" placeholder ="away" name="away"  />
+            </div>
           <?php
               }
           ?>
@@ -113,19 +133,21 @@ session_start();
             }
             else{//기본 예약
           ?>
-              <input id = "notice_checked" name = "notice" type="checkbox" checked/>공지
+              <input id = "notice_checked" name = "notice" type="checkbox" unchecked/>공지
               <br>
               <div id="notice_on">
-                <input type="text" placeholder = "home" name = "home" required/>
+                <input type="text" id = "notice_home" placeholder = "home" name = "home" />
                 <span > vs </span>
-                <input type="text" placeholder ="away" name="away" required />
+                <input type="text" id = "notice_away" placeholder ="away" name="away"  />
               </div>
             <?php
-            }
             ?>
             <div>
             <input type="text" placeholder="단체명" name="groupname" required/>
             </div>
+            <?php
+            }
+            ?>
         </div>
         <br/>
         <div class="buttons">
@@ -133,6 +155,11 @@ session_start();
             <?php if($_SESSION['modify']){//예약 수정 중일 때는 '예약 수정'버튼 기본 예약 중일때는 '예약 신청'버튼으로
             ?>
               수정
+            <?php
+            }
+            else if($confirm){
+            ?>
+              확정
             <?php
             }
             else{
@@ -145,7 +172,6 @@ session_start();
     </div>
     </form>
 
-     <script src="../Front_end/futsal_reserve_page/futsal_reserv_confirmation.js?ver=2" type="text/javascript"></script>
   </body>
 </html>
 <?php
@@ -155,10 +181,10 @@ session_start();
       $m_manage_ID = $_SESSION['m_manage_id'];
       $m_borrowdate = $_SESSION['m_borrowdate'];
       $name = "web_project";
-      $query1 = "select * from futsal_manage where manage_ID=$m_manage_ID and borrowdate = '$m_borrowdate'";        
+      $query = "select * from futsal_manage where manage_ID=$m_manage_ID and borrowdate = '$m_borrowdate'";
       $db = new PDO("mysql:dbname=$name", "root","root");
       $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-      $rows = $db->query($query1);
+      $rows = $db->query($query);
       foreach($rows as $row){
           $notice = $row['notice'];
           if($notice == 1){
@@ -166,6 +192,27 @@ session_start();
             $away = $row['away'];
             $groupname = $row['groupname'];
           }
+      }
+    }
+    catch(PDOException $ex){
+        echo "detail :".$ex->getMessage();
+    }
+  }
+  function set_confirm_val(){
+    global $c_population, $c_start_time, $c_end_time, $c_place, $c_manage_ID, $c_borrowdate;
+    try{
+      $name = "web_project";
+      echo $c_manage_ID;
+      echo $c_borrowdate;
+      $query = "select * from futsal_manage where manage_ID=$c_manage_ID and borrowdate = '$c_borrowdate'";
+      $db = new PDO("mysql:dbname=$name", "root","root");
+      $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+      $rows = $db->query($query);
+      foreach($rows as $row){
+        $c_population = $row['people'];
+        $c_start_time = $row['start_time'];
+        $c_end_time = $row['end_time'];
+        $c_place = $row['place'];
       }
     }
     catch(PDOException $ex){

@@ -1,18 +1,16 @@
 <?php
 session_start();
+date_default_timezone_set('Asia/Seoul');
 ?>
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
     <title>Hanyang Erica Rental Site</title>
-    <!-- <link rel="stylesheet" href="../Front_end/futsal_reserve_page/futsal_reserv.css?ver=3"> -->
-    <!-- <link rel="stylesheet" href="../Front_end/main/main.css"> -->
-    <!-- <link rel="stylesheet" href="../Front_end/futsal_reserve_page/futsal_reserv_test.css"> -->
     <link rel="stylesheet" type="text/css" href="../Front_End/bootstrap-3.3.2-dist/css/bootstrap.css">
-    <!-- <script src="main.js" type="text/javascript"></script> -->
     <link rel="stylesheet" href="../Front_End/calendar/css/application.css" />
     <link rel="stylesheet" href="../Front_End/calendar/css/home.css" />
+    <link rel="stylesheet" href="../Front_End/main2.css">
     <link rel="stylesheet" href="futsal_reserv_test_2.css" />
 
     <script src="http://ajax.googleapis.com/ajax/libs/prototype/1.7.3.0/prototype.js" type="text/javascript"></script>
@@ -21,6 +19,23 @@ session_start();
     <script src="../Front_End/bootstrap-3.3.2-dist/js/bootstrap.js"></script>
     <script src="timeexception.js" type="text/javascript"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript"src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready( function(){
+        $("#menuicon").click(function () {
+          $("#menubar").animate({left: 0}, 300 );
+          $("#xicon").animate({left: 0}, 300 );
+          $("#menuicon").fadeOut(300);
+        });
+
+        $("#xicon").click(function () {
+          $("#menubar").animate({left: "-25%"}, 300 );
+          $("#xicon").animate({left: "-25%"}, 300 );
+          $("#menuicon").fadeIn(300);
+        });
+
+      });
+    </script>
   </head>
   <body>
     <header>
@@ -34,42 +49,83 @@ session_start();
             }
             if(!isset($_SESSION['user_id'])){ //로그인 확인
                 ?>
-                <p><a href ='login_function/login.php'>Login</a></p>
+                <!-- <p><a href ='login_function/login.php'>Login</a></p> -->
             <?php
             }
             else{
                 $user_id = $_SESSION['user_id'];
             ?>
-                <p><?= $user_id ?></p>
-                <p ><a href = 'login_function/logout.php'>Logout</a></p>
+                <!-- <p><?= $user_id ?></p> -->
+                <!-- <p ><a href = 'login_function/logout.php'>Logout</a></p> -->
             <?php
             }
             set_place_date();//장소와 날짜 초기설정
             ?>
-        
-        <!-- <div class="page-header"> -->
-            <h1 class="text-center">HERS</h1>
-        <!-- </div> -->
-    </header>
 
-    <nav class="navbar-default">
-        <div class="container">
-          <ul class="nav nav-pills nav-justified">
-            <li><a href="../Front_End/main/main.html">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
+
+            <h1 class="text-center"><a href="../Front_End/main/main.php">HERS</a></h1>
+
+
+    </header>
+    <a id="menuicon"><svg xmlns="http://www.w3.org/2000/svg" data-name="Layer 1" viewBox="0 0 100 125" x="0px" y="0px"><title>54 all</title><path d="M74.46,49H25.54a1,1,0,0,0,0,2H74.46a1,1,0,0,0,0-2Z"/><path d="M74.46,28.73H25.54a1,1,0,0,0,0,2H74.46a1,1,0,0,0,0-2Z"/><path d="M74.46,69.27H25.54a1,1,0,1,0,0,2H74.46a1,1,0,1,0,0-2Z"/>
+    </svg></a>
+
+    <a id="xicon"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 100 125" version="1.1" x="0px" y="0px"><title>Bold Cross</title><desc>Created with Sketch.</desc><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g fill="#000000"><path d="M48,48 L48,18.8873016 C48,17.7827321 48.8954305,16.8873016 50,16.8873016 C51.1045695,16.8873016 52,17.7827321 52,18.8873016 L52,48 L81.1126984,48 C82.2172679,48 83.1126984,48.8954305 83.1126984,50 C83.1126984,51.1045695 82.2172679,52 81.1126984,52 L52,52 L52,81.1126984 C52,82.2172679 51.1045695,83.1126984 50,83.1126984 C48.8954305,83.1126984 48,82.2172679 48,81.1126984 L48,52 L18.8873016,52 C17.7827321,52 16.8873016,51.1045695 16.8873016,50 C16.8873016,48.8954305 17.7827321,48 18.8873016,48 L48,48 L48,48 Z" transform="translate(50.000000, 50.000000) rotate(45.000000) translate(-50.000000, -50.000000) "/></g></g>
+    </svg></a>
+
+    <nav id="menubar">
+      <dl>
+        <dt id="title">HERS</dt>
+
+        <dt>MAIN</dt><hr color="black">
+        <dd>
+          <ul class="menus">
+            <li><a href="../Front_End/main/main.php">Home</a></li>
+            <li><a href="../about/about.html">About Us</a></li>
           </ul>
-        </div>
+        </dd>
+
+        <dt>USER</dt><hr color="black">
+        <dd>
+          <ul class="menus">
+            <?php
+            if(!isset($_SESSION['user_id'])){
+             ?>
+            <li><a href="login_function/login.php">Login</a></li>
+            <?php
+            }
+
+            else{
+              ?>
+            <li>Signed In as (<?= $_SESSION['user_id']?>)</li>
+
+            <li><a href="login_function/logout.php">Logout</a></li>
+            <li><a href="../Front_End/mypage/mypage.html">My Page</a></li>
+            <?php
+             }
+            ?>
+          </ul>
+        </dd>
+
+        <dt>RENTAL</dt><hr color="black">
+        <dd>
+          <ul class="menus">
+            <li><a href="../Front_End/futsal_confirmation/reservation_lists.php">Futsal Confirmation</a></li>
+            <li><a href="../Front_End/futsal/futmain2.php">Futsal Field Rental</a></li>
+          </ul>
+        </dd>
+      </dl>
+
     </nav>
 
     <form action="futsal_reserv_confirmation.php" method="post">
     <div class="container">
       <div class="panel panel-defaul">
         <div class="panel-heading">
+          <p>예약진행</p>
         </div>
         <div class="panel-body">
-            <?php 
-                date_default_timezone_set('Asia/Seoul'); 
+            <?php
                 $today = date("Y-m-d",time());
                 ?>
                 <!-- 캘린더 자바스크립트에서 오늘날짜 가져오기 위한 부분. -->
@@ -78,11 +134,11 @@ session_start();
 
             ?>
                 <br><br>
-                
-                <div class="daterange daterange--single">예약 희망 날짜:</div>               
+
+                <div class="daterange daterange--single">예약 희망 날짜:</div>
 
                 <!-- 캘린더 구현 div/ source from "https://github.com/Baremetrics/calendar" -->
-                
+
                 <br>
         </div>
         <!-- 캘린더 선택후 캘린더에서 선택한 날짜로 선택날짜 이동할 때 php에서 장소 파라미터 주기위해 만든 input 태그임 브라우저에서는 안보이게 css처리함 -->
@@ -118,7 +174,7 @@ session_start();
                                 <option><?= $i ?></option>
                         <?php
                                 }
-                            } 
+                            }
                         ?>
                     </select>
                 </td>
@@ -138,7 +194,7 @@ session_start();
         </tbody>
         </table>
             <p class="text-center"><button id = "button2">
-            <?php 
+            <?php
             if($_SESSION['modify']){
             ?>
                 수정
@@ -148,13 +204,58 @@ session_start();
             ?>
                 예약
             <?php
-            }?>    
+            }?>
                 하기
-            </p>
+            </button></p>
+            <?php
+            if($modify==0){
+                $find = true;
+            ?>
+            <p class="text-center">
+                <button id = "button1" name = "find" value =<?= $find ?>>
+                상대팀 구하기
+            </button></p>
+            <?php
+            }
+            ?>
         </div>
       </div>
     </div>
     </form>
+
+    <!-- Modal -->
+  <div class="modal fade" id="matchingModal" role="dialog">
+    <div class="modal-dialog">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <span type="button" class="close" data-dismiss="modal">&times;</span>
+          <h4 class="modal-title">Matching</h4>
+        </div>
+        <div class="modal-body">
+        <fieldset>
+          <legend>Detail</legend>
+          <textarea class="form-control" rows="5" id="detail" readonly></textarea>
+        </fieldset>
+        <br>
+        <fieldset>
+          <legend>Send Message:</legend>
+          <textarea class="form-control" rows="5" id="message" maxlength="150" placeholder="Type Your Message..." required></textarea>
+        </fieldset>
+
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-default">Submit</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <!-- Modal End-->
+
+
     <script src="../Front_End/calendar/js/Calendar.js"></script>
     <script src="../Front_End/calendar/js/app.js"></script>
   </body>
@@ -165,10 +266,10 @@ session_start();
         $m_manage_ID = $_SESSION['m_manage_id'];
         $m_borrowdate = $_SESSION['m_borrowdate'];
         try{
-            $query1 = "select * from futsal_manage where manage_ID=$m_manage_ID and borrowdate='$m_borrowdate'";        
+            $query1 = "select * from futsal_manage where manage_ID=$m_manage_ID and borrowdate='$m_borrowdate'";
             $db = new PDO("mysql:dbname=$name", "root","root");
             $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $rows = $db->query($query1);            
+            $rows = $db->query($query1);
             foreach($rows as $row){
                 $m_population = $row['people'];
                 $m_start = $row['start_time'];
@@ -186,10 +287,10 @@ session_start();
             $date = $_GET["date"];
         }
         else if($modify){ //예약 수정 상태일때 예전 예약 날짜를 가져온다
-            $date = $_SESSION["m_borrowdate"];                
+            $date = $_SESSION["m_borrowdate"];
         }
         else{ //처음 default값은 오늘 날짜를 가져온다
-            $date = date("Y-m-d", time());                
+            $date = date("Y-m-d", time());
         }
         $place = $_GET["where"];
         // $admit_min = 0;
@@ -209,7 +310,7 @@ session_start();
         if( $place == "대운동장"){
             $admit_min = 10;
             $admit_max = 22;
-        }   
+        }
     }
     function make_timetable(){//예약 현황에 따른 타임 테이블을 만들어준다
         global $date, $place, $name, $modify, $m_start, $m_place, $m_borrowdate;
@@ -236,7 +337,7 @@ session_start();
                 ?>
                     <td class="text-center"> 예약 수정중 </td>
                     <td>
-                        <input class="time" type="radio" name="selected_time" value="<?=$time?>" selected = 'selected'/>                            
+                        <input class="time" type="radio" name="selected_time" value="<?=$time?>" selected = 'selected'/>
                     </td>
                 <?php
                 }
@@ -249,26 +350,36 @@ session_start();
                     ?>
                     <?php
                         if($start_time==$start_t){//그 시간에 예약이 차있을 경우
-                            ?>
-                            <td class="text-center"> 예약 완료 </td>
-                            <td class="text-center">X</td>
-                                <?php 
-                                    $flag = false;
-                                    break;
+                            if($row['matching']==1){
+                                ?>
+                                <td class="text-center"> 상대팀 구하는 중 </td>
+                                <td class="text-center"><span class="text-center show_match_info" data-toggle="modal" data-target="#matchingModal">정보 보기</span></td>
+                                <?php
+                                $flag = false;
+                                break;
+                            }
+                            else{
+                                ?>
+                                <td class="text-center"> 예약 완료 </td>
+                                <td class="text-center">X</td>
+                                <?php
+                                $flag = false;
+                                break;
+                            }
                         }
                     }
                     if($flag){//그 시간에 예약이 차있지 않았을 경우
                         $timearr = array($start_time,$end_time);
                         $time = implode(" ",$timearr);
                         ?>
-                    <td class="text-center"> 
-                        선택 가능 
+                    <td class="text-center">
+                        선택 가능
                     </td>
                     <td class="text-center">
                         <input class="time" type="radio" name="selected_time" value="<?=$time?>"/>
                     </td>
-                     <?php 
-                    }  
+                     <?php
+                    }
                     ?>
                 </tr>
             <?php

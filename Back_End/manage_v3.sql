@@ -7,26 +7,27 @@ create table user
     user_id     varchar(30),
     user_pw     varchar(30),
     dept_name   varchar(15),
-
     primary key(user_id)
 );
 create table futsal_manage
 (
-  manage_ID     integer(10) not null auto_increment,
-  user_id       varchar(10),
-  borrowdate    date,
-  start_time    time,
-  end_time      time,
-  place         varchar(10),
-  purpose       varchar(30),
-  notice        boolean,
-  home          varchar(30),
-  away          varchar(30),
-  people        integer(5),
-  groupname     varchar(10),
-  primary key(manage_ID, borrowdate),
-  constraint foreign key (user_id) references user(user_id)
-    on delete set null
+    manage_ID     integer(10) not null auto_increment,
+    user_id       varchar(10),
+    borrowdate    date,
+    start_time    time,
+    end_time      time,
+    place         varchar(10),
+    purpose       varchar(30),
+    notice        boolean,
+    home          varchar(30),
+    away          varchar(30),
+    people        integer(5),
+    groupname     varchar(10),
+    matching      boolean,
+    chat          varchar(150),
+    primary key(manage_ID, borrowdate),
+    constraint foreign key (user_id) references user(user_id)
+        on delete set null
 );
 create table purpose_view
 (
@@ -39,20 +40,21 @@ create table purpose_view
     end_time    time,
     primary key(manage_ID,borrowdate)
 );
-create table lec_room_manage
+create table matching_manage
 (
-  manage_ID     integer(10),
-  user_id       varchar(10),
-  borrowdate    date,
-  start_time    time,
-  end_time      time,
-  place         varchar(20),
-  purpose       varchar(30),
-  people        integer(5),
-  groupname     varchar(10),
-  primary key(manage_ID, borrowdate),
-  foreign key(user_id) references user(user_id)
-    on delete set null
+    receive_id  varchar(10),
+    chat        varchar(150),
+    send_id     varchar(10),
+    manage_ID   integer(10),
+    borrowdate  date,
+    primary key(send_id, manage_ID),
+    constraint foreign key (receive_id) references user(user_id)
+        on delete set null
 );
-
-insert into user values("jaehoon", 2016003509,01023589277,"jh9277@naver.com","jaehoon","jh2628","Computer");
+insert into matching_manage values ("jh9277","한판합시다.","jh2628",2,"2017-12-06");
+create table b_test
+)
+    num     integer(10),
+    numb    integer(10),
+    primary key(num, numb)
+);

@@ -1,11 +1,12 @@
 var flag=false;
 window.onload = function(){
-    document.getElementById("button2").onclick = button;
     var times = document.getElementsByClassName("time");
     for(var i = 0; i< times.length; i++){
         times[i].onclick = time_empty_check;
         times[i].checked = clear(times[i].checked);
     }
+    document.getElementById("button1").onclick = button;    
+    document.getElementById("button2").onclick = button;
 };
 
 function time_empty_check(){

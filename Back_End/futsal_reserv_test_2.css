@@ -3,7 +3,7 @@ p:not(.text-center):not(.right){
 	padding: 5px;
 }
 html{
-	padding-top: 15px;
+	/*padding-top: 15px;*/
 }
 body{
 	padding-top: 0px;
@@ -12,22 +12,33 @@ h1{
 	font-size: 20pt;
 	margin-bottom: 35px;
 }
-.right{
 
+
+#menuicon,#xicon,#menuabr {
+	z-index: 100;
+}
+
+#matchingModal .close{
+	margin-right: 0;
+}
+
+.show_match_info:hover{
+	cursor: pointer;
 }
 .daterange {
-	/*float: right;*/
-	/*display: inline;*/
-	/*border: 5px red solid;*/
+
 	margin-right: 10px;
 	float: right;
-	
-	/*float: right;*/
-	/*background-color: red;*/
 }
 .container{
+
 	padding-right: 1px;
 
+}
+
+
+.panel{
+	margin-top: 15%;
 }
 
 #check_date {
@@ -37,8 +48,8 @@ h1{
 #checking_place {
 	display: none;
 }
-.panel-body {	
-	float: right;	
+.panel-body {
+	float: right;
 	padding: 0px;
 }
 .panel-heading{
@@ -63,10 +74,5 @@ button:hover{
 	transform:scale(1.1);
 }
 .tb1{
-	width: 35%;
+	width: 36%;
 }
-
-
-
-
-

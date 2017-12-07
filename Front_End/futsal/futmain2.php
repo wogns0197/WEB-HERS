@@ -32,7 +32,7 @@ session_start();
 
   <body>
     <header>
-      <h1><a href="../main/main.html">HERS</a></h1>
+      <h1><a href="../main/main.php">HERS</a></h1>
       <hr/>
     </header>
 
@@ -57,16 +57,29 @@ session_start();
         <dt>USER</dt><hr color="black">
         <dd>
           <ul class="menus">
-            <li><a href="#">Login</a></li>
-            <li><a href="#">Logout</a></li>
+            <?php
+            if(!isset($_SESSION['user_id'])){
+             ?>
+            <li><a href="../../Back_End/login_function/login.php">Login</a></li>
+            <?php
+            }
+
+            else{
+              ?>
+            <li>Signed In as (<?= $_SESSION['user_id']?>)</li>
+
+            <li><a href="../../Back_End/login_function/logout.php">Logout</a></li>
             <li><a href="../mypage/mypage.html">My Page</a></li>
+            <?php
+             }
+            ?>
           </ul>
         </dd>
 
         <dt>RENTAL</dt><hr color="black">
         <dd>
           <ul class="menus">
-            <li><a href="../futsal-comfirmation/futconfirm.html">Futsal Confirmation</a></li>
+            <li><a href="../futsal_confirmation/reservation_lists.php">Futsal Confirmation</a></li>
             <li><a href="../futsal/futmain2.php">Futsal Field Rental</a></li>
           </ul>
         </dd>

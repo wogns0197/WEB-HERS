@@ -34,6 +34,7 @@ header{
   margin: 0 auto;
   text-align: center;
   width: 100%;
+
 }
 header a{
   text-decoration: none;
@@ -49,27 +50,38 @@ svg{
 }
 #menuicon{
   position: absolute;
-  left: 0;
+  z-index: 100;
+  left: 0%;
+  top: 0;
 }
 #menuicon:hover{
+  z-index: 100;
+  top: 0;
+
   cursor: pointer;
 }
 #xicon:hover{
+  z-index: 100;
+  top: 0;
   cursor: pointer;
 }
 #xicon{
-  z-index: 20;
+  z-index: 100;
+  top: 0;
   position: absolute;
   left: -22%;
 }
 nav{
   font-family: myserif;
-  background-color: rgba(0, 0, 0, 0.4);
+  /*background-color: rgba(0.3, 0, 0, 0);*/
+  background-color: hsl(0, 0%, 90%);
+  opacity: 0.90;
   width: 22%;
   height: 100%;
   position: absolute;
   left: -22%;
   z-index: 10;
+  top: 0;
 }
 nav dl{
   list-style: none;
@@ -159,11 +171,13 @@ footer{
   font-family: myexplain;
 }
 .user{
-  position: fixed;
-  right: 0;
+  /*position: relative;*/
+  top: 15%
+  right: 0%;
   height: 50px;
   margin-right: 2%;
   font-family: myserif;
   font-size: 15pt;
-  visibility: hidden;
+  z-index: 130;
+
 }
