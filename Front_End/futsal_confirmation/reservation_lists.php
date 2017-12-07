@@ -33,10 +33,11 @@ session_start();
   </head>
   <body>
     <header>
-    <h1><a href="../main/main.html">HERS</a></h1>
+    <h1><a href="../main/main.php">HERS</a></h1>
     <hr/>
   </header>
 
+  <!-- sidebar menu -->
   <a id="menuicon"><svg xmlns="http://www.w3.org/2000/svg" data-name="Layer 1" viewBox="0 0 100 125" x="0px" y="0px"><title>54 all</title><path d="M74.46,49H25.54a1,1,0,0,0,0,2H74.46a1,1,0,0,0,0-2Z"/><path d="M74.46,28.73H25.54a1,1,0,0,0,0,2H74.46a1,1,0,0,0,0-2Z"/><path d="M74.46,69.27H25.54a1,1,0,1,0,0,2H74.46a1,1,0,1,0,0-2Z"/>
   </svg></a>
 
@@ -50,7 +51,7 @@ session_start();
       <dt>MAIN</dt><hr color="black">
       <dd>
         <ul class="menus">
-          <li><a href="../main/main.html">Home</a></li>
+          <li><a href="../main/main.php">Home</a></li>
           <li><a href="../about/about.html">About Us</a></li>
         </ul>
       </dd>
@@ -58,30 +59,40 @@ session_start();
       <dt>USER</dt><hr color="black">
       <dd>
         <ul class="menus">
-          <li><a href="#">Login</a></li>
-          <li><a href="#">Logout</a></li>
+          <?php
+          if(!isset($_SESSION['user_id'])){
+           ?>
+          <li><a href="../../Back_End/login_function/login.php">Login</a></li>
+          <?php
+          }
+
+          else{
+            ?>
+          <li>Signed In as (<?= $_SESSION['user_id']?>)</li>
+
+          <li><a href="../../Back_End/login_function/logout.php">Logout</a></li>
           <li><a href="../mypage/mypage.html">My Page</a></li>
+          <?php
+           }
+          ?>
         </ul>
       </dd>
 
       <dt>RENTAL</dt><hr color="black">
       <dd>
         <ul class="menus">
-          <li><a href="../futsal-comfirmation/futconfirm.html">Futsal Confirmation</a></li>
+          <li><a href="../futsal_confirmation/reservation_lists.php">Futsal Confirmation</a></li>
           <li><a href="../futsal/futmain2.php">Futsal Field Rental</a></li>
         </ul>
       </dd>
     </dl>
 
   </nav>
-
-  <div class="user">
-    <p>Signed In as (USER)</p>
-  </div>
+  <!-- end sidebar menu -->
 
 
 
-  
+
 
 
 
@@ -96,25 +107,25 @@ session_start();
       <div class="container">
         <?php
           get_list();
-          
+
           if(count($manage_ID) > 0){
         ?>
           <table class="reserve_lists" bor>
-            <tr>          
+            <tr>
               <th id="num lefttop" class="base">관리번호</th>
               <th id="day" class="base">대여날짜</th>
               <th id="time" class="base">대여시간</th>
               <th id="place" class="base">대여장소</th>
-              <th id="empt" class="base"></th>          
-              <th id="empt" class="base"></th>          
+              <th id="empt" class="base"></th>
+              <th id="empt" class="base"></th>
             </tr>
         <?}?>
-        
+
 
           <?php
 
             get_list();
-            
+
             for($i = 0; $i < $size; $i++){//모든 예약 내역을 가져온다
 
 
@@ -134,9 +145,9 @@ session_start();
                   </tr>
                 <?php
                   }
-              
-              
-          
+
+
+
               else{?>
                 <tr>
                 <th id="num" class="tab"><?=$manage_ID[$i]?></th>
@@ -155,13 +166,13 @@ session_start();
           ?>
               <?}
           ?>
-          
+
         </table>
-        <a href="../main/main.html"><button id="botbut">HOME</button></a>
+        <a href="../main/main.php"><button id="botbut">HOME</button></a>
       </div>
-          
+
     </div>
-  
+
   </body>
 </html>
 <?php
