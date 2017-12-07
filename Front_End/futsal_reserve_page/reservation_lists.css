@@ -66,7 +66,6 @@ th{
 }
 button{
 	margin: 0;
-
 	width: 100%;
 	height: 100%;
 	border: none;
@@ -86,6 +85,11 @@ button{
 @import url(//fonts.googleapis.com/earlyaccess/nanumgothiccoding.css);
 table{
 	font-family: 'Nanum Gothic Coding', monospace;
+}
+#botbut{
+	margin-top: 10%;
+	background-color: #D8D8D8;
+	padding: 2%;
 }
 
 /*table radius*/

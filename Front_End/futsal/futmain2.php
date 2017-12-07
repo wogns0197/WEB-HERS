@@ -49,7 +49,7 @@ session_start();
         <dt>MAIN</dt><hr color="black">
         <dd>
           <ul class="menus">
-            <li><a href="main.html">Home</a></li>
+            <li><a href="../main/main.html">Home</a></li>
             <li><a href="../about/about.html">About Us</a></li>
           </ul>
         </dd>

@@ -1,0 +1,20 @@
+1. Main  –  mainsub  –  로그인,회원가입,아이디/비밀번호 찾기
+세 파트에 있는 모든 입력란에는 placeholder로 힌트글자를 적어 놓음
+	아이디/비밀번호 찾기는 자바스크립트 css항목에서 display 사용.
+	버튼에는 transition(scale), transport 사용.
+2. futsal_reservation  –  reservation_confirmation, reservation_finish, test_2
+	상단에서 왼쪽에 로그인된 id배치, 로그아웃 버튼은 상단 오른쪽 배치.
+	예약내역 확인 내용들에 보더 감싼뒤 좌우밑에 그림자.
+	예약 실패하면 실패화면 보여주기
+	버튼에는 transition(scale), transport 사용.
+3. futsal_reservation  –  reservation_list
+	php사용하여 size++될때 마다 홀수 짝수 구분하여 백그라운드 칼라 회색/흰색배경 되	게끔.
+4. futmain 
+	풋살 메인화면에 예약확인 버튼 제작
+	왼쪽 상단에 날씨기능 추가
+	왼쪽 하단에 경기공지기능 추가
+풋살장a/b, 대운동장, 잔디구장 버튼 제작(hover,after,before 등 활용하여 버튼 효과를 크게 주었음)
+
+	
+
+
