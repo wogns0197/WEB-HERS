@@ -50,7 +50,7 @@ session_start();
       <dt>MAIN</dt><hr color="black">
       <dd>
         <ul class="menus">
-          <li><a href="main.html">Home</a></li>
+          <li><a href="../main/main.html">Home</a></li>
           <li><a href="../about/about.html">About Us</a></li>
         </ul>
       </dd>
@@ -94,17 +94,27 @@ session_start();
     <div id="reserve_wrap">
       <h2>| Reservation Confirmation |</h2>
       <div class="container">
-        <table class="reserve_lists" bor>
-          <tr>          
-            <th id="num lefttop" class="base">관리번호</th>
-            <th id="day" class="base">대여날짜</th>
-            <th id="time" class="base">대여시간</th>
-            <th id="place" class="base">대여장소</th>
-            <th id="empt" class="base"></th>          
-            <th id="empt" class="base"></th>          
-          </tr>
+        <?php
+          get_list();
+          
+          if(count($manage_ID) > 0){
+        ?>
+          <table class="reserve_lists" bor>
+            <tr>          
+              <th id="num lefttop" class="base">관리번호</th>
+              <th id="day" class="base">대여날짜</th>
+              <th id="time" class="base">대여시간</th>
+              <th id="place" class="base">대여장소</th>
+              <th id="empt" class="base"></th>          
+              <th id="empt" class="base"></th>          
+            </tr>
+        <?}?>
+        
+
           <?php
+
             get_list();
+            
             for($i = 0; $i < $size; $i++){//모든 예약 내역을 가져온다
 
 
@@ -147,8 +157,11 @@ session_start();
           ?>
           
         </table>
+        <a href="../main/main.html"><button id="botbut">HOME</button></a>
       </div>
+          
     </div>
+  
   </body>
 </html>
 <?php
