@@ -62,7 +62,8 @@ nav{
   box-shadow: 5px 0 20px rgba(0,0,0,0.5);
   width: 22%;
   height: 100%;
-  position: absolute;
+  /*position: absolute;*/
+  position: fixed;
   left: -25%;
   z-index: 10;
 }
