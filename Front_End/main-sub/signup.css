@@ -7,8 +7,9 @@ main{
 	margin-right: 20%;
 	padding-top: 5%;
 	padding-bottom: 3%;
-	background-color: #585858;
-	box-shadow: 0px 10px 30px -9px rgba(0,0,0,0.4);
+	/*background-color: #585858;*/
+	/*box-shadow: 0px 5px 0px 0px rgba(0,0,0,0.1);*/
+
 
 }
 .id1{
@@ -16,11 +17,11 @@ main{
 }
 input{
 	font-size: 10pt;
-	border-radius: 5px;
+	border:none;
 	text-align: center;
 	width: 200px;
 	height: 40px;
-	border:1px solid #848484;
+	border-bottom: 1px solid #848484;
 }
 .log{
 	padding-top: 5%;
@@ -28,18 +29,19 @@ input{
 button:hover{
 	cursor: pointer;
 	transition: 0.5s;
-	background-color: #2E2E2E;
-	transition: 0.5s;
 	transform:scale(0.9);
+	background-color: #F2F2F2;
+	color: #848484;
+	font-weight: bold;
 }
 button{
 	color: white;
 	font-size: 10pt;
-	width: 50%;
-	height: 50px;
+	width: 40%;
+	height: 35px;
 	border:none;
 	border-radius: 50px;
-	background-color: #848484;
+	background-color: #BDBDBD;
 	transition: 0.2s;
 	transform: scale(1);
 }

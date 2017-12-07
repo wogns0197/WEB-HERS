@@ -2,7 +2,7 @@
 main{
 	margin-top: 10%;
 	left: 25%;
-	background-color: #585858;
+	/*background-color: #585858;*/
 	width: 50%;
 	height: 400px;
 	position: absolute;
@@ -10,7 +10,7 @@ main{
 }
 button{
 	width: 50%;
-	height: 60px;
+	height: 40px;
 	background-color: #585858;
 	border:none;
 	color: white;
@@ -19,14 +19,16 @@ button{
 	margin-right: 0;
 }
 #q1{
-	background-color:#585858;
-	border-radius: 10px 0px 5px 0px;
+	background-color:#D8D8D8;
+	border-radius: 10px 0px 0px 0px;
 	float: left;
+	color: #424242;
 }
 #q2{
-	background-color:#6E6E6E;
+	background-color:#F2F2F2;
 	float: right;
-	border-radius: 0px 10px 0px 5px;
+	border-radius: 0px 10px 0px 0px;
+	color: #A4A4A4;
 }
 section{
 	color: white;
@@ -34,11 +36,13 @@ section{
 }
 input{
 	font-size: 10pt;
-	border-radius: 5px;
+	
 	text-align: center;
-	width: 200px;
-	height: 40px;
-	border:1px solid #848484;
+	width: 30%;
+	height: 30px;
+	border:none;
+	border-radius: 1px;
+	border-bottom: 1px solid #848484;
 }
 .forgotid{	
 	text-align: center;
@@ -47,7 +51,8 @@ input{
 #bottom:hover{
 	cursor: pointer;
 	transition: 0.5s;
-	background-color: #2E2E2E;
+	background-color: #F2F2F2;
+	color: #848484;
 	transition: 0.5s;
 	transform:scale(0.9);
 }
@@ -55,10 +60,10 @@ input{
 	color: white;
 	font-size: 10pt;
 	width: 50%;
-	height: 50px;
+	height: 40px;
 	border:none;
 	border-radius: 50px;
-	background-color: #848484;
+	background-color: #BDBDBD;
 	transition: 0.2s;
 	transform: scale(1);
 }
@@ -74,14 +79,14 @@ footer{
 	animation-name: smooth;
 	animation-duration: 2s;
 }
-@keyframes smooth{
+/*@keyframes smooth{
 	0%{
 		opacity: 0.3;
 	}
 	100%{
 		opacity: 0.9;
 	}
-}
+}*/
 
 #num{
 	width:80px;
