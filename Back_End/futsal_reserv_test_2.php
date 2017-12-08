@@ -13,7 +13,7 @@ date_default_timezone_set('Asia/Seoul');
     <link rel="stylesheet" href="../Front_End/main2.css">
     <link rel="stylesheet" href="futsal_reserv_test_2.css" />
 
-    <script src="http://ajax.googleapis.com/ajax/libs/prototype/1.7.3.0/prototype.js" type="text/javascript"></script>
+    <!-- <script src="http://ajax.googleapis.com/ajax/libs/prototype/1.7.3.0/prototype.js" type="text/javascript"></script> -->
     <script src="../Front_End/calendar/js/vendor/jquery.js"></script>
     <script src="../Front_End/calendar/js/vendor/moment.js"></script>
     <script src="../Front_End/bootstrap-3.3.2-dist/js/bootstrap.js"></script>
