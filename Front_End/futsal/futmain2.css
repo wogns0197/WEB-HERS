@@ -8,35 +8,51 @@ background-image: url("../main/mainimg/theball.jpg");
 
 
 #ericamap {
-  /*width: 50%;*/
   border-radius: 45%;
-
   width: 70%;
 
 }
 
 .container {
   margin-top: 10%;
-  /*position: fixed;*/
-
-
-
 }
 
+.modal-dialog{
+  margin-top: 20%;
+}
 #main-section{
 
 background-image: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);
-/*height: 600px;*/
-
+box-shadow: 3px 10px 5px 3px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
+#futsal_btns button{
+  display: inline;
+  text-align: center;
+}
+
+
+
 @media only screen and (max-width: 500px) {
+    #ericamap {
+      border-radius: 48%;
+      width: 90%;
+
+    }
     .container {
       margin-top: 10%;
     }
 
+    .modal-dialog{
+      margin-top: 50%;
+    }
+
     #home {
       margin-top: -10%;
+    }
+    #futsal_btns{
+      margin-left: auto;
+      margin-right: auto;
     }
 
     #menuicon, #xicon, #menubar {
@@ -51,24 +67,38 @@ background-image: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);
 }
 
 @media only screen and (min-width: 500px) and (max-width: 800px) {
+    #weatehr-section{
+      width:40%;
+    }
+    #ericamap {
+      border-radius: 45%;
+      width: 90%;
+
+    }
     .container {
       margin-top: 15%;
     }
 
+    .modal-dialog{
+      margin-top: 30%;
+    }
+
     #home {
-      margin-top: 0%;
+      margin-top: -15%;
     }
 
     #menuicon, #xicon, #menubar {
-      margin-top: 0%;
+      margin-top: -15%;
     }
     #main-section{
 
     background-image: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);
-    height: 700px;
+    height: 800px;
 
     }
 }
+
+
 
 
 

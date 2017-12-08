@@ -108,11 +108,12 @@ session_start();
 
     </nav>
     <!-- end sidebar menu -->
+
     <div class="container col-sm-2"></div>
 
     <div class="container col-sm-8 center-block"  id="main-section">
     <!-- weather api -->
-    <iframe  type="text/html" frameborder="0" height="250px" width="100%" src="http://forecast.io/embed/#lat=37.3217&lon=126.8309&name=Hanyang Univ.&units=si"> </iframe>
+    <iframe  id="weather-section" type="text/html" frameborder="0" height="250px" width="100%" src="http://forecast.io/embed/#lat=37.3217&lon=126.8309&name=Hanyang Univ.&units=si"> </iframe>
     <!-- API from.. https://darksky.net/ -->
 
   <!-- </div> -->
@@ -127,34 +128,69 @@ session_start();
 
 
 
+      <!-- futsal place click button modals -->
+          <div id="futsal_modal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
 
-          <div id="futsal_modal" class="modal fade">
-            <div class="modal-content">
-              <span class="close" data-dismiss="modal">&times;</span>
-              <a href = "../../Back_end/futsal_reserv_test_2.php?where=풋살장A"><button class="btn btn-default" id="futsal_A">풋살장A</button></a>
-              <a href = "../../Back_end/futsal_reserv_test_2.php?where=풋살장B";><button class="btn btn-default" id="futsal_B">풋살장B</button></a>
-            </div>
+              <div class="modal-content">
 
-          </div>
+                <div class="modal-header">
+                  <span class="close" data-dismiss="modal">&times;</span>
+                  <h4 class="modal-title">위치</h4>
+                </div>
 
-          <div id="soccer_modal" class="modal fade">
-            <div class="modal-content">
-              <span class="close" data-dismiss="modal">&times;</span>
-              <a href = "../../Back_end/futsal_reserv_test_2.php?where=잔디구장";><button class="btn btn-default" id="soccer">잔디구장</button><a>
+                <div class="modal-body">
+                  <div id="futsal_btns" class="text-center">
+                    <a href = "../../Back_end/futsal_reserv_test_2.php?where=풋살장A"><button class="btn-lg btn-info" id="futsal_A">풋살장A</button></a>
+                    <a href = "../../Back_end/futsal_reserv_test_2.php?where=풋살장B"><button class="btn-lg btn-info" id="futsal_B">풋살장B</button></a>
+                 </div>
+                </div>
 
-            </div>
-
-          </div>
-
-
-          <div id="stadium_modal" class="modal fade">
-            <div class="modal-content">
-              <span class="close" data-dismiss="modal">&times;</span>
-              <a href = "../../Back_end/futsal_reserv_test_2.php?where=대운동장";><button class="btn btn-default" id="stadium">대운동장</button></a>
+              </div>
 
             </div>
-
           </div>
+
+          <div id="soccer_modal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+
+              <div class="modal-content">
+
+                <div class="modal-header">
+                  <span class="close" data-dismiss="modal">&times;</span>
+                  <h4 class="modal-title">위치</h4>
+                </div>
+
+                <div class="modal-body">
+                  <a href = "../../Back_end/futsal_reserv_test_2.php?where=잔디구장"><button class="btn-lg btn-info center-block" id="soccer">잔디구장</button><a>
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+
+
+          <div id="stadium_modal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+
+              <div class="modal-content">
+
+                <div class="modal-header">
+                  <span class="close" data-dismiss="modal">&times;</span>
+                  <h4 class="modal-title">위치</h4>
+                </div>
+
+                <div class="modal-body">
+                  <a href = "../../Back_end/futsal_reserv_test_2.php?where=대운동장"><button class="btn-lg btn-info center-block" id="stadium">대운동장</button></a>
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+      <!-- end futsal place click button modals -->
+
 
 
 
