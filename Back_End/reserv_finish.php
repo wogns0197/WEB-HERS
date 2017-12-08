@@ -6,12 +6,12 @@ session_start();
 <html>
     <meta charset="utf-8">
     <title>Hanyang Erica Rental Site</title>
-    
+
     <link rel="stylesheet" href="reserv_finish.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?php
     $confirm = $_SESSION['confirm'];
-    $_SESSION['place'] = $_GET['where'];          
+    $_SESSION['place'] = $_GET['where'];
     try{
       if(!isset($_SESSION['user_id'])){
            echo "<script>alert('로그인이 필요합니다!');location.href='login_function/login.php';</script>";
@@ -26,7 +26,7 @@ session_start();
             <br/>
           </div>
           <?php
-      }      
+      }
       $name = "web_project";
       $time = explode(" ",$_POST["time"]);
       $id = $_SESSION['user_id'];
@@ -50,7 +50,7 @@ session_start();
       $groupname = $_POST["groupname"];
       $db = new PDO("mysql:dbname=$name", "root","root");
       $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-      $flag = true;      
+      $flag = true;
       if($_SESSION['modify']==1){
         $query1 = "update futsal_manage set borrowdate='$borrowdate',start_time='$start_time',end_time='$end_time',place='$place',purpose='$purpose',notice='$notice',home='$home',away='$away',people=$population,groupname='$groupname' where manage_ID=$m_manage_id and borrowdate='$modifydate'";
       }
@@ -60,13 +60,13 @@ session_start();
       else{
         $query1 = "insert into futsal_manage(user_id, borrowdate, start_time, end_time, place, purpose, notice,home, away, people, groupname) values('$id','$borrowdate','$start_time','$end_time','$place', '$purpose', '$notice','$home','$away',$population, '$groupname')";
       }
-      $check_query = "select count(*) from futsal_manage where borrowdate='$borrowdate' and start_time='$start_time' and place='$place'";              
+      $check_query = "select count(*) from futsal_manage where borrowdate='$borrowdate' and start_time='$start_time' and place='$place'";
       try{
         $check = $db->query($check_query);
         foreach($check as $a){
           $count = $a['count(*)'];
         }
-        $db->query($query1);  
+        $db->query($query1);
       }
       catch(PDOException $ex){
         echo "check1";
@@ -84,7 +84,7 @@ session_start();
             echo "detail :".$ex->getMessage();
             $flag = false;
           ?>
-            <script src="modify_fail.js" type = "text/javascript"></script>            
+            <script src="modify_fail.js" type = "text/javascript"></script>
           <?php
           }
         }
@@ -98,13 +98,13 @@ session_start();
             echo "detail :".$ex->getMessage();
             $flag = false;
             ?>
-            <script src="modify_fail.js" type = "text/javascript"></script>            
+            <script src="modify_fail.js" type = "text/javascript"></script>
             <?php
           }
         }
         ?>
         <script src="modify_success.js" type = "text/javascript"></script>
-        <?php  
+        <?php
       }
       else if($confirm==0){
         if($count==0){
@@ -165,7 +165,7 @@ session_start();
         <?php
         if($notice==1)?>
           <p>공지여부 : <span class="strong">O</span></p>
-        <button><a href="../Front_End/main/main.html">Home</a></button>
+        <button><a href="../Front_End/main/main.php">Home</a></button>
       </div>
 
     <?php

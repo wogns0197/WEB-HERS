@@ -6,12 +6,27 @@ session_start();
   <head>
     <meta charset="utf-8">
     <title>Futsal Field Rental</title>
+
+
+    <link rel="stylesheet" type="text/css" href="../bootstrap-3.3.2-dist/css/bootstrap.css">
     <link rel="stylesheet" href="../main2.css">
-    <link rel="stylesheet" href="notice.css">
-    <link rel="stylesheet" href="futmain.css?ver=11">
+
+    <link rel="stylesheet" href="futmain2.css?ver=2">
+
+
+    <!-- <link rel="stylesheet" href="notice.css"> -->
+    <script
+ src="https://code.jquery.com/jquery-3.2.1.min.js"
+ integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+ crossorigin="anonymous"></script>
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-     <script type="text/javascript"src="http://code.jquery.com/jquery-latest.min.js"></script>
+     <script src="../bootstrap-3.3.2-dist/js/bootstrap.js"></script>
+     <script type="text/javascript" src="futmain2.js"></script>
+
+
+
+     <!-- <script type="text/javascript"src="http://code.jquery.com/jquery-latest.min.js"></script> -->
      <script type="text/javascript">
        $(document).ready( function(){
          $("#menuicon").click(function () {
@@ -31,11 +46,16 @@ session_start();
   </head>
 
   <body>
-    <header>
+
+    <header id="home">
+      <!-- <div class="header"> -->
       <h1><a href="../main/main.php">HERS</a></h1>
-      <hr/>
+      <!-- <hr/> -->
+      <!-- </div> -->
     </header>
 
+
+    <!-- sidebar menu -->
     <a id="menuicon"><svg xmlns="http://www.w3.org/2000/svg" data-name="Layer 1" viewBox="0 0 100 125" x="0px" y="0px"><title>54 all</title><path d="M74.46,49H25.54a1,1,0,0,0,0,2H74.46a1,1,0,0,0,0-2Z"/><path d="M74.46,28.73H25.54a1,1,0,0,0,0,2H74.46a1,1,0,0,0,0-2Z"/><path d="M74.46,69.27H25.54a1,1,0,1,0,0,2H74.46a1,1,0,1,0,0-2Z"/>
     </svg></a>
 
@@ -49,9 +69,10 @@ session_start();
         <dt>MAIN</dt><hr color="black">
         <dd>
           <ul class="menus">
-            <li><a href="../main/main.html">Home</a></li>
+            <li><a href="../main/main.php">Home</a></li>
             <li><a href="../about/about.html">About Us</a></li>
           </ul>
+
         </dd>
 
         <dt>USER</dt><hr color="black">
@@ -86,90 +107,104 @@ session_start();
       </dl>
 
     </nav>
+    <!-- end sidebar menu -->
+    <div class="container col-sm-2"></div>
 
-    <div class="user">
-      <p>Signed In as (USER)</p>
+    <div class="container col-sm-8 center-block"  id="main-section">
+    <!-- weather api -->
+    <iframe  type="text/html" frameborder="0" height="250px" width="100%" src="http://forecast.io/embed/#lat=37.3217&lon=126.8309&name=Hanyang Univ.&units=si"> </iframe>
+    <!-- API from.. https://darksky.net/ -->
+
+  <!-- </div> -->
+
+
+
+
+    <div id="map">
+        <object id = "ericamap" class="center-block" type="image/svg+xml" data="erica_futsal_대지 1.svg" >현재 브라우져는 object를 지원하지 않습니다.</object>
     </div>
 
-      <div class="right">
 
-          <div id="map">
-            <object id = "ericamap" type="image/svg+xml" data="erica_futsal_대지 1.svg" >현재 브라우져는 object를 지원하지 않습니다.</object>
-          </div>
 
-          <script type="text/javascript" src="futmain.js?ver=11"></script>
 
-          <div id="futsal_modal" class="modal">
+
+          <div id="futsal_modal" class="modal fade">
             <div class="modal-content">
-              <span class="close">&times;</span>
-              <button id="futsal_A">풋살장A</button>
-              <button id="futsal_B">풋살장B</button>
+              <span class="close" data-dismiss="modal">&times;</span>
+              <a href = "../../Back_end/futsal_reserv_test_2.php?where=풋살장A"><button class="btn btn-default" id="futsal_A">풋살장A</button></a>
+              <a href = "../../Back_end/futsal_reserv_test_2.php?where=풋살장B";><button class="btn btn-default" id="futsal_B">풋살장B</button></a>
             </div>
 
           </div>
 
-          <div id="soccer_modal" class="modal">
+          <div id="soccer_modal" class="modal fade">
             <div class="modal-content">
-              <span class="close">&times;</span>
-              <button id="soccer">잔디구장</button>
-
-            </div>
-
-          </div>
-
-
-          <div id="stadium_modal" class="modal">
-            <div class="modal-content">
-              <span class="close">&times;</span>
-              <button id="stadium">대운동장</button>
+              <span class="close" data-dismiss="modal">&times;</span>
+              <a href = "../../Back_end/futsal_reserv_test_2.php?where=잔디구장";><button class="btn btn-default" id="soccer">잔디구장</button><a>
 
             </div>
 
           </div>
 
 
-      </div>
-      <div class="left">
+          <div id="stadium_modal" class="modal fade">
+            <div class="modal-content">
+              <span class="close" data-dismiss="modal">&times;</span>
+              <a href = "../../Back_end/futsal_reserv_test_2.php?where=대운동장";><button class="btn btn-default" id="stadium">대운동장</button></a>
 
-        <iframe  type="text/html" frameborder="0" height="250px" width="100%" src="http://forecast.io/embed/#lat=37.3217&lon=126.8309&name=Hanyang Univ.&units=si"> </iframe>
-        <!-- API from.. https://darksky.net/ -->
-        <!-- source=http://thinkgood.tistory.com/471 -->
-        <table cellSpacing=0 cellPadding=0 width="100%" class="momtong" >
-          <?php
-          set_modify_val();// 예약 수정 상태일 경우 예약 수정을 진행할때 예전 예약 내용을 default값으로 넣어주기위한 값들을 받아온다
-          $view_rows = notice_view(); // 오늘 날짜에 공지를 원했던 경기를 db에서 가져온다.
-          ?>
-          <tbody>
-              <td>
-              <MARQUEE scrollAmount=4 direction=up>
-                  <section>
-                  <table cellSpacing=0 cellPadding=0 width="100%" border=0>
-                  <tbody>
-                    <tr>
-                    <td height=60 id="gamenotice">&nbsp;--- Game Notice ---</td></tr>
-                    <tr>
-                    <?php
-                        foreach($view_rows as $row){
-                            $start_a = explode(":",$row["start_time"]);
-                            $start_t = $start_a[0].":".$start_a[1];
-                            $end_a = explode(":", $row["end_time"]);
-                            $end_t = $end_a[0].":".$end_a[1];
-                    ?>
-                          <tr><td height=50>&nbsp;<?= $row["place"] ?>   <?= $row["home"] ?> <span class="vs">vs </span><?= $row["away"]?> <?= $start_t ?>~<?= $end_t ?><td></tr>
-                    <?php
-                    }
-                    ?>
-                    <td height=1>&nbsp;</td></tr>
-                  </tbody>
-                  </table>
-                  </section>
-              </MARQUEE>
-              </td>
-        </tbody></table></section></MARQUEE></td></tbody></table>
-        <form action="../futsal_confirmation/reservation_lists.php">
+            </div>
+
+          </div>
+
+
+
+    </div>
+
+    <div class="container col-sm-2" id="right-side">
+      <!-- source=http://thinkgood.tistory.com/471 -->
+      <!-- notice function -->
+
+      <table cellSpacing=0 cellPadding=0 class="notice-table center-block" >
+        <?php
+        set_modify_val();// 예약 수정 상태일 경우 예약 수정을 진행할때 예전 예약 내용을 default값으로 넣어주기위한 값들을 받아온다
+        $view_rows = notice_view(); // 오늘 날짜에 공지를 원했던 경기를 db에서 가져온다.
+        ?>
+        <tbody>
+            <td>
+            <MARQUEE scrollAmount=4 direction=up>
+                <section>
+                <table cellSpacing=0 cellPadding=0 class="notice-inner-table center-block" border=0>
+                <tbody>
+                  <tr>
+                  <td height=30 id="gamenotice" class="center-block">&nbsp;--- Game Notice ---</td></tr>
+                  <tr>
+                  <?php
+                      foreach($view_rows as $row){
+                          $start_a = explode(":",$row["start_time"]);
+                          $start_t = $start_a[0].":".$start_a[1];
+                          $end_a = explode(":", $row["end_time"]);
+                          $end_t = $end_a[0].":".$end_a[1];
+                  ?>
+                        <tr><td height=50>&nbsp;<?= $row["place"] ?>   <?= $row["home"] ?> <span class="vs">vs </span><?= $row["away"]?> <?= $start_t ?>~<?= $end_t ?><td></tr>
+                  <?php
+                  }
+                  ?>
+                  <td height=1>&nbsp;</td></tr>
+                </tbody>
+                </table>
+                </section>
+            </MARQUEE>
+            </td>
+      </tbody></table></section></MARQUEE></td></tbody></table>
+  </div>
+
+
+
+
+        <!-- <form action="../futsal_confirmation/reservation_lists.php">
         <button id="reserv_confirm">예약내역확인</button>
-      </form>
-      </div>
+      </form> -->
+
   </body>
 </html>
 <?php
