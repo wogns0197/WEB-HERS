@@ -9,7 +9,6 @@ main{
 }
 button{
 	width: 50%;
-
 	height: 40px;
 	background-color: #585858;
 	border:none;
@@ -30,7 +29,6 @@ button{
   
 	background-color:#F2F2F2;
 	float: right;
-
 	border-radius: 0px 10px 0px 0px;
 	color: #A4A4A4;
 }
@@ -56,6 +54,11 @@ input{
 	text-align: center;
 	margin-top: 20%;	
 }
+.forgotpw{
+	text-align: center;
+	margin-top: 20%;	
+	display: none;
+}
 #bottom:hover{
 	cursor: pointer;
 	transition: 0.5s;
@@ -73,7 +76,7 @@ input{
 	height: 40px;
 	border:none;
 	border-radius: 50px;
-
+	margin-top: 10%;
 	background-color: #BDBDBD;
 	transition: 0.2s;
 	transform: scale(1);
