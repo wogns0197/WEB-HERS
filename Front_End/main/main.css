@@ -7,15 +7,15 @@ body, html{
 }
 @font-face {
   font-family: myserif;
-  src: url(font/Anson-Regular.otf);
+  src: url(../font/Anson-Regular.otf);
 }
 @font-face {
   font-family: mylight;
-  src: url(font/Existence-Light.otf);
+  src: url(../font/Existence-Light.otf);
 }
 @font-face {
   font-family: myexplain;
-  src: url(font/CaviarDreams.ttf);
+  src: url(../font/CaviarDreams.ttf);
 }
 video{
   position: fixed;
