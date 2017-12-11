@@ -13,10 +13,10 @@ function time_empty_check(){
     flag=true;
 }
 
-function button(event){
+function button(){
     if(!flag){
         alert("시간을 입력해주세요");
-        event.stop();
+        window.stop();
         return false;
     }
 }

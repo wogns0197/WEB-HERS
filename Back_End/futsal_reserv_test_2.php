@@ -221,7 +221,7 @@ date_default_timezone_set('Asia/Seoul');
     </form>
 
     <!-- Info Show Modal -->
-    <form action="find_matching.php" method="post">
+    <form action="matching_info.php" method="post">
         <div class="modal fade" id="matchingModal" role="dialog">
             <div class="modal-dialog">
 
@@ -387,9 +387,8 @@ date_default_timezone_set('Asia/Seoul');
                             if($row['matching']==1){
                                 ?>
                                 <td class="text-center"> 상대팀 구하는 중 </td>
-                                <?php $ii = 1?>
-                                <td class="text-center"><span id="chat_info<?=$ii?>" class="text-center show_match_info" data-toggle="modal" data-target="#matchingModal">정보 보기</span></td>
-                                <input type="hidden" id="time_info<?= $ii ?>" value="<?= $start_t ?>"/>
+                                <td class="text-center"><span id="chat_info<?=$i?>" class="text-center show_match_info" data-toggle="modal" data-target="#matchingModal">정보 보기</span></td>
+                                <input type="hidden" id="time_info<?= $i ?>" value="<?= $start_t ?>"/>
                                 <?php
                                 $flag = false;
                                 break;
