@@ -18,6 +18,7 @@ date_default_timezone_set('Asia/Seoul');
     <script src="../Front_End/calendar/js/vendor/moment.js"></script>
     <script src="../Front_End/bootstrap-3.3.2-dist/js/bootstrap.js"></script>
     <script src="timeexception.js" type="text/javascript"></script>
+    <script type="text/javascript" src="chat_info.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script type="text/javascript"src="http://code.jquery.com/jquery-latest.min.js"></script>
     <script type="text/javascript">
@@ -220,38 +221,42 @@ date_default_timezone_set('Asia/Seoul');
     </form>
 
     <!-- Modal -->
-  <div class="modal fade" id="matchingModal" role="dialog">
-    <div class="modal-dialog">
+    <form action="find_matching.php" method="post">
+        <div class="modal fade" id="matchingModal" role="dialog">
+            <div class="modal-dialog">
 
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header">
-          <span type="button" class="close" data-dismiss="modal">&times;</span>
-          <h4 class="modal-title">Matching</h4>
-        </div>
-        <div class="modal-body">
-        <fieldset>
-          <legend>Detail</legend>
-          <?php
-            $message = find_message();
-            ?>
-          <textarea class="form-control" rows="5" id="detail" readonly><?=$message?></textarea>
-        </fieldset>
-        <br>
-        <fieldset>
-          <legend>Send Message:</legend>
-          <textarea class="form-control" rows="5" id="message" maxlength="150" placeholder="Type Your Message..." required></textarea>
-        </fieldset>
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                <span type="button" class="close" data-dismiss="modal">&times;</span>
+                <h4 class="modal-title">Matching</h4>
+                </div>
+                <div class="modal-body">
+                <fieldset>
+                <legend>Detail</legend>
+                <?php
+                    $message = find_message();
+                ?>
+                <input type="hidden" name="date" value=<?=$date?>/>
+                <input type="hidden" id = "send_time" name="time" value=0/>
+                <textarea class="form-control" rows="5" id="detail" readonly><?=$message?></textarea>
+                </fieldset>
+                <br>
+                <fieldset>
+                <legend>Send Message:</legend>
+                <textarea class="form-control" rows="5" id="message" maxlength="150" placeholder="Type Your Message..." name="chat" required></textarea>
+                </fieldset>
 
-        </div>
-        <div class="modal-footer">
-          <button type="submit" class="btn btn-default">Submit</button>
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        </div>
-      </div>
+                </div>
+                <div class="modal-footer">
+                <button type="submit" class="btn btn-default">Submit</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
 
-    </div>
-  </div>
+            </div>
+        </div>
+    </form>
   <!-- Modal End-->
 
 
@@ -352,7 +357,9 @@ date_default_timezone_set('Asia/Seoul');
                             if($row['matching']==1){
                                 ?>
                                 <td class="text-center"> 상대팀 구하는 중 </td>
-                                <td class="text-center"><span class="text-center show_match_info" data-toggle="modal" data-target="#matchingModal">정보 보기</span></td>
+                                <?php $ii = 1?>
+                                <td class="text-center"><span id="chat_info<?=$ii?>" class="text-center show_match_info" data-toggle="modal" data-target="#matchingModal">정보 보기</span></td>
+                                <input type="hidden" id="time_info<?= $ii ?>" value="<?= $start_t ?>"/>
                                 <?php
                                 $flag = false;
                                 break;
@@ -392,8 +399,7 @@ date_default_timezone_set('Asia/Seoul');
         }
     }
     function find_message(){
-        global $id, $date;
-        $name = "web_project";
+        global $id, $date, $name;
         $query = "select chat from futsal_manage where matching=1 and borrowdate='$date' and user_id='$id'";
         $db = new PDO("mysql:dbname=$name", "root", "root");
         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
