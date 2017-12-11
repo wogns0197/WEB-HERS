@@ -3,62 +3,37 @@ body, html{
   padding: 0;
   width: 100%;
 }
+body{
+  background-image: url(image/theball.jpg);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
 @font-face {
-  font-family: abouthead;
-  src: url(font/Franks-Regular.otf);
+  font-family: mylight;
+  src: url(font/Existence-Light.otf);
+}
+.entire{
+  background-color: rgba(255, 255, 255, 0.7);
+  height: 100%;
+  width: 80%;
+  margin-left: 10%;
+  margin-right: 10%;
+  top: 15%;
+  position: absolute;
 }
 h2{
   text-align: center;
   font-weight: bold;
-  font-family: abouthead;
-  font-size: 25pt;
+  font-family: mylight;
+  font-size: 20pt;
 }
 .siteinfo{
+  top: 3%;
+  width: 100%;
   text-align: center;
+}
+.siteinfo p{
   padding-left: 3%;
   padding-right: 3%;
-}
-.front img, .back img{
-  height: 250px;
-  width: 250px;
-  border-radius: 50%;
-}
-.front{
-  margin: auto;
-  width: 600px;
-  margin-top: 3%;
-}
-.back{
-  margin: auto;
-  width: 910px;
-  margin-top: 3%;
-}
-#kwon{
-  margin-right: 70px;
-}
-#choi, #park{
-  margin-right: 70px;
-}
-span{
-  font-family: abouthead;
-  position: absolute;
-  padding: 10px;
-  width: 230px; height: 230px;
-  text-align: center;
-  z-index: -1;
-  background-color: white;
-  border-radius: 50%;
-}
-span h3{
-  font-size: 21pt;
-  font-weight: bold;
-  margin-top: 10%;
-  margin-bottom: 5%;
-}
-span p{
-  font-size: 18pt;
-  margin: 0;
-}
-span a{
-  font-size: 15pt;
 }
