@@ -391,7 +391,7 @@ date_default_timezone_set('Asia/Seoul');
                             if($row['matching']==1){
                                 ?>
                                 <td class="text-center"> 상대팀 구하는 중 </td>
-                                <td class="text-center"><span id="chat_info<?=$i?>" class="text-center show_match_info" data-toggle="modal" data-target="#matchingModal">정보 보기</span></td>
+                                <td class="text-center"><span value=<?= $i ?> class="show_match_info" data-toggle="modal" data-target="#matchingModal" onclick="setting_time">정보 보기</span></td>
                                 <input type="hidden" id="time_info<?= $i ?>" value="<?= $start_t ?>"/>
                                 <?php
                                 $flag = false;

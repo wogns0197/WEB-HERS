@@ -8,6 +8,9 @@ $name = "web_project";
 $chat = $_POST['chat'];
 $receive_id = null;
 $manage_id = 0;
+echo $date;
+echo $time;
+echo $place;
 $query = "select * from futsal_manage where borrowdate='$date' and matching=1 and start_time='$time' and place='$place'";
 $db = new PDO("mysql:dbname=$name", "root", "root");
 $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -28,4 +31,4 @@ else{
 <?php
 }
 ?>
-<script type="text/javascript"src="success_send_message.js"></script>
+<!-- <script type="text/javascript"src="success_send_message.js"></script> -->
