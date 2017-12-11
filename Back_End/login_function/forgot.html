@@ -1,83 +1,82 @@
 <!DOCTYPE html>
-<html>
-<head>
-	<title>Forgot</title>
-	<link href="forgot.css" rel="stylesheet" />
-	<meta charset="utf-8"/>
-</head>
-<body>
+ <html>
+ <head>
+ 	<title>Forgot</title>
+ 	<link href="forgot.css" rel="stylesheet" />
+ 	<meta charset="utf-8"/>
+ </head>
+ <body>
+ 	
+ 	<main>
+ 		<section>
+ 			
+ 			<button id="q1">ID</button>
+ 			
+ 			<button id="q2">PW</button>
+ 			<br/>
+ 			<div class="forgotid">
+ 				<input type="text" name="name" placeholder="Name" this.style.color='black'; id="name">
+ 				<input type="text" name="sid" placeholder="Student id" this.style.color='black';>
+ 			
+ 				<footer>
+ 					<button id="bottom">FIND ID!</button>
+ 				</footer>
+ 			</div>
+ 			<div class="forgotpw">
+ 				<input type="text" name="email" placeholder="Email" this.style.color='black'; id="email">
+ 				<br/>
+ 				<input type="text" name="num" placeholder="인증번호" this.style.color='black'; id="num">
+ 				<footer>
+ 					<button id="bottom">FIND PASSWORD!</button>
+ 				</footer>
+ 			</div>
+ 
+ 
+ 			<script type="text/javascript">
+ 
+ 				window.onload = function() {
+ 			    document.getElementById("q1").onclick = changeColor;
+ 			    document.getElementById("q2").onclick = changeColor2;
+ 
+ 				};
+ 				function changeColor() {
+ 				    var q1 = document.getElementById("q1");
+  				    var q2 = document.getElementById("q2");	
+  				    var id = document.getElementsByClassName("forgotid");
+  				    var pw = document.getElementsByClassName("forgotpw");
+ 
 
-	
-	<main>
-		<section>
-		<button id="q1">ID</button>
-		<button id="q2">PW</button>
-
-
-		<form action="find_id.php" method="post" id="find_id">
-
-			
-			
-			
-			<br/>
-			<div class="forgotid">
-				<input type="text" name="name" placeholder="Name" this.style.color='black'; id="name">
-				<input type="text" name="sid" placeholder="Student id" this.style.color='black';>
-			
-				<footer>
-					<button id="bottom" type = "submit" form="find_id">FIND ID!</button>
-				</footer>
-			</div>
-		</form>
-
-			<div class="forgotpw">
-				<input type="text" name="email" placeholder="Email" this.style.color='black'; id="email">
-				<br/>
-				<input type="text" name="num" placeholder="인증번호" this.style.color='black'; id="num">
-				<footer>
-					<button id="bottom">FIND PASSWORD!</button>
-				</footer>
-			</div>
-
-
-			<script type="text/javascript">
-
-				window.onload = function() {
-			    document.getElementById("q1").onclick = changeColor;
-			    document.getElementById("q2").onclick = changeColor2;
-
-				};
-				function changeColor() {
-				    var q1 = document.getElementById("q1");
-				    var q2 = document.getElementById("q2");	
-				    var id = document.getElementsByClassName("forgotid");
-				    var pw = document.getElementsByClassName("forgotpw");
-				    q1.style.backgroundColor = "#585858";
-				    q2.style.backgroundColor = "#6E6E6E";
-				    pw[0].style.display = "none";
-				    id[0].style.display = "block";
-
-
-				}
-				function changeColor2() {
-				    var q1 = document.getElementById("q1");
-				    var q2 = document.getElementById("q2");
-				    var id = document.getElementsByClassName("forgotid");
-				    var pw = document.getElementsByClassName("forgotpw");
-				    q1.style.backgroundColor = "#6E6E6E";
-				    q2.style.backgroundColor = "#585858";
-				    id[0].style.display = "none";
-				    pw[0].style.display = "block";
-				}
-
-			</script>
-			
-			
-		</section>
-		
-	</main>
-
-
-	
-</body>
-</html>
+ 				    q1.style.backgroundColor = "#D8D8D8";
+ 				    q2.style.backgroundColor = "#F2F2F2";
+ 				    
+ 				    q2.style.color = '#A4A4A4';
+ 				    q1.style.color = '#2E2E2E'
+  				    pw[0].style.display = "none";
+  				    id[0].style.display = "block";
+  
+ 
+ 				}
+ 				function changeColor2() {
+ 				    var q1 = document.getElementById("q1");
+  				    var q2 = document.getElementById("q2");
+  				    var id = document.getElementsByClassName("forgotid");
+  				    var pw = document.getElementsByClassName("forgotpw");
+ 
+ 				    q1.style.backgroundColor = "#F2F2F2";
+ 				    q2.style.backgroundColor = "#D8D8D8";
+ 				    q1.style.color = '#A4A4A4';
+ 				    q2.style.color = '#2E2E2E'
+  				    id[0].style.display = "none";
+  				    pw[0].style.display = "block";
+  				}
+ 
+ 			</script>
+ 			
+ 			
+ 		</section>
+ 		
+ 	</main>
+ 
+ 	
+ </body>
+ </html>

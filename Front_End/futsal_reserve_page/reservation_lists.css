@@ -1,9 +1,9 @@
 
 #reserve_wrap{
-	left: 15%;
+	
 	height: 60%;
-	margin-top: 10%;
-	width: 70%;
+	margin-top: 8%;
+	width: 100%;
 	
 	position: fixed;
 }
@@ -91,6 +91,9 @@ table{
 	background-color: #D8D8D8;
 	padding: 2%;
 }
-
-/*table radius*/
-
+iframe{
+	margin-right: 3%;
+}
+.momtong{
+	height: 100px;
+}
