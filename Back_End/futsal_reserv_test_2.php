@@ -17,8 +17,8 @@ date_default_timezone_set('Asia/Seoul');
     <script src="../Front_End/calendar/js/vendor/jquery.js"></script>
     <script src="../Front_End/calendar/js/vendor/moment.js"></script>
     <script src="../Front_End/bootstrap-3.3.2-dist/js/bootstrap.js"></script>
-    <script src="timeexception.js" type="text/javascript"></script>
-    <script type="text/javascript" src="chat_info.js"></script>
+    <script src="chat_info.js" type="text/javascript" ></script>
+    <script src="futsal_reserv1.js" type="text/javascript"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script type="text/javascript"src="http://code.jquery.com/jquery-latest.min.js"></script>
     <script type="text/javascript">
@@ -209,7 +209,7 @@ date_default_timezone_set('Asia/Seoul');
                 $find = true;
             ?>
             <p class="text-center">
-                <span id = "button1" data-toggle="modal" data-target="#getmatchModal" >
+                <span data-toggle="modal" data-target="#getmatchModal" >
                 상대팀 구하기
             </span></p>
             <?php
@@ -260,7 +260,7 @@ date_default_timezone_set('Asia/Seoul');
   <!-- Modal End-->
 
   <!-- Matching Modal -->
-  <form action="" method="post">
+  <form action="find_match.php" method="post">
       <div class="modal fade" id="getmatchModal" role="dialog">
           <div class="modal-dialog">
 
@@ -279,7 +279,7 @@ date_default_timezone_set('Asia/Seoul');
 
               </div>
               <div class="modal-footer">
-              <button type="submit" class="btn btn-default">Submit</button>
+              <button id = "button1" type="submit" class="btn btn-default">Submit</button>
               <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
               </div>
           </div>
