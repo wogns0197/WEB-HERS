@@ -209,9 +209,9 @@ date_default_timezone_set('Asia/Seoul');
                 $find = true;
             ?>
             <p class="text-center">
-                <button id = "button1" name = "find" value =<?= $find ?>>
+                <span id = "button1" data-toggle="modal" data-target="#getmatchModal" >
                 상대팀 구하기
-            </button></p>
+            </span></p>
             <?php
             }
             ?>
@@ -220,7 +220,7 @@ date_default_timezone_set('Asia/Seoul');
     </div>
     </form>
 
-    <!-- Modal -->
+    <!-- Info Show Modal -->
     <form action="find_matching.php" method="post">
         <div class="modal fade" id="matchingModal" role="dialog">
             <div class="modal-dialog">
@@ -258,6 +258,36 @@ date_default_timezone_set('Asia/Seoul');
         </div>
     </form>
   <!-- Modal End-->
+
+  <!-- Matching Modal -->
+  <form action="" method="post">
+      <div class="modal fade" id="getmatchModal" role="dialog">
+          <div class="modal-dialog">
+
+          <!-- Modal content-->
+          <div class="modal-content">
+              <div class="modal-header">
+              <span type="button" class="close" data-dismiss="modal">&times;</span>
+              <h4 class="modal-title">Matching</h4>
+              </div>
+              <div class="modal-body">
+              <br>
+              <fieldset>
+              <legend>Notice Message:</legend>
+              <textarea class="form-control" rows="5" id="message" maxlength="150" placeholder="OOO팀과 함께 경기하실 분들을 모집합니다. 연락주세요." name="chat" required></textarea>
+              </fieldset>
+
+              </div>
+              <div class="modal-footer">
+              <button type="submit" class="btn btn-default">Submit</button>
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              </div>
+          </div>
+
+          </div>
+      </div>
+  </form>
+<!-- Modal End-->
 
 
     <script src="../Front_End/calendar/js/Calendar.js"></script>
