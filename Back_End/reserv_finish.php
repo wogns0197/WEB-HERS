@@ -55,7 +55,8 @@ session_start();
         $query1 = "update futsal_manage set borrowdate='$borrowdate',start_time='$start_time',end_time='$end_time',place='$place',purpose='$purpose',notice='$notice',home='$home',away='$away',people=$population,groupname='$groupname' where manage_ID=$m_manage_id and borrowdate='$modifydate'";
       }
       else if($confirm == 1){
-        $query1 = "update futsal_manage set purpose='$purpose', notice='$notice', home='$home', away='$away', groupname='$groupname'";
+        $query1 = "update futsal_manage set matching = 0, purpose='$purpose', notice='$notice', home='$home', away='$away', groupname='$groupname'";
+        $query2 = "delete from matching_manage where receive_id='$id' and borrowdate='$borrowdate'";
       }
       else{
         $query1 = "insert into futsal_manage(user_id, borrowdate, start_time, end_time, place, purpose, notice,home, away, people, groupname) values('$id','$borrowdate','$start_time','$end_time','$place', '$purpose', '$notice','$home','$away',$population, '$groupname')";
@@ -67,6 +68,9 @@ session_start();
           $count = $a['count(*)'];
         }
         $db->query($query1);
+        if($confirm==1){
+         $db->query($query2);
+        }
       }
       catch(PDOException $ex){
         echo "check1";
