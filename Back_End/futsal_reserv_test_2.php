@@ -232,7 +232,10 @@ date_default_timezone_set('Asia/Seoul');
         <div class="modal-body">
         <fieldset>
           <legend>Detail</legend>
-          <textarea class="form-control" rows="5" id="detail" readonly></textarea>
+          <?php
+            $message = find_message();
+            ?>
+          <textarea class="form-control" rows="5" id="detail" readonly><?=$message?></textarea>
         </fieldset>
         <br>
         <fieldset>
@@ -387,5 +390,17 @@ date_default_timezone_set('Asia/Seoul');
             }
         $start_time += 2;
         }
+    }
+    function find_message(){
+        global $id, $date;
+        $name = "web_project";
+        $query = "select chat from futsal_manage where matching=1 and borrowdate='$date' and user_id='$id'";
+        $db = new PDO("mysql:dbname=$name", "root", "root");
+        $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $rows = $db->query($query);
+        foreach($rows as $row){
+            $chat  = $row['chat'];
+        }
+        return $chat;
     }
 ?>
