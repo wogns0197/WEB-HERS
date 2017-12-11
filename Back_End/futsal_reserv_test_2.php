@@ -163,12 +163,12 @@ date_default_timezone_set('Asia/Seoul');
                             for($i=$admit_min; $i<=$admit_max; $i++){
                                 if($i == $m_population){ // 예약 수정상태일 때 전의 예약했던 인원을 selected상태로 default
                         ?>
-                                <option selected = 'selected'><?= $i ?></option>
+                                <option class = "spopulation" selected = 'selected' value=<?=$i?>><?= $i ?></option>
                         <?php
                                 }
                                 else{
                         ?>
-                                <option><?= $i ?></option>
+                                <option class = "spopulation" value=<?=$i?>><?= $i ?></option>
                         <?php
                                 }
                             }
@@ -278,6 +278,10 @@ date_default_timezone_set('Asia/Seoul');
               </fieldset>
 
               </div>
+              <input type="hidden" name="date" value=<?=$date?>/>
+              <input type="hidden" id = "send_time2" name="time" value=0/>
+              <input type="hidden" name="place" value=<?=$place?>/>
+              <input type="hidden" id = "spopulation" name="population" value=0/>
               <div class="modal-footer">
               <button id = "button1" type="submit" class="btn btn-default">Submit</button>
               <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
