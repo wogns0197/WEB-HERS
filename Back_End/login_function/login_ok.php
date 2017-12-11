@@ -40,9 +40,7 @@ catch(PDOException $ex){
 
 }
 
+
+
 ?>
 <meta http-equiv='refresh' content='0;url=<?= $_SESSION['prevPage'] ?>'>
-
-<?php
-
-?>

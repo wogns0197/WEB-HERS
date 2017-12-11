@@ -13,7 +13,7 @@ date_default_timezone_set('Asia/Seoul');
     <link rel="stylesheet" href="../Front_End/main2.css">
     <link rel="stylesheet" href="futsal_reserv_test_2.css" />
 
-    <script src="http://ajax.googleapis.com/ajax/libs/prototype/1.7.3.0/prototype.js" type="text/javascript"></script>
+    <!-- <script src="http://ajax.googleapis.com/ajax/libs/prototype/1.7.3.0/prototype.js" type="text/javascript"></script> -->
     <script src="../Front_End/calendar/js/vendor/jquery.js"></script>
     <script src="../Front_End/calendar/js/vendor/moment.js"></script>
     <script src="../Front_End/bootstrap-3.3.2-dist/js/bootstrap.js"></script>
@@ -48,17 +48,10 @@ date_default_timezone_set('Asia/Seoul');
                 set_modify_val();
             }
             if(!isset($_SESSION['user_id'])){ //로그인 확인
-                ?>
-                <!-- <p><a href ='login_function/login.php'>Login</a></p> -->
-            <?php
+              echo "<script>alert('로그인이 필요합니다!');location.href='login_function/login.php';</script>";
+
             }
-            else{
-                $user_id = $_SESSION['user_id'];
-            ?>
-                <!-- <p><?= $user_id ?></p> -->
-                <!-- <p ><a href = 'login_function/logout.php'>Logout</a></p> -->
-            <?php
-            }
+
             set_place_date();//장소와 날짜 초기설정
             ?>
 

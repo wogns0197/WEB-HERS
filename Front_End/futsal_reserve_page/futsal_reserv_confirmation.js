@@ -14,7 +14,10 @@ function show_hidden(){
 		notice_required();
 	}
 	else{
+
 		versus.style.visibility = "hidden";
+		notice_required();
+		
 	}
 }
 

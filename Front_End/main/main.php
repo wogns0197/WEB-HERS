@@ -136,10 +136,10 @@ session_start();
   	  $('.backgroundTransition').backgroundTransition({
   		  backgrounds:[
 
-  			  { src: 'mainimg/boys.jpg' },
-  			  { src: 'mainimg/theball.jpg' },
-          { src: 'mainimg/desert.jpg'},
-          { src: 'mainimg/theball2.jpg'}
+  			  { src: 'mainimg/one.jpg' },
+  			  { src: 'mainimg/two.jpg' },
+          { src: 'mainimg/three.jpg'},
+          { src: 'mainimg/four.jpg'}
 
   		  ],
   		  transitionDelay: 5,
