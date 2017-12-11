@@ -7,11 +7,11 @@ body, html{
 }
 @font-face {
   font-family: mylight;
-  src: url(main/font/Existence-Light.otf);
+  src: url(font/Existence-Light.otf);
 }
 @font-face {
   font-family: myserif;
-  src: url(main/font/Anson-Regular.otf);
+  src: url(font/Anson-Regular.otf);
 }
 header{
   font-family: mylight;
