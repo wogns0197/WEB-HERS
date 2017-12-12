@@ -1,6 +1,5 @@
 <?php
 session_start();
-print_r($_POST);
 $id = $_SESSION['user_id'];
 $date = $_POST['date'];
 $place  = $_SESSION['place'];
@@ -9,9 +8,6 @@ $name = "web_project";
 $chat = $_POST['chat'];
 $receive_id = null;
 $manage_id = 0;
-echo $date;
-echo $time;
-echo $place;
 $query = "select * from futsal_manage where borrowdate='$date' and matching=1 and start_time='$time' and place='$place'";
 $db = new PDO("mysql:dbname=$name", "root", "root");
 $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -23,13 +19,30 @@ foreach($rows as $row){
     $flag = true;
 }
 if($flag){
-    $query2 = "insert into matching_manage values('$receive_id','$chat','$id',$manage_id,'$date')";
-    $db->query($query2);
+    $check_query = "select count(*) from matching_manage where send_id='$id' and manage_ID=$manage_id";
+    $rows = $db->query($check_query);
+    $check = true;
+    foreach($rows as $row){
+        $check = false;
+    }
+    if($check){
+        $query2 = "insert into matching_manage values('$receive_id','$chat','$id',$manage_id,'$date')";
+        $db->query($query2);
+    }
+    else{
+    ?>
+        <script type="text/javascript"src="duplicate_send_message.js"></script>        
+    <?php
+    }
 }
 else{
 ?>
-    <script type="text/javascript"scr="fail_send_message.js"></script>
+    <script type="text/javascript"src="fail_send_message.js"></script>
+<?php
+}
+if($check && $flag){
+?>
+<script type="text/javascript"src="success_send_message.js"></script>
 <?php
 }
 ?>
-<!-- <script type="text/javascript"src="success_send_message.js"></script> -->

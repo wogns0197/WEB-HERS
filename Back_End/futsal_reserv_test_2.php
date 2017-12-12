@@ -234,9 +234,6 @@ date_default_timezone_set('Asia/Seoul');
                 <div class="modal-body">
                 <fieldset>
                 <legend>Detail</legend>
-                <?php
-                    $message = find_message();
-                ?>
                 <input type="hidden" name="date" value=<?=$date?>/>
                 <input type="hidden" id = "send_time" name = "time" value="12"/>
                 <textarea class="form-control" rows="5" id="detail" readonly><?=$message?></textarea>
@@ -351,7 +348,7 @@ date_default_timezone_set('Asia/Seoul');
         }
     }
     function make_timetable(){//예약 현황에 따른 타임 테이블을 만들어준다
-        global $date, $place, $name, $modify, $m_start, $m_place, $m_borrowdate;
+        global $date, $place, $name, $modify, $m_start, $m_place, $m_borrowdate, $message;
         $start_time = 12;
         $n = 5;
         $borrow_place = $_POST["place"];
@@ -389,6 +386,7 @@ date_default_timezone_set('Asia/Seoul');
                     <?php
                         if($start_time==$start_t){//그 시간에 예약이 차있을 경우
                             if($row['matching']==1){
+                                $message = find_message($start_t);
                                 ?>
                                 <td class="text-center"> 상대팀 구하는 중 </td>
                                 <td class="text-center"><span id = "chat_info<?= $i ?>" class="show_match_info"  data-toggle="modal" data-target="#matchingModal">정보 보기</span></td>
@@ -431,9 +429,11 @@ date_default_timezone_set('Asia/Seoul');
         $start_time += 2;
         }
     }
-    function find_message(){
-        global $id, $date, $name;
-        $query = "select chat from futsal_manage where matching=1 and borrowdate='$date' and user_id='$id'";
+    function find_message($time){
+        global $date, $name, $place;
+        // echo $time;
+        $stime = $time.":00:00";
+        $query = "select chat from futsal_manage where matching=1 and borrowdate='$date' and start_time='$stime' and place='$place'";
         $db = new PDO("mysql:dbname=$name", "root", "root");
         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         $rows = $db->query($query);
