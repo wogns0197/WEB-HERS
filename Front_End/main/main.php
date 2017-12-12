@@ -56,7 +56,7 @@ session_start();
             <li>Signed In as (<?= $_SESSION['user_id']?>)</li>
 
             <li><a href="../../Back_End/login_function/logout.php">Logout</a></li>
-            <li><a href="../mypage/mypage.html">My Page</a></li>
+            <li><a href="../mypage/mypage.php">My Page</a></li>
             <?php
              }
             ?>

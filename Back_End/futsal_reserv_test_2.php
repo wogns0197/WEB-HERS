@@ -95,7 +95,7 @@ date_default_timezone_set('Asia/Seoul');
             <li>Signed In as (<?= $_SESSION['user_id']?>)</li>
 
             <li><a href="login_function/logout.php">Logout</a></li>
-            <li><a href="../Front_End/mypage/mypage.html">My Page</a></li>
+            <li><a href="../Front_End/mypage/mypage.php">My Page</a></li>
             <?php
              }
             ?>
