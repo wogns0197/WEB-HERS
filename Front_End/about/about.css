@@ -18,12 +18,11 @@ body{
   src: url(../font/DXPnM-KSCpc-EUC-H.ttf);
 }
 .entire{
-  background-color: rgba(255, 255, 255, 0.7);
-  height: 100%;
+  background-color: rgba(255, 255, 255, 0.75);
   width: 80%;
   margin-left: 10%;
   margin-right: 10%;
-  top: 15%;
+  top: 25%;
   position: absolute;
 }
 h2{
@@ -35,11 +34,36 @@ h2{
 .siteinfo{
   top: 3%;
   width: 100%;
+  margin-bottom: 5%;
+  visibility: hidden;
 }
 .siteinfo p{
-  padding-left: 3%;
-  padding-right: 3%;
   font-family: myparagraph;
   font-size: 13pt;
   line-height: 1.3em;
+  clear: both;
+  margin-left: 3%;
+  margin-right: 3%;
+  text-align: center;
+}
+.siteinfo img{
+  width: 150px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.signimages img{
+  float: left;
+  width: 130px;
+}
+.signimages img:not(#final){
+  margin-right: 20px;
+}
+.signimages{
+  width: 450px;
+  margin: auto;
+}
+.developer{
+  clear: both;
+  visibility: hidden;
 }

@@ -27,32 +27,16 @@ session_start();
 
 
      <!-- <script type="text/javascript"src="http://code.jquery.com/jquery-latest.min.js"></script> -->
-     <script type="text/javascript">
-       $(document).ready( function(){
-         $("#menuicon").click(function () {
-           $("#menubar").animate({left: 0}, 300 );
-           $("#xicon").animate({left: 0}, 300 );
-           $("#menuicon").fadeOut(300);
-         });
-
-         $("#xicon").click(function () {
-           $("#menubar").animate({left: "-25%"}, 300 );
-           $("#xicon").animate({left: "-25%"}, 300 );
-           $("#menuicon").fadeIn(300);
-         });
-
-       });
-     </script>
+     <script type="text/javascript"src="../main2.js"></script>
   </head>
 
   <body>
 
+    <div>
     <header id="home">
-      <!-- <div class="header"> -->
       <h1><a href="../main/main.php">HERS</a></h1>
-      <!-- <hr/> -->
-      <!-- </div> -->
     </header>
+    </div>
 
 
     <!-- sidebar menu -->
@@ -90,7 +74,7 @@ session_start();
             <li>Signed In as (<?= $_SESSION['user_id']?>)</li>
 
             <li><a href="../../Back_End/login_function/logout.php">Logout</a></li>
-            <li><a href="../mypage/mypage.html">My Page</a></li>
+            <li><a href="../mypage/mypage.php">My Page</a></li>
             <?php
              }
             ?>
@@ -162,7 +146,7 @@ session_start();
                 </div>
 
                 <div class="modal-body">
-                  <a href = "../../Back_end/futsal_reserv_test_2.php?where=잔디구장"><button center-block" id="soccer">잔디구장</button><a>
+                  <a href = "../../Back_end/futsal_reserv_test_2.php?where=잔디구장"><button center-block id="soccer">잔디구장</button></a>
                 </div>
 
               </div>
@@ -182,7 +166,7 @@ session_start();
                 </div>
 
                 <div class="modal-body">
-                  <a href = "../../Back_end/futsal_reserv_test_2.php?where=대운동장"><button center-block" id="stadium">대운동장</button></a>
+                  <a href = "../../Back_end/futsal_reserv_test_2.php?where=대운동장"><button center-block id="stadium">대운동장</button></a>
                 </div>
 
               </div>
@@ -196,14 +180,13 @@ session_start();
 
     </div>
 
-    <div class="container col-sm-2" id="right-side">
+    <div class="container col-sm-2 hidden" id="right-side">
       <!-- source=http://thinkgood.tistory.com/471 -->
       <!-- notice function -->
 
-<<<<<<< HEAD
-      </div>
+      <!-- </div> -->
 
-=======
+
       <table cellSpacing=0 cellPadding=0 class="notice-table center-block" >
         <?php
         set_modify_val();// 예약 수정 상태일 경우 예약 수정을 진행할때 예전 예약 내용을 default값으로 넣어주기위한 값들을 받아온다
@@ -245,7 +228,6 @@ session_start();
         <button id="reserv_confirm">예약내역확인</button>
       </form> -->
 
->>>>>>> 6e300c6fa81a266c9a71997ef4b149bddbac9bb8
   </body>
 </html>
 <?php

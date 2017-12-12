@@ -14,22 +14,7 @@ session_start();
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <script type="text/javascript"src="http://code.jquery.com/jquery-latest.min.js"></script>
-  <script type="text/javascript">
-    $(document).ready( function(){
-      $("#menuicon").click(function () {
-        $("#menubar").animate({left: 0}, 300 );
-        $("#xicon").animate({left: 0}, 300 );
-        $("#menuicon").fadeOut(300);
-      });
-
-      $("#xicon").click(function () {
-        $("#menubar").animate({left: "-25%"}, 300 );
-        $("#xicon").animate({left: "-25%"}, 300 );
-        $("#menuicon").fadeIn(300);
-      });
-
-    });
-  </script>
+  <script type="text/javascript"src="../main2.js"></script>
   </head>
   <body>
     <header>
@@ -73,7 +58,7 @@ session_start();
           <li>Signed In as (<?= $_SESSION['user_id']?>)</li>
 
           <li><a href="../../Back_End/login_function/logout.php">Logout</a></li>
-          <li><a href="../mypage/mypage.html">My Page</a></li>
+          <li><a href="../mypage/mypage.php">My Page</a></li>
           <?php
            }
           ?>

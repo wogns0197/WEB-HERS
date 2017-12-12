@@ -1,5 +1,6 @@
 <?php
 session_start();
+echo print_r($_SESSION);
 ?>
 
 <!DOCTYPE html>
@@ -52,14 +53,19 @@ session_start();
       $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
       $flag = true;
       if($_SESSION['modify']==1){
-        $query1 = "update futsal_manage set borrowdate='$borrowdate',start_time='$start_time',end_time='$end_time',place='$place',purpose='$purpose',notice='$notice',home='$home',away='$away',people=$population,groupname='$groupname' where manage_ID=$m_manage_id and borrowdate='$modifydate'";
+        if($confirm == 1){
+          $query1 = "update futsal_manage set borrowdate='$borrowdate',start_time='$start_time',end_time='$end_time',place='$place',purpose='$purpose',notice='$notice',home='$home',away='$away',people=$population,groupname='$groupname', matching = 1 where manage_ID=$m_manage_id and borrowdate='$modifydate'";          
+        }
+        else{
+          $query1 = "update futsal_manage set borrowdate='$borrowdate',start_time='$start_time',end_time='$end_time',place='$place',purpose='$purpose',notice='$notice',home='$home',away='$away',people=$population,groupname='$groupname', matching = 0 where manage_ID=$m_manage_id and borrowdate='$modifydate'";                    
+        }
       }
       else if($confirm == 1){
         $query1 = "update futsal_manage set matching = 0, purpose='$purpose', notice='$notice', home='$home', away='$away', groupname='$groupname'";
         $query2 = "delete from matching_manage where receive_id='$id' and borrowdate='$borrowdate'";
       }
       else{
-        $query1 = "insert into futsal_manage(user_id, borrowdate, start_time, end_time, place, purpose, notice,home, away, people, groupname) values('$id','$borrowdate','$start_time','$end_time','$place', '$purpose', '$notice','$home','$away',$population, '$groupname')";
+        $query1 = "insert into futsal_manage(user_id, borrowdate, start_time, end_time, place, purpose, notice,home, away, people, groupname, matching) values('$id','$borrowdate','$start_time','$end_time','$place', '$purpose', '$notice','$home','$away',$population, '$groupname',0)";
       }
       $check_query = "select count(*) from futsal_manage where borrowdate='$borrowdate' and start_time='$start_time' and place='$place'";
       try{

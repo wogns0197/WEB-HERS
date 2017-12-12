@@ -8,31 +8,27 @@ window.onload = function(){
     document.getElementById("button2").onclick = button;
     document.getElementById("button1").onclick = button;
     document.getElementById("button1").onclick = setting;
-    // document.getElementById("chat_info0").onclick = foo0;
-    // document.getElementById("chat_info1").onclick = foo1;
-    // document.getElementById("chat_info2").onclick = foo2;
-    // document.getElementById("chat_info3").onclick = foo3;
-    // document.getElementById("chat_info4").onclick = foo4;
+    if(isEmpty(document.getElementById("chat_info0"))){
+        document.getElementById("chat_info0").onclick = foo0;        
+    }
+    if(isEmpty(document.getElementById("chat_info1"))){
+        document.getElementById("chat_info1").onclick = foo1;
+    }
+    if(isEmpty(document.getElementById("chat_info2"))){
+        document.getElementById("chat_info2").onclick = foo2;
+    }
+    if(isEmpty(document.getElementById("chat_info3"))){        
+        document.getElementById("chat_info3").onclick = foo3;
+    }
+    if(isEmpty(document.getElementById("chat_info4"))){
+        document.getElementById("chat_info4").onclick = foo4;
+    }
 
 };
-function setting_time(event){
-    var idx = event.value;
-    if(idx=0){
-        document.getElementById("send_time").value = document.getElementById("time_info0").value;        
-    }
-    else if(idx=1){
-        document.getElementById("send_time").value = document.getElementById("time_info1").value;        
-    }
-    else if(idx=2){
-        document.getElementById("send_time").value = document.getElementById("time_info2").value;        
-    }
-    else if(idx=3){
-        document.getElementById("send_time").value = document.getElementById("time_info3").value;        
-    }
-    else if(idx=4){
-        document.getElementById("send_time").value = document.getElementById("time_info4").value;        
-    }
+function isEmpty(val){
+    return (val == null) ? false : true;
 }
+
 function time_empty_check(){
     flag=true;
 }
@@ -65,18 +61,19 @@ function clear(a){
     }
     return a;
 }
-// function foo0(){
-//     document.getElementById("send_time").value = document.getElementById("time_info0").value;
-// }
-// function foo1(){
-//     document.getElementById("send_time").value = document.getElementById("time_info1").value;
-// }
-// function foo2(){
-//     document.getElementById("send_time").value = document.getElementById("time_info2").value;
-// }
-// function foo3(){
-//     document.getElementById("send_time").value = document.getElementById("time_info3").value;
-// }
-// function foo4(){
-//     document.getElementById("send_time").value = document.getElementById("time_info4").value;
-// }
+function foo0(){
+    document.getElementById("send_time").value = document.getElementById("time_info0").value;
+}
+function foo1(){
+    document.getElementById("send_time").value = document.getElementById("time_info1").value;
+    alert(document.getElementById("time_info1").value);
+}
+function foo2(){
+    document.getElementById("send_time").value = document.getElementById("time_info2").value;
+}
+function foo3(){
+    document.getElementById("send_time").value = document.getElementById("time_info3").value;
+}
+function foo4(){
+    document.getElementById("send_time").value = document.getElementById("time_info4").value;
+}

@@ -17,7 +17,7 @@ function show_hidden(){
 
 		versus.style.visibility = "hidden";
 		notice_required();
-		
+
 	}
 }
 
