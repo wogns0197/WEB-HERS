@@ -24,7 +24,7 @@ create table futsal_manage
     people        integer(5),
     groupname     varchar(10),
     matching      boolean,
-    chat          varchar(150),
+    chat          varchar(200),
     primary key(manage_ID, borrowdate),
     constraint foreign key (user_id) references user(user_id)
         on delete set null
@@ -43,7 +43,7 @@ create table purpose_view
 create table matching_manage
 (
     receive_id  varchar(10),
-    chat        varchar(150),
+    chat        varchar(200),
     send_id     varchar(10),
     manage_ID   integer(10),
     borrowdate  date,
@@ -58,3 +58,5 @@ create table b_test
     numb    integer(10),
     primary key(num, numb)
 );
+insert into futsal_manage(user_id, borrowdate, start_time, end_time, place, purpose, people, matching,chat)
+    values('jh9277','2017-12-31','12:00:00',"14:00:00",'대운동장','풋살',10,1,' dmdjdjdj');

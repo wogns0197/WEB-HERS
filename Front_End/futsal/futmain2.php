@@ -141,8 +141,8 @@ session_start();
 
                 <div class="modal-body">
                   <div id="futsal_btns" class="text-center">
-                    <a href = "../../Back_end/futsal_reserv_test_2.php?where=풋살장A"><button class="btn-lg btn-info" id="futsal_A">풋살장A</button></a>
-                    <a href = "../../Back_end/futsal_reserv_test_2.php?where=풋살장B"><button class="btn-lg btn-info" id="futsal_B">풋살장B</button></a>
+                    <a href = "../../Back_end/futsal_reserv_test_2.php?where=풋살장A"><button  id="futsal_A">풋살장A</button></a>
+                    <a href = "../../Back_end/futsal_reserv_test_2.php?where=풋살장B"><button  id="futsal_B">풋살장B</button></a>
                  </div>
                 </div>
 
@@ -162,7 +162,7 @@ session_start();
                 </div>
 
                 <div class="modal-body">
-                  <a href = "../../Back_end/futsal_reserv_test_2.php?where=잔디구장"><button class="btn-lg btn-info center-block" id="soccer">잔디구장</button><a>
+                  <a href = "../../Back_end/futsal_reserv_test_2.php?where=잔디구장"><button center-block" id="soccer">잔디구장</button><a>
                 </div>
 
               </div>
@@ -182,7 +182,7 @@ session_start();
                 </div>
 
                 <div class="modal-body">
-                  <a href = "../../Back_end/futsal_reserv_test_2.php?where=대운동장"><button class="btn-lg btn-info center-block" id="stadium">대운동장</button></a>
+                  <a href = "../../Back_end/futsal_reserv_test_2.php?where=대운동장"><button center-block" id="stadium">대운동장</button></a>
                 </div>
 
               </div>
@@ -200,10 +200,9 @@ session_start();
       <!-- source=http://thinkgood.tistory.com/471 -->
       <!-- notice function -->
 
-<<<<<<< HEAD
       </div>
 
-=======
+
       <table cellSpacing=0 cellPadding=0 class="notice-table center-block" >
         <?php
         set_modify_val();// 예약 수정 상태일 경우 예약 수정을 진행할때 예전 예약 내용을 default값으로 넣어주기위한 값들을 받아온다
@@ -245,7 +244,6 @@ session_start();
         <button id="reserv_confirm">예약내역확인</button>
       </form> -->
 
->>>>>>> 6e300c6fa81a266c9a71997ef4b149bddbac9bb8
   </body>
 </html>
 <?php

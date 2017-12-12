@@ -1,5 +1,6 @@
 
 function pageLoad(){
+	alert("hi");
 	document.getElementById("notice_checked").onchange = show_hidden;
 }
 
@@ -17,7 +18,7 @@ function show_hidden(){
 
 		versus.style.visibility = "hidden";
 		notice_required();
-		
+
 	}
 }
 
