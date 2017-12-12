@@ -5,13 +5,17 @@ body, html{
 }
 body{
   background-image: url(image/theball.jpg);
-  background-size: 100%;
+  background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
 @font-face {
   font-family: mylight;
   src: url(../font/Existence-Light.otf);
+}
+@font-face {
+  font-family: myparagraph;
+  src: url(../font/DXPnM-KSCpc-EUC-H.ttf);
 }
 .entire{
   background-color: rgba(255, 255, 255, 0.7);
@@ -31,9 +35,11 @@ h2{
 .siteinfo{
   top: 3%;
   width: 100%;
-  text-align: center;
 }
 .siteinfo p{
   padding-left: 3%;
   padding-right: 3%;
+  font-family: myparagraph;
+  font-size: 13pt;
+  line-height: 1.3em;
 }
