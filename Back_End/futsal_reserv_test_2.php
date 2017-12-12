@@ -17,8 +17,8 @@ date_default_timezone_set('Asia/Seoul');
     <script src="../Front_End/calendar/js/vendor/jquery.js"></script>
     <script src="../Front_End/calendar/js/vendor/moment.js"></script>
     <script src="../Front_End/bootstrap-3.3.2-dist/js/bootstrap.js"></script>
-    <script src="timeexception.js" type="text/javascript"></script>
-    <script type="text/javascript" src="chat_info.js"></script>
+    <script src="chat_info.js" type="text/javascript" ></script>
+    <script src="futsal_reserv1.js" type="text/javascript"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script type="text/javascript"src="http://code.jquery.com/jquery-latest.min.js"></script>
     <script type="text/javascript">
@@ -163,12 +163,12 @@ date_default_timezone_set('Asia/Seoul');
                             for($i=$admit_min; $i<=$admit_max; $i++){
                                 if($i == $m_population){ // 예약 수정상태일 때 전의 예약했던 인원을 selected상태로 default
                         ?>
-                                <option selected = 'selected'><?= $i ?></option>
+                                <option class = "spopulation" selected = 'selected' value=<?=$i?>><?= $i ?></option>
                         <?php
                                 }
                                 else{
                         ?>
-                                <option><?= $i ?></option>
+                                <option class = "spopulation" value=<?=$i?>><?= $i ?></option>
                         <?php
                                 }
                             }
@@ -209,7 +209,7 @@ date_default_timezone_set('Asia/Seoul');
                 $find = true;
             ?>
             <p class="text-center">
-                <span id = "button1" data-toggle="modal" data-target="#getmatchModal" >
+                <span data-toggle="modal" data-target="#getmatchModal" >
                 상대팀 구하기
             </span></p>
             <?php
@@ -221,7 +221,7 @@ date_default_timezone_set('Asia/Seoul');
     </form>
 
     <!-- Info Show Modal -->
-    <form action="find_matching.php" method="post">
+    <form action="matching_info.php" method="post">
         <div class="modal fade" id="matchingModal" role="dialog">
             <div class="modal-dialog">
 
@@ -260,7 +260,7 @@ date_default_timezone_set('Asia/Seoul');
   <!-- Modal End-->
 
   <!-- Matching Modal -->
-  <form action="" method="post">
+  <form action="find_match.php" method="post">
       <div class="modal fade" id="getmatchModal" role="dialog">
           <div class="modal-dialog">
 
@@ -278,8 +278,12 @@ date_default_timezone_set('Asia/Seoul');
               </fieldset>
 
               </div>
+              <input type="hidden" name="date" value=<?=$date?>/>
+              <input type="hidden" id = "send_time2" name="time" value=0/>
+              <input type="hidden" name="place" value=<?=$place?>/>
+              <input type="hidden" id = "spopulation" name="population" value=0/>
               <div class="modal-footer">
-              <button type="submit" class="btn btn-default">Submit</button>
+              <button id = "button1" type="submit" class="btn btn-default">Submit</button>
               <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
               </div>
           </div>
@@ -387,9 +391,8 @@ date_default_timezone_set('Asia/Seoul');
                             if($row['matching']==1){
                                 ?>
                                 <td class="text-center"> 상대팀 구하는 중 </td>
-                                <?php $ii = 1?>
-                                <td class="text-center"><span id="chat_info<?=$ii?>" class="text-center show_match_info" data-toggle="modal" data-target="#matchingModal">정보 보기</span></td>
-                                <input type="hidden" id="time_info<?= $ii ?>" value="<?= $start_t ?>"/>
+                                <td class="text-center"><span value=<?= $i ?> class="show_match_info" data-toggle="modal" data-target="#matchingModal" onclick="setting_time">정보 보기</span></td>
+                                <input type="hidden" id="time_info<?= $i ?>" value="<?= $start_t ?>"/>
                                 <?php
                                 $flag = false;
                                 break;
