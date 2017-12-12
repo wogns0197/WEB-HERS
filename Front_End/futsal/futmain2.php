@@ -200,10 +200,9 @@ session_start();
       <!-- source=http://thinkgood.tistory.com/471 -->
       <!-- notice function -->
 
-<<<<<<< HEAD
       </div>
 
-=======
+
       <table cellSpacing=0 cellPadding=0 class="notice-table center-block" >
         <?php
         set_modify_val();// 예약 수정 상태일 경우 예약 수정을 진행할때 예전 예약 내용을 default값으로 넣어주기위한 값들을 받아온다
@@ -245,7 +244,6 @@ session_start();
         <button id="reserv_confirm">예약내역확인</button>
       </form> -->
 
->>>>>>> 6e300c6fa81a266c9a71997ef4b149bddbac9bb8
   </body>
 </html>
 <?php
