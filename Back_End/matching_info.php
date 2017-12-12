@@ -21,11 +21,11 @@ foreach($rows as $row){
 if($flag){
     $check_query = "select count(*) from matching_manage where send_id='$id' and manage_ID=$manage_id";
     $rows = $db->query($check_query);
-    $check = true;
+    $count = 0;
     foreach($rows as $row){
-        $check = false;
+        $count = $row['count(*)'];
     }
-    if($check){
+    if($count==0){
         $query2 = "insert into matching_manage values('$receive_id','$chat','$id',$manage_id,'$date')";
         $db->query($query2);
     }
@@ -40,7 +40,7 @@ else{
     <script type="text/javascript"src="fail_send_message.js"></script>
 <?php
 }
-if($check && $flag){
+if($count == 0 && $flag){
 ?>
 <script type="text/javascript"src="success_send_message.js"></script>
 <?php

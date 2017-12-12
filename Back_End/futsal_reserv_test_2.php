@@ -17,7 +17,6 @@ date_default_timezone_set('Asia/Seoul');
     <script src="../Front_End/calendar/js/vendor/jquery.js"></script>
     <script src="../Front_End/calendar/js/vendor/moment.js"></script>
     <script src="../Front_End/bootstrap-3.3.2-dist/js/bootstrap.js"></script>
-    <script src="chat_info.js" type="text/javascript" ></script>
     <script src="futsal_reserv1.js" type="text/javascript"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script type="text/javascript"src="http://code.jquery.com/jquery-latest.min.js"></script>
