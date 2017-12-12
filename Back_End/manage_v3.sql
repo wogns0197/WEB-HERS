@@ -51,12 +51,9 @@ create table matching_manage
     constraint foreign key (receive_id) references user(user_id)
         on delete set null
 );
-insert into matching_manage values ("jh9277","한판합시다.","jh2628",2,"2017-12-06");
 create table b_test
-)
+(
     num     integer(10),
     numb    integer(10),
     primary key(num, numb)
 );
-insert into futsal_manage(user_id, borrowdate, start_time, end_time, place, purpose, people, matching,chat)
-    values('jh9277','2017-12-31','12:00:00',"14:00:00",'대운동장','풋살',10,1,' dmdjdjdj');
