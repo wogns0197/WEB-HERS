@@ -1,5 +1,6 @@
 <?php
 session_start();
+print_r($_POST);
 $id = $_SESSION['user_id'];
 $date = $_POST['date'];
 $place  = $_SESSION['place'];
