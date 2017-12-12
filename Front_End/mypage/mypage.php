@@ -72,6 +72,7 @@ session_start();
     <!-- end sidebar menu -->
 
 
+<form action="../../Back_End/futsal_reserv_confirmation.php" method="post" id="confirm"></form>
     <div id="reserve_wrap">
       <h2>| Reservation Confirmation |</h2>
       <div class="container">
