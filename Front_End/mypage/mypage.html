@@ -6,22 +6,7 @@
     <link rel="stylesheet" href="../main2.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script type="text/javascript"src="http://code.jquery.com/jquery-latest.min.js"></script>
-    <script type="text/javascript">
-    $(document).ready( function(){
-      $("#menuicon").click(function () {
-        $("#menubar").animate({left: 0}, 300 );
-        $("#xicon").animate({left: 0}, 300 );
-        $("#menuicon").fadeOut(300);
-      });
-
-      $("#xicon").click(function () {
-        $("#menubar").animate({left: "-25%"}, 300 );
-        $("#xicon").animate({left: "-25%"}, 300 );
-        $("#menuicon").fadeIn(300);
-      });
-
-    });
-    </script>
+    <script type="text/javascript"src="../main2.js"></script>
   </head>
   <body>
     <header>
