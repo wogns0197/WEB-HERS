@@ -32,12 +32,11 @@ session_start();
 
   <body>
 
+    <div>
     <header id="home">
-      <!-- <div class="header"> -->
       <h1><a href="../main/main.php">HERS</a></h1>
-      <!-- <hr/> -->
-      <!-- </div> -->
     </header>
+    </div>
 
 
     <!-- sidebar menu -->
@@ -181,11 +180,11 @@ session_start();
 
     </div>
 
-    <div class="container col-sm-2" id="right-side">
+    <div class="container col-sm-2 hidden" id="right-side">
       <!-- source=http://thinkgood.tistory.com/471 -->
       <!-- notice function -->
 
-      </div>
+      <!-- </div> -->
 
 
       <table cellSpacing=0 cellPadding=0 class="notice-table center-block" >
