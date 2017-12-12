@@ -31,7 +31,7 @@ if(isset($_SESSION['user_id'])){
 </head>
 
 <body>
-	<main class="col-5">
+	<main class="col-7">
 		<div id="title">LogIn <hr/></div>
 		<form method='post' action='login_ok.php'>
 			<input class="col-5" type="text" name="user_id"  placeholder="ID">
@@ -44,7 +44,9 @@ if(isset($_SESSION['user_id'])){
 			<footer>
 				<a href="signup.html" id="up">sign up</a>
 				|
-				<a href="forgot.html" id="fg">forgot</a>
+				<a href="forgot.html" id="fg">forgotID</a>
+				|
+				<a href="forgotpw.html" id="fg">forgotPW</a>
 			</footer>
 		</form>
 	</main>
