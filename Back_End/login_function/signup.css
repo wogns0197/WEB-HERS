@@ -1,53 +1,72 @@
-
+body,html{
+	width: 100%;	
+	margin: 0;
+	padding: 0;
+}
+body{
+	background-image: url("test.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	
+}
 main{
+	margin: auto;
+	width: 35%;
+	background-color: #F2F2F2;
 	text-align: center;
+	padding-top: 2%;
 	margin-top: 10%;
-	border-radius: 5px;
-	margin-left: 20%;
-	margin-right: 20%;
-	padding-top: 5%;
 	padding-bottom: 3%;
-	/*background-color: #585858;*/
-	/*box-shadow: 0px 5px 0px 0px rgba(0,0,0,0.1);*/
-
-
+	box-shadow: 0px 10px 30px -9px rgba(0,0,0,1);
+	border-radius: 3.14159265358979323846264338327950px;
 }
 .id1{
 	margin-left: 20px;
 }
-input{
-	font-size: 10pt;
-	border:none;
-	text-align: center;
-	width: 200px;
-	height: 40px;
-	border-bottom: 1px solid #848484;
+#title{
+	margin-top: 2%;
+	margin-bottom: 5%;
+	color: #BDBDBD;
 }
-.log{
-	padding-top: 5%;
+#title hr{
+	width: 50%;
+	border: 0;
+	border-bottom: 1px solid #D8D8D8;
+	
+}
+input{
+	font-size: 10pt;	
+	text-align: center;
+	width: 30%;
+	height: 30px;
+	border: 1px solid #E6E6E6;
+	border-radius: 5px;
+	
 }
 button:hover{
 	cursor: pointer;
 	transition: 0.5s;
 	transform:scale(0.9);
-	background-color: #F2F2F2;
-	color: #848484;
+	background-color:#FA5858;
+	font-size: 12pt;
 	font-weight: bold;
 }
 button{
+	margin-top: 10%;
 	color: white;
 	font-size: 10pt;
 	width: 40%;
 	height: 35px;
 	border:none;
-	border-radius: 50px;
-	background-color: #BDBDBD;
+	border-radius: 3px;
+	background-color: #F78181;
 	transition: 0.2s;
 	transform: scale(1);
-}
 
+}
 /*회원가입 각 빈칸들 설정*/
-#name1{
+/*#name1{
 	width: 100px;
 }
 #email{
@@ -59,11 +78,30 @@ button{
 	
 	margin-bottom: 5px;	
 }
-#dept{
-	width: 308px;	
-	margin-bottom: 15px;		
-}
+
 .pw{
 	width: 150px;
 	margin: 5px;
+}*/
+
+
+/* For mobile phones: */
+[class*="col-"] {
+    width: 80%;
+    margin-bottom: 1%;
+}
+@media only screen and (min-width: 768px) {
+    /* For desktop: */
+    .col-1 {width: 8.33%;}
+    .col-2 {width: 16.66%;}
+    .col-3 {width: 25%;}
+    .col-4 {width: 33.33%;}
+    .col-5 {width: 41.66%;}
+    .col-6 {width: 50%;}
+    .col-7 {width: 58.33%;}
+    .col-8 {width: 66.66%;}
+    .col-9 {width: 75%;}
+    .col-10 {width: 83.33%;}
+    .col-11 {width: 91.66%;}
+    .col-12 {width: 100%;}
 }

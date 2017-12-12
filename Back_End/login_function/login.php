@@ -31,10 +31,12 @@ if(isset($_SESSION['user_id'])){
 </head>
 
 <body>
-	<main>
+	<main class="col-5">
+		<div id="title">LogIn <hr/></div>
 		<form method='post' action='login_ok.php'>
-			<input type="text" name="user_id"  placeholder="ID">
-			<input type="password" name="user_pw" placeholder="PW">
+			<input class="col-5" type="text" name="user_id"  placeholder="ID">
+			<br/>
+			<input class="col-5" type="password" name="user_pw" placeholder="PW">
 			<br/>
 			<div class="log">
 				<button>LOGIN</button>
@@ -46,6 +48,7 @@ if(isset($_SESSION['user_id'])){
 			</footer>
 		</form>
 	</main>
+
 
 
 </body>

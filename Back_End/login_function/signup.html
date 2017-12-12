@@ -6,28 +6,29 @@
 	<title>Sign in</title>
 </head>
 <body>
-	<main>
+	<main class="col-5">
+		<div id="title">Sing In <hr/></div>
 		<form action="signup_ok.php" method ="post">
-			<input type="text" name="name" placeholder="Name" id="name1" required>
+			<input class="col-6" type="text" name="name" placeholder="Name" id="name1" required>
 
-			<input type="text" name="sid" placeholder="Student id (More than 10 digits)" pattern="\d{10,20}" required>
-
-			<br/>
-			<input type="email" name="email" placeholder="email@example.com" id="email">
+			<input class="col-9" type="text" name="sid" placeholder="Student id (More than 10 digits)" pattern="\d{10,20}" required>
 
 			<br/>
-			<input type="text" name="phone" placeholder="Phone Number(without '-')" id="phone" required>
+			<input class="col-9" type="email" name="email" placeholder="email@example.com" id="email">
 
 			<br/>
-			<input type="text" name="dept" placeholder="Department" id="dept" required>
+			<input class="col-9" type="text" name="phone" placeholder="Phone Number(without '-')" id="phone" required>
 
 			<br/>
-			<input type="text" name="user_id" placeholder="ID" id="id" required>
+			<input class="col-9" type="text" name="dept" placeholder="Department" id="dept" required>
+
+			<br/>
+			<input class="col-4" type="text" name="user_id" placeholder="ID" id="id" required>
 
 			<br/>
 			<!-- !!!패스워드 부분 암호화로 변경해야함 -->
-			<input type="password" name="user_pw" placeholder="Password" class="pw" required>
-			<input type="password" name="user_pw_re" placeholder="Re-Password" class="pw" required>
+			<input class="col-5" type="password" name="user_pw" placeholder="Password" class="pw" required>
+			<input class="col-5" type="password" name="user_pw_re" placeholder="Re-Password" class="pw" required>
 			<div class="log">
 				<button type="submit">SIGN IN</button>
 			</div>
