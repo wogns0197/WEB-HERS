@@ -109,7 +109,7 @@ box-shadow: 3px 10px 5px 3px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19
   border-top: solid 2px black;
   border-bottom: solid 2px black;
   height: 300px;
-  display: none;
+  /*display: none;*/
   /*border-radius: 5%;*/
 
 }
@@ -179,4 +179,8 @@ button:after{
 button:hover:before,button:hover:after {
   width:100%;
   transition:600ms ease all;
+}
+
+.hidden {
+  display: none;
 }

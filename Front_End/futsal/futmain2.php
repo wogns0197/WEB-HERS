@@ -32,12 +32,11 @@ session_start();
 
   <body>
 
+    <div>
     <header id="home">
-      <!-- <div class="header"> -->
       <h1><a href="../main/main.php">HERS</a></h1>
-      <!-- <hr/> -->
-      <!-- </div> -->
     </header>
+    </div>
 
 
     <!-- sidebar menu -->
@@ -75,7 +74,7 @@ session_start();
             <li>Signed In as (<?= $_SESSION['user_id']?>)</li>
 
             <li><a href="../../Back_End/login_function/logout.php">Logout</a></li>
-            <li><a href="../mypage/mypage.html">My Page</a></li>
+            <li><a href="../mypage/mypage.php">My Page</a></li>
             <?php
              }
             ?>
@@ -147,7 +146,7 @@ session_start();
                 </div>
 
                 <div class="modal-body">
-                  <a href = "../../Back_end/futsal_reserv_test_2.php?where=잔디구장"><button center-block" id="soccer">잔디구장</button><a>
+                  <a href = "../../Back_end/futsal_reserv_test_2.php?where=잔디구장"><button center-block id="soccer">잔디구장</button></a>
                 </div>
 
               </div>
@@ -167,7 +166,7 @@ session_start();
                 </div>
 
                 <div class="modal-body">
-                  <a href = "../../Back_end/futsal_reserv_test_2.php?where=대운동장"><button center-block" id="stadium">대운동장</button></a>
+                  <a href = "../../Back_end/futsal_reserv_test_2.php?where=대운동장"><button center-block id="stadium">대운동장</button></a>
                 </div>
 
               </div>
@@ -181,11 +180,11 @@ session_start();
 
     </div>
 
-    <div class="container col-sm-2" id="right-side">
+    <div class="container col-sm-2 hidden" id="right-side">
       <!-- source=http://thinkgood.tistory.com/471 -->
       <!-- notice function -->
 
-      </div>
+      <!-- </div> -->
 
 
       <table cellSpacing=0 cellPadding=0 class="notice-table center-block" >
