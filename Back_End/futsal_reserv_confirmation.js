@@ -1,6 +1,5 @@
 
 function pageLoad(){
-	alert("hi");
 	document.getElementById("notice_checked").onchange = show_hidden;
 }
 
