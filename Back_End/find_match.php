@@ -9,7 +9,7 @@ $end_time = $timearr[1].":00:00";
 $place  = $_SESSION['place'];
 $population = $_POST['population'];
 $chat = $_POST['chat'];
-$query = "insert into futsal_manage(user_id, borrowdate, start_time, end_time, place, people,matching,chat) values('$id','$date','$start_time','$end_time','$place',$population,1,'$chat')";
+$query = "insert into futsal_manage(user_id, borrowdate, start_time, end_time, place, purpose, notice, home, away,people,groupname, matching,chat) values('$id','$date','$start_time','$end_time','$place',' ',0,' ',' ',$population,' ',1,'$chat')";
 $db = new PDO("mysql:dbname=$name", "root", "root");
 $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 $db->query($query);
