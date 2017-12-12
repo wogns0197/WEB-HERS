@@ -26,10 +26,11 @@ background-image: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);
 box-shadow: 3px 10px 5px 3px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-#futsal_btns button{
+/*#futsal_btns button{
   display: inline;
   text-align: center;
-}
+  30 118 189
+}*/
 
 
 
@@ -128,4 +129,54 @@ box-shadow: 3px 10px 5px 3px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19
 
 #xicon{
   z-index: 120;
+}
+
+
+button{
+  width: 50%;
+
+  margin-left:25%;
+  /*margin-left: auto;*/
+  /*margin-right: auto;*/
+  margin-bottom: 1%;
+  cursor: pointer;
+  border: 1px solid black;
+  border-radius: 0;
+  font-size: 400%;
+  background:rgb(30,118,195);
+  color:#fff;
+  border:none;
+  position:relative;
+  height:60px;
+  font-size:1.6em;
+  padding:0 2em;
+  cursor:pointer;
+  transition:400ms ease all;
+  outline:none;
+  border-radius: 3px;
+}
+button:hover {
+  background:#fff;
+  color:rgb(30,118,189);
+}
+button:before,button:after{
+  content:'';
+  position:absolute;
+  top:0;
+  right:0;
+  height:2px;
+  width:0;
+  background: rgb(30,118,160);
+
+  transition:100ms ease all;
+}
+button:after{
+  right:inherit;
+  top:inherit;
+  left:0;
+  bottom:0;
+}
+button:hover:before,button:hover:after {
+  width:100%;
+  transition:600ms ease all;
 }
