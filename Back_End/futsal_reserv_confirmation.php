@@ -22,10 +22,10 @@ session_start();
             $user_id = $_SESSION['user_id'];
             ?>
             <div class="top">
-              <p id="userleft"><?= $user_id ?></p>
+              <!-- <p id="userleft"><?= $user_id ?></p> -->
               <p id="logoutright"><a href = 'login_function/logout.php'>Logout</a></p>
             </div>
-            <hr id="tophr" />
+            <!-- <hr id="tophr" /> -->
             <?php
         }
         if(!isset($_POST['confirm_val'])){
@@ -68,8 +68,8 @@ session_start();
         $place = $_POST["place"];
       }
     ?>
-    <div class="confirm_wrap">
-        <hr id="tophr" />
+    <div class="confirm_wrap col-9">
+        
         <br>
         <div class="container">
           <span class="arc">인원 : <?= $population ?>명</span><br>
@@ -94,6 +94,7 @@ session_start();
               <option>농구</option>
               <option>기타행사</option>
             </select>
+            </br>
           <?php
             if($modify == 1){//예약 수정
               if($notice == 1){//예약 수정할때 공지를 원할 경우
@@ -101,9 +102,9 @@ session_start();
             <input id = "notice_checked" name = "notice" type="checkbox" checked/>공지
             <br>
             <div id="notice_on">
-              <input type="text" id="notice_home" placeholder = "home" name = "home" value ="<?= $home ?>" required/>
-              <span > vs </span>
-              <input type="text" id="notice_away" placeholder ="away" name="away" value="<?= $away ?>"  required />
+              <input type="text" class="txt" id="notice_home" placeholder = "home" name = "home" value ="<?= $home ?>" required/>
+              <span> vs </span>
+              <input type="text" class="txt" id="notice_away" placeholder ="away" name="away" value="<?= $away ?>"  required />
             </div>
           <?php
               }
@@ -114,7 +115,7 @@ session_start();
               }
           ?>
             <div class="groupname">
-              <input type="text" placeholder="단체명" name="groupname" value = "<?= $groupname ?>" required/>
+              <input type="text" class="txt" placeholder="단체명" name="groupname" value = "<?= $groupname ?>" required/>
             </div>
           <?php
             }
@@ -123,14 +124,14 @@ session_start();
               <input id = "notice_checked" name = "notice" type="checkbox" />공지
               <br>
               <div id="notice_on">
-                <input type="text" id="notice_home" placeholder = "home" name = "home" />
+                <input type="text" class="txt" id="notice_home" placeholder = "home" name = "home" />
                 <span > vs </span>
-                <input type="text" id="notice_away" placeholder ="away" name="away"  />
+                <input type="text" class="txt" id="notice_away" placeholder ="away" name="away"  />
               </div>
             <?php
             ?>
             <div>
-            <input type="text" placeholder="단체명" name="groupname" required/>
+            <input type="text" class="txt" placeholder="단체명" name="groupname" required/>
             </div>
             <?php
             }

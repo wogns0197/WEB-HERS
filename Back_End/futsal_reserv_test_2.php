@@ -117,11 +117,9 @@ date_default_timezone_set('Asia/Seoul');
 
     <form action="futsal_reserv_confirmation.php" method="post">
     <div class="container">
-      <div class="panel panel-defaul">
-        <div class="panel-heading">
-          <p>예약진행</p>
-        </div>
-        <div class="panel-body">
+      <div class="panel panel-defaul col-12">
+        
+        <div class="panel-body col-5">
             <?php
                 $today = date("Y-m-d",time());
                 ?>
@@ -132,7 +130,7 @@ date_default_timezone_set('Asia/Seoul');
             ?>
                 <br><br>
 
-                <div class="daterange daterange--single">예약 희망 날짜:</div>
+                <div class="daterange daterange--single"></div>
 
                 <!-- 캘린더 구현 div/ source from "https://github.com/Baremetrics/calendar" -->
 
