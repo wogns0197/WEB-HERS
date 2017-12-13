@@ -182,8 +182,24 @@ echo print_r($_SESSION);
     }
     else{?>
       <div class="fail">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/CH-Vortrittssignal-Verzweigung_mit_Rechtsvortritt.svg/2000px-CH-Vortrittssignal-Verzweigung_mit_Rechtsvortritt.svg.png" alt="fail" height="300" width="300">
-        FAIL
+        <script>
+          document.location.href="reserv_FAIL.html"
+        </script>
+
+        <!-- <div class="momtong">
+        예약확인
+        <hr id="tophr"/>
+        <p>시간   :  <span class="strong"> <?= $start_time ?> - <?= $end_time ?></span></p>
+        <p>대여날짜   :   <span class="strong"><?=$borrowdate?></span></p> -->
+        <!-- <p>수정날짜<?=$modifydate?></p> -->
+        <!-- <p>장소 : <span class="strong"><?=$place?></span></p>
+        <p>목적 : <span class="strong"><?=$purpose?></span></p>
+        <?php
+        if($notice==1)?>
+          <p>공지여부 : <span class="strong">O</span></p>
+        <button><a href="../Front_End/main/main.php">Home</a></button> -->
+      </div>
+        
       </div>
     <?php
     }
