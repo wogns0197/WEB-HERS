@@ -12,7 +12,7 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../main2.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+  
   <script type="text/javascript"src="http://code.jquery.com/jquery-latest.min.js"></script>
   <script type="text/javascript"src="../main2.js"></script>
   </head>
