@@ -28,6 +28,10 @@
      var scrollTop = $(this).scrollTop();
 
      if(scrollTop > 100){
+       // $("header").css({visibility:"invisible"});
+       // $("#menuicon").css({visibility:"invisible"});
+       // $("#xicon").css({visibility:"invisible"});
+       // $("#menubar").css({visibility:"invisible"});
        $("#first").css({visibility:"visible", opacity: 0.0}).animate({opacity: 1.0},500);
        $("#first+img").css({visibility:"visible", opacity: 0.0}).animate({opacity: 1.0},2000);
        $("#final").css({visibility:"visible", opacity: 0.0}).animate({opacity: 1.0},3500);
@@ -44,6 +48,12 @@
        $("#soccer").css({visibility:"visible", opacity: 0.0}).animate({opacity: 1.0},500);
        $("#soccer+p").css({visibility:"visible", opacity: 0.0}).animate({opacity: 1.0},500);
        $("#soccer+p+p").css({visibility:"visible", opacity: 0.0}).animate({opacity: 1.0},500);
+     }
+     else{
+       // $("header").css({visibility:"visible"});
+       // $("#menuicon").css({visibility:"visible"});
+       // $("#xicon").css({visibility:"visible"});
+       // $("#menubar").css({visibility:"visible"});
      }
 
    });
