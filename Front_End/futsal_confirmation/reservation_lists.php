@@ -104,9 +104,6 @@ session_start();
 
 
             <?php
-
-              get_list();
-
               for($i = 0; $i < $size; $i++){//모든 예약 내역을 가져온다
 
 
@@ -175,7 +172,6 @@ session_start();
                       ?>
                       </tr>
                             <tr><td height=50>&nbsp;<?= $row["place"] ?>   <?= $row["home"] ?> <span class="vs">vs </span><?= $row["away"]?> <?= $start_t ?>~<?= $end_t ?><td></tr>
-                            <tr><td>TEST TEST TEST TEST TEST</td></tr>
                       <?php
                       }
                       ?>
@@ -222,5 +218,38 @@ function get_list(){//id에 해당하는 예약 list를 가져온다
   catch(PDOException $ex){
     echo "detail :".$ex->getMessage();
   }
+}
+function notice_view(){
+  date_default_timezone_set('Asia/Seoul');
+  $today = date("Y-m-d",time());
+  try{
+      $name = "web_project";
+      $query = "select * from purpose_view where borrowdate = '$today' order by start_time";
+      $db = new PDO("mysql:dbname=$name", "root", "root");
+      $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+      $rows = $db->query($query);
+      return $rows;
+  }
+  catch(PDOException $ex) {
+    echo "Sorry";
+    echo $ex->getMessage();
+  }
+}
+function set_modify_val(){
+  if(!isset($_POST['modify_val'])){
+    $_SESSION['modify'] = false;
+  }
+  else{
+      $_SESSION['modify'] = true;
+      $id = $_SESSION['user_id'];
+      $name = "web_project";
+      $val = $_POST["modify_val"];
+      $valarr = explode(" ", $val);
+      $manage_ID = $valarr[0];
+      $borrowdate = $valarr[1];
+      $_SESSION['m_manage_id'] = $manage_ID;
+      $_SESSION['m_borrowdate'] = $borrowdate;
+  }
+  $modify = $_SESSION['modify'];
 }
 ?>
