@@ -208,11 +208,18 @@ date_default_timezone_set('Asia/Seoul');
             ?>
             <?php
             }
+            $today_date_time = new DateTime(date("Y-m-d", time()));
+            $borrow_date_time = new DateTime($date);
+            $day_difference = date_diff($today_date_time, $borrow_date_time);
+            if($day_difference->days >= 7){
             ?>
             <p class="text-center">
             <span data-toggle="modal" data-target="#getmatchModal" >
             상대팀 구하기
             </span></p>
+            <?php
+            }
+            ?>
         </div>
       </div>
     </div>
