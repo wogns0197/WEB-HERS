@@ -92,28 +92,18 @@ session_start();
 
     </nav>
     <!-- end sidebar menu -->
-
     <div class="container col-sm-2"></div>
-
     <div class="container col-sm-8 center-block"  id="main-section">
     <!-- weather api -->
     <iframe  id="weather-section" type="text/html" frameborder="0" height="250px" width="100%" src="http://forecast.io/embed/#lat=37.3217&lon=126.8309&name=Hanyang Univ.&units=si"> </iframe>
     <!-- API from.. https://darksky.net/ -->
-
   <!-- </div> -->
-
-
-
-
     <div id="map">
         <object id = "ericamap" class="center-block" type="image/svg+xml" data="erica_futsal_대지 1.svg" >현재 브라우져는 object를 지원하지 않습니다.</object>
     </div>
-
-
-
-
       <!-- futsal place click button modals -->
           <div id="futsal_modal" class="modal fade" role="dialog">
+            <?php echo "8";?>
             <div class="modal-dialog">
 
               <div class="modal-content">
@@ -174,19 +164,12 @@ session_start();
             </div>
           </div>
       <!-- end futsal place click button modals -->
-
-
-
-
     </div>
-
-    <div class="container col-sm-2 hidden" id="right-side">
+    <!-- <div class="container col-sm-2 hidden" id="right-side"> -->
       <!-- source=http://thinkgood.tistory.com/471 -->
       <!-- notice function -->
 
       <!-- </div> -->
-
-
       <table cellSpacing=0 cellPadding=0 class="notice-table center-block" >
         <?php
         set_modify_val();// 예약 수정 상태일 경우 예약 수정을 진행할때 예전 예약 내용을 default값으로 넣어주기위한 값들을 받아온다

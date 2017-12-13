@@ -88,7 +88,6 @@ session_start();
         <div class="container">
           <?php
             get_list();
-
             if(count($manage_ID) > 0){
           ?>
             <table class="reserve_lists" bor>
