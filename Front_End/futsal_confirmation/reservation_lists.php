@@ -18,6 +18,11 @@ session_start();
   </head>
   <body>
     <header>
+      <?php
+      if(!isset($_SESSION['user_id'])){ //로그인 확인
+        echo "<script>alert('로그인이 필요합니다!');location.href='../../Back_End/login_function/login.php';</script>";
+      }
+      ?>
       <h1><a href="../main/main.php">HERS</a></h1>
       <hr/>
     </header>
@@ -56,7 +61,6 @@ session_start();
           else{
             ?>
           <li>Signed In as (<?= $_SESSION['user_id']?>)</li>
-
           <li><a href="../../Back_End/login_function/logout.php">Logout</a></li>
           <li><a href="../mypage/mypage.php">My Page</a></li>
           <?php

@@ -73,7 +73,7 @@ session_start();
 
 <form action="../../Back_End/futsal_reserv_confirmation.php" method="post" id="confirm"></form>
     <div id="reserve_wrap">
-      <h2>| Reservation Confirmation |</h2>
+      <h2>| Matching Message |</h2>
       <div class="container">
         <table class="reserve_lists" bor>
           <tr>
