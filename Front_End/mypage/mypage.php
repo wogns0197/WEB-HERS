@@ -15,7 +15,7 @@ session_start();
   </head>
   <body>
     <header>
-  		<h1><a href="../main/main.html">HERS</a> MY PAGE</h1>
+  		<h1><a href="../main/main.php">HERS</a> MY PAGE</h1>
   		<hr/>
   	</header>
 
@@ -32,7 +32,7 @@ session_start();
         <dt>MAIN</dt><hr color="black">
         <dd>
           <ul class="menus">
-            <li><a href="main.php">Home</a></li>
+            <li><a href="../main/main.php">Home</a></li>
             <li><a href="../about/about.html">About Us</a></li>
           </ul>
         </dd>
@@ -52,7 +52,6 @@ session_start();
             <li>Signed In as (<?= $_SESSION['user_id']?>)</li>
 
             <li><a href="../../Back_End/login_function/logout.php">Logout</a></li>
-            <li><a href="../mypage/mypage.php">My Page</a></li>
             <?php
              }
             ?>
