@@ -72,6 +72,7 @@ session_start();
 
 
 <form action="../../Back_End/futsal_reserv_confirmation.php" method="post" id="confirm"></form>
+<form action="delete_notice_chatting.php" method="post" id="delete"></form>
     <div id="reserve_wrap">
       <h2>| Matching Message |</h2>
       <div class="container">
@@ -88,8 +89,6 @@ session_start();
             get_list();
             $check_ID = 0;
             for($i = 0; $i < $size; $i++){
-            //if절 넣은건 관리번호 홀/짝에 따라 백그라운드컬러 다르게 하려는거
-              if ($i%2==0){
             ?>
                 <tr>
                 <?php
@@ -107,46 +106,32 @@ session_start();
                     }
                 ?>
                 <th><?=$send_id[$i]?></th>
+                <?php
+                    if($send_id[$i]=='HERS'){
+                        $phone_num[$i] = 'HERS-Administration';
+                    }
+                ?>
                 <th><?=$phone_num[$i]?></th>
                 <th><?=$chat[$i]?></th>
                 <?php
                   $valarr = array($manage_ID[$i], $borrowdate[$i]);
                   $val = implode(" ",$valarr);
+                  $delete_val = $manage_ID[$i];                  
+                if($send_id[$i]=='HERS'){
                 ?>
-                  <th id="but"><button id="but1" name="confirm_val" value="<?= $val ?>" type="submit" form = "confirm">예약 하기</button></th>
+                    <th id="but"><button class="buttab2" id="but2" name="delete_val" value=<?= $delete_val ?> type="submit" form = "delete">확인</button></th>                
+                <?php
+                    }
+                else{
+                ?>
+                    <th id="but"><button class="buttab2" id="but1" name="confirm_val" value="<?= $val ?>" type="submit" form = "confirm">예약 하기</button></th>
                   </tr>
-                <?php
-                  }
-              else{?>
-                <tr>
-                <?php
-                    if($check_ID == $manage_ID[$i]){
-                ?>
-                    <th> </th>
-                    <th> </th>
-                <?php
-                    }
-                    else{
-                ?>
-                    <th id="num" class="tab2"><?=$manage_ID[$i]?></th>
-                    <th id="day" class="tab2"><?=$borrowdate[$i]?></th>
-                <?php      
-                    }
-                ?>
-                <th><?=$send_id[$i]?></th>
-                <th><?=$phone_num[$i]?></th>
-                <th><?=$chat[$i]?></th>
-                <?php
-            $valarr = array($manage_ID[$i], $borrowdate[$i]);
-            $val = implode(" ",$valarr);
-          ?>
-            <th id="but"><button class="buttab2" id="but1" name="confirm_val" value="<?= $val ?>" type="submit" form = "confirm">예약 하기</button></th>
-            </tr>
+                }
           <?php
             }
           ?>
         <?php
-            $check_ID = $manage_ID[$i];                                                  
+            $check_ID = $manage_ID[$i];                    
         }
         ?>
         </table>
@@ -155,7 +140,7 @@ session_start();
   </body>
 </html>
 <?php
-function get_list(){//id에 해당하는 예약 list를 가져온다
+function get_list(){
   $id = $_SESSION['user_id'];
   $name = "web_project";
   try{
@@ -180,13 +165,11 @@ function get_list(){//id에 해당하는 예약 list를 가져온다
         }
       }
       catch(PDOException $ex){
-        echo "check1";
         echo "detail :".$ex->getMessage();
       }
     }
   }
   catch(PDOException $ex){
-    echo "check2";
     echo "detail :".$ex->getMessage();
   }
 }

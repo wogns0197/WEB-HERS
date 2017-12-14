@@ -51,9 +51,5 @@ create table matching_manage
     constraint foreign key (receive_id) references user(user_id)
         on delete set null
 );
-create table b_test
-(
-    num     integer(10),
-    numb    integer(10),
-    primary key(num, numb)
-);
+insert into user values('HERS',0,0,'0','HERS','HERS','0');
+insert into matching_manage values('cho9277','예약을 진행하지않아 예약이 취소되었습니다','HERS',21,'2017-12-28');
