@@ -79,7 +79,7 @@ session_start();
           <tr>
             <th class="base">관리번호</th>
             <th class="base">대여일</th>
-            <th id="num lefttop" class="base">아이디</th>
+            <th id="num lefttop" class="base">발송자</th>
             <th id="day" class="base">연락처</th>
             <th id="time" class="base">메세지</th>
             <th id="place" class="base">예약</th>
@@ -159,7 +159,7 @@ function get_list(){//id에 해당하는 예약 list를 가져온다
   $id = $_SESSION['user_id'];
   $name = "web_project";
   try{
-    $query = "select * from matching_manage where receive_id = '$id' and datediff(borrowdate,date_format(curdate(),'%Y-%m-%d'))>=14 order by manage_ID";
+    $query = "select * from matching_manage where receive_id = '$id' and datediff(borrowdate,date_format(curdate(),'%Y-%m-%d'))>=7 order by manage_ID";
     $db = new PDO("mysql:dbname=$name", "root","root");
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $rows = $db->query($query);

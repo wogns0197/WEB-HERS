@@ -1,6 +1,7 @@
 <?php
 session_start();
- ?>
+delete_over_date_data();
+?>
 
 <!DOCTYPE html>
 <html>
@@ -114,5 +115,23 @@ session_start();
   	  });
     });
   </script>
-
 </html>
+<?php
+  function delete_over_date_data(){
+    $name = "web_project";
+    $db = new PDO("mysql:dbname=$name", "root", "root");    
+    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $query_count = "select * from futsal_manage where matching=1 and datediff(borrowdate,date_format(curdate(),'%Y-%m-%d'))<7";
+    $query1 = "delete from futsal_manage where matching=1 and datediff(borrowdate,date_format(curdate(),'%Y-%m-%d'))<7";
+    $query2 = "delete from matching_manage where datediff(borrowdate,date_format(curdate(),'%Y-%m-%d'))<7";
+    try{
+      $db->query($query1);
+      $db->query($query2);
+    }
+    catch(PDOException $ex){
+      echo "detail :".$ex->getMessage();
+    }
+  }
+  $query = "select * from futsal_manage where user_id = '$id' and borrowdate >= date_format(curdate(), '%Y-%m-%d') order by borrowdate";
+  $db = new PDO("mysql:dbname=$name", "root","root");
+?>
