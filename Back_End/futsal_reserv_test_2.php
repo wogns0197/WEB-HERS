@@ -436,7 +436,6 @@ date_default_timezone_set('Asia/Seoul');
     }
     function find_message($time){
         global $date, $name, $place;
-        // echo $time;
         $stime = $time.":00:00";
         $query = "select chat from futsal_manage where matching=1 and borrowdate='$date' and start_time='$stime' and place='$place'";
         $db = new PDO("mysql:dbname=$name", "root", "root");
