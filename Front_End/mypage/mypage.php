@@ -98,23 +98,35 @@ session_start();
 
         <?php
             }
+            // $flag = 1;
             $check_ID = 0;
             for($i = 0; $i < $size; $i++){
             ?>
-                <tr>
+                
                 <?php
-                    if($check_ID == $manage_ID[$i]){
+                    if($check_ID == $manage_ID[$i]
+                    ){
+
                 ?>
+                  <tr>
                     <th> </th>
                     <th> </th>
                 <?php
                     }
                     else{
+                      if($i != 0){
                 ?>
+                  <tr class="bord">
                     <th id="num" class="tab2"><?=$manage_ID[$i]?></th>
                     <th id="day" class="tab2"><?=$borrowdate[$i]?></th>
-                <?php      
+                <?php   
                     }
+                    else{ ?>
+                        <tr>
+                    <th id="num" class="tab2"><?=$manage_ID[$i]?></th>
+                    <th id="day" class="tab2"><?=$borrowdate[$i]?></th>
+                  <?php  }   
+                  }
                 ?>
                 <th><?=$send_id[$i]?></th>
                 <?php
