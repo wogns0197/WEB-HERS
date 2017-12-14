@@ -50,7 +50,6 @@ date_default_timezone_set('Asia/Seoul');
             }
             if(!isset($_SESSION['user_id'])){ //로그인 확인
               echo "<script>alert('로그인이 필요합니다!');location.href='login_function/login.php';</script>";
-
             }
 
             set_place_date();//장소와 날짜 초기설정
@@ -214,7 +213,7 @@ date_default_timezone_set('Asia/Seoul');
             if($day_difference->days >= 7){
             ?>
             <p class="text-center">
-            <span data-toggle="modal" data-target="#getmatchModal" >
+            <span data-toggle="modal" id = "button3" data-target="#getmatchModal" >
             상대팀 구하기
             </span></p>
             <?php
@@ -231,31 +230,29 @@ date_default_timezone_set('Asia/Seoul');
             <div class="modal-dialog">
 
             <!-- Modal content-->
-            <div class="modal-content">
-                <div class="modal-header">
-                <span type="button" class="close" data-dismiss="modal">&times;</span>
-                <h4 class="modal-title">Matching</h4>
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <span type="button" class="close" data-dismiss="modal">&times;</span>
+                        <h4 class="modal-title">Matching</h4>
+                    </div>
+                    <div class="modal-body">
+                        <fieldset>
+                            <legend>Detail</legend>
+                            <input type="hidden" name="date" value=<?=$date?>/>
+                            <input type="hidden" id = "send_time" name = "time" value="0"/>
+                            <textarea class="form-control" rows="5" id="detail" readonly><?=$message?></textarea>
+                        </fieldset>
+                        <br>
+                        <fieldset>
+                        <legend>Send Message:</legend>
+                        <textarea class="form-control" rows="5" id="message" maxlength="150" placeholder="Type Your Message..." name="chat" required></textarea>
+                        </fieldset>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-default">Submit</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
                 </div>
-                <div class="modal-body">
-                <fieldset>
-                <legend>Detail</legend>
-                <input type="hidden" name="date" value=<?=$date?>/>
-                <input type="hidden" id = "send_time" name = "time" value="12"/>
-                <textarea class="form-control" rows="5" id="detail" readonly><?=$message?></textarea>
-                </fieldset>
-                <br>
-                <fieldset>
-                <legend>Send Message:</legend>
-                <textarea class="form-control" rows="5" id="message" maxlength="150" placeholder="Type Your Message..." name="chat" required></textarea>
-                </fieldset>
-
-                </div>
-                <div class="modal-footer">
-                <button type="submit" class="btn btn-default">Submit</button>
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                </div>
-            </div>
-
             </div>
         </div>
     </form>
@@ -264,33 +261,31 @@ date_default_timezone_set('Asia/Seoul');
   <!-- Matching Modal -->
   <form action="find_match.php" method="post">
       <div class="modal fade" id="getmatchModal" role="dialog">
-          <div class="modal-dialog">
+        <div class="modal-dialog">
 
           <!-- Modal content-->
-          <div class="modal-content">
-              <div class="modal-header">
-              <span type="button" class="close" data-dismiss="modal">&times;</span>
-              <h4 class="modal-title">Matching</h4>
-              </div>
-              <div class="modal-body">
-              <br>
-              <fieldset>
-              <legend>Notice Message:</legend>
-              <textarea class="form-control" rows="5" id="message" maxlength="150" placeholder="OOO팀과 함께 경기하실 분들을 모집합니다. 연락주세요." name="chat" required></textarea>
-              </fieldset>
-
-              </div>
-              <input type="hidden" name="date" value=<?=$date?>/>
-              <input type="hidden" id = "send_time2" name="time" value=0/>
-              <input type="hidden" name="place" value=<?=$place?>/>
-              <input type="hidden" id = "spopulation" name="population" value=0/>
-              <div class="modal-footer">
-              <button id = "button1" type="submit" class="btn btn-default">Submit</button>
-              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-              </div>
-          </div>
-
-          </div>
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span type="button" class="close" data-dismiss="modal">&times;</span>
+                    <h4 class="modal-title">Matching</h4>
+                </div>
+                <div class="modal-body">
+                    <br>
+                    <fieldset>
+                    <legend>Notice Message:</legend>
+                    <textarea class="form-control" rows="5" id="message" maxlength="150" placeholder="OOO팀과 함께 경기하실 분들을 모집합니다. 연락주세요." name="chat" required></textarea>
+                    </fieldset>
+                </div>
+                <input type="hidden" name="date" value=<?=$date?>/>
+                <input type="hidden" id = "send_time2" name="time" value=0/>
+                <input type="hidden" name="place" value=<?=$place?>/>
+                <input type="hidden" id = "spopulation" name="population" value=0/>
+                <div class="modal-footer">
+                    <button id = "button1" type="submit" class="btn btn-default">Submit</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
       </div>
   </form>
 <!-- Modal End-->
