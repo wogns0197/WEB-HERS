@@ -19,12 +19,7 @@ session_start();
       else{
           $user_id = $_SESSION['user_id'];
           ?>
-          <div class="top">
-            <p id="userleft"><?= $user_id ?></p>
-            <p id="logoutright"><a href = 'login_function/logout.php'>Logout</a></p>
-            <hr id="tophr" />
-            <br/>
-          </div>
+  
           <?php
       }
       $name = "web_project";
