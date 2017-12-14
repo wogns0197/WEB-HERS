@@ -98,7 +98,7 @@ session_start();
         $view_rows = notice_view(); // 오늘 날짜에 공지를 원했던 경기를 db에서 가져온다.
         ?>
 
-        <MARQUEE scrollAmount=2 height=50 direction=up>                
+        <MARQUEE scrollAmount=2 height=70 direction=up>                
           <section>
             <p>&nbsp;--- Game Notice ---</p>
             
@@ -110,11 +110,9 @@ session_start();
                     $end_t = $end_a[0].":".$end_a[1];
             ?>
                   <p>
-<<<<<<< HEAD
+
                   &nbsp;[<?= $row["place"] ?>]&nbsp;  <?= $row["home"] ?> <span class="vs">vs </span><?= $row["away"]?> <?= $start_t ?>~<?= $end_t ?>
-=======
-                  &nbsp;[<?= $row["place"] ?>]  <?= $row["home"] ?> <span class="vs">vs </span><?= $row["away"]?> <?= $start_t ?>~<?= $end_t ?>
->>>>>>> 1127d33cc93858a1ffafcdd20b2d0c12bf361488
+
                     <br/>
                     -
                   </p>
