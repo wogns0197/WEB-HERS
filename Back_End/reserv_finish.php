@@ -166,7 +166,7 @@ session_start();
         <?php
         if($notice==1)?>
           <p>공지여부 : <span class="strong">O</span></p>
-        <button><a href="../Front_End/main/main.php">Home</a></button>
+        <a href="../Front_End/main/main.php"><button>Home</button></a>
       </div>
 
     <?php

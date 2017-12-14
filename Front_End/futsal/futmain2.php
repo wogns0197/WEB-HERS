@@ -110,7 +110,11 @@ session_start();
                     $end_t = $end_a[0].":".$end_a[1];
             ?>
                   <p>
+<<<<<<< HEAD
+                  &nbsp;[<?= $row["place"] ?>]&nbsp;  <?= $row["home"] ?> <span class="vs">vs </span><?= $row["away"]?> <?= $start_t ?>~<?= $end_t ?>
+=======
                   &nbsp;[<?= $row["place"] ?>]  <?= $row["home"] ?> <span class="vs">vs </span><?= $row["away"]?> <?= $start_t ?>~<?= $end_t ?>
+>>>>>>> 1127d33cc93858a1ffafcdd20b2d0c12bf361488
                     <br/>
                     -
                   </p>
