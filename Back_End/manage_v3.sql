@@ -51,5 +51,4 @@ create table matching_manage
     constraint foreign key (receive_id) references user(user_id)
         on delete set null
 );
-insert into user values('HERS',0,0,'0','HERS','HERS','0');
-insert into matching_manage values('cho9277','예약을 진행하지않아 예약이 취소되었습니다','HERS',21,'2017-12-28');
+insert into user values('HERS',0,0,'0','HERS','HERS','0');-- 관리자 계정
