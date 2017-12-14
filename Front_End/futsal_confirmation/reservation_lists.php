@@ -199,7 +199,7 @@ function get_list(){//id에 해당하는 예약 list를 가져온다
   $id = $_SESSION['user_id'];
   $name = "web_project";
   try{
-    $query = "select * from futsal_manage where user_id = '$id' and borrowdate >= date_format(curdate(), '%Y-%m-%d')";
+    $query = "select * from futsal_manage where user_id = '$id' and borrowdate >= date_format(curdate(), '%Y-%m-%d') order by borrowdate";
     $db = new PDO("mysql:dbname=$name", "root","root");
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $rows = $db->query($query);

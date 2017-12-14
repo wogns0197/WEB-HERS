@@ -110,7 +110,7 @@ session_start();
                     $end_t = $end_a[0].":".$end_a[1];
             ?>
                   <p>
-                  &nbsp;<?= $row["place"] ?><?= $row["home"] ?> <span class="vs">vs </span><?= $row["away"]?> <?= $start_t ?>~<?= $end_t ?>
+                  &nbsp;[<?= $row["place"] ?>]  <?= $row["home"] ?> <span class="vs">vs </span><?= $row["away"]?> <?= $start_t ?>~<?= $end_t ?>
                     <br/>
                     -
                   </p>
@@ -130,7 +130,6 @@ session_start();
     </div>
       <!-- futsal place click button modals -->
           <div id="futsal_modal" class="modal fade" role="dialog">
-            <?php echo "8";?>
             <div class="modal-dialog">
 
               <div class="modal-content">

@@ -190,8 +190,6 @@ session_start();
     global $c_population, $c_start_time, $c_end_time, $c_place, $c_manage_ID, $c_borrowdate;
     try{
       $name = "web_project";
-      echo $c_manage_ID;
-      echo $c_borrowdate;
       $query = "select * from futsal_manage where manage_ID=$c_manage_ID and borrowdate = '$c_borrowdate'";
       $db = new PDO("mysql:dbname=$name", "root","root");
       $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);

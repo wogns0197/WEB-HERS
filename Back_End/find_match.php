@@ -1,6 +1,5 @@
 <?php
 session_start();
-print_r($_SESSION);
 $id = $_SESSION['user_id'];
 $name = "web_project";
 $date = $_POST['date'];

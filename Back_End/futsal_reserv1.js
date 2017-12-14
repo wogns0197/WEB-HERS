@@ -66,7 +66,6 @@ function foo0(){
 }
 function foo1(){
     document.getElementById("send_time").value = document.getElementById("time_info1").value;
-    alert(document.getElementById("time_info1").value);
 }
 function foo2(){
     document.getElementById("send_time").value = document.getElementById("time_info2").value;

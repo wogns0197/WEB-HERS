@@ -1,6 +1,5 @@
 <?php
 session_start();
-echo print_r($_SESSION);
 ?>
 
 <!DOCTYPE html>
@@ -79,7 +78,6 @@ echo print_r($_SESSION);
         }
       }
       catch(PDOException $ex){
-        echo "check1";
         echo "detail : ".$ex->getMessage();
         $flag = false;
       }
@@ -90,7 +88,6 @@ echo print_r($_SESSION);
             $db->query($query2);
           }
           catch(PDOException $ex){
-            echo "check2";
             echo "detail :".$ex->getMessage();
             $flag = false;
           ?>
@@ -104,7 +101,6 @@ echo print_r($_SESSION);
             $db->query($query2);
           }
           catch(PDOException $ex){
-            echo "check3";
             echo "detail :".$ex->getMessage();
             $flag = false;
             ?>
@@ -120,14 +116,10 @@ echo print_r($_SESSION);
         if($count==0){
           if($notice){
             try{
-              // echo "borrowdate : ".$borrowdate;
-              // echo "place : ".$place;
-              // echo "time : ".$start_time;
               $query2 = "insert into purpose_view values((select manage_ID from futsal_manage where place = '$place' and borrowdate = '$borrowdate' and start_time = '$start_time'),'$place','$home','$away','$borrowdate','$start_time','$end_time')";
               $db->query($query2);
             }
             catch(PDOException $ex){
-              echo "check4";
               echo "detail :".$ex->getMessage();
               $flag = false;
             }
@@ -144,7 +136,6 @@ echo print_r($_SESSION);
       }
     }
     catch(PDOException $ex){
-      echo "check5";
       echo "Sorry";
       echo "detail :".$ex->getMessage();
       if($modify){
@@ -185,19 +176,6 @@ echo print_r($_SESSION);
         <script>
           document.location.href="reserv_FAIL.html"
         </script>
-
-        <!-- <div class="momtong">
-        예약확인
-        <hr id="tophr"/>
-        <p>시간   :  <span class="strong"> <?= $start_time ?> - <?= $end_time ?></span></p>
-        <p>대여날짜   :   <span class="strong"><?=$borrowdate?></span></p> -->
-        <!-- <p>수정날짜<?=$modifydate?></p> -->
-        <!-- <p>장소 : <span class="strong"><?=$place?></span></p>
-        <p>목적 : <span class="strong"><?=$purpose?></span></p>
-        <?php
-        if($notice==1)?>
-          <p>공지여부 : <span class="strong">O</span></p>
-        <button><a href="../Front_End/main/main.php">Home</a></button> -->
       </div>
         
       </div>
