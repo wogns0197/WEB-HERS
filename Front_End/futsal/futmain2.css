@@ -1,6 +1,6 @@
-html,body{
+body{
 /*background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);*/
-background-image: url("../main/mainimg/theball.jpg");
+background-image: url("../main/mainimg/test.jpg");
 /*overflow: hidden;*/
 
 }
@@ -15,6 +15,7 @@ background-image: url("../main/mainimg/theball.jpg");
 
 .container {
   margin-top: 0%;
+  margin: auto;
 }
 
 .modal-dialog{
@@ -76,8 +77,8 @@ background-image: url("../main/mainimg/theball.jpg");
     #ericamap {
       border-radius: 45%;
       width: 90%;
-
     }
+
     .container {
       margin-top: 1%;
     }
@@ -185,6 +186,7 @@ button:hover:before,button:hover:after {
 }
 p{
   text-align: center;
+  color: white;
 }
 
 .hidden {
@@ -196,11 +198,9 @@ p{
 }
 #menuicon{
   position: absolute;
+  margin-top: 1.5%;
 }
 marquee{
   margin-top: 2%;
   background:rgba(250,250,250,0.3);
-}
-#menuicon{
-  margin-top: 1.5%;
 }

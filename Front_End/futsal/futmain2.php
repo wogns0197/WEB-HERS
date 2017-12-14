@@ -112,7 +112,7 @@ session_start();
                   <p>
                   &nbsp;<?= $row["place"] ?><?= $row["home"] ?> <span class="vs">vs </span><?= $row["away"]?> <?= $start_t ?>~<?= $end_t ?>
                     <br/>
-                    ---
+                    -
                   </p>
             <?php
             }
