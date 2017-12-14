@@ -7,7 +7,7 @@ window.onload = function(){
     }
     document.getElementById("button2").onclick = button;
     document.getElementById("button1").onclick = button;
-    document.getElementById("button1").onclick = setting;
+    document.getElementById("button3").onclick = setting;
     if(isEmpty(document.getElementById("chat_info0"))){
         document.getElementById("chat_info0").onclick = foo0;        
     }
