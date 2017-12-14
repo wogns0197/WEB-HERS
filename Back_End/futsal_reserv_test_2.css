@@ -59,15 +59,7 @@ h1{
 	padding:0px;
 
 }
-button:hover{
-	cursor: pointer;
-	transition: 0.5s;
-	transform:scale(0.9);
-	background-color:#FA5858;
-	font-size: 12pt;
-	font-weight: bold;
-}
-button{
+button,.sangdae{
 	color: white;
 	font-size: 10pt;
 	width: 40%;
@@ -78,9 +70,31 @@ button{
 	transition: 0.2s;
 	transform: scale(1);
 }
+button:hover{
+	cursor: pointer;
+	transition: 0.5s;
+	transform:scale(0.94);
+	background-color:#FA5858;
+	font-size: 12pt;
+	font-weight: bold;
+}
+.sangdae:hover{
+	cursor: pointer;
+	transition: 0.5s;
+	transform:scale(0.94);
+	background-color:#FA5858;
+	font-size: 12pt;
+	font-weight: bold;
+	color: white;
+}
+
+
 
 .tb1{
 	width: 36%;
+}
+.text-center{
+	cursor: pointer;
 }
 
 /* For mobile phones: */

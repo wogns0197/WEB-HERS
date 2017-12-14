@@ -184,11 +184,6 @@ button:hover:before,button:hover:after {
   width:100%;
   transition:600ms ease all;
 }
-p{
-  text-align: center;
-  color: white;
-}
-
 .hidden {
   display: none;
 }
@@ -202,5 +197,10 @@ p{
 }
 marquee{
   margin-top: 2%;
-  background:rgba(250,250,250,0.3);
+  background:rgba(250,250,250,0.5);
+  /*background-color: white;*/
+}
+p{
+  text-align: center;
+  color: white;
 }

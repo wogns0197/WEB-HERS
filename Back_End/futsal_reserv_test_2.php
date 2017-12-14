@@ -212,10 +212,14 @@ date_default_timezone_set('Asia/Seoul');
             $day_difference = date_diff($today_date_time, $borrow_date_time);
             if($day_difference->days >= 7){
             ?>
+
+
             <p class="text-center">
-            <span data-toggle="modal" id = "button3" data-target="#getmatchModal" >
+            <span data-toggle="modal" id = "button3" class="btn sangdae" data-target="#getmatchModal" >
             상대팀 구하기
             </span></p>
+
+
             <?php
             }
             ?>

@@ -91,8 +91,11 @@ session_start();
         <?php
             }
             else{
-        ?>
+        ?>  
+          <aside>
             <p> 메세지가 없습니다. </p>
+          </aside>
+
         <?php
             }
             $check_ID = 0;
@@ -134,7 +137,7 @@ session_start();
                 ?>
                     <th id="but"><button class="buttab2" id="but1" name="confirm_val" value="<?= $val ?>" type="submit" form = "confirm">예약 하기</button></th>
                   </tr>
-                }
+                
           <?php
             }
           ?>
