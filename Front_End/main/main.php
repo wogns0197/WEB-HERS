@@ -124,6 +124,15 @@ delete_over_date_data();
     $query_count = "select * from futsal_manage where matching=1 and datediff(borrowdate,date_format(curdate(),'%Y-%m-%d'))<7";
     try{
       $rows = $db->query($query_count);
+      $query1 = "delete from futsal_manage where matching=1 and datediff(borrowdate,date_format(curdate(),'%Y-%m-%d'))<7";
+      $query2 = "delete from matching_manage where datediff(borrowdate,date_format(curdate(),'%Y-%m-%d'))<7";
+      try{
+        $db->query($query1);
+        $db->query($query2);
+      }
+      catch(PDOException $ex){
+        echo "detail :".$ex->getMessage();
+      }
       foreach($rows as $row){
         $manage_ID = $row['manage_ID'];
         $user_id = $row['user_id'];
@@ -131,15 +140,6 @@ delete_over_date_data();
         $query_send = "insert into matching_manage values('$user_id','예약을 진행하지않아 예약이 취소되었습니다','HERS',$manage_ID,'$borrowdate')";
         $db->query($query_send);
       }
-    }
-    catch(PDOException $ex){
-      echo "detail :".$ex->getMessage();
-    }
-    $query1 = "delete from futsal_manage where matching=1 and datediff(borrowdate,date_format(curdate(),'%Y-%m-%d'))<7";
-    $query2 = "delete from matching_manage where datediff(borrowdate,date_format(curdate(),'%Y-%m-%d'))<7";
-    try{
-      $db->query($query1);
-      $db->query($query2);
     }
     catch(PDOException $ex){
       echo "detail :".$ex->getMessage();

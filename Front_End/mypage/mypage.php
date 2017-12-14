@@ -28,7 +28,6 @@ session_start();
     <nav id="menubar">
       <dl>
         <dt id="title">HERS</dt>
-
         <dt>MAIN</dt><hr color="black">
         <dd>
           <ul class="menus">
@@ -36,7 +35,6 @@ session_start();
             <li><a href="../about/about.html">About Us</a></li>
           </ul>
         </dd>
-
         <dt>USER</dt><hr color="black">
         <dd>
           <ul class="menus">
@@ -77,7 +75,7 @@ session_start();
       <div class="container">
         <table class="reserve_lists" bor>
         <?php
-            get_list();                    
+            get_list();            
             if(count($manage_ID)>0){
         ?>
         <tr>
@@ -91,42 +89,27 @@ session_start();
         <?php
             }
             else{
-        ?>  
-          <aside>
+        ?>
             <p> 메세지가 없습니다. </p>
-          </aside>
-
         <?php
             }
-            // $flag = 1;
             $check_ID = 0;
             for($i = 0; $i < $size; $i++){
             ?>
-                
+                <tr>
                 <?php
-                    if($check_ID == $manage_ID[$i]
-                    ){
-
+                    if($check_ID == $manage_ID[$i]){
                 ?>
-                  <tr>
                     <th> </th>
                     <th> </th>
                 <?php
                     }
                     else{
-                      if($i != 0){
                 ?>
-                  <tr class="bord">
                     <th id="num" class="tab2"><?=$manage_ID[$i]?></th>
                     <th id="day" class="tab2"><?=$borrowdate[$i]?></th>
-                <?php   
+                <?php      
                     }
-                    else{ ?>
-                        <tr>
-                    <th id="num" class="tab2"><?=$manage_ID[$i]?></th>
-                    <th id="day" class="tab2"><?=$borrowdate[$i]?></th>
-                  <?php  }   
-                  }
                 ?>
                 <th><?=$send_id[$i]?></th>
                 <?php
@@ -149,7 +132,7 @@ session_start();
                 ?>
                     <th id="but"><button class="buttab2" id="but1" name="confirm_val" value="<?= $val ?>" type="submit" form = "confirm">예약 하기</button></th>
                   </tr>
-                
+                }
           <?php
             }
           ?>
@@ -167,7 +150,7 @@ function get_list(){
   $id = $_SESSION['user_id'];
   $name = "web_project";
   try{
-    $query = "select * from matching_manage where receive_id = '$id' and datediff(borrowdate,date_format(curdate(),'%Y-%m-%d'))>=7 order by manage_ID";
+    $query = "select * from matching_manage where receive_id = '$id' and (datediff(borrowdate,date_format(curdate(),'%Y-%m-%d'))>=7 or send_id = 'HERS') order by manage_ID";
     $db = new PDO("mysql:dbname=$name", "root","root");
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $rows = $db->query($query);
