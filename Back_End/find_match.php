@@ -21,4 +21,4 @@ $db = new PDO("mysql:dbname=$name", "root", "root");
 $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 $db->query($query);
 ?>
-<!-- <script src="success_find_matching_register.js" type="text/javascript" ></script> -->
+<script src="success_find_matching_register.js" type="text/javascript" ></script>

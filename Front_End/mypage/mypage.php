@@ -70,23 +70,31 @@ session_start();
     </nav>
     <!-- end sidebar menu -->
 
-
 <form action="../../Back_End/futsal_reserv_confirmation.php" method="post" id="confirm"></form>
 <form action="delete_notice_chatting.php" method="post" id="delete"></form>
     <div id="reserve_wrap">
       <h2>| Matching Message |</h2>
       <div class="container">
         <table class="reserve_lists" bor>
-          <tr>
+        <?php
+            get_list();                    
+            if(count($manage_ID)>0){
+        ?>
+        <tr>
             <th class="base">관리번호</th>
             <th class="base">대여일</th>
             <th id="num lefttop" class="base">발송자</th>
             <th id="day" class="base">연락처</th>
             <th id="time" class="base">메세지</th>
             <th id="place" class="base">예약</th>
-          </tr>
-          <?php
-            get_list();
+        </tr>
+        <?php
+            }
+            else{
+        ?>
+            <p> 메세지가 없습니다. </p>
+        <?php
+            }
             $check_ID = 0;
             for($i = 0; $i < $size; $i++){
             ?>
