@@ -11,7 +11,7 @@ session_start();
     <link rel="stylesheet" type="text/css" href="../bootstrap-3.3.2-dist/css/bootstrap.css">
     <link rel="stylesheet" href="../main2.css">
 
-    <link rel="stylesheet" href="futmain2.css?ver=2">
+    <link rel="stylesheet" href="futmain2.css">
 
 
     <!-- <link rel="stylesheet" href="notice.css"> -->
@@ -32,11 +32,11 @@ session_start();
 
   <body>
 
-    <div>
-    <header id="home">
+    
+    <!-- <header id="home">
       <h1><a href="../main/main.php">HERS</a></h1>
-    </header>
-    </div>
+    </header> -->
+    
 
 
     <!-- sidebar menu -->
@@ -92,6 +92,33 @@ session_start();
 
     </nav>
     <!-- end sidebar menu -->
+    <table cellSpacing=0 cellPadding=0 class="notice-table center-block" >
+        <?php
+        set_modify_val();// 예약 수정 상태일 경우 예약 수정을 진행할때 예전 예약 내용을 default값으로 넣어주기위한 값들을 받아온다
+        $view_rows = notice_view(); // 오늘 날짜에 공지를 원했던 경기를 db에서 가져온다.
+        ?>
+
+        <MARQUEE scrollAmount=2 height=50 direction=up>                
+          <section>
+            <p>&nbsp;--- Game Notice ---</p>
+            
+            <?php
+                foreach($view_rows as $row){
+                    $start_a = explode(":",$row["start_time"]);
+                    $start_t = $start_a[0].":".$start_a[1];
+                    $end_a = explode(":", $row["end_time"]);
+                    $end_t = $end_a[0].":".$end_a[1];
+            ?>
+                  <p>
+                  &nbsp;<?= $row["place"] ?><?= $row["home"] ?> <span class="vs">vs </span><?= $row["away"]?> <?= $start_t ?>~<?= $end_t ?>
+                    <br/>
+                    ---
+                  </p>
+            <?php
+            }
+            ?>
+            </section>          
+          </MARQUEE>
     <div class="container col-sm-2"></div>
     <div class="container col-sm-8 center-block"  id="main-section">
     <!-- weather api -->
@@ -170,38 +197,7 @@ session_start();
       <!-- notice function -->
 
       <!-- </div> -->
-      <table cellSpacing=0 cellPadding=0 class="notice-table center-block" >
-        <?php
-        set_modify_val();// 예약 수정 상태일 경우 예약 수정을 진행할때 예전 예약 내용을 default값으로 넣어주기위한 값들을 받아온다
-        $view_rows = notice_view(); // 오늘 날짜에 공지를 원했던 경기를 db에서 가져온다.
-        ?>
-        <tbody>
-            <td>
-            <MARQUEE scrollAmount=4 direction=up>
-                <section>
-                <table cellSpacing=0 cellPadding=0 class="notice-inner-table center-block" border=0>
-                <tbody>
-                  <tr>
-                  <td height=30 id="gamenotice" class="center-block">&nbsp;--- Game Notice ---</td></tr>
-                  <tr>
-                  <?php
-                      foreach($view_rows as $row){
-                          $start_a = explode(":",$row["start_time"]);
-                          $start_t = $start_a[0].":".$start_a[1];
-                          $end_a = explode(":", $row["end_time"]);
-                          $end_t = $end_a[0].":".$end_a[1];
-                  ?>
-                        <tr><td height=50>&nbsp;<?= $row["place"] ?>   <?= $row["home"] ?> <span class="vs">vs </span><?= $row["away"]?> <?= $start_t ?>~<?= $end_t ?><td></tr>
-                  <?php
-                  }
-                  ?>
-                  <td height=1>&nbsp;</td></tr>
-                </tbody>
-                </table>
-                </section>
-            </MARQUEE>
-            </td>
-      </tbody></table></section></MARQUEE></td></tbody></table>
+
   </div>
 
 
