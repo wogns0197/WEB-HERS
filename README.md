@@ -38,8 +38,8 @@ http://localhost:8888/Web-Application-HERS/Front_End/main/main.php
 
 * Reservation / Matching
 <div>
-<img src = "/readmeimgs/reserve1.png" alt = "reservation" width="45%" height = "auto" />
 <img src = "/readmeimgs/reserve2.png" alt = "reservation" width="45%" height = "auto" />
+<img src = "/readmeimgs/reserve1.png" alt = "reservation" width="45%" height = "auto" />
 </div>
 <br>
 <div>
