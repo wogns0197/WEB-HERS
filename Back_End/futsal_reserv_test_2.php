@@ -210,7 +210,7 @@ date_default_timezone_set('Asia/Seoul');
             $today_date_time = new DateTime(date("Y-m-d", time()));
             $borrow_date_time = new DateTime($date);
             $day_difference = date_diff($today_date_time, $borrow_date_time);
-            if($day_difference->days >= 7){
+            if($day_difference->days >= 14){
             ?>
 
 
