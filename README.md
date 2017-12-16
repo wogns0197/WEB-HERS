@@ -26,7 +26,6 @@ http://localhost:8888/Web-Application-HERS/Front_End/main/main.php
 <img src = "/readmeimgs/main2.png" alt = "main" width="45%" height = "auto" />
 </div>
 
-<hr/>
 
 * Login / Singup
 <div>
@@ -34,7 +33,6 @@ http://localhost:8888/Web-Application-HERS/Front_End/main/main.php
 <img src = "/readmeimgs/singup.png" alt = "singup" width="45%" height = "auto" />
 </div>
 
-<hr/>
 
 * Reservation / Matching
 <div>
