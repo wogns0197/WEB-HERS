@@ -51,7 +51,8 @@ http://localhost:8888/Web-Application-HERS/Front_End/main/main.php
 * Calendar source from https://github.com/react-component/calendar 
   > due to incomplete support from Safari using date type input, we used above source and modify little bit ->
   > Can not pick date before today and after 2 months from today.
-  
+* Weather API from https://darksky.net/forecast
+* Main Page Background Transition source from http://www.blueb.co.kr/?c=1/14&cat=%EB%B0%B0%EA%B2%BD%ED%9A%A8%EA%B3%BC&uid=4089
 ## LANGUAGE / LICENSE
 * Used Language
   * HTML
