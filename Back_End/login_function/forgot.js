@@ -41,9 +41,6 @@ window.onload = function() {
       parameters: {name : $("name").value,
                    sid  : $("s_id").value},
       onSuccess: loadIds,
-      // onSuccess: function(ajax){
-      //   alert(ajax.responseText);
-      // },
       onFailure: ajaxFailure,
       onException: ajaxFailure
     });
