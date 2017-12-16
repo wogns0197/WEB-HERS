@@ -2,7 +2,7 @@
 
 * Web-Application : HERS (Hanyang Erica Rental Service)
 
-* Team Member : Kwon Jae Hoon / Park Jae Hoon / Seo Geurim / Choi Jae Young
+* Team Member : <a href="https://github.com/wogns0197">Kwon Jae Hoon</a> / <a href="https://github.com/MilyangParkJaeHoon">Park Jae Hoon</a> / <a href="https://github.com/Seogeurim">Seo Geurim</a> / <a href="https://github.com/chlwodud77">Choi Jae Young</a>
 
 ## DESCRIPTION
 HERS provides Hanyang Univ Erica campus futsal / soccer rental service.
@@ -39,6 +39,10 @@ http://localhost:8888/Web-Application-HERS/Front_End/main/main.php
 * Reservation / Matching
 <div>
 <img src = "/readmeimgs/reserve1.png" alt = "reservation" width="45%" height = "auto" />
+<img src = "/readmeimgs/reserve2.png" alt = "reservation" width="45%" height = "auto" />
+</div>
+<br>
+<div>
 <img src = "/readmeimgs/match2.png" alt = "matching" width="45%" height = "auto" />
 <img src = "/readmeimgs/match4.png" alt = "matching" width="45%" height = "auto" />
 </div>
