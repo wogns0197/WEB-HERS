@@ -167,7 +167,12 @@ date_default_timezone_set('Asia/Seoul');
                     <select name="population">
                         <?php
                             for($i=$admit_min; $i<=$admit_max; $i++){
-                                if($i == $m_population){ // 예약 수정상태일 때 전의 예약했던 인원을 selected상태로 default
+                                if($_GET['match']=="true" && $_GET['population']==$i){
+                        ?>
+                                <option class = "spopulation" selected = 'selected' value=<?=$i?>><?= $i ?></option>
+                        <?php
+                                }
+                                else if($i == $m_population){ // 예약 수정상태일 때 전의 예약했던 인원을 selected상태로 default
                         ?>
                                 <option class = "spopulation" selected = 'selected' value=<?=$i?>><?= $i ?></option>
                         <?php
@@ -355,8 +360,6 @@ date_default_timezone_set('Asia/Seoul');
             $date = date("Y-m-d", time());
         }
         $place = $_GET["where"];
-        // $admit_min = 0;
-        // $admit_max = 0;
         if( $place == "풋살장A"){
             $admit_min = 6;
             $admit_max = 10;

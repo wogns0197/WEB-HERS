@@ -114,6 +114,7 @@ session_start();
                     <th><button type="submit" class="btn btn-default">정보 보기</button></th>
                     <input type="hidden" name="where" value="<?= $place[$i] ?>"/>
                     <input type="hidden" name="date" value="<?= $borrowdate[$i]?>"/>
+                    <input type="hidden" name="population" value="<?= $people[$i]?>"/>
                     <input type="hidden" name="match" value="true"/>
                   </tr>
             </form>
@@ -140,7 +141,7 @@ function match_request_list(){
             $chat[] = $row['chat'];
             $start_time[] = $row['start_time'];
             $end_time[] = $row['end_time'];
-            $people[] = ((int)$row['people']/2);
+            $people[] = $row['people'];
             $place[] = $row['place'];
         }
     }
