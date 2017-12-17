@@ -89,9 +89,9 @@ session_start();
         $view_rows = notice_view(); // 오늘 날짜에 공지를 원했던 경기를 db에서 가져온다.
         ?>
 
-        <MARQUEE scrollAmount=1 height=60 direction=up>
+        <MARQUEE scrollAmount=1 height=70 direction=up>
           <section>
-            <p>&nbsp;--- Game Notice ---</p>
+            <p>&nbsp;<  Today's Matches  ></p>
 
             <?php
                 foreach($view_rows as $row){
@@ -132,8 +132,8 @@ session_start();
 
                 <div class="modal-body">
                   <div id="futsal_btns" class="text-center">
-                    <a href = "../../Back_end/futsal_reserv_test_2.php?where=풋살장A"><button  id="futsal_A">풋살장A</button></a>
-                    <a href = "../../Back_end/futsal_reserv_test_2.php?where=풋살장B"><button  id="futsal_B">풋살장B</button></a>
+                    <a href = "../../Back_end/futsal_reserv_test_2.php?where=풋살장A"><button class="center-block" id="futsal_A">풋살장A</button></a>
+                    <a href = "../../Back_end/futsal_reserv_test_2.php?where=풋살장B"><button class="center-block" id="futsal_B">풋살장B</button></a>
                  </div>
                 </div>
 
@@ -153,7 +153,7 @@ session_start();
                 </div>
 
                 <div class="modal-body">
-                  <a href = "../../Back_end/futsal_reserv_test_2.php?where=잔디구장"><button center-block id="soccer">잔디구장</button></a>
+                  <a href = "../../Back_end/futsal_reserv_test_2.php?where=잔디구장"><button class="center-block" id="soccer">잔디구장</button></a>
                 </div>
 
               </div>
@@ -173,7 +173,7 @@ session_start();
                 </div>
 
                 <div class="modal-body">
-                  <a href = "../../Back_end/futsal_reserv_test_2.php?where=대운동장"><button center-block id="stadium">대운동장</button></a>
+                  <a href = "../../Back_end/futsal_reserv_test_2.php?where=대운동장"><button class="center-block" id="stadium">대운동장</button></a>
                 </div>
 
               </div>
