@@ -129,12 +129,12 @@ date_default_timezone_set('Asia/Seoul');
             }
             else{
             ?>
-<<<<<<< HEAD:Back_End/futsal_reserv_test_2.php
+
         <div class="panel-body col-11">                
-            <a href="../Front_End/futsal/futmain2.php"><img src="back.svg" id="backimg"></a>
-=======
+            <a href="../Front_End/futsal/futmain2.php"><img src="../login_function/back.svg" id="backimg"></a>
+
         <div class="panel-body col-5">
->>>>>>> d7774e2f0d2c4828c0ea04dd73179a81d14dbbbc:apps/reservation/reservation_page.php
+
             <?php
             }
                 $today = date("Y-m-d",time());
