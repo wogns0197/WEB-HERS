@@ -6,13 +6,19 @@ session_start();
   <head>
     <meta charset="utf-8">
     <title>HERS My Page</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
+
     <link rel="stylesheet" href="../main2.css">
     <link rel="stylesheet" href="../futsal_reserve_page/reservation_lists.css">
     <link rel="stylesheet" href="mypage.css">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script type="text/javascript"src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
     <script type="text/javascript"src="../main2.js"></script>
+    <script type="text/javascript"src="mypage.js"></script>
+
   </head>
   <body>
     <header>
@@ -123,7 +129,8 @@ session_start();
                     }
                 ?>
                 <th><?=$phone_num[$i]?></th>
-                <th><?=$chat[$i]?></th>
+                <th class="messages" data-toggle="modal" data-target="#getMgModal"><input type="hidden" value = "<?=$chat[$i]?>" />
+                <input type="button" value="메세지 보기"></th>
                 <?php
                   $valarr = array($manage_ID[$i], $borrowdate[$i]);
                   $val = implode(" ",$valarr);
@@ -137,7 +144,7 @@ session_start();
                 ?>
                     <th id="but"><button class="buttab2" id="but1" name="confirm_val" value="<?= $val ?>" type="submit" form = "confirm">예약 하기</button></th>
                   </tr>
-                
+
           <?php
             }
           ?>
@@ -148,6 +155,37 @@ session_start();
         </table>
       </div>
     </div>
+
+    <!-- Matching Modal -->
+
+        <div class="modal fade" id="getMgModal" role="dialog">
+          <div class="modal-dialog">
+
+            <!-- Modal content-->
+              <div class="modal-content">
+                  <div class="modal-header">
+                      <span type="button" class="close" data-dismiss="modal">&times;</span>
+                      <h4 class="modal-title">Matching Message</h4>
+                  </div>
+                  <div class="modal-body">
+                      <br>
+                      <fieldset>
+                      <legend>Message:</legend>
+                      <textarea class="form-control" rows="5" id="mgarea" maxlength="200" name="chat" readonly></textarea>
+                      </fieldset>
+                  </div>
+                  <input type="hidden" name="date" value=<?=$date?>/>
+                  <input type="hidden" id = "send_time2" name="time" value=0/>
+                  <input type="hidden" name="place" value=<?=$place?>/>
+                  <input type="hidden" id = "spopulation" name="population" value=0/>
+                  <div class="modal-footer">
+                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                  </div>
+              </div>
+          </div>
+        </div>
+
+  <!-- Modal End-->
   </body>
 </html>
 <?php
