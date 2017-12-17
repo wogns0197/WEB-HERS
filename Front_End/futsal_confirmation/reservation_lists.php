@@ -109,8 +109,6 @@ session_start();
 
             <?php
               for($i = 0; $i < $size; $i++){//모든 예약 내역을 가져온다
-
-
               //if절 넣은건 관리번호 홀/짝에 따라 백그라운드컬러 다르게 하려는거
                 if ($i%2==0){?>
                   <tr>
@@ -127,9 +125,6 @@ session_start();
                     </tr>
                   <?php
                     }
-
-
-
                 else{?>
                   <tr>
                   <th id="num" class="tab"><?=$manage_ID[$i]?></th>
@@ -150,6 +145,59 @@ session_start();
             ?>
 
           </table>
+          </tbody></table>
+        </div>
+        <h2>| Your Matching Request |</h2>
+        <div class="container">
+          <?php
+            match_get_list();
+            if(count($match_manage_ID) > 0){
+          ?>
+            <table class="reserve_lists" bor>
+              <tr>
+                <th id="num lefttop" class="base">관리번호</th>
+                <th id="day" class="base">대여날짜</th>
+                <th id="time" class="base">대여시간</th>
+                <th id="place" class="base">대여장소</th>
+                <th id="empt" class="base"></th>
+              </tr>
+          <?}?>
+            <?php
+              for($i = 0; $i < count($match_manage_ID); $i++){//모든 예약 내역을 가져온다
+              //if절 넣은건 관리번호 홀/짝에 따라 백그라운드컬러 다르게 하려는거
+                if ($i%2==0){?>
+                  <tr>
+                  <th id="num" class="tab2"><?=$match_manage_ID[$i]?></th>
+                  <th id="day" class="tab2"><?=$match_borrowdate[$i]?></th>
+                  <th id="time" class="tab2"><?=substr($match_start_time[$i],0,-3)?> ~ <?=substr($match_end_time[$i],0,-3)?></th>
+                  <th id="place" class="tab2"><?=$match_place[$i]?></th>
+                  <?php
+                    $valarr = array($match_manage_ID[$i], $match_borrowdate[$i]);
+                    $val = implode(" ",$valarr);
+                  ?>
+                    <th id="but"><button name="cancel_val" value="<?= $val ?>" type="submit" form = "cancel">취소</button></th>
+                    </tr>
+                  <?php
+                    }
+                else{?>
+                  <tr>
+                  <th id="num" class="tab"><?=$match_manage_ID[$i]?></th>
+                  <th id="day" class="tab"><?=$match_borrowdate[$i]?></th>
+                  <th id="time" class="tab"><?=substr($match_start_time[$i],0,-3)?> ~ <?=substr($match_end_time[$i],0,-3)?></th>
+                  <th id="place" class="tab"><?=$match_place[$i]?></th>
+                  <?php
+              $valarr = array($match_manage_ID[$i], $match_borrowdate[$i]);
+              $val = implode(" ",$valarr);
+            ?>
+              <th id="but"><button class="buttab2" name="cancel_val" value="<?= $val ?>" type="submit" form = "cancel">취소</button></th>
+              </tr>
+            <?php
+              }
+            ?>
+                <?}
+            ?>
+          </table>
+          </tbody></table>
           <table cellSpacing=0 cellPadding=0 width="100%" class="momtong" >
             <?php
             set_modify_val();// 예약 수정 상태일 경우 예약 수정을 진행할때 예전 예약 내용을 default값으로 넣어주기위한 값들을 받아온다
@@ -179,24 +227,15 @@ session_start();
                       <?php
                       }
                       ?>
-
                     <td height=1>&nbsp;</td></tr>
                   </tbody>
                   </table>
                   </section>
               </MARQUEE>
               </td>
-        </tbody></table></section></MARQUEE></td></tbody></table>
-
-
+        </tbody></table>
         </div>
-
-
-
     </div>
-    <form action="../futsal_confirmation/reservation_lists.php"></form>
-
-
   </body>
 </html>
 <?php
@@ -204,7 +243,7 @@ function get_list(){//id에 해당하는 예약 list를 가져온다
   $id = $_SESSION['user_id'];
   $name = "web_project";
   try{
-    $query = "select * from futsal_manage where user_id = '$id' and borrowdate >= date_format(curdate(), '%Y-%m-%d') order by borrowdate";
+    $query = "select * from futsal_manage where user_id = '$id' and borrowdate >= date_format(curdate(), '%Y-%m-%d') and matching=0 order by borrowdate";
     $db = new PDO("mysql:dbname=$name", "root","root");
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $rows = $db->query($query);
@@ -217,6 +256,27 @@ function get_list(){//id에 해당하는 예약 list를 가져온다
       $start_time[] = $row["start_time"];
       $end_time[] = $row["end_time"];
       $place[] = $row["place"];
+    }
+  }
+  catch(PDOException $ex){
+    echo "detail :".$ex->getMessage();
+  }
+}
+function match_get_list(){//id에 해당하는 예약 list를 가져온다
+  $id = $_SESSION['user_id'];
+  $name = "web_project";
+  try{
+    $query = "select * from futsal_manage where user_id = '$id' and borrowdate >= date_format(curdate(), '%Y-%m-%d') and matching=1 order by borrowdate";
+    $db = new PDO("mysql:dbname=$name", "root","root");
+    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $rows = $db->query($query);
+    global $match_manage_ID, $match_borrowdate, $match_start_time, $match_end_time, $match_place;
+    foreach($rows as $row){
+      $match_manage_ID[] = $row["manage_ID"];
+      $match_borrowdate[] = $row["borrowdate"];
+      $match_start_time[] = $row["start_time"];
+      $match_end_time[] = $row["end_time"];
+      $match_place[] = $row["place"];
     }
   }
   catch(PDOException $ex){
