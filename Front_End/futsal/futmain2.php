@@ -91,7 +91,7 @@ session_start();
 
         <MARQUEE scrollAmount=1 height=60 direction=up>
           <section>
-            <p>&nbsp;--- Game Notice ---</p>
+            <p>&nbsp;<  Today's Matches  ></p>
 
             <?php
                 foreach($view_rows as $row){
