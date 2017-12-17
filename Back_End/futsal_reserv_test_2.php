@@ -107,6 +107,7 @@ date_default_timezone_set('Asia/Seoul');
           <ul class="menus">
             <li><a href="../Front_End/futsal_confirmation/reservation_lists.php">Futsal Confirmation</a></li>
             <li><a href="../Front_End/futsal/futmain2.php">Futsal Field Rental</a></li>
+            <li><a href="../Front_End/mypage/match.php">Matching Request</a></li>
           </ul>
         </dd>
       </dl>

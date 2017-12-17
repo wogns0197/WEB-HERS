@@ -23,7 +23,7 @@ if($receive_id == $id){
     <script type="text/javascript" src="send_myself.js"></script>
 <?php
 }
-if($flag){
+else if($flag){
     $check_query = "select count(*) from matching_manage where send_id='$id' and manage_ID=$manage_id";
     $rows = $db->query($check_query);
     $count = 0;

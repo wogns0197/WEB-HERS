@@ -56,6 +56,7 @@ session_start();
             <li>Signed In as (<?= $_SESSION['user_id']?>)</li>
 
             <li><a href="../../Back_End/login_function/logout.php">Logout</a></li>
+            <li><a href="../mypage.php">My Page</a></li>
             <?php
              }
             ?>
@@ -110,8 +111,7 @@ session_start();
                   $val = implode(" ",$valarr);
                   $delete_val = $manage_ID[$i];
                 ?>                
-                    <!-- <td class="text-center"><span class="show_match_info"  data-toggle="modal" data-target="#matchingModal">정보 보기</span></td> -->
-                    <th><button type="submit" class="btn btn-default">Submit</button></th>
+                    <th><button type="submit" class="btn btn-default">정보 보기</button></th>
                     <input type="hidden" name="where" value="<?= $place[$i] ?>"/>
                     <input type="hidden" name="date" value="<?= $borrowdate[$i]?>"/>
                     <input type="hidden" name="match" value="true"/>
@@ -122,32 +122,6 @@ session_start();
         </table>
       </div>
     </div>
-        <!-- Info Show Modal -->
-    <form action="matching_info2.php" method="post">
-        <div class="modal fade" id="matchingModal" role="dialog">
-            <div class="modal-dialog">
-
-            <!-- Modal content-->
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <span type="button" class="close" data-dismiss="modal">&times;</span>
-                        <h4 class="modal-title">Matching</h4>
-                    </div>
-                    <div class="modal-body">
-                        <fieldset>
-                        <legend>Send Message:</legend>
-                        <textarea class="form-control" rows="5" id="message" maxlength="150" placeholder="Type Your Message..." name="chat" required></textarea>
-                        </fieldset>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="submit" class="btn btn-default">Submit</button>
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </form>
-  <!-- Modal End-->
   </body>
 </html>
 <?php

@@ -69,6 +69,7 @@ delete_over_date_data();
           <ul class="menus">
             <li><a href="../futsal_confirmation/reservation_lists.php">Futsal Confirmation</a></li>
             <li><a href="../futsal/futmain2.php">Futsal Field Rental</a></li>
+            <li><a href="../mypage/match.php">Matching Request</a></li>
           </ul>
         </dd>
       </dl>
