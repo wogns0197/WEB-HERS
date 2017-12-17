@@ -127,12 +127,16 @@ date_default_timezone_set('Asia/Seoul');
             else{
             ?>
 <<<<<<< HEAD:apps/reservation/reservation_page.php
+<<<<<<< HEAD:apps/reservation/reservation_page.php
 
         <div class="panel-body col-11">                
             <a href="../Front_End/futsal/futmain2.php"><img src="../login_function/back.svg" id="backimg"></a>
 
         <div class="panel-body col-5">
 
+=======
+        <div class="panel-body col-5">                
+>>>>>>> parent of e4ff3b7... asdf:Back_End/futsal_reserv_test_2.php
 =======
         <div class="panel-body col-5">                
 >>>>>>> parent of e4ff3b7... asdf:Back_End/futsal_reserv_test_2.php
