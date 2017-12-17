@@ -18,43 +18,59 @@
   		<hr/>
   	</header>
 
-  	<a id="menuicon"><svg class="menusvg" xmlns="http://www.w3.org/2000/svg" data-name="Layer 1" viewBox="0 0 100 125" x="0px" y="0px"><title>54 all</title><path d="M74.46,49H25.54a1,1,0,0,0,0,2H74.46a1,1,0,0,0,0-2Z"/><path d="M74.46,28.73H25.54a1,1,0,0,0,0,2H74.46a1,1,0,0,0,0-2Z"/><path d="M74.46,69.27H25.54a1,1,0,1,0,0,2H74.46a1,1,0,1,0,0-2Z"/>
-  	</svg></a>
+    <!-- sidebar menu -->
+    <a id="menuicon"><svg class="menusvg" xmlns="http://www.w3.org/2000/svg" data-name="Layer 1" viewBox="0 0 100 125" x="0px" y="0px"><title>54 all</title><path d="M74.46,49H25.54a1,1,0,0,0,0,2H74.46a1,1,0,0,0,0-2Z"/><path d="M74.46,28.73H25.54a1,1,0,0,0,0,2H74.46a1,1,0,0,0,0-2Z"/><path d="M74.46,69.27H25.54a1,1,0,1,0,0,2H74.46a1,1,0,1,0,0-2Z"/>
+    </svg></a>
 
-  	<a id="xicon"><svg class="menusvg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 100 125" version="1.1" x="0px" y="0px"><title>Bold Cross</title><desc>Created with Sketch.</desc><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g fill="#000000"><path d="M48,48 L48,18.8873016 C48,17.7827321 48.8954305,16.8873016 50,16.8873016 C51.1045695,16.8873016 52,17.7827321 52,18.8873016 L52,48 L81.1126984,48 C82.2172679,48 83.1126984,48.8954305 83.1126984,50 C83.1126984,51.1045695 82.2172679,52 81.1126984,52 L52,52 L52,81.1126984 C52,82.2172679 51.1045695,83.1126984 50,83.1126984 C48.8954305,83.1126984 48,82.2172679 48,81.1126984 L48,52 L18.8873016,52 C17.7827321,52 16.8873016,51.1045695 16.8873016,50 C16.8873016,48.8954305 17.7827321,48 18.8873016,48 L48,48 L48,48 Z" transform="translate(50.000000, 50.000000) rotate(45.000000) translate(-50.000000, -50.000000) "/></g></g>
-  	</svg></a>
+    <a id="xicon"><svg class="menusvg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 100 125" version="1.1" x="0px" y="0px"><title>Bold Cross</title><desc>Created with Sketch.</desc><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g fill="#000000"><path d="M48,48 L48,18.8873016 C48,17.7827321 48.8954305,16.8873016 50,16.8873016 C51.1045695,16.8873016 52,17.7827321 52,18.8873016 L52,48 L81.1126984,48 C82.2172679,48 83.1126984,48.8954305 83.1126984,50 C83.1126984,51.1045695 82.2172679,52 81.1126984,52 L52,52 L52,81.1126984 C52,82.2172679 51.1045695,83.1126984 50,83.1126984 C48.8954305,83.1126984 48,82.2172679 48,81.1126984 L48,52 L18.8873016,52 C17.7827321,52 16.8873016,51.1045695 16.8873016,50 C16.8873016,48.8954305 17.7827321,48 18.8873016,48 L48,48 L48,48 Z" transform="translate(50.000000, 50.000000) rotate(45.000000) translate(-50.000000, -50.000000) "/></g></g>
+    </svg></a>
 
-  	<nav id="menubar">
-  		<dl>
-  			<dt id="title">HERS</dt>
+    <nav id="menubar">
+      <dl>
+        <dt id="title">HERS</dt>
 
-        <dt>MAIN</dt><hr color="black">
+        <dt>MAIN</dt>
         <dd>
           <ul class="menus">
             <li><a href="../main/main.php">Home</a></li>
-            <li><a href="../about/about.html">About Us</a></li>
+            <li><a href="../about/about.php">About Us</a></li>
           </ul>
         </dd>
 
-        <dt>USER</dt><hr color="black">
+        <dt>USER</dt>
         <dd>
           <ul class="menus">
-            <li><a href="#">Login</a></li>
-            <li><a href="#">Logout</a></li>
-            <li><a href="../mypage/mypage.html">My Page</a></li>
+            <?php
+            if(!isset($_SESSION['user_id'])){
+             ?>
+            <li><a href="../../Back_End/login_function/login.php">Login</a></li>
+            <?php
+            }
+
+            else{
+              ?>
+            <li>Signed In as (<?= $_SESSION['user_id']?>)</li>
+
+            <li><a href="../../Back_End/login_function/logout.php">Logout</a></li>
+            <li><a href="../mypage/mypage.php">My Page</a></li>
+            <?php
+             }
+            ?>
           </ul>
         </dd>
 
-        <dt>RENTAL</dt><hr color="black">
+        <dt>RENTAL</dt>
         <dd>
           <ul class="menus">
-            <li><a href="../futsal-comfirmation/futconfirm.html">Futsal Confirmation</a></li>
+            <li><a href="../futsal_confirmation/reservation_lists.php">Futsal Confirmation</a></li>
             <li><a href="../futsal/futmain2.php">Futsal Field Rental</a></li>
+            <li><a href="../mypage/match.php">Matching Request</a></li>
           </ul>
         </dd>
-  		</dl>
+      </dl>
 
-  	</nav>
+    </nav>
+    <!-- end sidebar menu -->
 
     <div class="entire">
       <div class="siteinfo">

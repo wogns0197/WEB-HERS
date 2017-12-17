@@ -17,16 +17,6 @@ body, html{
   font-family: myexplain;
   src: url(../font/CaviarDreams.ttf);
 }
-video{
-  position: fixed;
-	top : 0;
-	left : 0;
-	min-width : 100%;
-	min-height : 100%;
-  height: auto;
-  width: auto;
-	z-index : -1;
-}
 header{
   font-family: mylight;
   position: fixed;

@@ -9,10 +9,10 @@ body, html{
   font-family: mylight;
   src: url(font/Existence-Light.otf);
 }
-/*@font-face {
-  font-family: myserif;
-  src: url(font/Anson-Regular.otf);
-}*/
+@font-face {
+  font-family: hersfont;
+  src: url(../font/Anson-Regular.otf);
+}
 header{
   font-family: mylight;
   position: fixed;
@@ -57,9 +57,9 @@ hr{
   left: -25%;
 }
 nav{
-  font-family: mylight;
-  background-color: white;
-  box-shadow: 5px 0 20px rgba(0,0,0,0.5);
+  font-family: hersfont;
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 5px 0 20px rgba(0,0,0,0.3);
   width: 22%;
   height: 100%;
   /*position: absolute;*/
@@ -75,8 +75,9 @@ nav dl{
 }
 nav dl dt{
   font-size: 20pt;
-  font-family: mylight;
+  font-family: hersfont;
   margin-top: 15%;
+  padding-bottom: 4%;
 }
 #title{
   font-size: 25pt;
@@ -84,7 +85,7 @@ nav dl dt{
 }
 nav dl dd{
   font-size: 16pt;
-  font-family: mylight;
+  font-family: hersfont;
   padding-left: 0;
   margin-left: 0;
   list-style: none;
@@ -95,22 +96,10 @@ nav dl dd{
   margin-left: 0;
   list-style: none;
 }
-.menus li{
-
-}
 .menus li a{
   text-decoration: none;
   color: black;
 }
 nav ul li a:hover{
   text-decoration: underline;
-}
-.user{
-  position: fixed;
-  right: 0;
-  height: 50px;
-  margin-right: 2%;
-  font-family: myserif;
-  font-size: 15pt;
-  visibility: hidden;
 }
