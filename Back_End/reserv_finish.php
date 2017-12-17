@@ -46,17 +46,22 @@ session_start();
       $db = new PDO("mysql:dbname=$name", "root","root");
       $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
       $flag = true;
-      if($_SESSION['modify']==1){
-        if($confirm == 1){
-          $query1 = "update futsal_manage set borrowdate='$borrowdate',start_time='$start_time',end_time='$end_time',place='$place',purpose='$purpose',notice='$notice',home='$home',away='$away',people=$population,groupname='$groupname', matching = 1 where manage_ID=$m_manage_id and borrowdate='$modifydate'";          
-        }
-        else{
-          $query1 = "update futsal_manage set borrowdate='$borrowdate',start_time='$start_time',end_time='$end_time',place='$place',purpose='$purpose',notice='$notice',home='$home',away='$away',people=$population,groupname='$groupname', matching = 0 where manage_ID=$m_manage_id and borrowdate='$modifydate'";                    
-        }
+      if($_SESSION['modify']==1){//수정 중일때
+        $query1 = "update futsal_manage set borrowdate='$borrowdate',start_time='$start_time',end_time='$end_time',place='$place',purpose='$purpose',notice='$notice',home='$home',away='$away',people=$population,groupname='$groupname', matching = 0 where manage_ID=$m_manage_id and borrowdate='$modifydate'";                    
       }
       else if($confirm == 1){
-        $query1 = "update futsal_manage set matching = 0, purpose='$purpose', notice='$notice', home='$home', away='$away', groupname='$groupname'";
-        $query2 = "delete from matching_manage where receive_id='$id' and borrowdate='$borrowdate'";
+        $check_manage_id_query = "select manage_ID from futsal_manage where borrowdate='$borrowdate' and place='$place' and start_time='$start_time'";
+        try{
+          $check_ids = $db->query($check_manage_id_query);          
+        }
+        catch(PDOException $ex){
+          echo "detail :".$ex->getMessage();
+        }
+        foreach($check_ids as $check_id){
+          $manage_id= $check_id['manage_ID'];
+        }
+        $query1 = "update futsal_manage set matching = 0, purpose='$purpose', notice='$notice', home='$home', away='$away', groupname='$groupname' where manage_ID=$manage_id";
+        $query2 = "delete from matching_manage where manage_ID=$manage_id";
       }
       else{
         $query1 = "insert into futsal_manage(user_id, borrowdate, start_time, end_time, place, purpose, notice,home, away, people, groupname, matching) values('$id','$borrowdate','$start_time','$end_time','$place', '$purpose', '$notice','$home','$away',$population, '$groupname',0)";
@@ -169,7 +174,7 @@ session_start();
     else{?>
       <div class="fail">
         <script>
-          document.location.href="reserv_FAIL.html"
+          // document.location.href="reserv_FAIL.html"
         </script>
       </div>
         
