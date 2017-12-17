@@ -96,7 +96,7 @@ nav dl dt{
 }
 #title{
   font-size: 25pt;
-  font-weight: bold;
+  font-weight: normal;
 }
 nav dl dd{
   font-size: 16pt;
@@ -111,15 +111,12 @@ nav dl dd{
   margin-left: 0;
   list-style: none;
 }
-.menus li{
-
-}
 .menus li a{
   text-decoration: none;
   color: black;
 }
 nav ul li a:hover{
-  color: white;
+  text-decoration: underline;
 }
 .main p{
   font-size: 30pt;
@@ -171,7 +168,6 @@ footer{
   font-family: myexplain;
 }
 .user{
-  /*position: relative;*/
   top: 15%
   right: 0%;
   height: 50px;
@@ -179,5 +175,4 @@ footer{
   font-family: myserif;
   font-size: 15pt;
   z-index: 130;
-
 }

@@ -17,9 +17,8 @@ session_start();
   <body>
     <div class="backgroundTransition"></div>
 
-
-     <header id="home">
-      <h1><a href="main.html">HERS</a></h1>
+    <header id="home">
+      <h1><a href="main.php">HERS</a></h1>
     </header>
 
     <!-- sidebar menu -->
@@ -33,7 +32,7 @@ session_start();
       <dl>
         <dt id="title">HERS</dt>
 
-        <dt>MAIN</dt><hr color="black">
+        <dt>MAIN</dt>
         <dd>
           <ul class="menus">
             <li><a href="main.php">Home</a></li>
@@ -41,7 +40,7 @@ session_start();
           </ul>
         </dd>
 
-        <dt>USER</dt><hr color="black">
+        <dt>USER</dt>
         <dd>
           <ul class="menus">
             <?php
@@ -63,7 +62,7 @@ session_start();
           </ul>
         </dd>
 
-        <dt>RENTAL</dt><hr color="black">
+        <dt>RENTAL</dt>
         <dd>
           <ul class="menus">
             <li><a href="../futsal_confirmation/reservation_lists.php">Futsal Confirmation</a></li>
