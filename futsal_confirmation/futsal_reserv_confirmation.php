@@ -20,7 +20,7 @@ session_start();
         else{
             $user_id = $_SESSION['user_id'];
             ?>
-            
+
             <?php
         }
         if(!isset($_POST['confirm_val'])){
@@ -64,7 +64,7 @@ session_start();
       }
     ?>
     <div class="confirm_wrap col-9">
-        
+
         <br>
         <div class="container">
           <span class="arc">인원 : <?= $population ?>명</span><br>
@@ -106,6 +106,12 @@ session_start();
               else{//예약 수정할때 공지를 원하지 않을 경우
           ?>
             <input id = "notice_checked" name = "notice" type="checkbox" unchecked/>공지
+            <br>
+            <div id="notice_on">
+              <input type="text" class="txt" id="notice_home" placeholder = "home" name = "home" value ="<?= $home ?>" />
+              <span> vs </span>
+              <input type="text" class="txt" id="notice_away" placeholder ="away" name="away" value="<?= $away ?>"   />
+            </div>
           <?php
               }
           ?>
