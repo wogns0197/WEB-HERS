@@ -8,7 +8,7 @@ session_start();
     <title>Futsal Field Rental</title>
 
 
-    <link rel="stylesheet" type="text/css" href="../Frnt_End/bootstrap-3.3.2-dist/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../Front_End/bootstrap-3.3.2-dist/css/bootstrap.css">
     <link rel="stylesheet" href="../prime.css">
     <link rel="stylesheet" href="futmain.css">
 
@@ -18,7 +18,7 @@ session_start();
       crossorigin="anonymous"></script>
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-     <script src="../bootstrap-3.3.2-dist/js/bootstrap.js"></script>
+     <script src="../Front_End/bootstrap-3.3.2-dist/js/bootstrap.js"></script>
      <script type="text/javascript" src="futmain.js"></script>
      <script type="text/javascript"src="../prime.js"></script>
   </head>

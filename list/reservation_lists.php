@@ -6,7 +6,7 @@ session_start();
   <head>
     <meta charset="utf-8">
     <title>Hanyang Erica Rental Site</title>
-    <link rel="stylesheet" href="reservation_lists.css">
+    <link rel="stylesheet" href="../list/reservation_lists.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../prime.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">

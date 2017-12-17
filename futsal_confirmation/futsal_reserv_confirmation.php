@@ -15,7 +15,7 @@ session_start();
   <body>
     <?php
         if(!isset($_SESSION['user_id'])){//로그인 확인
-            echo "<script>alert('로그인이 필요합니다!');location.href='login_function/login.php';</script>";
+            echo "<script>alert('로그인이 필요합니다!');location.href='../Back_End/login_function/login.php';</script>";
         }
         else{
             $user_id = $_SESSION['user_id'];
@@ -36,7 +36,7 @@ session_start();
         $confirm = $_SESSION['confirm'];
     ?>
     <!-- 이전 페이지에서 예약 선택 정보 가져옴  -->
-    <form action="reserv_finish.php" method="post">
+    <form action="../finish/reserv_finish.php" method="post">
     <?php
       //전의 페이지에서 받아온 정보를 가져온다
       $modify = $_SESSION['modify'];
