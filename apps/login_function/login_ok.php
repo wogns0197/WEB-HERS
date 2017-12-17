@@ -1,5 +1,6 @@
 <?php
 session_start();
+include 'db-connect.php';
 
 if(!isset($_POST['user_id']) || !isset($_POST['user_pw'])) exit;
 $user_id = $_POST['user_id'];
@@ -10,9 +11,10 @@ $user_in_flag = false;
 
 
 try{
-  $name = "web_project";
+
   $login_query = "select count(user_id) from user where user_id = '$user_id' and user_pw = '$user_pw'";
-  $db = new PDO("mysql:dbname=$name", "root","root");
+  $dsn = "mysql:host=$db_host;port=$db_port;dbname=$db_name;charset=$charset";
+	$db = new PDO($dsn, $db_user, $db_password);
   $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
   $rows = $db->query($login_query);
 

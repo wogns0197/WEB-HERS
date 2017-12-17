@@ -1,4 +1,5 @@
 <?php
+include 'db-connect.php';
 $name = $_POST['name'];
 $s_id = $_POST['sid'];
 $user_pw = $_POST['user_pw'];
@@ -16,10 +17,10 @@ if($user_pw != $user_pw_re){
 }
 
 try{
-  $db_name = "web_project";
   $signup_query = "insert into user values('$name',$s_id,$phone,'$email','$user_id','$user_pw','$dept')";
 
-  $db = new PDO("mysql:dbname=$db_name", "root","root");
+  $dsn = "mysql:host=$db_host;port=$db_port;dbname=$db_name;charset=$charset";
+	$db = new PDO($dsn, $db_user, $db_password);
   $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
   $rows = $db->query($signup_query);
 
