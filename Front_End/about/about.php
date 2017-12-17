@@ -71,6 +71,13 @@
     </nav>
     <!-- end sidebar menu -->
 
+    <div class="category">
+      <a id="info" href="#">INFORMATION</a>&#32;&#183;&#32;
+      <a id="dev" href="#">DEVELOPERS</a>&#32;&#183;&#32;
+      <a id="ctct" href="#">CONTACT</a>
+    </div>
+
+
     <div class="entire">
       <div class="siteinfo">
         <h2 id="firsttitle">SITE INFORMATION</h2>
@@ -106,42 +113,46 @@
       <div class="developer">
         <h2>DEVELOPERS</h2>
 
+        <div class="person">
+          <img src="image/kwon.jpg" alt="kwon">
+          <h3>권재훈 Kwon Jaehoon</h3>
+          <p>"front"</p>
+          <p>Futsal Rental Page function materialization</p>
+          <a href="https://github.com/wogns0197">Github Go</a>
+        </div>
+
+        <div class="person">
+          <img src="image/seo.jpg" alt="seo">
+          <h3>서그림 Seo Geurim</h3>
+          <p>"front"</p>
+          <p>Main Page About Page Entire Design materialization</p>
+          <a href="https://github.com/Seogeurim">Github Go</a>
+        </div>
+
+        <div class="person">
+          <img src="image/choi.jpg" alt="choi">
+          <h3>최재영 Choi Jaeyoung</h3>
+          <p>"front/back"</p>
+          <p>Rental Function Partial Design materialization</p>
+          <a href="https://github.com/chlwodud77">Github Go</a>
+        </div>
+
+        <div class="person">
+          <img src="image/park.png" alt="choi">
+          <h3>박재훈 Park Jaehoon</h3>
+          <p>"back"</p>
+          <p>Rental Function Database materialization</p>
+          <a href="https://github.com/MilyangParkJaeHoon">Github Go</a>
+        </div>
+
 
       </div>
+
+      <div class="contact">
+        <h2>CONTACT</h2>
+        
+      </div>
     </div>
-
-    <!-- <div class="developer">
-      <span id="kwoninfo">
-        <h3>Kwon Jaehoon</h3>
-        <p>"front"</p>
-        <p>Futsal Rental Page function materialization</p>
-        <a href="https://github.com/wogns0197">Github Go</a>
-      </span>
-      <img id="kwon" src="image/kwon.jpg" alt="kwon">
-
-      <span id="seoinfo">
-        <h3>Seo Geurim</h3>
-        <p>"front"</p>
-        <p>Main Page About Page Entire Design materialization</p>
-        <a href="https://github.com/Seogeurim">Github Go</a>
-      </span>
-      <img id="seo" src="image/seo.jpg" alt="seo">
-
-      <span id="choiinfo">
-        <h3>Choi Jaeyoung</h3>
-        <p>"front/back"</p>
-        <p>Rental Function Partial Design materialization</p>
-        <a href="https://github.com/chlwodud77">Github Go</a>
-      </span>
-      <img id="choi" src="image/choi.jpg" alt="choi">
-
-      <span id="parkinfo">
-        <h3>Park Jaehoon</h3>
-        <p>"back"</p>
-        <p>Rental Function Database materialization</p>
-        <a href="https://github.com/MilyangParkJaeHoon">Github Go</a>
-      </span>
-    </div> -->
 
   </body>
 </html>
