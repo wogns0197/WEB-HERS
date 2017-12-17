@@ -6,7 +6,7 @@ body, html{
   font-size: 12pt;
 }
 @font-face {
-  font-family: myserif;
+  font-family: hersfont;
   src: url(../font/Anson-Regular.otf);
 }
 @font-face {
@@ -72,8 +72,7 @@ svg{
   left: -22%;
 }
 nav{
-  font-family: myserif;
-  /*background-color: rgba(0.3, 0, 0, 0);*/
+  font-family: hersfont;
   background-color: hsl(0, 0%, 90%);
   opacity: 0.90;
   width: 22%;
@@ -91,8 +90,9 @@ nav dl{
 }
 nav dl dt{
   font-size: 20pt;
-  font-family: myserif;
+  font-family: hersfont;
   margin-top: 15%;
+  padding-bottom: 4%;
 }
 #title{
   font-size: 25pt;
@@ -100,7 +100,7 @@ nav dl dt{
 }
 nav dl dd{
   font-size: 16pt;
-  font-family: myserif;
+  font-family: hersfont;
   padding-left: 0;
   margin-left: 0;
   list-style: none;
@@ -166,13 +166,4 @@ footer{
   font-size: 9pt;
   letter-spacing: 3pt;
   font-family: myexplain;
-}
-.user{
-  top: 15%
-  right: 0%;
-  height: 50px;
-  margin-right: 2%;
-  font-family: myserif;
-  font-size: 15pt;
-  z-index: 130;
 }
