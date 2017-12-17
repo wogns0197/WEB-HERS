@@ -5,24 +5,14 @@
     $manage_ID = $_SESSION['manage_id'];
     $borrowdate = $_SESSION['borrowdate'];
     try{
-        $query1 = "select * from futsal_manage where manage_ID=$manage_ID and borrowdate='$borrowdate'";        
-        $query2 = "delete from futsal_manage where manage_ID=$manage_ID and borrowdate='$borrowdate'";
+        $query1 = "delete from futsal_manage where manage_ID=$manage_ID and borrowdate='$borrowdate'";
+        $query2 = "delete from matching_manage where manage_Id=$manage_ID";
+        $query3 = "delete from purpose_view where manage_ID=$manage_ID";
         $db = new PDO("mysql:dbname=$name", "root","root");
         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $rows = $db->query($query1);
+        $db->query($query1);
         $db->query($query2);
-        foreach($rows as $row){
-            $notice = $row["notice"];
-        }
-        if($notice){
-            try{
-                $query3 = "delete from purpose_view where manage_ID=$manage_ID and borrowdate='$borrowdate'";
-                $db->query($query3);
-            }
-            catch(PDOException $ex){
-                echo "detail :".$ex->getMessage();
-            } 
-        }
+        $db->query($query3);        
     }
     catch(PDOException $ex){
         echo "detail :".$ex->getMessage();

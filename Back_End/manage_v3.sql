@@ -2,7 +2,7 @@ create table user
 (
     name        varchar(10),
     student_ID  integer(10),
-    phone_num   varchar(15),
+    phone_num   integer(15),
     e_mail      varchar(30),
     user_id     varchar(30),
     user_pw     varchar(30),
@@ -52,3 +52,4 @@ create table matching_manage
         on delete set null
 );
 insert into user values('HERS',0,0,'0','HERS','HERS','0');-- 관리자 계정
+

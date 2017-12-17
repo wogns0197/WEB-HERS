@@ -37,7 +37,7 @@ delete_over_date_data();
         <dd>
           <ul class="menus">
             <li><a href="main.php">Home</a></li>
-            <li><a href="../about/about.html">About Us</a></li>
+            <li><a href="../about/about.php">About Us</a></li>
           </ul>
         </dd>
 
@@ -119,7 +119,7 @@ delete_over_date_data();
 <?php
   function delete_over_date_data(){
     $name = "web_project";
-    $db = new PDO("mysql:dbname=$name", "root", "root");    
+    $db = new PDO("mysql:dbname=$name", "root", "root");
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $query_count = "select * from futsal_manage where matching=1 and datediff(borrowdate,date_format(curdate(),'%Y-%m-%d'))<7";
     try{
