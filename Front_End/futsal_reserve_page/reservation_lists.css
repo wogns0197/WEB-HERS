@@ -23,7 +23,7 @@ th{
 	width: 80px;
 	font-weight: normal;
 }
-#num{
+.num{
 	width: 7%;
 	font-size: 10pt;
 }
@@ -31,7 +31,7 @@ th{
 	width: 3%;
 	border: none;
 }
-#day{
+.day{
 	width: 15%;
 }
 #place{
