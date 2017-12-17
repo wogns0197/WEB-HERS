@@ -150,44 +150,7 @@ session_start();
             ?>
 
           </table>
-          <table cellSpacing=0 cellPadding=0 width="100%" class="momtong" >
-            <?php
-            set_modify_val();// 예약 수정 상태일 경우 예약 수정을 진행할때 예전 예약 내용을 default값으로 넣어주기위한 값들을 받아온다
-            $view_rows = notice_view(); // 오늘 날짜에 공지를 원했던 경기를 db에서 가져온다.
-            ?>
-            <tbody>
-                <td>
-                <MARQUEE scrollAmount=4 direction=up>
-                    <section>
-                    <table cellSpacing=0 cellPadding=0 width="100%"  border=0>
-                    <tbody>
-                      <tr>
-                      <td height=60 id="gamenotice">&nbsp;--- Game Notice ---
-                      </td>
-                      </tr>
-
-                      <tr>
-                      <?php
-                          foreach($view_rows as $row){
-                              $start_a = explode(":",$row["start_time"]);
-                              $start_t = $start_a[0].":".$start_a[1];
-                              $end_a = explode(":", $row["end_time"]);
-                              $end_t = $end_a[0].":".$end_a[1];
-                      ?>
-                      </tr>
-                            <tr><td height=50>&nbsp;<?= $row["place"] ?>   <?= $row["home"] ?> <span class="vs">vs </span><?= $row["away"]?> <?= $start_t ?>~<?= $end_t ?><td></tr>
-                      <?php
-                      }
-                      ?>
-
-                    <td height=1>&nbsp;</td></tr>
-                  </tbody>
-                  </table>
-                  </section>
-              </MARQUEE>
-              </td>
-        </tbody></table></section></MARQUEE></td></tbody></table>
-
+          
 
         </div>
 
