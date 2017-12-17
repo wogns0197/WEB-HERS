@@ -6,7 +6,7 @@ session_start();
   <head>
     <meta charset="utf-8">
     <title>Hanyang Erica Rental Site</title>
-    <link rel="stylesheet" href="../list/reservation_lists.css">
+    <link rel="stylesheet" href="reservation_lists.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../prime.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,7 +18,7 @@ session_start();
     <header>
       <?php
       if(!isset($_SESSION['user_id'])){ //로그인 확인
-        echo "<script>alert('로그인이 필요합니다!');location.href='../../Back_End/login_function/login.php';</script>";
+        echo "<script>alert('로그인이 필요합니다!');location.href='../Back_End/login_function/login.php';</script>";
       }
       ?>
       <h1><a href="../main/main.php">HERS</a></h1>
@@ -51,7 +51,7 @@ session_start();
             <?php
             if(!isset($_SESSION['user_id'])){
              ?>
-            <li><a href="../../Back_End/login_function/login.php">Login</a></li>
+            <li><a href="../Back_End/login_function/login.php">Login</a></li>
             <?php
             }
 
@@ -59,7 +59,7 @@ session_start();
               ?>
             <li>Signed In as (<?= $_SESSION['user_id']?>)</li>
 
-            <li><a href="../../Back_End/login_function/logout.php">Logout</a></li>
+            <li><a href="../Back_End/login_function/logout.php">Logout</a></li>
             <li><a href="../mypage/mypage.php">My Page</a></li>
             <?php
              }
@@ -70,9 +70,9 @@ session_start();
         <dt>RENTAL</dt>
         <dd>
           <ul class="menus">
-            <li><a href="../futsal_confirmation/reservation_lists.php">Futsal Confirmation</a></li>
+            <li><a href="../list/reservation_lists.php">Futsal Confirmation</a></li>
             <li><a href="../futsal_main/futmain.php">Futsal Field Rental</a></li>
-            <li><a href="../mypage/match.php">Matching Request</a></li>
+            <li><a href="../matching/match.php">Matching Request</a></li>
           </ul>
         </dd>
       </dl>
