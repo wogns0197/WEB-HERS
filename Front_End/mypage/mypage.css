@@ -1,4 +1,9 @@
 p{	
 	margin-top: 10%;
 	text-align: center;
+	font-family: asiangothic;
+}
+@font-face{
+	font-family: asiangothic;
+	src : url(../font/asiangothic-Light.otf);
 }
