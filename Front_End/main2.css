@@ -9,10 +9,10 @@ body, html{
   font-family: mylight;
   src: url(font/Existence-Light.otf);
 }
-@font-face {
+/*@font-face {
   font-family: myserif;
   src: url(font/Anson-Regular.otf);
-}
+}*/
 header{
   font-family: mylight;
   position: fixed;
@@ -57,7 +57,7 @@ hr{
   left: -25%;
 }
 nav{
-  font-family: myserif;
+  font-family: mylight;
   background-color: white;
   box-shadow: 5px 0 20px rgba(0,0,0,0.5);
   width: 22%;
@@ -75,7 +75,7 @@ nav dl{
 }
 nav dl dt{
   font-size: 20pt;
-  font-family: myserif;
+  font-family: mylight;
   margin-top: 15%;
 }
 #title{
@@ -84,7 +84,7 @@ nav dl dt{
 }
 nav dl dd{
   font-size: 16pt;
-  font-family: myserif;
+  font-family: mylight;
   padding-left: 0;
   margin-left: 0;
   list-style: none;
