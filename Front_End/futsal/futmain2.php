@@ -86,6 +86,7 @@ session_start();
           <ul class="menus">
             <li><a href="../futsal_confirmation/reservation_lists.php">Futsal Confirmation</a></li>
             <li><a href="../futsal/futmain2.php">Futsal Field Rental</a></li>
+            <li><a href="../mypage/match.php">Matching Request</a></li>
           </ul>
         </dd>
       </dl>
@@ -98,7 +99,7 @@ session_start();
         $view_rows = notice_view(); // 오늘 날짜에 공지를 원했던 경기를 db에서 가져온다.
         ?>
 
-        <MARQUEE scrollAmount=2 height=70 direction=up>                
+        <MARQUEE scrollAmount=2 height=50 direction=up>                
           <section>
             <p>&nbsp;--- Game Notice ---</p>
             
@@ -110,9 +111,7 @@ session_start();
                     $end_t = $end_a[0].":".$end_a[1];
             ?>
                   <p>
-
                   &nbsp;[<?= $row["place"] ?>]&nbsp;  <?= $row["home"] ?> <span class="vs">vs </span><?= $row["away"]?> <?= $start_t ?>~<?= $end_t ?>
-
                     <br/>
                     -
                   </p>

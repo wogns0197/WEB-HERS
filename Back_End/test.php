@@ -8,7 +8,7 @@ date_default_timezone_set('Asia/Seoul');
     <meta charset="utf-8">
     <title>Hanyang Erica Rental Site</title>
     <link rel="stylesheet" type="text/css" href="../Front_End/bootstrap-3.3.2-dist/css/bootstrap.css">
-    <link rel="stylesheet" href="../Front_End/calendar/css/application.css" />
+    <link rel="stylesheet" href="../Front_End/calendar/css/appliscation.css" />
     <link rel="stylesheet" href="../Front_End/calendar/css/home.css" />
     <link rel="stylesheet" href="../Front_End/main2.css">
     <link rel="stylesheet" href="futsal_reserv_test_2.css" />
@@ -107,7 +107,6 @@ date_default_timezone_set('Asia/Seoul');
           <ul class="menus">
             <li><a href="../Front_End/futsal_confirmation/reservation_lists.php">Futsal Confirmation</a></li>
             <li><a href="../Front_End/futsal/futmain2.php">Futsal Field Rental</a></li>
-            <li><a href="../Front_End/mypage/match.php">Matching Request</a></li>
           </ul>
         </dd>
       </dl>
@@ -118,17 +117,9 @@ date_default_timezone_set('Asia/Seoul');
     <form action="futsal_reserv_confirmation.php" method="post">
     <div class="container">
       <div class="panel panel-defaul col-12">
-        <?php
-            if($_GET['match']=="true"){
-        ?>
-        <div hidden class="panel-body col-5">
-        <?php
-            }
-            else{
-            ?>
-        <div class="panel-body col-5">                
+        
+        <div class="panel-body col-5">
             <?php
-            }
                 $today = date("Y-m-d",time());
                 ?>
                 <!-- 캘린더 자바스크립트에서 오늘날짜 가져오기 위한 부분. -->
@@ -167,12 +158,7 @@ date_default_timezone_set('Asia/Seoul');
                     <select name="population">
                         <?php
                             for($i=$admit_min; $i<=$admit_max; $i++){
-                                if($_GET['match']=="true" && $_GET['population']==$i){
-                        ?>
-                                <option class = "spopulation" selected = 'selected' value=<?=$i?>><?= $i ?></option>
-                        <?php
-                                }
-                                else if($i == $m_population){ // 예약 수정상태일 때 전의 예약했던 인원을 selected상태로 default
+                                if($i == $m_population){ // 예약 수정상태일 때 전의 예약했던 인원을 selected상태로 default
                         ?>
                                 <option class = "spopulation" selected = 'selected' value=<?=$i?>><?= $i ?></option>
                         <?php
@@ -201,56 +187,46 @@ date_default_timezone_set('Asia/Seoul');
         ?>
         </tbody>
         </table>
-        <?php
-        if($_GET['match']=="true"){
-        ?>
-            <p hidden class="text-center"><button id = "button2">
-        <?php
-        }
-        else{
-        ?>
-            <p class="text-center"><button id = "button2">
-        <?php
-        }
-            if($_SESSION['modify']){
+            <?php
+            if($_GET['match']!=1){
             ?>
-                수정
-            <?php
-            }
-            else{
-            ?>
-                예약
-            <?php
-            }?>
-                하기
-            </button></p>
-            <?php
-            if($modify==0){
-                $find = true;
-            ?>
-            <?php
-            }
-            $today_date_time = new DateTime(date("Y-m-d", time()));
-            $borrow_date_time = new DateTime($date);
-            $day_difference = date_diff($today_date_time, $borrow_date_time);
-            if($day_difference->days >= 14){
-                if($_GET['match']=="true" || $modify==1){
+                <p class="text-center"><button id = "button2">
+                <?php
+                if($_SESSION['modify']){
                 ?>
-                    <p hidden class="text-center">                    
+                    수정
                 <?php
                 }
                 else{
                 ?>
-                    <p class="text-center">
-            <?php
+                    예약
+                <?php
+                }?>
+                    하기
+                </button></p>
+                <?php
+                if($modify==0){
+                    $find = true;
+                ?>
+                <?php
                 }
-            ?>
-            <span data-toggle="modal" id = "button3" class="btn sangdae" data-target="#getmatchModal" >
-            상대팀 구하기
-            </span></p>
-            <?php
+                $today_date_time = new DateTime(date("Y-m-d", time()));
+                $borrow_date_time = new DateTime($date);
+                $day_difference = date_diff($today_date_time, $borrow_date_time);
+                if($day_difference->days >= 14){
+                ?>
+
+
+                <p class="text-center">
+                <span data-toggle="modal" id = "button3" class="btn sangdae" data-target="#getmatchModal" >
+                상대팀 구하기
+                </span></p>
+
+
+                <?php
+                }
             }
-        ?>
+            ?>
         </div>
       </div>
     </div>
