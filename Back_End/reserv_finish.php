@@ -177,7 +177,7 @@ session_start();
     else{?>
       <div class="fail">
         <script>
-          // document.location.href="reserv_FAIL.html"
+          document.location.href="reserv_FAIL.html"
         </script>
       </div>
         

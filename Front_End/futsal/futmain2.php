@@ -22,12 +22,7 @@ session_start();
      <script type="text/javascript" src="futmain2.js"></script>
      <script type="text/javascript"src="../main2.js"></script>
   </head>
-
   <body>
-    <!-- <header id="home">
-      <h1><a href="../main/main.php">HERS</a></h1>
-    </header> -->
-
     <!-- sidebar menu -->
     <a id="menuicon"><svg class="menusvg" xmlns="http://www.w3.org/2000/svg" data-name="Layer 1" viewBox="0 0 100 125" x="0px" y="0px"><title>54 all</title><path d="M74.46,49H25.54a1,1,0,0,0,0,2H74.46a1,1,0,0,0,0-2Z"/><path d="M74.46,28.73H25.54a1,1,0,0,0,0,2H74.46a1,1,0,0,0,0-2Z"/><path d="M74.46,69.27H25.54a1,1,0,1,0,0,2H74.46a1,1,0,1,0,0-2Z"/>
     </svg></a>
@@ -122,81 +117,49 @@ session_start();
       <!-- futsal place click button modals -->
           <div id="futsal_modal" class="modal fade" role="dialog">
             <div class="modal-dialog">
-
               <div class="modal-content">
-
                 <div class="modal-header">
                   <span class="close" data-dismiss="modal">&times;</span>
                   <h4 class="modal-title">위치</h4>
                 </div>
-
                 <div class="modal-body">
                   <div id="futsal_btns" class="text-center">
-                    <a href = "../../Back_end/futsal_reserv_test_2.php?where=풋살장A"><button class="center-block" id="futsal_A">풋살장A</button></a>
-                    <a href = "../../Back_end/futsal_reserv_test_2.php?where=풋살장B"><button class="center-block" id="futsal_B">풋살장B</button></a>
+                    <a href = "../../Back_End/futsal_reserv_test_2.php?where=풋살장A"><button class="center-block" id="futsal_A">풋살장A</button></a>
+                    <a href = "../../Back_End/futsal_reserv_test_2.php?where=풋살장B"><button class="center-block" id="futsal_B">풋살장B</button></a>
                  </div>
                 </div>
-
               </div>
-
             </div>
           </div>
-
           <div id="soccer_modal" class="modal fade" role="dialog">
             <div class="modal-dialog">
-
               <div class="modal-content">
-
                 <div class="modal-header">
                   <span class="close" data-dismiss="modal">&times;</span>
                   <h4 class="modal-title">위치</h4>
                 </div>
-
                 <div class="modal-body">
-                  <a href = "../../Back_end/futsal_reserv_test_2.php?where=잔디구장"><button class="center-block" id="soccer">잔디구장</button></a>
+                  <a href = "../../Back_End/futsal_reserv_test_2.php?where=잔디구장"><button class="center-block" id="soccer">잔디구장</button></a>
                 </div>
-
               </div>
-
             </div>
           </div>
-
-
           <div id="stadium_modal" class="modal fade" role="dialog">
             <div class="modal-dialog">
-
               <div class="modal-content">
-
                 <div class="modal-header">
                   <span class="close" data-dismiss="modal">&times;</span>
                   <h4 class="modal-title">위치</h4>
                 </div>
 
                 <div class="modal-body">
-                  <a href = "../../Back_end/futsal_reserv_test_2.php?where=대운동장"><button class="center-block" id="stadium">대운동장</button></a>
+                  <a href = "../../Back_End/futsal_reserv_test_2.php?where=대운동장"><button class="center-block" id="stadium">대운동장</button></a>
                 </div>
-
               </div>
-
             </div>
           </div>
-      <!-- end futsal place click button modals -->
+      </div>
     </div>
-    <!-- <div class="container col-sm-2 hidden" id="right-side"> -->
-      <!-- source=http://thinkgood.tistory.com/471 -->
-      <!-- notice function -->
-
-      <!-- </div> -->
-
-  </div>
-
-
-
-
-        <!-- <form action="../futsal_confirmation/reservation_lists.php">
-        <button id="reserv_confirm">예약내역확인</button>
-      </form> -->
-
   </body>
 </html>
 <?php

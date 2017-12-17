@@ -111,8 +111,8 @@ session_start();
                     }
                     else{
                 ?>
-                    <th id="num" class="tab2"><?=$manage_ID[$i]?></th>
-                    <th id="day" class="tab2"><?=$borrowdate[$i]?></th>
+                    <th class="tab2 num"><?=$manage_ID[$i]?></th>
+                    <th class="tab2 day"><?=$borrowdate[$i]?></th>
                 <?php
                     }
                 ?>
