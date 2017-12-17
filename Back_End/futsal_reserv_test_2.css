@@ -12,6 +12,7 @@ h1{
 	font-size: 20pt;
 	margin-bottom: 35px;
 }
+<<<<<<< HEAD
 #backimg{
 
 	width: 3%;
@@ -19,6 +20,8 @@ h1{
 	margin-left: 1%;
 	opacity: 0.6;
 }
+=======
+>>>>>>> parent of e4ff3b7... asdf
 
 #menuicon,#xicon,#menuabr {
 	z-index: 100;
