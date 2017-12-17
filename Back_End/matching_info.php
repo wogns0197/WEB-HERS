@@ -1,5 +1,7 @@
 <?php
 session_start();
+print_r($_POST);
+print_r($_SESSION);
 $id = $_SESSION['user_id'];
 $date = $_POST['date'];
 $place  = $_SESSION['place'];
@@ -18,6 +20,7 @@ foreach($rows as $row){
     $manage_id = $row['manage_ID'];
     $flag = true;
 }
+echo $flag;
 if($receive_id == $id){
 ?>
     <script type="text/javascript" src="send_myself.js"></script>

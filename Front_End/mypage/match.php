@@ -98,6 +98,7 @@ session_start();
             }
             for($i = 0; $i < count($manage_ID); $i++){
             ?>
+                <form action="../../Back_End/futsal_reserv_test_2.php" method="get">
                 <tr>
                     <th id="num" class="tab2"><?=$manage_ID[$i]?></th>
                     <th id="day" class="tab2"><?=$borrowdate[$i]?></th>
@@ -109,13 +110,15 @@ session_start();
                   $val = implode(" ",$valarr);
                   $delete_val = $manage_ID[$i];
                 ?>                
-                    <td class="text-center"><span class="show_match_info"  data-toggle="modal" data-target="#matchingModal">정보 보기</span></td>
-                    <input type="hidden" id = "manage_info<?= $i ?>" value=<?= $manage_ID[$i] ?>/>
+                    <!-- <td class="text-center"><span class="show_match_info"  data-toggle="modal" data-target="#matchingModal">정보 보기</span></td> -->
+                    <th><button type="submit" class="btn btn-default">Submit</button></th>
+                    <input type="hidden" name="where" value="<?= $place[$i] ?>"/>
+                    <input type="hidden" name="date" value="<?= $borrowdate[$i]?>"/>
+                    <input type="hidden" name="match" value=1/>
                   </tr>
-        <?php
-            }
-            $check_ID = $manage_ID[$i];
-        ?>
+            </form>
+            <?php
+            }?>
         </table>
       </div>
     </div>
@@ -150,7 +153,7 @@ session_start();
 <?php
 function match_request_list(){
     $name = "web_project";
-    global $manage_ID, $borrowdate, $user_id, $chat, $start_time, $end_time, $people;
+    global $manage_ID, $borrowdate, $user_id, $chat, $start_time, $end_time, $people, $place;
     try{
         $query = "select * from futsal_manage where matching=1 and datediff(borrowdate,date_format(curdate(),'%Y-%m-%d'))>=7 order by borrowdate, start_time";
         $db = new PDO("mysql:dbname=$name", "root","root");
