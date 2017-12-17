@@ -16,8 +16,8 @@ session_start();
   </head>
   <body>
     <header>
-  		<h1><a href="../main/main.php">HERS</a> MY PAGE</h1>
-  	</header>
+      <h1><a href="../main/main.php">HERS</a> MY PAGE</h1>
+    </header>
 
     <!-- sidebar menu -->
     <a id="menuicon"><svg class="menusvg" xmlns="http://www.w3.org/2000/svg" data-name="Layer 1" viewBox="0 0 100 125" x="0px" y="0px"><title>54 all</title><path d="M74.46,49H25.54a1,1,0,0,0,0,2H74.46a1,1,0,0,0,0-2Z"/><path d="M74.46,28.73H25.54a1,1,0,0,0,0,2H74.46a1,1,0,0,0,0-2Z"/><path d="M74.46,69.27H25.54a1,1,0,1,0,0,2H74.46a1,1,0,1,0,0-2Z"/>
@@ -137,7 +137,7 @@ session_start();
                 ?>
                     <th id="but"><button class="buttab2" id="but1" name="confirm_val" value="<?= $val ?>" type="submit" form = "confirm">예약 하기</button></th>
                   </tr>
-                }
+                
           <?php
             }
           ?>
