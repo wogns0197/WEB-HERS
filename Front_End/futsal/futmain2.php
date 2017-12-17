@@ -9,7 +9,7 @@ session_start();
 
 
     <link rel="stylesheet" type="text/css" href="../bootstrap-3.3.2-dist/css/bootstrap.css">
-    <link rel="stylesheet" href="../main2.css">
+    <link rel="stylesheet" href="../prime.css">
     <link rel="stylesheet" href="futmain2.css">
 
     <script

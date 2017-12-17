@@ -8,7 +8,7 @@ session_start();
     <title>HERS My Page</title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
 
-    <link rel="stylesheet" href="../main2.css">
+    <link rel="stylesheet" href="../prime.css">
     <link rel="stylesheet" href="../futsal_reserve_page/reservation_lists.css">
     <link rel="stylesheet" href="mypage.css">
 
@@ -16,7 +16,7 @@ session_start();
     <script type="text/javascript"src="http://code.jquery.com/jquery-latest.min.js"></script>
     <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-    <script type="text/javascript"src="../main2.js"></script>
+    <script type="text/javascript"src="../prime.js"></script>
     <script type="text/javascript"src="mypage.js"></script>
 
   </head>

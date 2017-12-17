@@ -10,7 +10,7 @@ date_default_timezone_set('Asia/Seoul');
     <link rel="stylesheet" type="text/css" href="../Front_End/bootstrap-3.3.2-dist/css/bootstrap.css">
     <link rel="stylesheet" href="../Front_End/calendar/css/application.css" />
     <link rel="stylesheet" href="../Front_End/calendar/css/home.css" />
-    <link rel="stylesheet" href="../Front_End/main2.css">
+    <link rel="stylesheet" href="../Front_End/prime.css">
     <link rel="stylesheet" href="futsal_reserv_test_2.css" />
 
 

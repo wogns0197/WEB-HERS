@@ -5,24 +5,19 @@ session_start();
 <html>
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>HERS My Page</title>
-    <link rel="stylesheet" href="../main2.css">
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../prime.css">
     <link rel="stylesheet" href="../futsal_reserve_page/reservation_lists.css">
+    <link rel="stylesheet" type="text/css" href="../Front_End/bootstrap-3.3.2-dist/css/bootstrap.css">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
 
-    <script type="text/javascript"
-    src="https://code.jquery.com/jquery-3.2.1.min.js"
-    integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-    crossorigin="anonymous"></script>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript"src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script type="text/javascript"src="../prime.js"></script>
+    <script type="text/javascript"scr="match.js"></script>
+    <script src="../Front_End/bootstrap-3.3.2-dist/js/bootstrap.js"></script>
     <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
-    <script type="text/javascript" src= "../main2.js"></script>
-    <script type="text/javascript" src="match.js"></script>
-
-
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
   </head>
   <body>
     <header>
@@ -104,21 +99,20 @@ session_start();
             }
             for($i = 0; $i < count($manage_ID); $i++){
             ?>
-                <form action="../../Back_End/futsal_reserv_test_2.php" method="get" id="showinfo" >
+                <form action="../../Back_End/futsal_reserv_test_2.php" method="get">
                 <tr>
-                    <th  class="tab2 num"><?=$manage_ID[$i]?></th>
-                    <th  class="tab2 day"><?=$borrowdate[$i]?></th>
+                    <th id="num" class="tab2"><?=$manage_ID[$i]?></th>
+                    <th id="day" class="tab2"><?=$borrowdate[$i]?></th>
                     <th><?=substr($start_time[$i],0,5)?> ~ <?=substr($end_time[$i],0,5)?></th>
                     <th><?=$user_id[$i]?></th>
-                    <th class="messages" data-toggle="modal" data-target="#getMgModal"><input type="hidden" value = "<?=$chat[$i]?>" />
-                    <input type="button" value="메세지 보기"></button></th>
-
+                    <th><?=$chat[$i]?></th>
                 <?php
                   $valarr = array($manage_ID[$i], $borrowdate[$i]);
                   $val = implode(" ",$valarr);
                   $delete_val = $manage_ID[$i];
-                ?>
-                    <th><input type="submit" class="btn btn-default" value="정보 보기" form="showinfo"></input></th>
+                ?>                
+                  <th>
+                    <button type="submit" class="btn btn-default">정보 보기</button></th>
                     <input type="hidden" name="where" value="<?= $place[$i] ?>"/>
                     <input type="hidden" name="date" value="<?= $borrowdate[$i]?>"/>
                     <input type="hidden" name="population" value="<?= $people[$i]?>"/>
@@ -130,40 +124,7 @@ session_start();
         </table>
       </div>
     </div>
-
-    <!-- Matching Modal -->
-
-        <div class="modal fade" id="getMgModal" role="dialog">
-          <div class="modal-dialog">
-
-            <!-- Modal content-->
-              <div class="modal-content">
-                  <div class="modal-header">
-                      <span type="button" class="close" data-dismiss="modal">&times;</span>
-                      <h4 class="modal-title">Matching Message</h4>
-                  </div>
-                  <div class="modal-body">
-                      <br>
-                      <fieldset>
-                      <legend>Message:</legend>
-                      <textarea class="form-control" rows="5" id="mgarea" maxlength="200" name="chat" readonly></textarea>
-                      </fieldset>
-                  </div>
-                  <input type="hidden" name="date" value=<?=$date?>/>
-                  <input type="hidden" id = "send_time2" name="time" value=0/>
-                  <input type="hidden" name="place" value=<?=$place?>/>
-                  <input type="hidden" id = "spopulation" name="population" value=0/>
-                  <div class="modal-footer">
-                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                  </div>
-              </div>
-          </div>
-        </div>
-
-  <!-- Modal End-->
-
   </body>
-
 </html>
 <?php
 function match_request_list(){
