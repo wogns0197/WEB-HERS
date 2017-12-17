@@ -28,19 +28,20 @@ try{
     $_SESSION['user_id'] = $user_id;
     $_SESSION['user_pw'] = $user_pw;
     echo "<script>alert('로그인에 성공하였습니다.!');</script>";
+    echo "<script>history.go(-2);</script>";
+
   }
   else{
-    echo "<script>alert('아이디 또는 패스워드가 잘못되었습니다.');history.back();</script>";
+    echo "<script>alert('아이디 또는 패스워드가 잘못되었습니다.');history.go(-1);</script>";
 
   }
 
 }
 catch(PDOException $ex){
-  echo "<script>alert('아이디 또는 패스워드가 잘못되었습니다.');history.back();</script>";
+  // echo "<script>alert('아이디 또는 패스워드가 잘못되었습니다.');history.go(-1);</script>";
 
 }
 
 
 
 ?>
-<meta http-equiv='refresh' content='0;url=<?= $_SESSION['prevPage'] ?>'>

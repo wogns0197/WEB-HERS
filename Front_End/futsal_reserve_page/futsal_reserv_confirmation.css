@@ -1,30 +1,37 @@
 .confirm_wrap{
+	margin: auto;
+	width: 45%;
+	background-color: #F2F2F2;
+	text-align: center;
+	padding-top: 2%;
+	/*margin-top: 7%;*/
+	padding-bottom: 3%;
+	box-shadow: 0px 10px 30px -9px rgba(0,0,0,1);
+	border-radius: 3.14159265358979323846264338327950px;
+	height: 500px;
+	font-size: 15pt;
 	margin-top: 5%;
-	width: 50%;
-	height: 60%;
-	
-	margin-left: auto;
-	margin-right: auto;
-	border-right:2px solid #FAFAFA;
-	border-radius: 15px;
-	box-shadow: 0px 10px 30px -9px rgba(0,0,0,0.4);
-
-	padding: 5%;
-	text-align:center;
 }
-
-
+.container{
+	margin-top: 5%;
+}
 #notice_on {
 	visibility: hidden;
-
 }
-
 #notice_on .show{
 	visibility: visible;
 }
-
 .hidden {
 	display: none;
+}
+.txt{
+	font-size: 10pt;	
+	text-align: center;
+	width: 30%;
+	height: 30px;
+	border: 1px solid #E6E6E6;
+	border-radius: 5px;
+	
 }
 #userleft{
 	float: left;
@@ -58,25 +65,48 @@ input{
 	border-bottom: 0.5px solid #D8D8D8;
 
 }
-button{
-	border: none;
-	border-radius: 50px;
-	width: 20%;
-	font-size: 10pt;
-	height: 30px;
-	background-color: rgb(248,248,250);
-	color: rgb(30,118,189);
-	transition: 0.3s;
-	transform: scale(1.1);
-}
 button:hover{
 	cursor: pointer;
 	transition: 0.5s;
-	transform:scale(1);
+	transform:scale(0.9);
+	background-color:#FA5858;
+	font-size: 12pt;
+	font-weight: bold;
+}
+button{
 	
-	background-color: rgb(248,248,255);
+	color: white;
+	font-size: 10pt;
+	width: 40%;
+	height: 35px;
+	border:none;
+	border-radius: 3px;
+	background-color: #F78181;
+	transition: 0.2s;
+	transform: scale(1);
+
 }
 .fail{
 	margin: auto;
 	width: 20%;
+}
+/* For mobile phones: */
+[class*="col-"] {
+    width: 70%;
+    margin-bottom: 1%;
+}
+@media only screen and (min-width: 768px) {
+    /* For desktop: */
+    .col-1 {width: 8.33%;}
+    .col-2 {width: 16.66%;}
+    .col-3 {width: 25%;}
+    .col-4 {width: 33.33%;}
+    .col-5 {width: 41.66%;}
+    .col-6 {width: 50%;}
+    .col-7 {width: 58.33%;}
+    .col-8 {width: 66.66%;}
+    .col-9 {width: 75%;}
+    .col-10 {width: 83.33%;}
+    .col-11 {width: 91.66%;}
+    .col-12 {width: 100%;}
 }

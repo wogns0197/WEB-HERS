@@ -11,7 +11,7 @@ session_start();
     <link rel="stylesheet" type="text/css" href="../bootstrap-3.3.2-dist/css/bootstrap.css">
     <link rel="stylesheet" href="../main2.css">
 
-    <link rel="stylesheet" href="futmain2.css?ver=2">
+    <link rel="stylesheet" href="futmain2.css">
 
 
     <!-- <link rel="stylesheet" href="notice.css"> -->
@@ -32,11 +32,11 @@ session_start();
 
   <body>
 
-    <div>
-    <header id="home">
+    
+    <!-- <header id="home">
       <h1><a href="../main/main.php">HERS</a></h1>
-    </header>
-    </div>
+    </header> -->
+    
 
 
     <!-- sidebar menu -->
@@ -86,32 +86,49 @@ session_start();
           <ul class="menus">
             <li><a href="../futsal_confirmation/reservation_lists.php">Futsal Confirmation</a></li>
             <li><a href="../futsal/futmain2.php">Futsal Field Rental</a></li>
+            <li><a href="../mypage/match.php">Matching Request</a></li>
           </ul>
         </dd>
       </dl>
 
     </nav>
     <!-- end sidebar menu -->
+    <table cellSpacing=0 cellPadding=0 class="notice-table center-block" >
+        <?php
+        set_modify_val();// 예약 수정 상태일 경우 예약 수정을 진행할때 예전 예약 내용을 default값으로 넣어주기위한 값들을 받아온다
+        $view_rows = notice_view(); // 오늘 날짜에 공지를 원했던 경기를 db에서 가져온다.
+        ?>
 
+        <MARQUEE scrollAmount=2 height=50 direction=up>                
+          <section>
+            <p>&nbsp;--- Game Notice ---</p>
+            
+            <?php
+                foreach($view_rows as $row){
+                    $start_a = explode(":",$row["start_time"]);
+                    $start_t = $start_a[0].":".$start_a[1];
+                    $end_a = explode(":", $row["end_time"]);
+                    $end_t = $end_a[0].":".$end_a[1];
+            ?>
+                  <p>
+                  &nbsp;[<?= $row["place"] ?>]&nbsp;  <?= $row["home"] ?> <span class="vs">vs </span><?= $row["away"]?> <?= $start_t ?>~<?= $end_t ?>
+                    <br/>
+                    -
+                  </p>
+            <?php
+            }
+            ?>
+            </section>          
+          </MARQUEE>
     <div class="container col-sm-2"></div>
-
     <div class="container col-sm-8 center-block"  id="main-section">
     <!-- weather api -->
     <iframe  id="weather-section" type="text/html" frameborder="0" height="250px" width="100%" src="http://forecast.io/embed/#lat=37.3217&lon=126.8309&name=Hanyang Univ.&units=si"> </iframe>
     <!-- API from.. https://darksky.net/ -->
-
   <!-- </div> -->
-
-
-
-
     <div id="map">
         <object id = "ericamap" class="center-block" type="image/svg+xml" data="erica_futsal_대지 1.svg" >현재 브라우져는 object를 지원하지 않습니다.</object>
     </div>
-
-
-
-
       <!-- futsal place click button modals -->
           <div id="futsal_modal" class="modal fade" role="dialog">
             <div class="modal-dialog">
@@ -174,51 +191,13 @@ session_start();
             </div>
           </div>
       <!-- end futsal place click button modals -->
-
-
-
-
     </div>
-
-    <div class="container col-sm-2 hidden" id="right-side">
+    <!-- <div class="container col-sm-2 hidden" id="right-side"> -->
       <!-- source=http://thinkgood.tistory.com/471 -->
       <!-- notice function -->
 
       <!-- </div> -->
 
-
-      <table cellSpacing=0 cellPadding=0 class="notice-table center-block" >
-        <?php
-        set_modify_val();// 예약 수정 상태일 경우 예약 수정을 진행할때 예전 예약 내용을 default값으로 넣어주기위한 값들을 받아온다
-        $view_rows = notice_view(); // 오늘 날짜에 공지를 원했던 경기를 db에서 가져온다.
-        ?>
-        <tbody>
-            <td>
-            <MARQUEE scrollAmount=4 direction=up>
-                <section>
-                <table cellSpacing=0 cellPadding=0 class="notice-inner-table center-block" border=0>
-                <tbody>
-                  <tr>
-                  <td height=30 id="gamenotice" class="center-block">&nbsp;--- Game Notice ---</td></tr>
-                  <tr>
-                  <?php
-                      foreach($view_rows as $row){
-                          $start_a = explode(":",$row["start_time"]);
-                          $start_t = $start_a[0].":".$start_a[1];
-                          $end_a = explode(":", $row["end_time"]);
-                          $end_t = $end_a[0].":".$end_a[1];
-                  ?>
-                        <tr><td height=50>&nbsp;<?= $row["place"] ?>   <?= $row["home"] ?> <span class="vs">vs </span><?= $row["away"]?> <?= $start_t ?>~<?= $end_t ?><td></tr>
-                  <?php
-                  }
-                  ?>
-                  <td height=1>&nbsp;</td></tr>
-                </tbody>
-                </table>
-                </section>
-            </MARQUEE>
-            </td>
-      </tbody></table></section></MARQUEE></td></tbody></table>
   </div>
 
 

@@ -8,10 +8,16 @@ session_start();
     <title>HERS My Page</title>
     <link rel="stylesheet" href="../main2.css">
     <link rel="stylesheet" href="../futsal_reserve_page/reservation_lists.css">
+    <link rel="stylesheet" type="text/css" href="../Front_End/bootstrap-3.3.2-dist/css/bootstrap.css">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script type="text/javascript"src="http://code.jquery.com/jquery-latest.min.js"></script>
     <script type="text/javascript"src="../main2.js"></script>
+    <script type="text/javascript"scr="match.js"></script>
+    <script src="../Front_End/bootstrap-3.3.2-dist/js/bootstrap.js"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
   </head>
   <body>
     <header>
@@ -50,6 +56,7 @@ session_start();
             <li>Signed In as (<?= $_SESSION['user_id']?>)</li>
 
             <li><a href="../../Back_End/login_function/logout.php">Logout</a></li>
+            <li><a href="mypage.php">My Page</a></li>
             <?php
              }
             ?>
@@ -61,123 +68,85 @@ session_start();
           <ul class="menus">
             <li><a href="../futsal_confirmation/reservation_lists.php">Futsal Confirmation</a></li>
             <li><a href="../futsal/futmain2.php">Futsal Field Rental</a></li>
-            <li><a href="match.php">Matching Request</a></li>
           </ul>
         </dd>
       </dl>
 
     </nav>
     <!-- end sidebar menu -->
-
-<form action="../../Back_End/futsal_reserv_confirmation.php" method="post" id="confirm"></form>
-<form action="delete_notice_chatting.php" method="post" id="delete"></form>
     <div id="reserve_wrap">
       <h2>| Matching Message |</h2>
       <div class="container">
         <table class="reserve_lists" bor>
         <?php
-            get_list();            
+            match_request_list();
             if(count($manage_ID)>0){
         ?>
         <tr>
             <th class="base">관리번호</th>
             <th class="base">대여일</th>
-            <th id="num lefttop" class="base">발송자</th>
-            <th id="day" class="base">연락처</th>
+            <th class="base">시간</th>
+            <th id="num lefttop" class="base">신청자</th>
             <th id="time" class="base">메세지</th>
-            <th id="place" class="base">예약</th>
+            <th id="place" class="base">신청</th>
         </tr>
         <?php
             }
             else{
         ?>
-            <p> 메세지가 없습니다. </p>
+            <p> 현재 존재하는 매칭 요구가 없습니다. </p>
         <?php
             }
-            $check_ID = 0;
-            for($i = 0; $i < $size; $i++){
+            for($i = 0; $i < count($manage_ID); $i++){
             ?>
+                <form action="../../Back_End/futsal_reserv_test_2.php" method="get">
                 <tr>
-                <?php
-                    if($check_ID == $manage_ID[$i]){
-                ?>
-                    <th> </th>
-                    <th> </th>
-                <?php
-                    }
-                    else{
-                ?>
                     <th id="num" class="tab2"><?=$manage_ID[$i]?></th>
                     <th id="day" class="tab2"><?=$borrowdate[$i]?></th>
-                <?php      
-                    }
-                ?>
-                <th><?=$send_id[$i]?></th>
-                <?php
-                    if($send_id[$i]=='HERS'){
-                        $phone_num[$i] = 'HERS-Administration';
-                    }
-                ?>
-                <th><?=$phone_num[$i]?></th>
-                <th><?=$chat[$i]?></th>
+                    <th><?=substr($start_time[$i],0,5)?> ~ <?=substr($end_time[$i],0,5)?></th>
+                    <th><?=$user_id[$i]?></th>
+                    <th><?=$chat[$i]?></th>
                 <?php
                   $valarr = array($manage_ID[$i], $borrowdate[$i]);
                   $val = implode(" ",$valarr);
-                  $delete_val = $manage_ID[$i];                  
-                if($send_id[$i]=='HERS'){
-                ?>
-                    <th id="but"><button class="buttab2" id="but2" name="delete_val" value=<?= $delete_val ?> type="submit" form = "delete">확인</button></th>                
-                <?php
-                    }
-                else{
-                ?>
-                    <th id="but"><button class="buttab2" id="but1" name="confirm_val" value="<?= $val ?>" type="submit" form = "confirm">예약 하기</button></th>
+                  $delete_val = $manage_ID[$i];
+                ?>                
+                    <th><button type="submit" class="btn btn-default">정보 보기</button></th>
+                    <input type="hidden" name="where" value="<?= $place[$i] ?>"/>
+                    <input type="hidden" name="date" value="<?= $borrowdate[$i]?>"/>
+                    <input type="hidden" name="population" value="<?= $people[$i]?>"/>
+                    <input type="hidden" name="match" value="true"/>
                   </tr>
-                }
-          <?php
-            }
-          ?>
-        <?php
-            $check_ID = $manage_ID[$i];                    
-        }
-        ?>
+            </form>
+            <?php
+            }?>
         </table>
       </div>
     </div>
   </body>
 </html>
 <?php
-function get_list(){
-  $id = $_SESSION['user_id'];
-  $name = "web_project";
-  try{
-    $query = "select * from matching_manage where receive_id = '$id' and (datediff(borrowdate,date_format(curdate(),'%Y-%m-%d'))>=7 or send_id = 'HERS') order by manage_ID";
-    $db = new PDO("mysql:dbname=$name", "root","root");
-    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $rows = $db->query($query);
-    global $size, $manage_ID, $send_id, $chat, $borrowdate, $phone_num;
-    $size=0;
-    foreach($rows as $row){
-      $size++;
-      $send_id[] = $row['send_id'];
-      $chat[] = $row['chat'];
-      $manage_ID[] = $row["manage_ID"];
-      $borrowdate[] = $row["borrowdate"];
-      try{
-        $s_id = $row['send_id'];
-        $send_user_query = "select * from user where user_id = '$s_id'";
-        $sends = $db->query($send_user_query);
-        foreach($sends as $send){
-          $phone_num[] = $send['phone_num'];
+function match_request_list(){
+    $name = "web_project";
+    global $manage_ID, $borrowdate, $user_id, $chat, $start_time, $end_time, $people, $place;
+    try{
+        $query = "select * from futsal_manage where matching=1 and datediff(borrowdate,date_format(curdate(),'%Y-%m-%d'))>=7 order by borrowdate, start_time";
+        $db = new PDO("mysql:dbname=$name", "root","root");
+        $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $rows = $db->query($query);
+        foreach($rows as $row){
+            $manage_ID[] = $row['manage_ID'];
+            $borrowdate[] = $row['borrowdate'];
+            $user_id[] = $row['user_id'];
+            $chat[] = $row['chat'];
+            $start_time[] = $row['start_time'];
+            $end_time[] = $row['end_time'];
+            $people[] = $row['people'];
+            $place[] = $row['place'];
         }
-      }
-      catch(PDOException $ex){
-        echo "detail :".$ex->getMessage();
-      }
     }
-  }
-  catch(PDOException $ex){
-    echo "detail :".$ex->getMessage();
-  }
+    catch(PDOException $ex){
+        echo "detail :".$ex->getMessage();
+    }
 }
 ?>

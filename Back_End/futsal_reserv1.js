@@ -7,7 +7,7 @@ window.onload = function(){
     }
     document.getElementById("button2").onclick = button;
     document.getElementById("button1").onclick = button;
-    document.getElementById("button1").onclick = setting;
+    document.getElementById("button3").onclick = setting;
     if(isEmpty(document.getElementById("chat_info0"))){
         document.getElementById("chat_info0").onclick = foo0;        
     }
@@ -66,7 +66,6 @@ function foo0(){
 }
 function foo1(){
     document.getElementById("send_time").value = document.getElementById("time_info1").value;
-    alert(document.getElementById("time_info1").value);
 }
 function foo2(){
     document.getElementById("send_time").value = document.getElementById("time_info2").value;

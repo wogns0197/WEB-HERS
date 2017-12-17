@@ -1,6 +1,5 @@
 <?php
 session_start();
-echo print_r($_SESSION);
 ?>
 
 <!DOCTYPE html>
@@ -20,12 +19,7 @@ echo print_r($_SESSION);
       else{
           $user_id = $_SESSION['user_id'];
           ?>
-          <div class="top">
-            <p id="userleft"><?= $user_id ?></p>
-            <p id="logoutright"><a href = 'login_function/logout.php'>Logout</a></p>
-            <hr id="tophr" />
-            <br/>
-          </div>
+  
           <?php
       }
       $name = "web_project";
@@ -52,17 +46,22 @@ echo print_r($_SESSION);
       $db = new PDO("mysql:dbname=$name", "root","root");
       $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
       $flag = true;
-      if($_SESSION['modify']==1){
-        if($confirm == 1){
-          $query1 = "update futsal_manage set borrowdate='$borrowdate',start_time='$start_time',end_time='$end_time',place='$place',purpose='$purpose',notice='$notice',home='$home',away='$away',people=$population,groupname='$groupname', matching = 1 where manage_ID=$m_manage_id and borrowdate='$modifydate'";          
-        }
-        else{
-          $query1 = "update futsal_manage set borrowdate='$borrowdate',start_time='$start_time',end_time='$end_time',place='$place',purpose='$purpose',notice='$notice',home='$home',away='$away',people=$population,groupname='$groupname', matching = 0 where manage_ID=$m_manage_id and borrowdate='$modifydate'";                    
-        }
+      if($_SESSION['modify']==1){//수정 중일때
+        $query1 = "update futsal_manage set borrowdate='$borrowdate',start_time='$start_time',end_time='$end_time',place='$place',purpose='$purpose',notice='$notice',home='$home',away='$away',people=$population,groupname='$groupname', matching = 0 where manage_ID=$m_manage_id and borrowdate='$modifydate'";                    
       }
       else if($confirm == 1){
-        $query1 = "update futsal_manage set matching = 0, purpose='$purpose', notice='$notice', home='$home', away='$away', groupname='$groupname'";
-        $query2 = "delete from matching_manage where receive_id='$id' and borrowdate='$borrowdate'";
+        $check_manage_id_query = "select manage_ID from futsal_manage where borrowdate='$borrowdate' and place='$place' and start_time='$start_time'";
+        try{
+          $check_ids = $db->query($check_manage_id_query);          
+        }
+        catch(PDOException $ex){
+          echo "detail :".$ex->getMessage();
+        }
+        foreach($check_ids as $check_id){
+          $manage_id= $check_id['manage_ID'];
+        }
+        $query1 = "update futsal_manage set matching = 0, purpose='$purpose', notice='$notice', home='$home', away='$away', groupname='$groupname' where manage_ID=$manage_id";
+        $query2 = "delete from matching_manage where manage_ID=$manage_id";
       }
       else{
         $query1 = "insert into futsal_manage(user_id, borrowdate, start_time, end_time, place, purpose, notice,home, away, people, groupname, matching) values('$id','$borrowdate','$start_time','$end_time','$place', '$purpose', '$notice','$home','$away',$population, '$groupname',0)";
@@ -79,7 +78,6 @@ echo print_r($_SESSION);
         }
       }
       catch(PDOException $ex){
-        echo "check1";
         echo "detail : ".$ex->getMessage();
         $flag = false;
       }
@@ -90,7 +88,6 @@ echo print_r($_SESSION);
             $db->query($query2);
           }
           catch(PDOException $ex){
-            echo "check2";
             echo "detail :".$ex->getMessage();
             $flag = false;
           ?>
@@ -104,7 +101,6 @@ echo print_r($_SESSION);
             $db->query($query2);
           }
           catch(PDOException $ex){
-            echo "check3";
             echo "detail :".$ex->getMessage();
             $flag = false;
             ?>
@@ -120,14 +116,10 @@ echo print_r($_SESSION);
         if($count==0){
           if($notice){
             try{
-              // echo "borrowdate : ".$borrowdate;
-              // echo "place : ".$place;
-              // echo "time : ".$start_time;
               $query2 = "insert into purpose_view values((select manage_ID from futsal_manage where place = '$place' and borrowdate = '$borrowdate' and start_time = '$start_time'),'$place','$home','$away','$borrowdate','$start_time','$end_time')";
               $db->query($query2);
             }
             catch(PDOException $ex){
-              echo "check4";
               echo "detail :".$ex->getMessage();
               $flag = false;
             }
@@ -144,7 +136,6 @@ echo print_r($_SESSION);
       }
     }
     catch(PDOException $ex){
-      echo "check5";
       echo "Sorry";
       echo "detail :".$ex->getMessage();
       if($modify){
@@ -165,7 +156,10 @@ echo print_r($_SESSION);
     <?php
     if($flag){?>
       <div class="momtong">
-        예약확인
+        <div class="topp">
+          <p>예약확인</p>
+        </div>
+        
         <hr id="tophr"/>
         <p>시간   :  <span class="strong"> <?= $start_time ?> - <?= $end_time ?></span></p>
         <p>대여날짜   :   <span class="strong"><?=$borrowdate?></span></p>
@@ -175,15 +169,18 @@ echo print_r($_SESSION);
         <?php
         if($notice==1)?>
           <p>공지여부 : <span class="strong">O</span></p>
-        <button><a href="../Front_End/main/main.php">Home</a></button>
+        <a href="../Front_End/main/main.php"><button>Home</button></a>
       </div>
 
     <?php
     }
     else{?>
       <div class="fail">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/CH-Vortrittssignal-Verzweigung_mit_Rechtsvortritt.svg/2000px-CH-Vortrittssignal-Verzweigung_mit_Rechtsvortritt.svg.png" alt="fail" height="300" width="300">
-        FAIL
+        <script>
+          // document.location.href="reserv_FAIL.html"
+        </script>
+      </div>
+        
       </div>
     <?php
     }

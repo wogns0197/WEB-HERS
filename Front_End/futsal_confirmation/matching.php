@@ -14,7 +14,22 @@ session_start();
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <script type="text/javascript"src="http://code.jquery.com/jquery-latest.min.js"></script>
-  <script type="text/javascript"src="../main2.js"></script>
+  <script type="text/javascript">
+    $(document).ready( function(){
+      $("#menuicon").click(function () {
+        $("#menubar").animate({left: 0}, 300 );
+        $("#xicon").animate({left: 0}, 300 );
+        $("#menuicon").fadeOut(300);
+      });
+
+      $("#xicon").click(function () {
+        $("#menubar").animate({left: "-25%"}, 300 );
+        $("#xicon").animate({left: "-25%"}, 300 );
+        $("#menuicon").fadeIn(300);
+      });
+
+    });
+  </script>
   </head>
   <body>
     <header>
@@ -64,96 +79,4 @@ session_start();
     <p>Signed In as (USER)</p>
   </div>
     <!-- db에서 유저 아이디 써서 예약 내역 불러옴 -->
-    <form action="../../Back_End/futsal_reserv_confirmation.php" method="post" id="confirm"></form>
-    <div id="reserve_wrap">
-      <h2>| Reservation Confirmation |</h2>
-      <div class="container">
-        <table class="reserve_lists" bor>
-          <tr>
-            <th class="base">관리번호</th>
-            <th id="num lefttop" class="base">아이디</th>
-            <th id="day" class="base">연락처</th>
-            <th class="base">대여일</th>
-            <th id="time" class="base">메세지</th>
-            <th id="place" class="base">예약</th>
-          </tr>
-          <?php
-            get_list();
-            for($i = 0; $i < $size; $i++){//모든 예약 내역을 가져온다
-            //if절 넣은건 관리번호 홀/짝에 따라 백그라운드컬러 다르게 하려는거
-              if ($i%2==0){?>
-                <tr>
-                <th id="num" class="tab2"><?=$manage_ID[$i]?></th>
-                <th><?=$send_id[$i]?></th>
-                <th><?=$phone_num[$i]?></th>
-                <th id="day" class="tab2"><?=$borrowdate[$i]?></th>
-                <th><?=$chat[$i]?></th>
-                <?php
-                  $valarr = array($manage_ID[$i], $borrowdate[$i]);
-                  $val = implode(" ",$valarr);
-                ?>
-                  <th id="but"><button id="but1" name="confirm_val" value="<?= $val ?>" type="submit" form = "confirm">예약 하기</button></th>
-                  </tr>
-                <?php
-                  }
-              else{?>
-                <tr>
-                <th id="num" class="tab2"><?=$manage_ID[$i]?></th>
-                <th><?=$send_id[$i]?></th>
-                <th><?=$phone_num[$i]?></th>
-                <th id="day" class="tab2"><?=$borrowdate[$i]?></th>
-                <th><?=$chat[$i]?></th>
-                <?php
-            $valarr = array($manage_ID[$i], $borrowdate[$i]);
-            $val = implode(" ",$valarr);
-          ?>
-            <th id="but"><button class="buttab2" id="but1" name="confirm_val" value="<?= $val ?>" type="submit" form = "confirm">예약 하기</button></th>
-            </tr>
-          <?php
-            }
-          ?>
-              <?}
-          ?>
-
-        </table>
-      </div>
-    </div>
-  </body>
-</html>
-<?php
-function get_list(){//id에 해당하는 예약 list를 가져온다
-  $id = $_SESSION['user_id'];
-  $name = "web_project";
-  try{
-    $query = "select * from matching_manage where receive_id = '$id' and datediff(borrowdate,date_format(curdate(),'%Y-%m-%d'))>=14";
-    $db = new PDO("mysql:dbname=$name", "root","root");
-    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $rows = $db->query($query);
-    global $size, $manage_ID, $send_id, $chat, $borrowdate, $phone_num;
-    $size=0;
-    foreach($rows as $row){
-      $size++;
-      $send_id[] = $row['send_id'];
-      $chat[] = $row['chat'];
-      $manage_ID[] = $row["manage_ID"];
-      $borrowdate[] = $row["borrowdate"];
-      try{
-        $s_id = $row['send_id'];
-        $send_user_query = "select * from user where user_id = '$s_id'";
-        $sends = $db->query($send_user_query);
-        foreach($sends as $send){
-          $phone_num[] = $send['phone_num'];
-        }
-      }
-      catch(PDOException $ex){
-        echo "check1";
-        echo "detail :".$ex->getMessage();
-      }
-    }
-  }
-  catch(PDOException $ex){
-    echo "check2";
-    echo "detail :".$ex->getMessage();
-  }
-}
-?>
+    

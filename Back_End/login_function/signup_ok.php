@@ -32,8 +32,8 @@ catch(PDOException $ex){
 
 
 }
-
+  echo "<script>history.go(-3);</script>";
 
  ?>
 
- <meta http-equiv='refresh' content='0;url=../../Front_End/futsal/futmain2.php'>
+ <!-- <meta http-equiv='refresh' content='0;url=../../Front_End/futsal/futmain2.php'> -->

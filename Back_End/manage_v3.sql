@@ -2,7 +2,7 @@ create table user
 (
     name        varchar(10),
     student_ID  integer(10),
-    phone_num   integer(15),
+    phone_num   varchar(15),
     e_mail      varchar(30),
     user_id     varchar(30),
     user_pw     varchar(30),
@@ -51,9 +51,4 @@ create table matching_manage
     constraint foreign key (receive_id) references user(user_id)
         on delete set null
 );
-create table b_test
-(
-    num     integer(10),
-    numb    integer(10),
-    primary key(num, numb)
-);
+insert into user values('HERS',0,0,'0','HERS','HERS','0');-- 관리자 계정

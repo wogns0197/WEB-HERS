@@ -2,33 +2,71 @@
 <html>
 <head>
   <title>Forgot</title>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
   <link href="forgot.css" rel="stylesheet" />
+
   <meta charset="utf-8"/>
+  <script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+  <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/prototype/1.7.3/prototype.js"></script>
   <script type="text/javascript" src="forgot.js"></script>
+
+
+
 </head>
 <body>
-  
+
   <main class="col-8">
-    
-      
+
+
       <div id="title">Find ID<hr/></div>
-      
-      
-      
+
+
+
       <div class="forgotid">
         <input class="col-5" type="text" name="name" placeholder="Name" this.style.color='black'; id="name">
-        <input class="col-5" type="text" name="sid" placeholder="Student id" this.style.color='black';>
-      
+        <input class="col-5" type="text" name="sid" placeholder="Student id" this.style.color='black'; id="s_id">
+
         <footer>
-          <button class="col-5" id="bottom">FIND ID!</button>
+          <button class="col-5" id="bottom" data-toggle="modal" data-target="#getidModal">FIND ID!</button>
         </footer>
       </div>
-      
-    
-    
+
+
+
   </main>
 
-  
+  <!-- Id lists Modal -->
+  <div class="modal fade" id="getidModal" role="dialog">
+    <div class="modal-dialog">
+
+      <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <span type="button" class="close" data-dismiss="modal">&times;</span>
+                <h4 class="modal-title">Find ID</h4>
+            </div>
+            <div class="modal-body">
+                <br>
+                <div id="idarea">
+                    <p>회원님의 아이디 내역:</p>
+
+                    <ul id="ids">
+
+                    </ul>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+  </div>
+
+
 </body>
 </html>
 <!-- <div class="forgotpw">
