@@ -77,6 +77,12 @@ footer{
 	margin-top: 5%;
 	color: #BDBDBD;
 }
+#backimg{
+	width: 3%;
+	float: left;
+	margin-left: 3%;
+	opacity: 0.6;
+}
 
 
 
