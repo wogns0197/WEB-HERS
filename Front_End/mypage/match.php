@@ -114,7 +114,7 @@ session_start();
                     <th><button type="submit" class="btn btn-default">Submit</button></th>
                     <input type="hidden" name="where" value="<?= $place[$i] ?>"/>
                     <input type="hidden" name="date" value="<?= $borrowdate[$i]?>"/>
-                    <input type="hidden" name="match" value=1/>
+                    <input type="hidden" name="match" value="true"/>
                   </tr>
             </form>
             <?php

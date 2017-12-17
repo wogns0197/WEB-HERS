@@ -117,9 +117,17 @@ date_default_timezone_set('Asia/Seoul');
     <form action="futsal_reserv_confirmation.php" method="post">
     <div class="container">
       <div class="panel panel-defaul col-12">
-        
-        <div class="panel-body col-5">
+        <?php
+            if($_GET['match']=="true"){
+        ?>
+        <div hidden class="panel-body col-5">
+        <?php
+            }
+            else{
+            ?>
+        <div class="panel-body col-5">                
             <?php
+            }
                 $today = date("Y-m-d",time());
                 ?>
                 <!-- 캘린더 자바스크립트에서 오늘날짜 가져오기 위한 부분. -->
@@ -187,8 +195,17 @@ date_default_timezone_set('Asia/Seoul');
         ?>
         </tbody>
         </table>
+        <?php
+        if($_GET['match']=="true"){
+        ?>
+            <p hidden class="text-center"><button id = "button2">
+        <?php
+        }
+        else{
+        ?>
             <p class="text-center"><button id = "button2">
-            <?php
+        <?php
+        }
             if($_SESSION['modify']){
             ?>
                 수정
@@ -211,18 +228,23 @@ date_default_timezone_set('Asia/Seoul');
             $borrow_date_time = new DateTime($date);
             $day_difference = date_diff($today_date_time, $borrow_date_time);
             if($day_difference->days >= 14){
+                if($_GET['match']=="true"){
+                ?>
+                    <p hidden class="text-center">                    
+                <?php
+                }
+                else{
+                ?>
+                    <p class="text-center">
+            <?php
+                }
             ?>
-
-
-            <p class="text-center">
             <span data-toggle="modal" id = "button3" class="btn sangdae" data-target="#getmatchModal" >
             상대팀 구하기
             </span></p>
-
-
             <?php
             }
-            ?>
+        ?>
         </div>
       </div>
     </div>
