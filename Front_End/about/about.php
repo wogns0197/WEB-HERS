@@ -15,7 +15,6 @@
   <body>
     <header>
   		<h1><a href="../main/main.php">HERS</a> ABOUT</h1>
-  		<hr/>
   	</header>
 
     <!-- sidebar menu -->

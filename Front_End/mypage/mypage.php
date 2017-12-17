@@ -17,7 +17,6 @@ session_start();
   <body>
     <header>
   		<h1><a href="../main/main.php">HERS</a> MY PAGE</h1>
-  		<hr/>
   	</header>
 
     <!-- sidebar menu -->
