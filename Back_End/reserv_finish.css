@@ -7,6 +7,9 @@ h1{
 	font-size: 19pt;
 	margin-bottom: 0px;
 }
+.topp{
+	color: #BDBDBD;
+}
 p{
 	text-decoration: none;
 	color: rgb(30,118,189);
@@ -28,6 +31,8 @@ p{
 	margin-top: 6%;
 }
 #tophr{
+	border: none;
+	border-bottom: 1px solid #BDBDBD;
 	width: 58%;
 }
 .momtong{	

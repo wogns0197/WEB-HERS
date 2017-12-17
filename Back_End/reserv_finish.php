@@ -151,7 +151,10 @@ session_start();
     <?php
     if($flag){?>
       <div class="momtong">
-        예약확인
+        <div class="topp">
+          <p>예약확인</p>
+        </div>
+        
         <hr id="tophr"/>
         <p>시간   :  <span class="strong"> <?= $start_time ?> - <?= $end_time ?></span></p>
         <p>대여날짜   :   <span class="strong"><?=$borrowdate?></span></p>

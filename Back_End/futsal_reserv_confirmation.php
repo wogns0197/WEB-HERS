@@ -21,11 +21,7 @@ session_start();
         else{
             $user_id = $_SESSION['user_id'];
             ?>
-            <div class="top">
-              <!-- <p id="userleft"><?= $user_id ?></p> -->
-              <p id="logoutright"><a href = 'login_function/logout.php'>Logout</a></p>
-            </div>
-            <!-- <hr id="tophr" /> -->
+            
             <?php
         }
         if(!isset($_POST['confirm_val'])){
