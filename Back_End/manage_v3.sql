@@ -2,7 +2,7 @@ create table user
 (
     name        varchar(10),
     student_ID  integer(10),
-    phone_num   integer(15),
+    phone_num   varchar(15),
     e_mail      varchar(30),
     user_id     varchar(30),
     user_pw     varchar(30),
