@@ -49,7 +49,7 @@ date_default_timezone_set('Asia/Seoul');
                 set_modify_val();
             }
             if(!isset($_SESSION['user_id'])){ //로그인 확인
-              echo "<script>alert('로그인이 필요합니다!');location.href='../Back_End/login_function/login.php';</script>";
+              echo "<script>alert('로그인이 필요합니다!');location.href='../login_function/login.php';</script>";
             }
 
             set_place_date();//장소와 날짜 초기설정
@@ -86,7 +86,7 @@ date_default_timezone_set('Asia/Seoul');
             <?php
             if(!isset($_SESSION['user_id'])){
              ?>
-            <li><a href="../Back_End/login_function/login.php">Login</a></li>
+            <li><a href="../login_function/login.php">Login</a></li>
             <?php
             }
 
@@ -94,7 +94,7 @@ date_default_timezone_set('Asia/Seoul');
               ?>
             <li>Signed In as (<?= $_SESSION['user_id']?>)</li>
 
-            <li><a href="../Back_End/login_function/logout.php">Logout</a></li>
+            <li><a href="../login_function/logout.php">Logout</a></li>
             <li><a href="../Front_End/mypage/mypage.php">My Page</a></li>
             <?php
              }

@@ -6,4 +6,4 @@ $prevPage = $_SERVER['HTTP_REFERER'];
 session_destroy();
 ?>
 
-<meta http-equiv='refresh' content='0;url=../../main/main.php'>
+<meta http-equiv='refresh' content='0;url=../main/main.php'>

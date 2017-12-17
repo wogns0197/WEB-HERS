@@ -38,8 +38,8 @@ session_start();
         <dd>
           <ul class="menus">
             <li><a href="../main/main.php">Home</a></li>
-            <li><a href="../about/about.html">About Us</a></li>
-          </ul>
+            <li><a href="../about/about.php">About Us</a></li>
+            </ul>
         </dd>
         <dt>USER</dt><hr color="black">
         <dd>
@@ -47,7 +47,7 @@ session_start();
             <?php
             if(!isset($_SESSION['user_id'])){
              ?>
-            <li><a href="../../Back_End/login_function/login.php">Login</a></li>
+            <li><a href="../Back_End/login_function/login.php">Login</a></li>
             <?php
             }
 
@@ -55,8 +55,8 @@ session_start();
               ?>
             <li>Signed In as (<?= $_SESSION['user_id']?>)</li>
 
-            <li><a href="../../Back_End/login_function/logout.php">Logout</a></li>
-            <li><a href="mypage.php">My Page</a></li>
+            <li><a href="../Back_End/login_function/logout.php">Logout</a></li>
+            <li><a href="../mypage/mypage.php">My Page</a></li>
             <?php
              }
             ?>

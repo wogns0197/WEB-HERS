@@ -15,7 +15,7 @@ session_start();
   <body>
     <?php
         if(!isset($_SESSION['user_id'])){//로그인 확인
-            echo "<script>alert('로그인이 필요합니다!');location.href='../Back_End/login_function/login.php';</script>";
+            echo "<script>alert('로그인이 필요합니다!');location.href='../login_function/login.php';</script>";
         }
         else{
             $user_id = $_SESSION['user_id'];

@@ -47,7 +47,7 @@ delete_over_date_data();
             <?php
             if(!isset($_SESSION['user_id'])){
              ?>
-            <li><a href="../Back_End/login_function/login.php">Login</a></li>
+            <li><a href="../login_function/login.php">Login</a></li>
             <?php
             }
 
@@ -55,7 +55,7 @@ delete_over_date_data();
               ?>
             <li>Signed In as (<?= $_SESSION['user_id']?>)</li>
 
-            <li><a href="../Back_End/login_function/logout.php">Logout</a></li>
+            <li><a href="../login_function/logout.php">Logout</a></li>
             <li><a href="../mypage/mypage.php">My Page</a></li>
             <?php
              }
