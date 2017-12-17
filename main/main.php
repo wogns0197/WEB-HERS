@@ -47,7 +47,7 @@ delete_over_date_data();
             <?php
             if(!isset($_SESSION['user_id'])){
              ?>
-            <li><a href="../../Back_End/login_function/login.php">Login</a></li>
+            <li><a href="../Back_End/login_function/login.php">Login</a></li>
             <?php
             }
 
@@ -55,7 +55,7 @@ delete_over_date_data();
               ?>
             <li>Signed In as (<?= $_SESSION['user_id']?>)</li>
 
-            <li><a href="../../Back_End/login_function/logout.php">Logout</a></li>
+            <li><a href="../Back_End/login_function/logout.php">Logout</a></li>
             <li><a href="../mypage/mypage.php">My Page</a></li>
             <?php
              }
@@ -66,9 +66,9 @@ delete_over_date_data();
         <dt>RENTAL</dt>
         <dd>
           <ul class="menus">
-            <li><a href="../futsal_confirmation/reservation_lists.php">Futsal Confirmation</a></li>
-            <li><a href="../futsal/futmain2.php">Futsal Field Rental</a></li>
-            <li><a href="../mypage/match.php">Matching Request</a></li>
+            <li><a href="../list/reservation_lists.php">Futsal Confirmation</a></li>
+            <li><a href="../futsal_main/futmain.php">Futsal Field Rental</a></li>
+            <li><a href="../matching/match.php">Matching Request</a></li>
           </ul>
         </dd>
       </dl>
@@ -80,8 +80,8 @@ delete_over_date_data();
 
 
     <div class="buttons">
-      <a href="../futsal_confirmation/reservation_lists.php"><button id="lecture">Confirmation</button></a>
-      <a href = "../futsal/futmain2.php"><button id="futsal" href="#">Rental Go</button></a>
+      <a href="../list/reservation_lists.php"><button id="lecture">Confirmation</button></a>
+      <a href = "../futsal_main/futmain.php"><button id="futsal" href="#">Rental Go</button></a>
     </div>
 
     <article class="main">

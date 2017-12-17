@@ -6,13 +6,13 @@ session_start();
   <head>
     <meta charset="utf-8">
     <title>Hanyang Erica Rental Site</title>
-    <link rel="stylesheet" href="../futsal_reserve_page/reservation_lists.css">
+    <link rel="stylesheet" href="reservation_lists.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../main2.css">
+    <link rel="stylesheet" href="../prime.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <script type="text/javascript"src="http://code.jquery.com/jquery-latest.min.js"></script>
-  <script type="text/javascript"src="../main2.js"></script>
+  <script type="text/javascript"src="../prime.js"></script>
   </head>
   <body>
     <header>
@@ -71,7 +71,7 @@ session_start();
         <dd>
           <ul class="menus">
             <li><a href="../futsal_confirmation/reservation_lists.php">Futsal Confirmation</a></li>
-            <li><a href="../futsal/futmain2.php">Futsal Field Rental</a></li>
+            <li><a href="../futsal_main/futmain.php">Futsal Field Rental</a></li>
             <li><a href="../mypage/match.php">Matching Request</a></li>
           </ul>
         </dd>
@@ -81,8 +81,8 @@ session_start();
     <!-- end sidebar menu -->
 
     <!-- db에서 유저 아이디 써서 예약 내역 불러옴 -->
-    <form action="../../Back_End/reserv_cancel.php" method="post" id="cancel"></form>
-    <form action="../futsal/futmain2.php" method="post" id="modify"></form>
+    <form action="reserv_cancel.php" method="post" id="cancel"></form>
+    <form action="../futsal_main/futmain.php" method="post" id="modify"></form>
     <div id="reserve_wrap">
         <div id="fore">
           <iframe id="ifrm" type="text/html" frameborder="0" height="220px" width="100%"  src="http://forecast.io/embed/#lat=37.3217&lon=126.8309&name=Hanyang Univ.&units=si"> </iframe>

@@ -7,7 +7,7 @@ session_start();
     <meta charset="utf-8">
     <title>HERS My Page</title>
     <link rel="stylesheet" href="../prime.css">
-    <link rel="stylesheet" href="../futsal_reserve_page/reservation_lists.css">
+    <link rel="stylesheet" href="../list/reservation_lists.css">
     <link rel="stylesheet" type="text/css" href="../Front_End/bootstrap-3.3.2-dist/css/bootstrap.css">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
 
@@ -66,8 +66,8 @@ session_start();
         <dt>RENTAL</dt><hr color="black">
         <dd>
           <ul class="menus">
-            <li><a href="../futsal_confirmation/reservation_lists.php">Futsal Confirmation</a></li>
-            <li><a href="../futsal/futmain2.php">Futsal Field Rental</a></li>
+            <li><a href="../list/reservation_lists.php">Futsal Confirmation</a></li>
+            <li><a href="../futsal_main/futmain.php">Futsal Field Rental</a></li>
           </ul>
         </dd>
       </dl>
@@ -99,7 +99,7 @@ session_start();
             }
             for($i = 0; $i < count($manage_ID); $i++){
             ?>
-                <form action="../../Back_End/futsal_reserv_test_2.php" method="get">
+                <form action="../reservation/reservation_page.php" method="get">
                 <tr>
                     <th id="num" class="tab2"><?=$manage_ID[$i]?></th>
                     <th id="day" class="tab2"><?=$borrowdate[$i]?></th>

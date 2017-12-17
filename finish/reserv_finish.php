@@ -14,7 +14,7 @@ session_start();
     $_SESSION['place'] = $_GET['where'];
     try{
       if(!isset($_SESSION['user_id'])){
-           echo "<script>alert('로그인이 필요합니다!');location.href='login_function/login.php';</script>";
+           echo "<script>alert('로그인이 필요합니다!');location.href='../login_function/login.php';</script>";
       }
       else{
           $user_id = $_SESSION['user_id'];
@@ -169,7 +169,7 @@ session_start();
         <?php
         if($notice==1)?>
           <p>공지여부 : <span class="strong">O</span></p>
-        <a href="../Front_End/main/main.php"><button>Home</button></a>
+        <a href="../main/main.php"><button>Home</button></a>
       </div>
 
     <?php

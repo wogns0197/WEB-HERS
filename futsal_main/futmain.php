@@ -8,9 +8,9 @@ session_start();
     <title>Futsal Field Rental</title>
 
 
-    <link rel="stylesheet" type="text/css" href="../bootstrap-3.3.2-dist/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../Frnt_End/bootstrap-3.3.2-dist/css/bootstrap.css">
     <link rel="stylesheet" href="../prime.css">
-    <link rel="stylesheet" href="futmain2.css">
+    <link rel="stylesheet" href="futmain.css">
 
     <script
       src="https://code.jquery.com/jquery-3.2.1.min.js"
@@ -19,8 +19,8 @@ session_start();
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
      <script src="../bootstrap-3.3.2-dist/js/bootstrap.js"></script>
-     <script type="text/javascript" src="futmain2.js"></script>
-     <script type="text/javascript"src="../main2.js"></script>
+     <script type="text/javascript" src="futmain.js"></script>
+     <script type="text/javascript"src="../prime.js"></script>
   </head>
   <body>
     <!-- sidebar menu -->
@@ -48,7 +48,7 @@ session_start();
             <?php
             if(!isset($_SESSION['user_id'])){
              ?>
-            <li><a href="../../Back_End/login_function/login.php">Login</a></li>
+            <li><a href="../Back_End/login_function/login.php">Login</a></li>
             <?php
             }
 
@@ -56,7 +56,7 @@ session_start();
               ?>
             <li>Signed In as (<?= $_SESSION['user_id']?>)</li>
 
-            <li><a href="../../Back_End/login_function/logout.php">Logout</a></li>
+            <li><a href="../Back_End/login_function/logout.php">Logout</a></li>
             <li><a href="../mypage/mypage.php">My Page</a></li>
             <?php
              }
@@ -67,9 +67,9 @@ session_start();
         <dt>RENTAL</dt>
         <dd>
           <ul class="menus">
-            <li><a href="../futsal_confirmation/reservation_lists.php">Futsal Confirmation</a></li>
-            <li><a href="../futsal/futmain2.php">Futsal Field Rental</a></li>
-            <li><a href="../mypage/match.php">Matching Request</a></li>
+            <li><a href="../list/reservation_lists.php">Futsal Confirmation</a></li>
+            <li><a href="futmain.php">Futsal Field Rental</a></li>
+            <li><a href="../matching/match.php">Matching Request</a></li>
           </ul>
         </dd>
       </dl>
@@ -124,8 +124,8 @@ session_start();
                 </div>
                 <div class="modal-body">
                   <div id="futsal_btns" class="text-center">
-                    <a href = "../../Back_End/futsal_reserv_test_2.php?where=풋살장A"><button class="center-block" id="futsal_A">풋살장A</button></a>
-                    <a href = "../../Back_End/futsal_reserv_test_2.php?where=풋살장B"><button class="center-block" id="futsal_B">풋살장B</button></a>
+                    <a href = "../reservation/reservation_page.php?where=풋살장A"><button class="center-block" id="futsal_A">풋살장A</button></a>
+                    <a href = "../reservation/reservation_page.php?where=풋살장B"><button class="center-block" id="futsal_B">풋살장B</button></a>
                  </div>
                 </div>
               </div>
@@ -139,7 +139,7 @@ session_start();
                   <h4 class="modal-title">위치</h4>
                 </div>
                 <div class="modal-body">
-                  <a href = "../../Back_End/futsal_reserv_test_2.php?where=잔디구장"><button class="center-block" id="soccer">잔디구장</button></a>
+                  <a href = "../reservation/reservation_page.php?where=잔디구장"><button class="center-block" id="soccer">잔디구장</button></a>
                 </div>
               </div>
             </div>
@@ -153,7 +153,7 @@ session_start();
                 </div>
 
                 <div class="modal-body">
-                  <a href = "../../Back_End/futsal_reserv_test_2.php?where=대운동장"><button class="center-block" id="stadium">대운동장</button></a>
+                  <a href = "../reservation/reservation_page.php?where=대운동장"><button class="center-block" id="stadium">대운동장</button></a>
                 </div>
               </div>
             </div>

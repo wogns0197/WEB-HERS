@@ -9,7 +9,7 @@ session_start();
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
 
     <link rel="stylesheet" href="../prime.css">
-    <link rel="stylesheet" href="../futsal_reserve_page/reservation_lists.css">
+    <link rel="stylesheet" href="../list/reservation_lists.css">
     <link rel="stylesheet" href="mypage.css">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -50,7 +50,7 @@ session_start();
             <?php
             if(!isset($_SESSION['user_id'])){
              ?>
-            <li><a href="../../Back_End/login_function/login.php">Login</a></li>
+            <li><a href="../login_function/login.php">Login</a></li>
             <?php
             }
 
@@ -58,8 +58,8 @@ session_start();
               ?>
             <li>Signed In as (<?= $_SESSION['user_id']?>)</li>
 
-            <li><a href="../../Back_End/login_function/logout.php">Logout</a></li>
-            <li><a href="../mypage/mypage.php">My Page</a></li>
+            <li><a href="../login_function/logout.php">Logout</a></li>
+            <li><a href="mypage.php">My Page</a></li>
             <?php
              }
             ?>
@@ -70,8 +70,8 @@ session_start();
         <dd>
           <ul class="menus">
             <li><a href="../futsal_confirmation/reservation_lists.php">Futsal Confirmation</a></li>
-            <li><a href="../futsal/futmain2.php">Futsal Field Rental</a></li>
-            <li><a href="../mypage/match.php">Matching Request</a></li>
+            <li><a href="../futsal_main/futmain.php">Futsal Field Rental</a></li>
+            <li><a href="match.php">Matching Request</a></li>
           </ul>
         </dd>
       </dl>
@@ -79,7 +79,7 @@ session_start();
     </nav>
     <!-- end sidebar menu -->
 
-<form action="../../Back_End/futsal_reserv_confirmation.php" method="post" id="confirm"></form>
+<form action="../futsal_confirmation/futsal_reserv_confirmation.php" method="post" id="confirm"></form>
 <form action="delete_notice_chatting.php" method="post" id="delete"></form>
     <div id="reserve_wrap">
       <h2>| Matching Message |</h2>

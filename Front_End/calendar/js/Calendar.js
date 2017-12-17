@@ -382,7 +382,7 @@
     var new_selected_date = selected_date.setDate(selected_date.getDate() + 1);
     var n10 = selected_date.toISOString();
     var result10 = n10.slice(0,10);
-    location.href = "../Back_End/futsal_reserv_test_2.php?where="+place+"&date="+result10;
+    location.href = "../../../reservation/reservation_page.php?where="+place+"&date="+result10;
     return parsed_d;
 
 

@@ -1,7 +1,6 @@
 var checked = 0;
 
 window.onload = function(){
-  // alert("hi");
   var message = document.getElementsByClassName("messages");
   for(var i = 0; i < message.length; i++){
 
