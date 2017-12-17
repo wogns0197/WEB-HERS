@@ -234,7 +234,7 @@ date_default_timezone_set('Asia/Seoul');
             $borrow_date_time = new DateTime($date);
             $day_difference = date_diff($today_date_time, $borrow_date_time);
             if($day_difference->days >= 14){
-                if($_GET['match']=="true"){
+                if($_GET['match']=="true" || $modify==1){
                 ?>
                     <p hidden class="text-center">                    
                 <?php
