@@ -89,7 +89,7 @@ session_start();
         $view_rows = notice_view(); // 오늘 날짜에 공지를 원했던 경기를 db에서 가져온다.
         ?>
 
-        <MARQUEE scrollAmount=1 height=60 direction=up>
+        <MARQUEE scrollAmount=1 height=70 direction=up>
           <section>
             <p>&nbsp;<  Today's Matches  ></p>
 
