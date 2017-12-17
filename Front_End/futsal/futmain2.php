@@ -153,7 +153,7 @@ session_start();
                 </div>
 
                 <div class="modal-body">
-                  <a href = "../../Back_end/futsal_reserv_test_2.php?where=잔디구장"><button id="soccer">잔디구장</button></a>
+                  <a href = "../../Back_end/futsal_reserv_test_2.php?where=잔디구장"><button class="center-block" id="soccer">잔디구장</button></a>
                 </div>
 
               </div>
@@ -173,7 +173,7 @@ session_start();
                 </div>
 
                 <div class="modal-body">
-                  <a href = "../../Back_end/futsal_reserv_test_2.php?where=대운동장"><button id="stadium">대운동장</button></a>
+                  <a href = "../../Back_end/futsal_reserv_test_2.php?where=대운동장"><button class="center-block" id="stadium">대운동장</button></a>
                 </div>
 
               </div>
