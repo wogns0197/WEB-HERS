@@ -1,13 +1,16 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
     <title>About HERS</title>
     <link rel="stylesheet" href="about.css">
-    <link rel="stylesheet" href="../main2.css">
+    <link rel="stylesheet" href="../prime.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script type="text/javascript"src="http://code.jquery.com/jquery-latest.min.js"></script>
-    <script type="text/javascript"src="../main2.js"></script>
+    <script type="text/javascript"src="../prime.js"></script>
     <script type="text/javascript"src="jquery-animate-css-rotate-scale.js"></script>
     <script type="text/javascript"src="about.js"></script>
 
@@ -42,7 +45,7 @@
             <?php
             if(!isset($_SESSION['user_id'])){
              ?>
-            <li><a href="../../Back_End/login_function/login.php">Login</a></li>
+            <li><a href="../login_function/login.php">Login</a></li>
             <?php
             }
 
@@ -50,7 +53,7 @@
               ?>
             <li>Signed In as (<?= $_SESSION['user_id']?>)</li>
 
-            <li><a href="../../Back_End/login_function/logout.php">Logout</a></li>
+            <li><a href="../login_function/logout.php">Logout</a></li>
             <li><a href="../mypage/mypage.php">My Page</a></li>
             <?php
              }

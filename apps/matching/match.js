@@ -1,10 +1,8 @@
-var checked = 0;
 
 window.onload = function(){
   var message = document.getElementsByClassName("messages");
   for(var i = 0; i < message.length; i++){
 
-    checked = i;
     message[i].onclick = showMg;
 
   }

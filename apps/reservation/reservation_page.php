@@ -56,7 +56,7 @@ date_default_timezone_set('Asia/Seoul');
             ?>
 
 
-            <h1 class="text-center"><a href="../Front_End/main/main.php">HERS</a></h1>
+            <h1 class="text-center"><a href="../main/main.php">HERS</a></h1>
 
 
     </header>
@@ -126,7 +126,7 @@ date_default_timezone_set('Asia/Seoul');
             }
             else{
             ?>
-        <div class="panel-body col-5">                
+        <div class="panel-body col-5">
             <?php
             }
                 $today = date("Y-m-d",time());
@@ -236,7 +236,7 @@ date_default_timezone_set('Asia/Seoul');
             if($day_difference->days >= 14){
                 if($_GET['match']=="true" || $modify==1){
                 ?>
-                    <p hidden class="text-center">                    
+                    <p hidden class="text-center">
                 <?php
                 }
                 else{
@@ -257,7 +257,7 @@ date_default_timezone_set('Asia/Seoul');
     </form>
 
     <!-- Info Show Modal -->
-    <form action="matching_info.php" method="post">
+    <form action="../futsal_main/matching_info.php" method="post">
         <div class="modal fade" id="matchingModal" role="dialog">
             <div class="modal-dialog">
 

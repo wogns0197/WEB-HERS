@@ -16,8 +16,8 @@ session_start();
     <script type="text/javascript"src="http://code.jquery.com/jquery-latest.min.js"></script>
     <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-    <script type="text/javascript"src="../prime.js"></script>
-    <script type="text/javascript"src="mypage.js"></script>
+    <script type="text/javascript" src="../prime.js"></script>
+    <script type="text/javascript" src="mypage.js"></script>
 
   </head>
   <body>
@@ -69,7 +69,7 @@ session_start();
         <dt>RENTAL</dt>
         <dd>
           <ul class="menus">
-            <li><a href="../futsal_confirmation/reservation_lists.php">Futsal Confirmation</a></li>
+            <li><a href="../list/reservation_lists.php">Futsal Confirmation</a></li>
             <li><a href="../futsal_main/futmain.php">Futsal Field Rental</a></li>
             <li><a href="match.php">Matching Request</a></li>
           </ul>
