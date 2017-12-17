@@ -145,6 +145,7 @@ session_start();
             ?>
 
           </table>
+<<<<<<< HEAD
           </tbody></table>
         </div>
         <h2>| Your Matching Request |</h2>
@@ -234,6 +235,10 @@ session_start();
               </MARQUEE>
               </td>
         </tbody></table>
+=======
+          
+
+>>>>>>> aef1dce4c74046bb7572d605ce7e45b81ccc2c18
         </div>
     </div>
   </body>

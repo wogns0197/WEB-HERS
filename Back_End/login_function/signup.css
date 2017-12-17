@@ -65,6 +65,12 @@ button{
 	transform: scale(1);
 
 }
+#backimg{
+	width: 3%;
+	float: left;
+	margin-left: 3%;
+	opacity: 0.6;
+}
 /*회원가입 각 빈칸들 설정*/
 /*#name1{
 	width: 100px;

@@ -18,9 +18,8 @@ delete_over_date_data();
   <body>
     <div class="backgroundTransition"></div>
 
-
-     <header id="home">
-      <h1><a href="main.html">HERS</a></h1>
+    <header id="home">
+      <h1><a href="main.php">HERS</a></h1>
     </header>
 
     <!-- sidebar menu -->
@@ -34,15 +33,15 @@ delete_over_date_data();
       <dl>
         <dt id="title">HERS</dt>
 
-        <dt>MAIN</dt><hr color="black">
+        <dt>MAIN</dt>
         <dd>
           <ul class="menus">
             <li><a href="main.php">Home</a></li>
-            <li><a href="../about/about.html">About Us</a></li>
+            <li><a href="../about/about.php">About Us</a></li>
           </ul>
         </dd>
 
-        <dt>USER</dt><hr color="black">
+        <dt>USER</dt>
         <dd>
           <ul class="menus">
             <?php
@@ -64,7 +63,7 @@ delete_over_date_data();
           </ul>
         </dd>
 
-        <dt>RENTAL</dt><hr color="black">
+        <dt>RENTAL</dt>
         <dd>
           <ul class="menus">
             <li><a href="../futsal_confirmation/reservation_lists.php">Futsal Confirmation</a></li>
@@ -120,7 +119,7 @@ delete_over_date_data();
 <?php
   function delete_over_date_data(){
     $name = "web_project";
-    $db = new PDO("mysql:dbname=$name", "root", "root");    
+    $db = new PDO("mysql:dbname=$name", "root", "root");
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $query_count = "select * from futsal_manage where matching=1 and datediff(borrowdate,date_format(curdate(),'%Y-%m-%d'))<7";
     try{
