@@ -10,34 +10,23 @@ session_start();
 
     <link rel="stylesheet" type="text/css" href="../bootstrap-3.3.2-dist/css/bootstrap.css">
     <link rel="stylesheet" href="../main2.css">
-
     <link rel="stylesheet" href="futmain2.css">
 
-
-    <!-- <link rel="stylesheet" href="notice.css"> -->
     <script
- src="https://code.jquery.com/jquery-3.2.1.min.js"
- integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
- crossorigin="anonymous"></script>
+      src="https://code.jquery.com/jquery-3.2.1.min.js"
+      integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+      crossorigin="anonymous"></script>
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
      <script src="../bootstrap-3.3.2-dist/js/bootstrap.js"></script>
      <script type="text/javascript" src="futmain2.js"></script>
-
-
-
-     <!-- <script type="text/javascript"src="http://code.jquery.com/jquery-latest.min.js"></script> -->
      <script type="text/javascript"src="../main2.js"></script>
   </head>
 
   <body>
-
-    
     <!-- <header id="home">
       <h1><a href="../main/main.php">HERS</a></h1>
     </header> -->
-    
-
 
     <!-- sidebar menu -->
     <a id="menuicon"><svg class="menusvg" xmlns="http://www.w3.org/2000/svg" data-name="Layer 1" viewBox="0 0 100 125" x="0px" y="0px"><title>54 all</title><path d="M74.46,49H25.54a1,1,0,0,0,0,2H74.46a1,1,0,0,0,0-2Z"/><path d="M74.46,28.73H25.54a1,1,0,0,0,0,2H74.46a1,1,0,0,0,0-2Z"/><path d="M74.46,69.27H25.54a1,1,0,1,0,0,2H74.46a1,1,0,1,0,0-2Z"/>
@@ -50,16 +39,15 @@ session_start();
       <dl>
         <dt id="title">HERS</dt>
 
-        <dt>MAIN</dt><hr color="black">
+        <dt>MAIN</dt>
         <dd>
           <ul class="menus">
             <li><a href="../main/main.php">Home</a></li>
-            <li><a href="../about/about.html">About Us</a></li>
+            <li><a href="../about/about.php">About Us</a></li>
           </ul>
-
         </dd>
 
-        <dt>USER</dt><hr color="black">
+        <dt>USER</dt>
         <dd>
           <ul class="menus">
             <?php
@@ -81,7 +69,7 @@ session_start();
           </ul>
         </dd>
 
-        <dt>RENTAL</dt><hr color="black">
+        <dt>RENTAL</dt>
         <dd>
           <ul class="menus">
             <li><a href="../futsal_confirmation/reservation_lists.php">Futsal Confirmation</a></li>
@@ -93,16 +81,18 @@ session_start();
 
     </nav>
     <!-- end sidebar menu -->
+
+
     <table cellSpacing=0 cellPadding=0 class="notice-table center-block" >
         <?php
         set_modify_val();// 예약 수정 상태일 경우 예약 수정을 진행할때 예전 예약 내용을 default값으로 넣어주기위한 값들을 받아온다
         $view_rows = notice_view(); // 오늘 날짜에 공지를 원했던 경기를 db에서 가져온다.
         ?>
 
-        <MARQUEE scrollAmount=1 height=60 direction=up>                
+        <MARQUEE scrollAmount=1 height=60 direction=up>
           <section>
             <p>&nbsp;--- Game Notice ---</p>
-            
+
             <?php
                 foreach($view_rows as $row){
                     $start_a = explode(":",$row["start_time"]);
@@ -118,7 +108,7 @@ session_start();
             <?php
             }
             ?>
-            </section>          
+            </section>
           </MARQUEE>
     <div class="container col-sm-2"></div>
     <div class="container col-sm-8 center-block"  id="main-section">

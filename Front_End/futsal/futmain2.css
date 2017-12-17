@@ -1,18 +1,9 @@
-
-body,html{
-  width: 100%;  
-  margin: 0;
-  padding: 0;
-}
 body{
   background-image: url("../main/mainimg/theball2.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  
 }
-
-
 
 #ericamap {
   border-radius: 45%;
