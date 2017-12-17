@@ -8,6 +8,7 @@ session_start();
     <title>HERS My Page</title>
     <link rel="stylesheet" href="../main2.css">
     <link rel="stylesheet" href="../futsal_reserve_page/reservation_lists.css">
+    <link rel="stylesheet" href="mypage.css">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script type="text/javascript"src="http://code.jquery.com/jquery-latest.min.js"></script>
