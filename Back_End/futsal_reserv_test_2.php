@@ -117,16 +117,20 @@ date_default_timezone_set('Asia/Seoul');
 
     <form action="futsal_reserv_confirmation.php" method="post">
     <div class="container">
+
       <div class="panel panel-defaul col-12">
         <?php
             if($_GET['match']=="true"){
         ?>
+
         <div hidden class="panel-body col-5">
+
         <?php
             }
             else{
             ?>
-        <div class="panel-body col-5">                
+        <div class="panel-body col-11">                
+            <a href="../Front_End/futsal/futmain2.php"><img src="back.svg" id="backimg"></a>
             <?php
             }
                 $today = date("Y-m-d",time());
@@ -144,6 +148,7 @@ date_default_timezone_set('Asia/Seoul');
 
                 <br>
         </div>
+
         <!-- 캘린더 선택후 캘린더에서 선택한 날짜로 선택날짜 이동할 때 php에서 장소 파라미터 주기위해 만든 input 태그임 브라우저에서는 안보이게 css처리함 -->
         <input type="text" id="checking_place" class="hidden" name="place" value="<?= $place ?>">
 

@@ -12,6 +12,13 @@ h1{
 	font-size: 20pt;
 	margin-bottom: 35px;
 }
+#backimg{
+
+	width: 3%;
+	float: left;
+	margin-left: 1%;
+	opacity: 0.6;
+}
 
 #menuicon,#xicon,#menuabr {
 	z-index: 100;
