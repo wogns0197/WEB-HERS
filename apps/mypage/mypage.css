@@ -17,3 +17,28 @@ table{
 th{
 	text-align: center;
 }
+
+.num{
+	width:7%;
+}
+.container{
+	margin-right: 12%;
+}
+#but1{
+	background-color: #F2F2F2;
+	width: 100%;
+	height: 100%;
+}
+#but1:hover{
+	background-color: #E6E6E6;
+}
+input{
+	border:none;
+	background-color: #F2F2F2;
+	width: 99%;
+	height: 100%;
+	font-size: 10pt;
+}
+input:hover{
+	background-color: #E6E6E6;	
+}
