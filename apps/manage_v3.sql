@@ -2,7 +2,7 @@ create table user
 (
     name        varchar(10),
     student_ID  integer(10),
-    phone_num   integer(15),
+    phone_num   varchar(15),
     e_mail      varchar(30),
     user_id     varchar(30),
     user_pw     varchar(30),
@@ -12,7 +12,7 @@ create table user
 create table futsal_manage
 (
     manage_ID     integer(10) not null auto_increment,
-    user_id       varchar(10),
+    user_id       varchar(30),
     borrowdate    date,
     start_time    time,
     end_time      time,
@@ -42,9 +42,9 @@ create table purpose_view
 );
 create table matching_manage
 (
-    receive_id  varchar(10),
+    receive_id  varchar(30),
     chat        varchar(200),
-    send_id     varchar(10),
+    send_id     varchar(30),
     manage_ID   integer(10),
     borrowdate  date,
     primary key(send_id, manage_ID),
