@@ -33,14 +33,14 @@ if(isset($_SESSION['user_id'])){
 <body>
 	<main class="col-7">
 		<a href="../../Front_End/main/main.php"><img src="back.svg" id="backimg"></a>
-		<div id="title">LogIn <hr/></div>
+		<div id="title">Login <hr/></div>
 		<form method='post' action='login_ok.php'>
 			<input class="col-5" type="text" name="user_id"  placeholder="ID">
 			<br/>
 			<input class="col-5" type="password" name="user_pw" placeholder="PW">
 			<br/>
 			<div class="log">
-				<button>LOGIN</button>
+				<button>Login</button>
 			</div>
 			<footer>
 				<a href="signup.html" id="up">sign up</a>
