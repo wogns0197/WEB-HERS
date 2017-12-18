@@ -7,7 +7,7 @@ $(document).ready(function() {
      var info = $(".siteinfo").offset().top;
      $("body").animate({"scrollTop": info},500);
      $("header").fadeOut(500);
-     $("#clock").animate({rotate: '360deg'},600);
+     $("#clock").animate({rotate: '360deg'},500);
      // https://github.com/zachstronaut/jquery-animate-css-rotate-scale rotate animation reference
    });
 
