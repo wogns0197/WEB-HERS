@@ -49,7 +49,6 @@ h2{
   top: 3%;
   width: 100%;
   margin-bottom: 5%;
-  visibility: hidden;
 }
 .siteinfo p{
   font-family: myparagraph;
@@ -77,9 +76,8 @@ h2{
   width: 450px;
   margin: auto;
 }
-.developer{
+.developer, .contact{
   clear: both;
-  visibility: hidden;
 }
 .developer img{
   height: 200px;
@@ -94,9 +92,6 @@ h2{
   font-size: 13pt;
   line-height: 1.3em;
   margin-right: 2%;
-}
-.contact{
-  clear: both;
 }
 .contact p{
   text-align: center;
