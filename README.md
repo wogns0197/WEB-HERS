@@ -36,6 +36,14 @@ http://localhost:8888/Web-Application-HERS/Front_End/main/main.php
 <br>
 <br>
 
+* About Page
+<div>
+<img src = "/readmeimgs/about1.png" alt = "about" width="45%" height = "auto" />
+<img src = "/readmeimgs/about2.png" alt = "about" width="45%" height = "auto" />
+</div>
+<br>
+<br>
+
 * Reservation / Matching
 <div>
 <img src = "/readmeimgs/reserve2.png" alt = "reservation" width="45%" height = "auto" />
