@@ -5,7 +5,7 @@ session_start();
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Futsal Field Rental</title>
+    <title>HERS Futsal Field Rental</title>
 
 
     <link rel="stylesheet" type="text/css" href="../Front_End/bootstrap-3.3.2-dist/css/bootstrap.css">
