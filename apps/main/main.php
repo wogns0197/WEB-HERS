@@ -14,6 +14,7 @@ delete_over_date_data();
 
     <script type="text/javascript"src="http://code.jquery.com/jquery-latest.min.js"></script>
     <script type="text/javascript"src="main.js"></script>
+    <link rel="shortcut icon" href="favicon.jpg"/>
   </head>
   <body>
     <div class="backgroundTransition"></div>
