@@ -27,7 +27,7 @@ if(isset($_SESSION['user_id'])){
 <head>
 	<link href="login.css" rel="stylesheet" />
 	<meta charset="utf-8"/>
-	<title>LOGIN</title>
+	<title>Sign In</title>
 </head>
 
 <body>
