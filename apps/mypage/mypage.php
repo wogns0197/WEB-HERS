@@ -92,10 +92,10 @@ session_start();
         <tr>
             <th class="base">관리번호</th>
             <th class="base">대여일</th>
-            <th id="num lefttop" class="base">발송자</th>
-            <th id="day" class="base">연락처</th>
-            <th id="time" class="base">메세지</th>
-            <th id="place" class="base">예약</th>
+            <th class="num base">발송자</th>
+            <th class="day base">연락처</th>
+            <th class="time base">메세지</th>
+            <th class="place base">예약</th>
         </tr>
         <?php
             }
@@ -122,14 +122,14 @@ session_start();
                       if($i != 0){
                 ?>
                   <tr class="bord">
-                    <th id="num" class="tab2"><?=$manage_ID[$i]?></th>
-                    <th id="day" class="tab2"><?=$borrowdate[$i]?></th>
+                    <th class="num tab2"><?=$manage_ID[$i]?></th>
+                    <th class="day tab2"><?=$borrowdate[$i]?></th>
                 <?php      
                     }
                     else{ ?>
                         <tr>
-                    <th id="num" class="tab2"><?=$manage_ID[$i]?></th>
-                    <th id="day" class="tab2"><?=$borrowdate[$i]?></th>
+                    <th class="num tab2"><?=$manage_ID[$i]?></th>
+                    <th class="day tab2"><?=$borrowdate[$i]?></th>
                   <?php  }   
                   }
                 ?>
@@ -148,12 +148,12 @@ session_start();
                   $delete_val = $manage_ID[$i];
                 if($send_id[$i]=='HERS'){
                 ?>
-                    <th id="but"><button class="buttab2" id="but2" name="delete_val" value=<?= $delete_val ?> type="submit" form = "delete">확인</button></th>
+                    <th class="but"><button class="buttab2" id="but2" name="delete_val" value=<?= $delete_val ?> type="submit" form = "delete">확인</button></th>
                 <?php
                     }
                 else{
                 ?>
-                    <th id="but"><button class="buttab2" id="but1" name="confirm_val" value="<?= $val ?>" type="submit" form = "confirm">예약 하기</button></th>
+                    <th class="but"><button class="buttab2" id="but1" name="confirm_val" value="<?= $val ?>" type="submit" form = "confirm">예약 하기</button></th>
                   </tr>
 
           <?php

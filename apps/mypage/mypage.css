@@ -1,3 +1,6 @@
+html,body{
+	text-align: center;
+}
 p{	
 	margin-top: 10%;
 	text-align: center;
@@ -9,4 +12,7 @@ p{
 }
 table{
 	width: 100%;
+}
+th{
+	text-align: center;
 }
