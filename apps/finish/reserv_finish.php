@@ -19,7 +19,7 @@ session_start();
       else{
           $user_id = $_SESSION['user_id'];
           ?>
-  
+
           <?php
       }
       $name = "web_project";
@@ -47,12 +47,12 @@ session_start();
       $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
       $flag = true;
       if($_SESSION['modify']==1){//수정 중일때
-        $query1 = "update futsal_manage set borrowdate='$borrowdate',start_time='$start_time',end_time='$end_time',place='$place',purpose='$purpose',notice='$notice',home='$home',away='$away',people=$population,groupname='$groupname', matching = 0 where manage_ID=$m_manage_id and borrowdate='$modifydate'";                    
+        $query1 = "update futsal_manage set borrowdate='$borrowdate',start_time='$start_time',end_time='$end_time',place='$place',purpose='$purpose',notice='$notice',home='$home',away='$away',people=$population,groupname='$groupname', matching = 0 where manage_ID=$m_manage_id and borrowdate='$modifydate'";
       }
       else if($confirm == 1){
         $check_manage_id_query = "select manage_ID from futsal_manage where borrowdate='$borrowdate' and place='$place' and start_time='$start_time'";
         try{
-          $check_ids = $db->query($check_manage_id_query);          
+          $check_ids = $db->query($check_manage_id_query);
         }
         catch(PDOException $ex){
           echo "detail :".$ex->getMessage();
@@ -159,7 +159,7 @@ session_start();
         <div class="topp">
           <p>예약확인</p>
         </div>
-        
+
         <hr id="tophr"/>
         <p>시간   :  <span class="strong"> <?= $start_time ?> - <?= $end_time ?></span></p>
         <p>대여날짜   :   <span class="strong"><?=$borrowdate?></span></p>
@@ -167,12 +167,18 @@ session_start();
         <p>장소 : <span class="strong"><?=$place?></span></p>
         <p>목적 : <span class="strong"><?=$purpose?></span></p>
         <?php
-        if($notice==1)?>
+        if($notice==1){?>
           <p>공지여부 : <span class="strong">O</span></p>
         <a href="../main/main.php"><button>Home</button></a>
       </div>
-
     <?php
+        }
+        else{?>
+          <p>공지여부 : <span class="strong">X</span></p>
+        <a href="../main/main.php"><button>Home</button></a>
+      </div>
+    <?php
+        }
     }
     else{?>
       <div class="fail">
@@ -180,7 +186,7 @@ session_start();
           document.location.href="reserv_FAIL.html"
         </script>
       </div>
-        
+
       </div>
     <?php
     }
