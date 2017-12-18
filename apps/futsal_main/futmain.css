@@ -140,7 +140,6 @@ body{
 
 button{
   width: 50%;
-
   margin-left:25%;
   /*margin-left: auto;*/
   /*margin-right: auto;*/
@@ -160,10 +159,12 @@ button{
   transition:400ms ease all;
   outline:none;
   border-radius: 3px;
+  text-decoration: none;
 }
 button:hover {
   background:#fff;
   color:rgb(30,118,189);
+  text-decoration: none;
 }
 button:before,button:after{
   content:'';
@@ -173,7 +174,7 @@ button:before,button:after{
   height:2px;
   width:0;
   background: rgb(30,118,160);
-
+  text-decoration: none;
   transition:100ms ease all;
 }
 button:after{
@@ -181,10 +182,12 @@ button:after{
   top:inherit;
   left:0;
   bottom:0;
+  text-decoration: none;
 }
 button:hover:before,button:hover:after {
   width:100%;
   transition:600ms ease all;
+  text-decoration: none;
 }
 .hidden {
   display: none;
@@ -198,10 +201,6 @@ button:hover:before,button:hover:after {
 
 }
 marquee{
-<<<<<<< HEAD
-=======
-
->>>>>>> c6a00c2557d6f3656789a36668651f9bfaa31b79
   background:rgba(250,250,250,0.5);
   /*background-color: white;*/
 }
