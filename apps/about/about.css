@@ -98,3 +98,17 @@ h2{
 .contact{
   clear: both;
 }
+.contact p{
+  text-align: center;
+  line-height: 1.3em;
+  font-family: myparagraph;
+}
+#span1{
+  color: #2f54a3;
+}
+#span1 +span{
+  color: #483d8b;
+}
+#span1 +span +span{
+  color: #2F9D27;
+}

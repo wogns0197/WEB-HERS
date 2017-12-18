@@ -10,6 +10,7 @@ $(document).ready(function() {
      $("header").fadeOut(500);
 
      setTimeout(function(){
+       $(".developer h2").css({visibility:"visible", opacity: 0.0}).animate({opacity: 1.0},400);
        $("#kwon").css({visibility:"visible", opacity: 0.0}).animate({opacity: 1.0},500);
        $("#seo").css({visibility:"visible", opacity: 0.0}).animate({opacity: 1.0},600);
        $("#choi").css({visibility:"visible", opacity: 0.0}).animate({opacity: 1.0},700);

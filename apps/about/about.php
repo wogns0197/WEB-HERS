@@ -153,6 +153,8 @@ session_start();
 
       <div class="contact">
         <h2>CONTACT</h2>
+        <p>Hanyang University Erica Campus Web Application Project - HERS</p>
+        <p><span id="span1">Facebook</span> &#32;&#183;&#32; <span>GitHub</span> &#32;&#183;&#32; <span>Email</span></p>
 
       </div>
     </div>
