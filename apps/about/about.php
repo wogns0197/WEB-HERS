@@ -64,9 +64,9 @@ session_start();
         <dt>RENTAL</dt>
         <dd>
           <ul class="menus">
-            <li><a href="../futsal_confirmation/reservation_lists.php">Futsal Confirmation</a></li>
-            <li><a href="../futsal/futmain2.php">Futsal Field Rental</a></li>
-            <li><a href="../mypage/match.php">Matching Request</a></li>
+            <li><a href="../list/reservation_lists.php">Futsal Confirmation</a></li>
+            <li><a href="../futsal_main/futmain.php">Futsal Field Rental</a></li>
+            <li><a href="../matching/match.php">Matching Request</a></li>
           </ul>
         </dd>
       </dl>
@@ -83,7 +83,7 @@ session_start();
 
     <div class="entire">
       <div class="siteinfo">
-        <h2 id="firsttitle">SITE INFORMATION</h2>
+        <h2>SITE INFORMATION</h2>
 
         <p>It is a site that manages the futsal field and playground rental.<br />
           풋살장 및 운동장 대여를 관리하는 사이트입니다.</p>
@@ -93,7 +93,7 @@ session_start();
           이 사이트를 통해 풋살장 대여는 시간, 장소에 구애받지 않고 24시간 인터넷 상으로 가능해집니다.</p>
 
         <div class="signimages">
-          <img id="first" src="image/cursor.png" alt="cursor">
+          <img src="image/cursor.png" alt="cursor">
           <img src="image/place.png" alt="place">
           <img id="final" src="image/schedule.png" alt="schedule">
         </div>
@@ -101,11 +101,11 @@ session_start();
           Enter your desired schedule and user information then the rental will be completed.<br />
           아주 간단한 절차를 통해 회원가입 및 로그인한 뒤, 원하는 장소를 선택하고, <br />원하는 일정과 간단한 사용자 정보를 입력하면 대여가 완료됩니다.</p>
 
-        <img id="match" src="image/alone.png" alt="match">
+        <img src="image/alone.png" alt="match">
         <p>If you did not get an opponent to play in the game, you can get the opponent and play the soccer game in a much easier way.<br />
           경기를 하는 데 있어 상대팀을 구하지 못했다면, 상대팀 구하기 기능을 통해 상대팀을 구하고 훨씬 수월한 방법으로 축구 경기를 즐겨보세요.</p>
 
-        <img id="soccer" src="image/soccerplay.png" alt="soccerplay">
+        <img src="image/soccerplay.png" alt="soccerplay">
         <p>If you want, you can show your game through announcements. If you want to see the game, please check the notice.<br />
           원할 경우 자신의 경기를 공지를 통해 보여줄 수도 있습니다. 경기를 관람하고 싶다면, 틈틈히 공지를 확인해보세요.</p>
 
@@ -116,7 +116,7 @@ session_start();
       <div class="developer">
         <h2>DEVELOPERS</h2>
 
-        <div id="kwon" class="person">
+        <div class="person">
           <img src="image/kwon.jpg" alt="kwon">
           <h3>권재훈 Kwon Jaehoon</h3>
           <p>"front"</p>
@@ -124,7 +124,7 @@ session_start();
           <a href="https://github.com/wogns0197">Github Go</a>
         </div>
 
-        <div id="seo" class="person">
+        <div class="person">
           <img src="image/seo.jpg" alt="seo">
           <h3>서그림 Seo Geurim</h3>
           <p>"front"</p>
@@ -132,7 +132,7 @@ session_start();
           <a href="https://github.com/Seogeurim">Github Go</a>
         </div>
 
-        <div id="choi" class="person">
+        <div class="person">
           <img src="image/choi.jpg" alt="choi">
           <h3>최재영 Choi Jaeyoung</h3>
           <p>"front/back"</p>
@@ -140,7 +140,7 @@ session_start();
           <a href="https://github.com/chlwodud77">Github Go</a>
         </div>
 
-        <div id="park" class="person">
+        <div class="person">
           <img src="image/park.png" alt="choi">
           <h3>박재훈 Park Jaehoon</h3>
           <p>"back"</p>

@@ -145,6 +145,4 @@ delete_over_date_data();
       echo "detail :".$ex->getMessage();
     }
   }
-  $query = "select * from futsal_manage where user_id = '$id' and borrowdate >= date_format(curdate(), '%Y-%m-%d') order by borrowdate";
-  $db = new PDO("mysql:dbname=$name", "root","root");
 ?>
