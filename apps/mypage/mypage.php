@@ -153,9 +153,7 @@ session_start();
         }
         ?>
         </table>
-        
       </div>
-      <!-- <button id="back">back</button> -->
     </div>
 
     <!-- Matching Modal -->
@@ -184,9 +182,7 @@ session_start();
                       <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                   </div>
               </div>
-
           </div>
-
         </div>
 
   <!-- Modal End-->

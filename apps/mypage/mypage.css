@@ -7,25 +7,3 @@ p{
 	font-family: asiangothic;
 	src : url(../font/asiangothic-Light.otf);
 }
-/*#back:hover{
-	cursor: pointer;
-	transition: 0.5s;
-	transform:scale(0.9);
-	background-color:#FA5858;
-	font-size: 12pt;
-	font-weight: bold;
-}
-#back{
-	text-align: center;
-	margin-top: 10%;
-	color: white;
-	font-size: 10pt;
-	width: 20%;
-	height: 35px;
-	border:none;
-	border-radius: 3px;
-	background-color: #F78181;
-	transition: 0.2s;
-	transform: scale(1);
-
-}*/

@@ -95,12 +95,12 @@ session_start();
           ?>
             <table class="reserve_lists" bor>
               <tr>
-                <th class="num lefttop" class="base">관리번호</th>
-                <th class="day" class="base">대여날짜</th>
-                <th class="time" class="base">대여시간</th>
-                <th class="place" class="base">대여장소</th>
-                <th class="empt" class="base"></th>
-                <th class="empt" class="base"></th>
+                <th id="num lefttop" class="base">관리번호</th>
+                <th id="day" class="base">대여날짜</th>
+                <th id="time" class="base">대여시간</th>
+                <th id="place" class="base">대여장소</th>
+                <th id="empt" class="base"></th>
+                <th id="empt" class="base"></th>
               </tr>
           <?}?>
 
@@ -110,31 +110,31 @@ session_start();
               //if절 넣은건 관리번호 홀/짝에 따라 백그라운드컬러 다르게 하려는거
                 if ($i%2==0){?>
                   <tr>
-                  <th class="num" class="tab2"><?=$manage_ID[$i]?></th>
-                  <th class="day" class="tab2"><?=$borrowdate[$i]?></th>
-                  <th class="time" class="tab2"><?=substr($start_time[$i],0,-3)?> ~ <?=substr($end_time[$i],0,-3)?></th>
-                  <th class="place" class="tab2"><?=$place[$i]?></th>
+                  <th id="num" class="tab2"><?=$manage_ID[$i]?></th>
+                  <th id="day" class="tab2"><?=$borrowdate[$i]?></th>
+                  <th id="time" class="tab2"><?=substr($start_time[$i],0,-3)?> ~ <?=substr($end_time[$i],0,-3)?></th>
+                  <th id="place" class="tab2"><?=$place[$i]?></th>
                   <?php
                     $valarr = array($manage_ID[$i], $borrowdate[$i]);
                     $val = implode(" ",$valarr);
                   ?>
-                    <th class="but"><button  id="but1" name="modify_val" value="<?= $val ?>" type="submit" form = "modify">수정</button></th>
-                    <th class="but"><button id="but2" name="cancel_val" value="<?= $val ?>" type="submit" form = "cancel">취소</button></th>
+                    <th id="but"><button  id="but1" name="modify_val" value="<?= $val ?>" type="submit" form = "modify">수정</button></th>
+                    <th id="but"><button id="but2" name="cancel_val" value="<?= $val ?>" type="submit" form = "cancel">취소</button></th>
                     </tr>
                   <?php
                     }
                 else{?>
                   <tr>
-                  <th class="num" class="tab"><?=$manage_ID[$i]?></th>
-                  <th class="day" class="tab"><?=$borrowdate[$i]?></th>
-                  <th class="time" class="tab"><?=substr($start_time[$i],0,-3)?> ~ <?=substr($end_time[$i],0,-3)?></th>
-                  <th class="place" class="tab"><?=$place[$i]?></th>
+                  <th id="num" class="tab"><?=$manage_ID[$i]?></th>
+                  <th id="day" class="tab"><?=$borrowdate[$i]?></th>
+                  <th id="time" class="tab"><?=substr($start_time[$i],0,-3)?> ~ <?=substr($end_time[$i],0,-3)?></th>
+                  <th id="place" class="tab"><?=$place[$i]?></th>
                   <?php
               $valarr = array($manage_ID[$i], $borrowdate[$i]);
               $val = implode(" ",$valarr);
             ?>
-              <th class="but"><button class="buttab2" id="but1" name="modify_val" value="<?= $val ?>" type="submit" form = "modify">수정</button></th>
-              <th class= "but"><button class="buttab2" id="but2" name="cancel_val" value="<?= $val ?>" type="submit" form = "cancel">취소</button></th>
+              <th id="but"><button class="buttab2" id="but1" name="modify_val" value="<?= $val ?>" type="submit" form = "modify">수정</button></th>
+              <th id="but"><button class="buttab2" id="but2" name="cancel_val" value="<?= $val ?>" type="submit" form = "cancel">취소</button></th>
               </tr>
             <?php
               }
@@ -154,11 +154,11 @@ session_start();
           ?>
             <table class="reserve_lists" bor>
               <tr>
-                <th class="num lefttop" class="base">관리번호</th>
-                <th class="day" class="base">대여날짜</th>
-                <th class="time" class="base">대여시간</th>
-                <th class="place" class="base">대여장소</th>
-                <th class="empt" class="base"></th>
+                <th id="num lefttop" class="base">관리번호</th>
+                <th id="day" class="base">대여날짜</th>
+                <th id="time" class="base">대여시간</th>
+                <th id="place" class="base">대여장소</th>
+                <th id="empt" class="base"></th>
               </tr>
           <?}?>
             <?php
@@ -166,29 +166,29 @@ session_start();
               //if절 넣은건 관리번호 홀/짝에 따라 백그라운드컬러 다르게 하려는거
                 if ($i%2==0){?>
                   <tr>
-                  <th class="num" class="tab2"><?=$match_manage_ID[$i]?></th>
-                  <th class="day" class="tab2"><?=$match_borrowdate[$i]?></th>
-                  <th class="time" class="tab2"><?=substr($match_start_time[$i],0,-3)?> ~ <?=substr($match_end_time[$i],0,-3)?></th>
-                  <th class="place" class="tab2"><?=$match_place[$i]?></th>
+                  <th id="num" class="tab2"><?=$match_manage_ID[$i]?></th>
+                  <th id="day" class="tab2"><?=$match_borrowdate[$i]?></th>
+                  <th id="time" class="tab2"><?=substr($match_start_time[$i],0,-3)?> ~ <?=substr($match_end_time[$i],0,-3)?></th>
+                  <th id="place" class="tab2"><?=$match_place[$i]?></th>
                   <?php
                     $valarr = array($match_manage_ID[$i], $match_borrowdate[$i]);
                     $val = implode(" ",$valarr);
                   ?>
-                    <th class="but"><button name="cancel_val" value="<?= $val ?>" type="submit" form = "cancel">취소</button></th>
+                    <th id="but"><button name="cancel_val" value="<?= $val ?>" type="submit" form = "cancel">취소</button></th>
                     </tr>
                   <?php
                     }
                 else{?>
                   <tr>
-                  <th class="num" class="tab"><?=$match_manage_ID[$i]?></th>
-                  <th class="day" class="tab"><?=$match_borrowdate[$i]?></th>
-                  <th class="time" class="tab"><?=substr($match_start_time[$i],0,-3)?> ~ <?=substr($match_end_time[$i],0,-3)?></th>
-                  <th class="place" class="tab"><?=$match_place[$i]?></th>
+                  <th id="num" class="tab"><?=$match_manage_ID[$i]?></th>
+                  <th id="day" class="tab"><?=$match_borrowdate[$i]?></th>
+                  <th id="time" class="tab"><?=substr($match_start_time[$i],0,-3)?> ~ <?=substr($match_end_time[$i],0,-3)?></th>
+                  <th id="place" class="tab"><?=$match_place[$i]?></th>
                   <?php
               $valarr = array($match_manage_ID[$i], $match_borrowdate[$i]);
               $val = implode(" ",$valarr);
             ?>
-              <th class="but"><button class="buttab2" name="cancel_val" value="<?= $val ?>" type="submit" form = "cancel">취소</button></th>
+              <th id="but"><button class="buttab2" name="cancel_val" value="<?= $val ?>" type="submit" form = "cancel">취소</button></th>
               </tr>
             <?php
               }
