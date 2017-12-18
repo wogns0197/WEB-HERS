@@ -7,3 +7,6 @@ p{
 	font-family: asiangothic;
 	src : url(../font/asiangothic-Light.otf);
 }
+table{
+	width: 100%;
+}
