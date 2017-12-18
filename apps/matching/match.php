@@ -98,7 +98,7 @@ session_start();
             }
             for($i = 0; $i < count($manage_ID); $i++){
             ?>
-                <form action="../reservation/reservation_page.php" method="get" id="showinfo">
+                <form action="../reservation/reservation_page.php" method="get">
                 <tr>
                     <th  class="tab2 num"><?=$manage_ID[$i]?></th>
                     <th  class="tab2 day"><?=$borrowdate[$i]?></th>
@@ -107,18 +107,13 @@ session_start();
                     <th class="messages" data-toggle="modal" data-target="#getMgModal"><input type="hidden" value = "<?=$chat[$i]?>" />
                       <input type="button" value="메세지보기"></button>
                     </th>
-                <?php
-                  $valarr = array($manage_ID[$i], $borrowdate[$i]);
-                  $val = implode(" ",$valarr);
-                  $delete_val = $manage_ID[$i];
-                ?>
-                  <th><input type="submit" class="btn btn-default" value="정보 보기" form="showinfo"></input></th>
                     <input type="hidden" name="where" value="<?= $place[$i] ?>"/>
-                    <input type="hidden" name="date" value="<?= $borrowdate[$i]?>"/>
-                    <input type="hidden" name="population" value="<?= $people[$i]?>"/>
+                    <input type="hidden" name="date" value="<?= $borrowdate[$i] ?>"/>
+                    <input type="hidden" name="population" value="<?= $people[$i] ?>"/>
                     <input type="hidden" name="match" value="true"/>
+                  <th><input type="submit" class="btn btn-default" value="정보 보기"></input></th>
                   </tr>
-            </form>
+              </form>
             <?php
             }?>
         </table>

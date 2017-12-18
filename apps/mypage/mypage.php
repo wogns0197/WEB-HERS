@@ -71,7 +71,7 @@ session_start();
           <ul class="menus">
             <li><a href="../list/reservation_lists.php">Futsal Confirmation</a></li>
             <li><a href="../futsal_main/futmain.php">Futsal Field Rental</a></li>
-            <li><a href="match.php">Matching Request</a></li>
+            <li><a href="../matching/match.php">Matching Request</a></li>
           </ul>
         </dd>
       </dl>
