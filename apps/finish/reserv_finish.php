@@ -170,12 +170,14 @@ session_start();
         if($notice==1){?>
           <p>공지여부 : <span class="strong">O</span></p>
         <a href="../main/main.php"><button>Home</button></a>
+        <a href="../list/reservation_lists.php"><button>예약 확인</button></a>
       </div>
     <?php
         }
         else{?>
           <p>공지여부 : <span class="strong">X</span></p>
         <a href="../main/main.php"><button>Home</button></a>
+        <a href="../list/reservation_lists.php"><button>예약 확인</button></a>
       </div>
     <?php
         }
