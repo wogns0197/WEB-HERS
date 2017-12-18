@@ -1,10 +1,10 @@
 html,body{
 	overflow-x: hidden;
 }
-li{
+li:not(#menubar li){
 	float: left;
 }
-p{	
+p{
 	margin-top: 10%;
 	text-align: center;
 	font-family: asiangothic;
@@ -42,5 +42,5 @@ input{
 	font-size: 10pt;
 }
 input:hover{
-	background-color: #E6E6E6;	
+	background-color: #E6E6E6;
 }
