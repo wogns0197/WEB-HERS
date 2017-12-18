@@ -35,9 +35,11 @@ else if($flag){
         $db->query($query2);
     }
     else{
-    ?>
+    ?> 
         <script type="text/javascript"src="duplicate_send_message.js"></script>        
     <?php
+        echo $manage_id;
+        echo $date;
     }
 }
 else{
