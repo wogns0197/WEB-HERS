@@ -11,10 +11,11 @@ delete_over_date_data();
     <link rel="stylesheet" type="text/css" href="backgroundTransition.css" />
     <link rel="stylesheet" href="main.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
 
     <script type="text/javascript"src="http://code.jquery.com/jquery-latest.min.js"></script>
     <script type="text/javascript"src="main.js"></script>
-    <link rel="shortcut icon" href="favicon.jpg"/>
+
   </head>
   <body>
     <div class="backgroundTransition"></div>
