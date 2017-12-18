@@ -1,10 +1,4 @@
-// $(window).scroll(function() {
-//   var $el = $('.show-on-scroll');
-//
-//   if($(this).scrollTop() >= 400) $el.addClass('shown');
-//   else $el.removeClass('shown');
-// });
- $(document).ready(function() {
+$(document).ready(function() {
    $("#info").click(function() {
      var info = $(".siteinfo").offset().top;
      $("body").animate({"scrollTop": info},500);
@@ -14,10 +8,19 @@
      var dev = $(".developer").offset().top;
      $("body").animate({"scrollTop": dev},500);
      $("header").fadeOut(500);
+
+     setTimeout(function(){
+       $("#kwon").css({visibility:"visible", opacity: 0.0}).animate({opacity: 1.0},500);
+       $("#seo").css({visibility:"visible", opacity: 0.0}).animate({opacity: 1.0},600);
+       $("#choi").css({visibility:"visible", opacity: 0.0}).animate({opacity: 1.0},700);
+       $("#park").css({visibility:"visible", opacity: 0.0}).animate({opacity: 1.0},800);
+     },700);
+
    });
    $("#ctct").click(function() {
      var ct = $(".contact").offset().top;
      $("body").animate({"scrollTop": ct},500);
+     $("header").fadeOut(500);
    });
 
    $(".entire").fadeOut(0);
@@ -35,6 +38,8 @@
 
    $(window).scroll(function(){
      var scrollTop = $(this).scrollTop();
+     var developerdiv = $(".developer").offset().top;
+
      if(scrollTop ==0){
        $("header").fadeIn(500);
      }
@@ -53,12 +58,17 @@
        $("#soccer+p").css({visibility:"visible"});
        $("#soccer+p+p").css({visibility:"visible"});
      }
-     else{
-       // $("header").css({visibility:"visible"});
-       // $("#menuicon").css({visibility:"visible"});
-       // $("#xicon").css({visibility:"visible"});
-       // $("#menubar").css({visibility:"visible"});
-     }
+     // if(scrollTop > developerdiv-350){
+     //   $(".developer h2").css({visibility:"visible"});
+     // }
+     // if(scrollTop > developerdiv-250){
+     //   $("#kwon").css({visibility:"visible"});
+     //   $("#seo").css({visibility:"visible"});
+     // }
+     // if(scrollTop > developerdiv-100){
+     //   $("#choi").css({visibility:"visible"});
+     //   $("#park").css({visibility:"visible"});
+     //}
 
    });
 

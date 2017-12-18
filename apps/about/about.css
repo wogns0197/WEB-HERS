@@ -79,6 +79,7 @@ h2{
 }
 .developer{
   clear: both;
+  visibility: hidden;
 }
 .developer img{
   height: 200px;
