@@ -116,7 +116,7 @@ session_start();
       <div class="developer">
         <h2>DEVELOPERS</h2>
 
-        <div class="person">
+        <div id="kwon" class="person">
           <img src="image/kwon.jpg" alt="kwon">
           <h3>권재훈 Kwon Jaehoon</h3>
           <p>"front"</p>
@@ -124,7 +124,7 @@ session_start();
           <a href="https://github.com/wogns0197">Github Go</a>
         </div>
 
-        <div class="person">
+        <div id="seo" class="person">
           <img src="image/seo.jpg" alt="seo">
           <h3>서그림 Seo Geurim</h3>
           <p>"front"</p>
@@ -132,7 +132,7 @@ session_start();
           <a href="https://github.com/Seogeurim">Github Go</a>
         </div>
 
-        <div class="person">
+        <div id="choi" class="person">
           <img src="image/choi.jpg" alt="choi">
           <h3>최재영 Choi Jaeyoung</h3>
           <p>"front/back"</p>
@@ -140,7 +140,7 @@ session_start();
           <a href="https://github.com/chlwodud77">Github Go</a>
         </div>
 
-        <div class="person">
+        <div id="park" class="person">
           <img src="image/park.png" alt="choi">
           <h3>박재훈 Park Jaehoon</h3>
           <p>"back"</p>
@@ -153,7 +153,9 @@ session_start();
 
       <div class="contact">
         <h2>CONTACT</h2>
-        
+        <p>Hanyang University Erica Campus Web Application Project - HERS</p>
+        <p><span id="span1">Facebook</span> &#32;&#183;&#32; <span>GitHub</span> &#32;&#183;&#32; <span>Email</span></p>
+
       </div>
     </div>
 
