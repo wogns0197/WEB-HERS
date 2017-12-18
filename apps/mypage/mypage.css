@@ -1,5 +1,6 @@
 html,body{
 	text-align: center;
+	overflow-x: hidden;
 }
 p{	
 	margin-top: 10%;
