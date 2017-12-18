@@ -1,14 +1,14 @@
 
 <?php
-	include 'db-connect.php';
 	$name = $_GET['name'];
 	$s_id = $_GET['sid'];
+	$db_name = 'web_project';
 	$find = true;
 
 	//이름과 학번으로 아이디를 찾는 쿼리
 	$query = "select user_id from user where name = '$name' and student_ID = '$s_id'";
-	$dsn = "mysql:host=$db_host;port=$db_port;dbname=$db_name;charset=$charset";
-	$db = new PDO($dsn, $db_user, $db_password);
+
+    $db = new PDO("mysql:dbname=$db_name", "root","root");
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
   	try{

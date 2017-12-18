@@ -8,9 +8,7 @@ create table user
     user_pw     varchar(30),
     dept_name   varchar(15),
     primary key(user_id)
-)
-DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
-
+);
 create table futsal_manage
 (
     manage_ID     integer(10) not null auto_increment,
@@ -30,9 +28,7 @@ create table futsal_manage
     primary key(manage_ID, borrowdate),
     constraint foreign key (user_id) references user(user_id)
         on delete set null
-)
-DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
-
+);
 create table purpose_view
 (
     manage_ID   integer(10),
@@ -43,9 +39,7 @@ create table purpose_view
     start_time  time,
     end_time    time,
     primary key(manage_ID,borrowdate)
-)
-DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
-
+);
 create table matching_manage
 (
     receive_id  varchar(10),
@@ -56,7 +50,6 @@ create table matching_manage
     primary key(send_id, manage_ID),
     constraint foreign key (receive_id) references user(user_id)
         on delete set null
-)
-DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
-
+);
 insert into user values('HERS',0,0,'0','HERS','HERS','0');-- 관리자 계정
+

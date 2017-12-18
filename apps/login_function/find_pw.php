@@ -1,15 +1,14 @@
 
 <?php
-	include 'db-connect.php';
 	$userid = $_GET['userid'];
 	$s_id = $_GET['sid'];
+	$db_name = 'web_project';
 	$find = true;
 
-
+	
 	$query = "select user_pw from user where user_id = '$userid' and student_ID = '$s_id'";
 
-		$dsn = "mysql:host=$db_host;port=$db_port;dbname=$db_name;charset=$charset";
-		$db = new PDO($dsn, $db_user, $db_password);
+    $db = new PDO("mysql:dbname=$db_name", "root","root");
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
   	try{
