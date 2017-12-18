@@ -78,7 +78,7 @@ session_start();
     <!-- end sidebar menu -->
 
     <div id="reserve_wrap">
-      <h2>| Matching Message |</h2>
+      <h2>| Waiting For Matching Lists |</h2>
       <div class="container">
         <table class="reserve_lists" bor>
         <?php
