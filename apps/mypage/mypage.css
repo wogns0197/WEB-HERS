@@ -17,3 +17,12 @@ table{
 th{
 	text-align: center;
 }
+input{
+	border:none;
+}
+.num{
+	width:7%;
+}
+.container{
+	margin-right: 12%;
+}
