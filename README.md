@@ -41,6 +41,7 @@ http://localhost:8888/Web-Application-HERS/Front_End/main/main.php
 <img src = "/readmeimgs/about1.png" alt = "about" width="45%" height = "auto" />
 <img src = "/readmeimgs/about2.png" alt = "about" width="45%" height = "auto" />
 </div>
+Jquery Animation is optimized for Safari, not for Chrome, IE.
 <br>
 <br>
 
