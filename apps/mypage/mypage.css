@@ -1,6 +1,8 @@
 html,body{
-	text-align: center;
 	overflow-x: hidden;
+}
+li{
+	float: left;
 }
 p{	
 	margin-top: 10%;

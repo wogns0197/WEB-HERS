@@ -119,7 +119,7 @@ session_start();
                     $val = implode(" ",$valarr);
                   ?>
                     <th class="but"><button  id="but1" name="modify_val" value="<?= $val ?>" type="submit" form = "modify">수정</button></th>
-                    <th class="but"><button id="but2" name="cancel_val" value="<?= $val ?>" type="submit" form = "cancel">취소</button></th>
+                    <th class="but"><button id="but1" name="cancel_val" value="<?= $val ?>" type="submit" form = "cancel">취소</button></th>
                     </tr>
                   <?php
                     }
