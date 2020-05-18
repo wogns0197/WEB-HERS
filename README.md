@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Web-Application-HERS
 
 * Web-Application : HERS (Hanyang Erica Rental Service)
@@ -71,3 +72,7 @@ Jquery Animation is optimized for Safari, not for Chrome, IE.
   * Jquery
 * License
   * HERS is released under the MIT license.
+=======
+# WEB-HERS
+WebApplication team project at 2017-2nd semester
+>>>>>>> 60cacb33cabc98e6faa6ff064221170a0e90b5b2
